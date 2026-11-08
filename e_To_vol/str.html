@@ -1,0 +1,168 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言文件读写命令操作差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言文件读写命令操作差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="arr.html">上一章</a>]&nbsp;&nbsp;  [<a href="dll.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">五、火山视窗与易语言文件读写命令操作差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="窗口事件"></a>
+	<p>&nbsp;</p>
+	<h4>1、概述</h4>
+	<blockquote>
+		<p>易语言和火山视窗的文件读写命令共有两个差异，分别如下：</p>
+		<blockquote>
+			<p>(1) 易语言使用时无需定义变量即可操作，在火山视窗中需要定义<b>“文件读写类”</b>变量才可以操作。</p>
+			<p>(2) 易语言中文件读写中文本相关的操作命令，都采用的是多字节编码，而在火山视窗中的对应命令都采用的是Unicode编码。因此如果有易语言项目转火山项目时要额外注意这一点，需要提前将文本文件转换成Unicode编码的才可以使用火山视窗进行文件读写。</p>
+		</blockquote>
+		<p>下面以文件读写中的文本命令，演示如何使用火山视窗中的文件读写。</p>
+	</blockquote>
+	<a name="读入文本"></a>
+	<p>&nbsp;</p>
+	<h4>2、读入文本</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中虽然无需创建对象即可使用，但是依然需要一个整数变量来存储文件句柄。</p>
+			<p>在文件操作完毕后需要调用<b>“关闭文件()”</b>方法手动关闭。</p>
+			<blockquote>
+				<p><img src="str_img/1.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/2.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中需要定义<b>“文件读写类”</b>变量，在操作文件完毕后可以选择性的决定是否调用<b>“文件.关闭文件()”</b>方法来关闭。</p>
+			<p>推荐使用完毕后手动关闭文件。</p>
+			<blockquote>
+				<p><img src="str_img/3.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p>注：虽然都是读取10个字节，但火山视窗中实际读取的文本长度较长，这是因为ansi编码和UTF-16LE编码的长度不同导致的。</p>
+				<p><img src="str_img/4.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="读入一行"></a>
+	<p>&nbsp;</p>
+	<h4>3、读入一行</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>打开文件后调用<b>“读入一行()”</b>就可以读取内容到编辑框中。</p> 
+			<blockquote>
+				<p><img src="str_img/5.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/6.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>打开文件后调用<b>“文件.读入一行()”</b>就可以读取一行文本到编辑框中。</p>
+			<blockquote>
+				<p><img src="str_img/7.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/8.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="写出文本"></a>
+	<p>&nbsp;</p>
+	<h4>4、写出文本</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>打开文件后调用本方法就可以写出文本内容到文件中。</p>
+			<p>注：如果想要读入文件内容，必须关闭文件后才可以读取。</p>
+			<blockquote>
+				<p><img src="str_img/9.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/10.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>打开文件后就可以调用<b>“文件.写出文本()”</b>方法写出文本到文件中。</p>
+			<p>在火山视窗中同样也需要关闭文件后才可以读取内容。</p>
+			<blockquote>
+				<p><img src="str_img/11.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/12.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote> 
+	
+	<a name="写文本行"></a>
+	<p>&nbsp;</p>
+	<h4>5、写文本行</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>打开文件后调用<b>“写文本行()”</b>方法就可以写出一行文本到文件中。</p> 
+			<blockquote>
+				<p><img src="str_img/13.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>打开文件后调用<b>“文件.写文本行()”</b>方法就可以写出一行文本到文件中。</p>
+			<blockquote>
+				<p><img src="str_img/15.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="str_img/16.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote> 
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="arr.html">上一章</a>]&nbsp;&nbsp;  [<a href="dll.html">下一章</a>]  </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

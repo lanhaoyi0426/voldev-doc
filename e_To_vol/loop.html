@@ -1,0 +1,309 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言循环结构语句差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言循环结构语句差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Process.html">上一章</a>]&nbsp;&nbsp;  [<a href="Designer.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">六、火山视窗与易语言循环结构语句差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="对照表"></a>
+	<p>&nbsp;</p>
+	<h4>1、循环语句对照表</h4>
+	<blockquote>
+		<table border="1" width="40%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+				
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#判断循环">判断循环首/尾</a></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#判断循环">判断循环</a></td>
+					</tr>
+					<tr>
+						<td align="center" height="40" bgcolor="#F2F3F8"><a href="#循环判断">循环判断首/尾</a></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#循环判断">循环判断首/尾</a></td>
+					</tr>
+					<tr>
+						<td align="center" height="40" bgcolor="#F2F3F8"><a href="#计次循环">计次循环首</a></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#计次循环">计次循环</a></td>
+					</tr>
+					<tr>
+						<td align="center" height="40" bgcolor="#F2F3F8"><a href="#变量循环">变量循环首</a></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#变量循环">循环</a></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#到循环尾">到循环尾</a></td>
+						<td align="center" height="40" bgcolor="#F2F3F8"><a href="#到循环尾">到循环尾</a></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#跳出循环">跳出循环</a></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><a href="#跳出循环">跳出循环</a></td>
+					</tr>
+	
+				</tbody></table>
+	</blockquote>
+	<a name="判断循环"></a>
+	<p>&nbsp;</p>
+	<h4>2、判断循环首/尾</h4>
+	<blockquote>
+		<p>在火山中名叫<strong>“判断循环”</strong>，与易语言相比并无判断循环尾的字样，也不需要输入。</p> 
+		<p>易语言和火山对比如下：</p>
+		<blockquote>
+			<p>易语言：</p>
+			<p><img src="loop_img/1.png" border="0"></p>
+			<p>火山：</p>
+			<p><img src="loop_img/2.png" border="0"></p>
+		</blockquote>
+		<p>火山视窗应用样例：</p>
+		<blockquote>
+			<p>在本语句的子语句体内对<b>“计数”</b>变量进行累计<b>+1</b>，并输出计数结果，实现正向计数效果。</p>
+			<p><img src="../vol/loop_img/24.png" border="0"></p>
+			<p>最终利用本语句实现了正向计数效果。</p>
+			<p><img src="../vol/loop_img/21.png" border="0"></p>
+			<p>同理，也可以实现逆向计数如下所示：</p>
+			<p><img src="../vol/loop_img/25.png" border="0"></p>
+			<p>最终实现了逆向计数。</p> 
+			<p><img src="../vol/loop_img/23.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="循环判断"></a>
+	<p>&nbsp;</p>
+	<h4>3、循环判断首/尾</h4>
+	<blockquote>
+		<p>本语句与易语言的区别在于，易语言会自动生成语句尾，火山暂时需要手动输入。</p>
+		<p>易语言和火山对比如下：</p>
+		<blockquote>
+			<p>易语言：</p>
+			<p><img src="loop_img/3.png" border="0"></p>
+			<p>火山：</p>
+			<p><img src="loop_img/4.png" border="0"></p>
+		</blockquote>
+		<p>火山视窗应用样例：</p>
+		<blockquote>
+			<p>在本语句的子语句体内对<b>“计数”</b>变量进行累计<b>+1</b>，并输出计数结果，实现正向计数效果。</p>
+			<p><img src="../vol/loop_img/20.png" border="0"></p>
+			<p>最终利用本语句实现了正向计数效果。</p>
+			<p><img src="../vol/loop_img/21.png" border="0"></p>
+			<p>同理，也可以实现逆向计数如下所示：</p>
+			<p><img src="../vol/loop_img/22.png" border="0"></p>
+			<p>最终实现了逆向计数。</p>
+			<p><img src="../vol/loop_img/23.png" border="0"></p>
+		</blockquote>
+		
+		
+	</blockquote>	
+	
+	<a name="计次循环"></a>
+	<p>&nbsp;</p>
+	<h4>4、计次循环首/尾</h4>
+	<blockquote>
+		<p>本语句在火山中名叫<strong>“计次循环”</strong>，并且只有一个参数，且不需要提供计次循环尾。</p>
+		<p>帮助页如下图：</p>
+		<blockquote>
+			<p><img src="../vol/loop_img/9.png" border="0"></p>
+		</blockquote>
+		<p>在易语言中需要手动定义计数变量，而在火山中则可以省略此步骤，可以利用其内置方法<strong>“取循环索引()”</strong>代替计数变量。</p>
+		<p>易语言和火山对比如下：</p>
+		<blockquote>
+			<p>易语言：</p>
+			<p><img src="loop_img/5.png" border="0"></p>
+			<p>火山：</p> 
+			<p><img src="loop_img/6.png" border="0"></p>
+		</blockquote>
+		<p>火山视窗应用样例：</p>
+		<blockquote>
+			
+			<p>利用本语句循环10次，取出循环索引到编辑框中。</p>
+			<p>注：在火山中循环索引从0开始，如果需要移植易语言代码到火山，务必注意循环计数问题。</p>
+			<p><img src="../vol/loop_img/10.png" border="0"></p>
+			<p>最终循环索引会依次显示在编辑框中。</p>
+			<p><img src="../vol/loop_img/11.png" border="0"></p>
+		</blockquote>
+		<p>在火山中额外提供了<strong>“逆向计次循环”</strong>方法，用于逆向循环，通过<strong>“取循环索引()”</strong>方法可以直接取出逆向值。</p>
+		<p>应用样例：</p>
+		<blockquote>
+			
+			<p>利用本语句逆向循环10次，取出循环索引到编辑框中。</p>
+			<p><img src="../vol/loop_img/16.png" border="0"></p>
+			<p>最终循环索引会逆向依次显示在编辑框中。</p>
+			<p><img src="../vol/loop_img/17.png" border="0"></p>
+		</blockquote>
+		<p>取循环索引方法的注意事项如下：</p>
+		<blockquote>
+			<p>1、本方法只能用于<b>“计次循环”</b>或<b>“逆向计次循环”</b>的子语句体中使用，如下图所示为错误的。</p>
+			<blockquote>
+				<p><img src="../vol/loop_img/12.png" border="0"></p>
+			</blockquote>
+			<p>2、如果有多层循环嵌套，本方法只能取出最近层循环的索引值，无法取出其它循环层的循环索引。</p>
+			<blockquote>
+				<p><img src="../vol/loop_img/13.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>	
+
+	<a name="变量循环"></a>
+	<p>&nbsp;</p>
+	<h4>5、变量循环首/尾</h4>
+	<blockquote>
+		<p>本语句在火山中名叫<strong>“循环”</strong>，且不需要输入循环结束语句。其参数数量和作用也和易语言中一致，但顺序不同，对照表如下：</p>
+		<p>注意：在火山中<strong>第三</strong>个参数和易语言中的<strong>第四</strong>个参数作用一致，而火山<strong>第四</strong>个参数则和易语言中<strong>第三</strong>个参数作用一致。</p>
+		<blockquote>
+			<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+				<tbody>
+				<tr>
+					<td align="center" width="8%"  height="40" bgcolor="#D2D2DE"></td>
+					<td align="center" width="15%"  height="40" bgcolor="#D2D2DE">易语言<strong>变量循环首</strong></td>
+					<td align="center" width="15%" height="40" bgcolor="#D2D2DE">火山<strong>循环</strong></td>
+					<td align="center" width="42%" height="40" bgcolor="#D2D2DE">注释</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#D2D2DE">参数1：</td>
+					<td align="center"height="40" >变量起始值</td>
+					<td align="center" height="40">变量起始值</td>
+					<td align="center" height="40">
+						<p>在易语言中默认为1。</p>
+						<p>而火山中如果本参数被忽略默认为0。</p>
+						</td>
+				</tr>
+				<tr>
+					<td align="center" bgcolor="#D2D2DE" height="40">参数2：</td>
+					<td align="center"height="40" >变量目标值</td>
+					<td align="center" height="40">变量目标值</td>
+					<td align="center" height="40">
+						<p>在易语言中本参数不可忽略。</p>
+						<p>在火山中如果被忽略默认值为1。</p></td>
+				</tr>
+				<tr>
+					<td align="center" bgcolor="#D2D2DE" height="40">参数3：</td>
+					<td align="center"height="40" >变量递增值</td>
+					<td align="center" height="40">循环变量</td>
+					<td align="center" height="40">
+						<p>在易语言中<strong>变量递增值</strong>的默认为1。</p>
+						<p>在火山中<strong>循环变量</strong>如果留空，将使用一个内置的临时变量。</p>
+							
+					</td>
+				</tr>
+				<tr>
+					<td align="center" bgcolor="#D2D2DE" height="40">参数4：</td>
+					<td align="center"height="40" >循环变量</td>
+					<td align="center" height="40">变量递增值</td>
+					<td align="center" height="40">
+						<p>在易语言中<strong>循环变量</strong>可以被省略，如果被省略将使用内部临时变量、</p>
+						<p>在火山中<strong>变量递增值</strong>，如果被省略默认使用1。</p>
+					</td>
+				</tr>
+				
+					</tbody></table>
+		</blockquote>
+	<p>在火山中使用时，除了需要注意参数顺序和默认值之外，还需要注意<strong>循环变量</strong>参数的问题。</p>
+	<p>此参数在易语言中是从1开始计数，火山中是从0开始计数。</p>
+	<p>正向计数对比如下：</p>
+	<blockquote>
+		<p>易语言示例：</p>
+		<blockquote>
+			<p>可以看出易语言的计数从1开始。</p>
+			<p><img src="loop_img/7.png" border="0"></p>
+		</blockquote>
+		<p>火山示例：</p>
+		<blockquote>
+			<p>而在火山中想要实现易语言一样的效果，需要对计数变量进行+1操作。</p>
+			<p><img src="loop_img/8.png" border="0"></p>
+		</blockquote>
+	
+	</blockquote>
+	<p>逆向计数对比如下：</p>
+	<blockquote>
+		<p>易语言示例：</p>
+		<blockquote>
+			<p>易语言中的<strong>“变量目标值”</strong>参数，超过此参数时才会跳出循环。</p>
+			<p>因此当<strong>“变量起始值”</strong>为10，<strong>“变量目标值”</strong>为1，<strong>“变量递增值”</strong>为-1时就可以实现从10到1的逆向输出。</p>
+			<p><img src="loop_img/9.png" border="0"></p>
+		</blockquote> 
+		<p>火山示例：</p>
+		<blockquote>
+			<p>在火山中想要实现同样的效果，必须将<strong>“变量目标值”</strong>参数设置为0，因为火山中的规则是，大于等于此值时才会跳出循环。</p>
+			<p>如果要移植易语言代码到火山，务必要注意这一点问题。</p>
+			<p><img src="loop_img/10.png" border="0"></p>
+		</blockquote>
+	
+	</blockquote>
+	<p>利用其循环变量的特性，还可以实现循环正/逆向取出数组成员内容，如下：</p>
+	<blockquote>
+		<p><b>(1) </b>实现正向遍历数组成员，示例如下：</p>
+		<blockquote>
+			<p>循环语句的参数1、4忽略、参数2提供数组成员数、参数3提供循环变量，就可实现正向遍历输出数组成员。</p>
+			<p><img src="../vol/loop_img/1.png" border="0"></p>
+			<p>最终数组所有成员将被输出到编辑框中显示。</p>
+			<p><img src="../vol/loop_img/2.png" border="0"></p>
+		</blockquote>
+		<p><b>(2) </b>实现逆向遍历数组成员，示例如下：</p>
+		<blockquote>
+			<p>循环语句的参数1提供数组成员数、参数2提供0、参数3提供循环变量、参数4提供-1，就可实现逆向遍历输出数组成员。</p>
+			<p><img src="../vol/loop_img/3.png" border="0"></p>
+			<p>最终数组所有成员将被逆向输出到编辑框中显示。</p>
+			<p><img src="../vol/loop_img/4.png" border="0"></p> 
+		</blockquote>
+	</blockquote>
+
+	<a name="跳出循环"></a>	
+	<p>&nbsp;</p>
+	<h4>8、跳出循环</h4>
+	<blockquote>
+		<p>本关键字的作用和易语言同名关键字一致，用于转移当前程序执行位置到当前所处循环体尾部的下一条语句处，可用于所有循环语句。</p>
+		<blockquote>
+			<p>如下图所示，当循环索引为5时执行<b>跳出循环</b>。</p>
+			<p>注：和易语言相比在火山中本关键字不需要输入括号。</p>
+			<p><img src="../vol/loop_img/26.png" border="0"></p>
+			<p>最终循环提前结束。</p>
+			<p><img src="../vol/loop_img/27.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="到循环尾"></a>	
+	<p>&nbsp;</p>
+	<h4>9、到循环尾</h4>
+	<blockquote>
+		<p>本关键字的作用和易语言同名关键字一致，转移当前程序执行位置到当前所处循环体的尾部。</p>
+		<p>示例：</p>
+		<blockquote>
+			<p>注：和易语言相比在火山中本关键字不需要输入括号。</p>
+			<p><img src="../vol/loop_img/28.png" border="0"></p>
+			<p>因循环体内对<b>“整数变量”</b>进行了一次判断，并执行了一次<b>“到循环尾”</b>相当于跳过了一个循环，所以最终会输出<b>2、3</b>。</p>
+			<p><img src="../vol/loop_img/29.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="Process.html">上一章</a>]&nbsp;&nbsp;  [<a href="Designer.html">下一章</a>]  </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

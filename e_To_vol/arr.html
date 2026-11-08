@@ -1,0 +1,274 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言数组操作差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言数组操作差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="view.html">上一章</a>]&nbsp;&nbsp;  [<a href="str.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">四、火山视窗与易语言数组操作差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="窗口事件"></a>
+	<p>&nbsp;</p>
+	<h4>1、概述</h4>
+	<blockquote>
+		<p>在易语言中数组操作都是通过<b>“[]”</b>进行，而在火山中主要利用数组对象操作，譬如：文本数组类、整数数组类对象数组类等。虽然火山视窗中也支持数组符号来定义数组，但是暂未提供相关的数组操作方法，因此在日常开发中只能使用数组对象来操作，相对于数组符号数组对象的操作更加灵活。</p>
+		<p>下面用文本数组来演示易语言和火山视窗之间的操作差异。</p>
+	</blockquote>
+	
+	<a name="加入成员"></a>
+	<p>&nbsp;</p>
+	<h4>2、加入成员</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中利用<b>“加入成员()”</b>方法添加成员到数组中。</p>
+			<blockquote>
+				<p><img src="aar_img/1.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/2.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中需要定义<b>“文本数组类”</b>变量，调用其<b>“加入成员()”</b>方法来添加成员。</p>
+			<p>数组对象的循环取出内容，相对易语言来说也简单很多。</p>
+			<blockquote>
+				<p><img src="aar_img/3.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/4.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="取成员"></a>
+	<p>&nbsp;</p>
+	<h4>3、取成员</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>易语言取数组成员利用数组下标即可取出，下标索引从1开始。</p>
+			<blockquote>
+				<p><img src="aar_img/5.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/6.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中利用数组对象的<b>“取成员()”</b>方法进行获取成员，成员索引从0开始。</p>
+			<blockquote>
+				<p><img src="aar_img/7.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/8.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="插入成员"></a>
+	<p>&nbsp;</p>
+	<h4>4、插入成员</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中需要通过<b>“插入成员()”</b>方法来插入成员，成员索引从1开始。</p> 
+			<blockquote>
+				<p><img src="aar_img/9.png" border="0"></p>
+			</blockquote> 
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/10.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中也是通过<b>“插入成员()”</b>方法来插入，需要注意的是，其成员索引从0开始。</p>
+			<blockquote>
+				<p><img src="aar_img/11.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/12.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="替换成员"></a>
+	<p>&nbsp;</p>
+	<h4>5、替换成员</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中利用数组下标就可以实现替换成员。</p> 
+			<blockquote> 
+				<p><img src="aar_img/13.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中需要利用<b>“置成员值()”</b>方法进行替换成员。</p>
+			<blockquote>
+				<p><img src="aar_img/15.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/16.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+	</blockquote>
+	
+	<a name="查找成员"></a>
+	<p>&nbsp;</p>
+	<h4>6、查找成员是否存在</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中需要自己封装一个方法，利用循环来处理。</p>
+			<blockquote>
+				<p><img src="aar_img/17.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/18.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中直接使用<b>“所指定值是否存在()”</b>方法进行判断即可。</p>
+			<blockquote>
+				<p><img src="aar_img/19.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote> 
+				<p><img src="aar_img/20.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="删除成员"></a>
+	<p>&nbsp;</p>
+	<h4>7、删除成员</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中使用<b>“删除成员()”</b>方法就可以删除成员，成员索引从1开始。</p>
+			<blockquote>
+				<p><img src="aar_img/21.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/22.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中同样使用<b>“删除成员()”</b>方法，其成员索引从0开始。</p>
+			<blockquote>
+				<p><img src="aar_img/23.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/24.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="清空数组"></a>
+	<p>&nbsp;</p>
+	<h4>8、清空数组</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中通过<b>“重定义数组()”</b>方法进行清空数组。</p> 
+			<blockquote>
+				<p><img src="aar_img/25.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/28.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中调用<b>“删除所有成员()”</b>方法进行清空。</p>
+			<blockquote>
+				<p><img src="aar_img/26.png" border="0"></p>
+			</blockquote>
+			<p>运行结果如下：</p>
+			<blockquote>
+				<p><img src="aar_img/27.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+	</blockquote>
+	
+	<a name="对象数组"></a>
+	<p>&nbsp;</p>
+	<h4>9、扩展知识“对象数组”</h4>
+	<blockquote>
+		<p>在易语言中可以直接通过<b>“加入成员()”</b>来添加对象数据.</p>
+		<p>在火山中有两种方案。</p>
+		<blockquote>
+			<p>第一：直接使用对象数组类；</p>
+			<p>第二：使用对象数组模板类；</p>
+		</blockquote>
+		<p>前者在操作时需要强制转换，后者则不需要。</p>
+		<p>对象数组类演示：</p>
+		<blockquote>
+			<p>注：对象数组进行取成员时，赋值后的对象是一个全新的对象，操作此对象不会影响数组内的对象。</p>
+			<p><img src="aar_img/29.png" border="0"></p>
+		</blockquote>
+		<p>对象数组模板类演示：</p>
+		<blockquote> 
+			<p>首先新建一个类，基础类填写<b>“对象数组模板类”</b>，属性名提供<b>“@模板实现类”</b>属性值提供类名，即可完成对象数组的创建。</p>
+			<blockquote>
+				<p><img src="aar_img/30.png" border="0"></p>
+			</blockquote>
+			<p>使用<b>对象数组模板类</b>创建的数组，在取成员时不需要强制转换即可赋值。</p>
+			<blockquote>
+				<p><img src="aar_img/31.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="view.html">上一章</a>]&nbsp;&nbsp;  [<a href="str.html">下一章</a>]  </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

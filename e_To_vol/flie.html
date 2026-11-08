@@ -1,0 +1,681 @@
+
+<html>
+
+<head>
+<title>火山视窗文件批量更名工具_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗文件批量更名工具" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="table.html">上一章</a>]&nbsp;&nbsp;  [<a href="sql.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">一、易语言转火山视窗文件批量更名工具</h2>
+<p>&nbsp;</p>
+	<p>&nbsp;</p><a name="概述"></a>
+	<h4>1、基本概述</h4>
+	<blockquote>
+		<p>本篇教程将基于一个易语言程序<b>“文件批量更名工具”</b>，用火山视窗将其进行重写，以学习如何从易语言转移到火山视窗。</p>
+		<p>易语言例程：<a href="flie/flie.e">点击下载</a>。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+
+	<h4>2、易语言例程</h4>
+	<blockquote>
+		<p>首先打开易语言例程，对程序进行简单分析：</p>
+		<blockquote>
+			<p>当前例程只有一个窗口，如下所示：</p>
+			<blockquote>
+				<img src="wenjian_img/1.png" border="0">
+			</blockquote>
+			<p>移植注意事项如下：</p>
+			<blockquote>
+				<p>(1) 工具条图标组：</p>
+				<blockquote>
+					<p>在易语言中图片组的使用较为简单，可以直接加入单个图片组合成图片组。</p>
+					<blockquote>
+						<p><img src="wenjian_img/2.png" border="0"></p>
+					</blockquote>
+					<p>在火山视窗中需要手动将多个图片横向拼接成图片组，如下所示：</p>
+					<blockquote>
+						<p><img src="wenjian_img/3.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+				<p>(2) 选择夹：</p>
+				<blockquote>
+					<p>在易语言中选择夹可以直接在界面设计器中添加组件，在火山中则需要依赖组件布局器实现，具体可看第三章中第三节中的<a href="view.html#选择夹">选择夹差异</a>演示。</p>
+				</blockquote>
+			</blockquote>
+			<p>除了窗口外，额外还有窗口程序集，封装程序集和常量表，分别如下：</p>
+			<blockquote>
+				<p>启动窗口程序集：</p>
+				<blockquote>
+					<p>程序核心代码均在此程序集下。</p>
+					<p><img src="wenjian_img/4.png" border="0"></p>
+				</blockquote>
+				<p>封装程序集：</p> 
+				<blockquote>
+					<p>存放了程序的通用子程序，以便于后期维护和扩展。</p>
+					<p><img src="wenjian_img/5.png" border="0"></p>
+				</blockquote>
+				<p>常量表：</p>
+				<blockquote>
+					<p>只有三个整数常量，用于表示工具条按钮索引。</p>
+					<p><img src="wenjian_img/6.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p>总结：</p>
+			<blockquote>
+				<p>将此程序移植到火山视窗，首先需要保证在火山视窗中的命名尽量和易语言中保持一致，以便于后续的移植操作；其次可以优先考虑移植常量表，因为其内容较少；然后移植封装程序集，最后移植界面编写窗口代码。</p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>3、视窗项目创建</h4>
+	<blockquote>
+		<p>点击<b>“文件->新建->项目”</b>菜单，创建一个MFC窗口程序。</p>
+		<blockquote>
+			<p><img src="wenjian_img/7.png" border="0"></p>
+		</blockquote>
+		<p>创建后注意窗口的标题属性问题，其属性默认位于变量中：</p>
+		<blockquote>
+			<p><img src="wenjian_img/0.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>4、常量表移植</h4>
+	<blockquote>
+		<p>易语言常量表内容如下：</p>
+		<blockquote>
+			<p><img src="wenjian_img/6.png" border="0"></p>
+		</blockquote>
+		<p>在火山中可以新建一个类来存放，如下所示：</p>
+		<blockquote>
+			<p>可以选择将类名起名为<b>“工具条常量”</b>，这样就不需要给常量名增加<b>“工具条按钮_”</b>这样的标记头。</p>
+			<p><img src="wenjian_img/8.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>5、封装子程序集移植</h4>
+	<blockquote>
+		<p><b>5.1 “文件_枚举”移植</b></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>解析：主要利用<b>“寻找文件()”</b>方法，将某个文件夹下的指定后缀的文件全部枚举出来，放到文本数组中。</p>
+				<p>移植注意事项：</p>
+				<blockquote>
+					<p>(1) <b>文本型数组</b>在火山视窗中需要使用<b>文本数组类</b>。</p>
+					<p>(2) <b>“寻找文件()”</b>方法，对应火山视窗中的<b>“文件查找类”</b>。</p>
+				</blockquote>
+				<p><img src="wenjian_img/9.png" border="0"></p>
+			</blockquote>
+			<p>在火山移植后代码如下：</p>
+			<blockquote>
+				<p>代码编写逻辑和易语言基本一致，只是个别方法使用有所差异。</p>
+				<p>(1) 新建一个<b>封装类</b>来存放所有的封装代码。</p>
+				<p>(2) <b>文本型数组</b>使用<b>文本数组类</b>代替。</p>
+				<p>(3) <b>取文本右边</b>判断路径的方法可以使用<b>是否以文本结束</b>方法代替。</p>
+				<p>(4) <b>寻找文件</b>方法用<b>文件查找类</b>代替，需要定义变量才可以使用。</p>
+				<p><img src="wenjian_img/10.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><b>5.2 “文件_取文件名扩展名”移植</b></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>解析：利用文本操作相关命令实现取出一个文件路径中的文件名和扩展名。</p>
+				<p>移植注意事项：</p>
+				<blockquote>
+					<p>(1) <b>文本型数组</b>需要使用<b>文本数组类</b>代替。</p>
+					<p>(2) 参数<b>可空</b>属性，在火山中使用<b>@默认值</b>代替。</p>
+				</blockquote>
+				<p><img src="wenjian_img/12.png" border="0"></p>
+			</blockquote>
+			<p>火山代码如下：</p> 
+			<blockquote>
+				<p>在火山中因提供了<b>“取文件名无路径部分()”</b>现成的方法可以直接取路径文件名，因此移植时可以省去复杂的路径判断。</p>
+				<p>几行代码即可实现易语言中同样的功能，如下所示：</p>
+				<blockquote>
+					<p><img src="wenjian_img/11.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><b>5.3 “文件_取父目录”移植</b></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>解析：利用文本操作相关命令实现取出一个文件路径中的父目录。</p>
+				<p><img src="wenjian_img/13.png" border="0"></p>
+			</blockquote>
+			<p>火山如下：</p> 
+			<blockquote>
+				<p>在火山视窗中因提供了<b>“取文件名路径 ()”</b>方法，用来获取文件父目录，因此无需额外封装。</p>
+				<p>其方法帮助页如下：</p>
+				<blockquote>
+					<p><img src="wenjian_img/14.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><b>5.4 “超级列表框_填充文件”移植</b></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>解析：利用循环方法将文件路径数组中的内容填充到超级列表框组件上。</p>
+				<p>移植注意事项：</p>
+				<blockquote>
+					<p><b>文本型数组</b>需要使用<b>文本数组类</b>代替。</p>
+				</blockquote>
+				<p><img src="wenjian_img/15.png" border="0"></p>
+			</blockquote> 
+			<p>火山代码如下：</p> 
+			<blockquote>
+				<p>代码编写逻辑和易语言基本一致，只是个别方法使用有所差异。</p>
+				<p>(1) 因使用了文本数组类，所以在火山视窗中可利用<b>“文件路径数组.枚举循环 () ”</b>直接进入循环。</p>
+				<p>(2) 利用<b>“文件路径数组.取枚举值 ()”</b>即可代替<b>“文件路径数组 [局_计次]”</b>取出成员内容。</p>
+				<blockquote>
+					<p><img src="wenjian_img/16.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><b>5.5 “超级列表框_删除文件”移植</b></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>解析：利用循环方法来逆向删除超级列表框中被选中的项目，包括其对应文件一同删除。</p>
+				<p>移植注意事项：</p>
+				<blockquote>
+					<p><b>整数型数组</b>需要使用<b>整数数组类</b>代替。</p>
+				</blockquote>
+				<p><img src="wenjian_img/17.png" border="0"></p>
+			</blockquote>
+			<p>火山代码如下：</p> 
+			<blockquote>
+				<p>代码编写逻辑和易语言基本一致，只是个别方法使用有所差异。</p>
+				<p>(1) <b>“取被选择表项()”</b>方法是通过参数返回被选择的项目索引。</p>
+				<p>(2) 因在易语言中需要逆向循环，火山视窗中提供了现成的<b>“逆向计次循环”</b>，可用于逆向循环。</p>
+				<p>(3) <b>“局_被选择的索引.取成员 (取循环索引 ()”</b>可代替易语言中的<b>“局_被选择的索引 [局_逆向成员]”</b>用于表项索引。</p>
+				<blockquote>
+					<p><img src="wenjian_img/18.png" border="0"></p>
+				</blockquote>
+			</blockquote> 
+		</blockquote>
+		
+	</blockquote>
+	
+	
+	<p>&nbsp;</p>
+	<h4>6、主窗口设计</h4>
+	<blockquote>
+		<p><h5>6.1 易语言<b>“_启动窗口”</b>分析：</h5> </p>
+		<blockquote>
+			<p><b>_启动窗口</b>中共有以下几种组件：</p>
+			<blockquote>
+				<p>(1) 工具条</p>
+				<p>(2) 选择夹</p>
+				<p>(3) 分组框</p>
+				<p>(4) 单选框</p>
+				<p>(5) 选择框</p>
+				<p>(6) 编辑框</p>
+				<p>(7) 超级列表框</p>
+				<p>(8) 标签</p>
+				<p><img src="wenjian_img/1.png" border="0"></p>
+			</blockquote>
+		</blockquote>	
+		
+		<p>&nbsp;</p>
+		<p><h5>6.2 主窗口属性设置</h5></p>
+		<blockquote>
+			<p>易语言窗口主要属性如下：</p>
+			<blockquote>
+				<p>(1) 标题：用于设置窗口标题；</p>
+				<p>(2) 边框：让窗口具备可调节属性；</p>
+				<p>(3) 控制按钮：让窗口最大化最小化按钮可正常使用。</p>
+				<p><img src="wenjian_img/20.png" border="0"></p>
+			</blockquote> 
+			<p>将易语言<b>“_启动窗口”</b>中的主要属性在火山视窗<b>“我的主窗口”</b>中复现出来。</p>
+			<blockquote> 
+				<p>注：其中<b>“控制按钮”</b>和<b>“最小化”</b>按钮属性默认为真，无需设置。</p>
+				<p><img src="wenjian_img/19.png" border="0"></p>
+			</blockquote>
+			 <p>最终效果如下，窗口将具备可调节属性：</p>
+			 <blockquote>
+			 	<p><img src="wenjian_img/21.gif" border="0"></p>
+			 </blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><h5>6.3 工具条设计</h5></p>
+		<blockquote>
+			<p><b>6.3.1 工具条属性设置</b></p>
+			<blockquote>
+				<p>易语言相关属性如下，主要是<b>“位置”</b>和<b>“图片组”</b>属性。</p>
+				<blockquote>
+					<p><img src="wenjian_img/21.png" border="0"></p>
+				</blockquote>
+				<p>在火山视窗窗口设计器中，将工具条属性复现出来：</p> 
+				<blockquote>
+					<p><img src="wenjian_img/22.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p>&nbsp;</p>
+			<p><b>6.3.2 工具条按钮设置</b></p>
+			<blockquote>
+				<p>易语言设置：</p>
+				<blockquote>
+					<p>在易语言中需要在设计器中右键<b>“工具条”</b>选择<b>“设置工具条按钮”</b>菜单，进行设置：</p>
+					<blockquote>
+						<p><img src="wenjian_img/23.png" border="0"></p>
+					</blockquote>
+					<p>其工具条按钮设置界面效果如下：</p>
+					<blockquote>
+						<p><img src="wenjian_img/24.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+				<p>火山设置：</p>
+				<blockquote>
+					<p>在火山中通过<b>“工具条按钮”</b>属性进行设置：</p>
+					<blockquote>
+						<p><img src="wenjian_img/25.png" border="0"></p>
+					</blockquote>
+					<p>其设置界面效果如下，使用方式也易语言基本一致：</p>
+					<blockquote>
+						<p><img src="wenjian_img/26.png" border="0"></p>
+					</blockquote>
+					<p>设置完毕后效果如下：</p> 
+					<blockquote>
+						<p><img src="wenjian_img/27.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><h5>6.4 选择夹设计</h5></p>
+		<blockquote>
+			<p><b>6.4.1 概述</b></p>
+			<blockquote>
+				<p>在易语言中，支持直接在界面设计器中对选择夹的内容进行实时设计，如下所示：</p>
+				<blockquote>
+					<p><img src="wenjian_img/28.gif" border="0"></p>
+				</blockquote>
+				<p>在火山中则需要使用<b>“组件布局器”</b>实现，具体可看<a href="view.html#选择夹">部分组件差异</a>教程。</p>
+			</blockquote>
+			<p><b>6.4.2 子夹设计</b></p>
+			<blockquote>
+				<p><b>文件名</b>子夹设计：</p>
+				<blockquote>
+					<p>易语言<b>文件名</b>子夹内容，使用到的组件分别如下：</p>
+					<blockquote>
+						<p>(1) 标签</p>
+						<p>(2) 分组框</p>
+						<p>(3) 单选框</p>
+						<p>(4) 编辑框</p>
+						<p>(5) 选择框</p>
+						<p><img src="wenjian_img/29.png" border="0"></p>
+					</blockquote>
+					<p>按照易语言中所提供的组件，在火山视窗组件布局器中将其完整的复现出来，最终效果如下：</p>
+					<blockquote>
+						<p>注：组件名字的设置尽量也和易语言中保持一致，以便于后续代码编写。</p>
+						<p><img src="wenjian_img/30.png" border="0"></p>
+					</blockquote>
+					<p>设计完毕后代码如下，注意公开当前类和部分组件，以便于后续访问。</p>
+					<blockquote>
+						<p><img src="wenjian_img/31.png" border="0"></p>
+					</blockquote>  
+				</blockquote>
+				<p><b>扩展名</b>子夹设计：</p>
+				<blockquote>
+					<p>易语言<b>扩展名</b>子夹内容，使用到的组件分别如下：</p>
+					<blockquote>
+						<p>(1) 标签</p>
+						<p>(2) 选择框</p>
+						<p>(3) 编辑框</p>
+						<p><img src="wenjian_img/32.png" border="0"></p>
+					</blockquote>
+					<p>按照易语言中所提供的组件，在火山视窗组件布局器中将其完整的复现出来，最终效果如下：</p>
+					<blockquote> 
+						<p><img src="wenjian_img/33.png" border="0"></p>
+					</blockquote>
+					<p>设计完毕后代码如下，注意公开类和部分组件，以便于后续访问。</p>
+					<blockquote>
+						<p><img src="wenjian_img/34.png" border="0"></p>
+					</blockquote>  
+				</blockquote> 
+				<p><b>过滤选项</b>子夹设计：</p>
+				<blockquote>
+					<p>易语言<b>过滤选项</b>子夹内容，使用到的组件分别如下：</p>
+					<blockquote>
+						<p>(1) 标签</p>
+						<p>(2) 编辑框</p>
+						<p><img src="wenjian_img/36.png" border="0"></p>
+					</blockquote>
+					<p>按照易语言中所提供的组件，在火山视窗中将其完整的复现出来，最终效果如下：</p>
+					<blockquote>
+						<p><img src="wenjian_img/35.png" border="0"></p>
+					</blockquote>
+					<p>设计完毕后代码如下，注意公开当前类和部分组件，以便于后续访问。</p>
+					<blockquote>
+						<p><img src="wenjian_img/37.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+				
+			</blockquote>
+			<p><b>6.4.3 选择夹设计与显示</b></p>
+			<blockquote>
+				<p>(1) 打开主窗口设计器，将选择夹组件放到设计器的合适位置。</p>
+				<blockquote>
+					<img src="wenjian_img/38.png" border="0">
+				</blockquote>
+				<p>(2) 定义布局器变量，用于存储布局内容，以便于后续的代码编写。</p>
+				<p>(3) 调用选择夹的<b>“添加子夹()”</b>方法，动态添加子夹。</p>
+				<p>(4) 调用选择夹的<b>“取子夹内容组件()”</b>取出子夹内容。</p>
+				<blockquote>
+					<img src="wenjian_img/39.png" border="0">
+				</blockquote>
+				<p>运行效果如下：</p> 
+				<blockquote>
+					<img src="wenjian_img/40.gif" border="0">
+				</blockquote>  
+			</blockquote>												
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><h5>6.5 超级列表框设计</h5></p>
+		<blockquote>
+			<p><b>6.5.1 组件基本设置</b></p>
+			<blockquote>
+				<p>易语言超级列表属性如下：</p>
+				<blockquote>
+					<p><img src="wenjian_img/41.png" border="0"></p>
+				</blockquote>
+				<p>打开视窗界面设计器，并将超级列表框组件放到合适位置，同时设置相关属性：</p>
+				<blockquote>
+					<p><img src="wenjian_img/42.png" border="0"></p>
+				</blockquote> 
+				
+			</blockquote>
+			<p><b>6.5.2 组件报表列设置</b></p>
+			<blockquote>
+				<p>在易语言中可右键组件选择<b>“设置报表列”</b>进行设置。</p>
+				<blockquote>
+					<p><img src="wenjian_img/43.png" border="0"></p>
+				</blockquote>
+				<p>其界面效果如下：</p>
+				<blockquote>
+					<p><img src="wenjian_img/44.png" border="0"></p>
+				</blockquote>
+				<p>在火山中可通过<b>“报表列”</b>属性设置。</p>
+				<blockquote>
+					<p><img src="wenjian_img/45.png" border="0"></p>
+				</blockquote>
+				<p>将易语言中设置的报表列信息，在火山视窗中完整的复现出来。</p>
+				<blockquote> 
+					<p><img src="wenjian_img/46.png" border="0"></p>
+				</blockquote> 
+				<p>运行效果如下：</p>
+				<blockquote> 
+					<p><img src="wenjian_img/47.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+
+		<p><h5>6.6 窗口尺寸动态调整</h5></p>
+		<blockquote>
+			<p>至此主窗口所有组件全部放置完毕，但是还有一个问题。</p>
+			<p>在易语言中软件运行后，窗口内的组件也会跟随窗口的改变而改变。</p>
+			<blockquote>  
+			    <p><img src="wenjian_img/48.gif" border="0"></p>
+			</blockquote>
+			<p>而在火山视窗中，调整窗口并不会有这样的效果。</p>
+			<blockquote>
+				<p><img src="wenjian_img/49.png" border="0"></p>
+			</blockquote>
+			<p>因此需要查看易语言中<b>“__启动窗口_尺寸被改变”</b>事件中的代码，将代码在火山视窗中复现出来。</p>
+			<p>易语言代码如下：</p>
+			<blockquote> 
+				<p>在易语言中只需要调整选择夹和超级列表框。</p>
+				<p><img src="wenjian_img/50.png" border="0"></p>
+			</blockquote>
+			<p>火山视窗代码实现：</p>
+			<blockquote>
+				<p>(1) 调整工具条的宽度为用户区宽度。</p>
+				<p>(2) 在调整选择夹高度时，无需和易语言中一致，根据实际运行效果来决定是否减去一些尺寸。</p>
+				<p>(3) 调整超级列表框组件尺寸时，也可以根据实际需求来决定是否减去一些尺寸。</p>
+				<blockquote>
+					<p><img src="wenjian_img/51.png" border="0"></p>
+				</blockquote> 
+				<p>运行效果如下，至此主窗口全部设计完毕。</p>
+				<blockquote>
+					<p><img src="wenjian_img/52.gif" border="0"></p>
+				</blockquote> 
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>	
+	
+	<p>&nbsp;</p>
+	<h4>7、主程序代码移植</h4>
+	<blockquote>
+		<h5>7.1 “_工具条1_被单击”移植：</h5>
+		<blockquote>
+			<p>易语言事件添加：</p>
+			<blockquote>
+				<p>需要通过属性栏下方的<b>“组合框”</b>添加。</p>
+				<p><img src="wenjian_img/53.png" border="0"></p>
+			</blockquote>
+			<p>火山事件添加：</p>
+			<blockquote>
+				<p><img src="wenjian_img/55.png" border="0"></p>
+			</blockquote>
+			<p>易语言事件代码如下：</p>
+			<blockquote>
+				<p><img src="wenjian_img/54.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山视窗时，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 火山中多了一个<b>“来源对象”</b>判断，当存在多个工具条时，用于判断哪个工具条被单击。</p>
+				<p>(2) 火山中的常量访问不需要输入#号。</p>
+				<p>(3) 易语言中的<b>“文本型数组”</b>，在火山中需要使用<b>“文本数组类”</b>。</p>
+				<p>(4) <b>“超级列表框1.取被选择表项 ()”</b>方法在火山中需要通过参数返回，并且需要使用<b>“整数数组类”</b>来代替<b>“整数型数组”</b>。</p>
+				<p>(5) 信息框方法在火山中不需要提供父窗口，当前所处的窗口即信息框的父窗口。</p>
+				<p>(6) 信息框的返回值为<b>“返回按钮类型”</b>的常量类，并非整数值。</p>
+				<p><img src="wenjian_img/56.png" border="0"></p>
+			</blockquote>
+			<p>运行效果演示：</p>
+			<blockquote>
+				<p>添加文件夹演示：</p>
+				<p><img src="wenjian_img/57.gif" border="0"></p>
+				<p>删除演示：</p>
+				<p>注：按下ctrl键可以进行多选。</p>
+				<p><img src="wenjian_img/58.gif" border="0"></p>
+			</blockquote>
+		</blockquote> 
+		<p>&nbsp;</p>
+		<h5>7.2 “开始处理”移植：</h5>
+		<blockquote>
+			<p>易语言代码如下：</p> 
+			<blockquote>
+				<p><img src="wenjian_img/59.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山视窗时，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 火山中的<b>“取启动时间()”</b>方法返回的为长整数。</p>
+				<p>(2) 火山中的<b>“计次循环”</b>等于易语言中的<b>“计次循环首/尾”</b>。</p>
+				<p>(3) 在火山中无需定义计次变量，利用<b>“取循环索引()”</b>方法可代替易语言中的<b>“局_计次”</b>。</p>
+				<p>(4) 在火山中循环索引从0开始，因此在调用<b>“置/取标题()”</b>方法时，无需进行-1。</p>
+				<p>(5) 火山中提供了<b>“取文件名路径()”</b>方法可以直接取出指定文件的父目录。</p>
+				<p><img src="wenjian_img/60.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>7.3 “选择框”被单击事件移植：</h5>
+		<blockquote>
+			<p>易语言事件添加：</p>
+			<blockquote>
+				<p>在易语言中通过属性栏下方的组合框添加事件。</p>
+				<p><img src="wenjian_img/61.png" border="0"></p>
+			</blockquote>
+			<p>易语言事件代码：</p>
+			<blockquote>
+				<p>在易语言中共有三个选择框事件，分别如下，每个事件都是独立存在的。</p>
+				<p><img src="wenjian_img/62.png" border="0"></p>
+			</blockquote>
+			<p>火山视窗中复现此代码较为复杂，因为火山的选择夹必须依赖组件布局器才可以创建。</p>
+			<p>为了便于后续的维护管理，首先需要将组件布局器中选择框的事件挂接到窗口中执行。</p>
+			<p>操作步骤如下：</p>
+			<blockquote>
+				<p>(1) 挂接事件</b></p>
+				<blockquote>
+					<p>在窗口被创建完毕后，调用<b>“挂接事件()”</b>方法将组件布局器中选择框的事件进行挂接到窗口中操作。</p>
+					<p><img src="wenjian_img/63.png" border="0"></p>
+				</blockquote>
+				<p>(2) 添加事件</b></p>
+				<blockquote>
+					<p>在主窗口中定义一个临时的选择框变量，进行事件添加，添加后将其变量删除即可。</p>
+					<p><img src="wenjian_img/64.png" border="0"></p>
+				</blockquote>
+				<p>(3) 添加事件后</b></p>
+				<blockquote>
+					<p>利用<b>“如果否则”</b>语句，判断选择框点击来源。</p>
+					<p><img src="wenjian_img/65.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p>移植到火山视窗时，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 在事件中可使用<b>“来源对象”</b>参数代替当前操作的选择框。</p>
+				<p>(2) 直接调用<b>“选择框_被单击()”</b>事件方法传递组件参数和标记，即可代替易语言中实现在其它选择框单击事件下处理此选择框组件被单击。</p>
+				<blockquote>
+					<p>也就是<b>“选择框_被单击 (布局器_文件名.选择框_递增命名, 0) ”</b>代替了<b>“_选择框_递增命名_被单击 () ”</b>。</p>
+				</blockquote>
+				<p><img src="wenjian_img/66.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="wenjian_img/67.gif" border="0"></p>
+				<p><img src="wenjian_img/68.gif" border="0"></p>
+			</blockquote> 
+		</blockquote> 
+		<p>&nbsp;</p>
+		<h5>7.4 “预览”移植：</h5>
+		<blockquote>
+			<p>易语言代码如下：</p> 
+			<blockquote>
+				<p>本方法主要用于将文件新名称实时预览到超级列表框中。</p>
+				<p><img src="wenjian_img/69.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山视窗时，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 文本型数组需要使用文本数组类代替。</p>
+				<p>(2) 因使用了文本数组类，可直接利用数组对象的<b>“枚举循环()”</b>方法，进行循环。</p>
+				<p>(3) 因考虑到火山视窗中需要通过布局器变量来访问编辑框的内容，可以提前将编辑框的内容取出赋值给文本型变量。在后续的代码编写中，直接使用变量即可访问内容，可以提高代码阅读体验。</p>
+				<p>(4) 调用数组变量的<b>“取枚举值()”</b>方法可代替易语言中<b>“局_文件名数组 [局_计次]”</b>数组的访问。</p>
+				<p>(5) 易语言中<b>“到整数()”</b>方法中，在火山视窗需要使用<b>“文本到整数()”</b>代替。</p>
+				<p>(6) 调用数组变量的<b>“取枚举索引()”</b>方法可代替易语言中<b>“局_计次”</b>变量。</p>
+				<p>(7) 因火山中的循环索引都是从0开始，因此调用列表框<b>“置标题()”</b>方法时，无需对<b>“取枚举索引()”</b>方法进行-1操作。</p>
+				<p><img src="wenjian_img/70.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+		<p>&nbsp;</p>
+		<h5>7.5 “取列表框所有文件名”移植：</h5>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>本方法主要用于将列表框中显示的所有文件路径加入到文本数组中，以便于新文件名预览。</p>
+				<p><img src="wenjian_img/71.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山视窗时，注意事项如下：</p>
+			<blockquote>
+				<p>文本型数组需要使用文本数组类代替，且会自动参考。</p>
+				<p><img src="wenjian_img/72.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+		<p>&nbsp;</p>
+		<h5>7.6 剩余所有组件事件移植：</h5>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p>主要用于实时预览新文件名结果。</p>
+				<p><img src="wenjian_img/73.png" border="0"></p>
+			</blockquote>
+			<p>因考虑到这些组件都在组件布局器中，如果全部挂接事件到窗口中操作，反而过于复杂。</p>
+			<p>可以采取以下方式移植：</p>
+			<blockquote>
+				<p>(1) 公开<b>启动类</b>中的<b>主窗口对象</b>变量，同时公开<b>我的主窗口</b>中<b>预览</b>方法。</p>
+				<blockquote>
+					<p><img src="wenjian_img/74.png" border="0"></p>
+				</blockquote>
+				<p>(2) 在<b>“文件名布局器”</b>中，随便选择一个编辑框组件，添加其<b>“内容被改变”</b>事件。</p>
+				<blockquote>
+					<p><img src="wenjian_img/75.png" border="0"></p>
+				</blockquote>
+				<p>(3) 添加事件后会自动生成来源对象的判断，将其删掉后通过<b>“取程序()”</b>方法，访问到启动类后，继续访问主窗口对象，通过主窗口对象访问<b>“预览()”</b>方法。</p>
+				<blockquote>
+					<p>为什么要删掉自动生成的<b>“来源对象”</b>的判断？</p>
+					<p>这是因为，在当前类中所有的编辑框组件都需要<b>内容被改变</b>事件，并且都是调用<b>预览</b>方法，因此不需要单独去判断<b>来源对象</b>参数。</p>
+					<p><img src="wenjian_img/76.png" border="0"></p>
+				</blockquote>
+				<p>(4) 同样的方法在<b>“文件名布局器”</b>中，添加单选框被单击事件，并调用<b>“预览()”</b>方法。</p>
+				<blockquote>
+					<p><img src="wenjian_img/77.png" border="0"></p>
+				</blockquote>
+				<p>(5) 在<b>“扩展名布局器”</b>中，添加编辑框内容被改变事件并调用<b>“预览()”</b>方法。</p>
+				<blockquote>
+					<p><img src="wenjian_img/78.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote> 
+	
+	</blockquote>
+
+	<p>&nbsp;</p>
+	<h4>8、运行效果如下：</h4>
+	<blockquote>
+		<p>实时预览：</p>
+		<blockquote>
+			<p><img src="wenjian_img/81.gif" border="0"></p>
+		</blockquote>
+		<p>改名效果预览：</p>
+		<blockquote>
+			<p><img src="wenjian_img/82.gif" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>9、视窗例程下载</h4>
+	<blockquote>
+		<p><a href="flie/vol_flie.zip">点击下载</a></p>
+	</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left"> [<a href="table.html">上一章</a>]&nbsp;&nbsp;  [<a href="sql.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

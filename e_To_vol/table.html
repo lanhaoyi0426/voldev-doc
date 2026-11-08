@@ -1,0 +1,2277 @@
+
+<html>
+
+<head>
+<title>易语言核心库命令对照表_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,易语言核心库命令对照表" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="dll.html">上一章</a>]&nbsp;&nbsp;  [<a href="flie.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">第四章 易语言核心库命令对照表</h2>
+<h6 align="center">基于火山软件开发平台飞扬#20版本后续可能会有变动</h5>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="流程控制"></a>
+	<p>&nbsp;</p>
+	<h4>一、流程控制</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+				
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">如果</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">如果</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令根据提供的逻辑参数的值，来决定是否改变程序的执行位置。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">如果真</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">如果真</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令和如果命令相比，没有参数为假时执行的部分。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">判断</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令根据提供的逻辑参数的值，来决定是否改变程序的执行位置。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">分支判断 / 分支</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>开始对一个整数参数的值进行分支判断处理。</p>
+							<p>“分支判断”方法的子语句体中只能存在“分支”或“默认分支”方法的调用语句，并且至少包含一个。</p>
+							    
+							</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">判断循环首 / 尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">判断循环</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">根据首方法提供的逻辑参数的值，来决定是否进入循环。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">循环判断首 / 尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">循环判断首 / 尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">根据尾方法提供的逻辑参数的值，来决定是否返回到循环首部继续进行循环。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">计次循环首 / 尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">计次循环</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">执行本命令将把循环体内的命令重复执行指定的次数。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变量循环首 / 尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">循环</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>执行本命令将利用变量对循环体内的命令进行循环执行。第一次执行此命令时将使用“变量起始值”参数初始化“循环变量”参数所指定的变量。每次（包括第一次）执行到此命令处都将判断循环变量内的值是否已经超过“变量目标值”参数所指定的值，如已超过，则跳转到对应的“变量循环尾”命令的下一条命令处继续执行，否则顺序执行下一条语句继续进行循环。</p>
+							</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到循环尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到循环尾</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令转移当前程序执行位置到当前所处循环体的循环尾语句处。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">跳出循环</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">跳出循环</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令转移当前程序执行位置到当前所处循环体循环尾语句的下一条语句处。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">返回</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">返回</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令转移当前程序执行位置到调用本子程序语句的下一条语句处,并可根据需要（如果有）返回一个值到子程序调用处。</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">结束</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">结束</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本命令结束当前程序的运行。</td>
+					</tr>
+				</tbody></table>
+	</blockquote>
+	
+	<a name="算数运算"></a>
+	<p>&nbsp;</p>
+	<h4>二、算数运算</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">相乘</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">*</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示乘法运算</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">相除</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">/</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示除法运算</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">整除</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示整除，在火山视窗中直接使用强制转换即可。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求余数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">%</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示求余数</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">相加</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">+</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示加法运算</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">相减</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">-</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示减法运算</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">负</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">-</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示取负数</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取符号</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取符号</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个整数，如果小于零，表明给定数值为负；如果等于零，表明给定数值为零；如果大于零，表明给定数值为正。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取绝对值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>取整数绝对值</p>
+							<p>取小数绝对值</p>
+							<p>取长整数绝对值</p>
+						 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取一个数值的绝对值。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取整</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取整</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>返回一个小数的整数部分。本命令与“绝对取整”命令不相同之处为：</p>
+							<p>如果给定小数为负数，则本命令返回小于或等于该小数的第一个负整数，而“绝对取整”命令则会返回大于或等于该小数的第一个负整数。例如，本命令将 -7.8 转换成 -8，而“绝对取整”命令将 -7.8 转换成 -7。</p>
+							</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">绝对取整</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">绝对取整</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>返回一个小数的整数部分。本命令与“取整”命令不相同之处为：
+</p>
+							<p>如果给定小数为负数，则本命令返回大于或等于该小数的第一个负整数，而“取整”命令则会返回小于或等于该小数的第一个负整数。例如，本命令将 -7.8 转换成 -7，而“取整”命令将 -7.8 转换成 -8。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">四舍五入</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">四舍五入</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回按照指定的方式进行四舍五入运算的结果数值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求次方</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求次方</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定数值的指定次方</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求平方根</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求平方根</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定数值的平方根</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求正弦</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求正弦</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定角的正弦值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求余弦</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求余弦</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定角的余弦值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求正切</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求正切</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定角的正切值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求反正切</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求反正切</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定角的反正切值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求自然对数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求自然对数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定参数的自然对数值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求反对数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">求反对数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回 E（自然对数的底）的某次方</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否运算正确</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否运算正确</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 对乘、除、“求次方”、“求平方根”、“求正弦值”、“求余弦值”、“求正切值”、“求反正切值”、“求自然对数”、“求反对数”等等数学运算命令所计算出来的双精度结果数值进行校验，如果该数值正确有效，返回真。如果该数值是运算错误或运算溢出后的结果，返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置随机数种子</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置随机数种子</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>为随机数生成器初始化一个种子值，不同的种子值将导致“取随机数”命令返回不同的随机数系列。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取随机数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取随机数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个指定范围内的随机数值。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="逻辑比较"></a>
+	<p>&nbsp;</p>
+	<h4>三、逻辑比较</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">=</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>用于将右侧的参数值赋予给左侧参数内容</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">==</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>用于比较左侧参数与右侧参数是否相等</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">不等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">!=</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当左侧参数不等于右侧参数时返回真</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">小于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当左侧参数小于右侧参数时返回真</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">大于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">></td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当左侧参数大于右侧参数时返回真</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">小于或等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><=</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当左侧参数小于等于右侧参数时返回真</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">大于或等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">>=</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当左侧参数大于等于右侧参数时返回真</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">近似等于</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否以文本开头</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前文本是否以所指定文本开头。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">并且</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">&&</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>用于并且逻辑操作，当左侧参数和右侧参数均为逻辑值真时，最终整个表达式的结果返回真。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">或者</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">||</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>用于或者逻辑操作，当左侧参数或右侧参数其中任意一个的逻辑值为真，最终整个表达式的结果返回真。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取反</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取反</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果参数值为真则返回假，如果参数值为假则返回真。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="位运算"></a>
+	<p>&nbsp;</p>
+	<h4>四、位运算</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位取反</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位取反</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定整数值的每一位进行反转，返回反转后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位与</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>位与</p>
+							<p>连续位与</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将多个整数值进行位与运算，返回运算后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位或</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>位或</p>
+							<p>连续位或</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将多个整数值进行位或运算，返回运算后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位异或</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>位异或</p>
+							<p>连续位异或</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将多个整数值进行位异或运算，返回运算后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">左移</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位左移</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将参数1的每一位向左移动参数2所指定的数目,返回运算后的结果.</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">右移</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">位右移</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将参数1的每一位向右移动参数2所指定的数目，返回运算后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">合并整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">合并整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将第一个整数的低16位放置到结果整数的低16位，将第二个整数的低16位放置到结果整数的高16位，以此合并成一个整数，并返回合并后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">合并短整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">合并短整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将第一个整数的低8位放置到结果短整数的低8位，将第二个整数的低8位放置到结果短整数的高8位，以此合并成一个短整数，并返回合并后的结果。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="变量操作"></a>
+	<p>&nbsp;</p>
+	<h4>五、变量操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">赋值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">=</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定的常数、常数集、常量、资源、对象或者变量赋于到指定的变量或变量数组中去。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">连续赋值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">连续赋值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>将一个值连续赋予到所指定的一系列同类型变量中。</p>
+							<p>注：在火山视窗中暂不支持对属性进行赋值。</p>
+							</td>
+					</tr>
+				</tbody></table>
+	</blockquote>
+	<a name="数组操作"></a>
+	<p>&nbsp;</p>
+	<h4>六、数组操作</h4>
+	<blockquote>
+		<p>在火山视窗中的数组操作主要使用XX数组类进行操作，譬如：文本数组类，整数数组类。</p>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">重定义数组</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.重置数组 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>重置数组中的成员数为所指定的数目</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数组成员数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>取数组成员数</p>
+							<p>整数数组.取成员数 </p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>获取数组的成员数量</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数组下标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定数组维可用的最大下标（最小下标固定为1）</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">复制数组</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将数组数据复制到指定的数组变量，该数组变量内的所有数据和数组维定义信息将被全部覆盖。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">加入成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.加入成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将一个所指定类型的成员值加入到数组的尾部</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">插入成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.插入成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定的成员值插入到所指定的索引位置</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.删除成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除数组中所指定索引位置处的成员</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">清除数组</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.删除所有成员</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除指定数组变量中的所有成员</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组排序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.排序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>对数组中的所有成员进行排序</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组清零</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数组变量.清零 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将数组中的所有成员值清除为零值</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="环境存取"></a>
+	<p>&nbsp;</p>
+	<h4>七、环境存取</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取命令行</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取命令行</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令可以取出在启动程序时附加在其可执行文件名后面的所有以空格分隔的命令行文本段</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取运行目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取运行目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取当前被执行的程序文件所处的目录</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取执行文件名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取执行文件名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取当前被执行的程序文件的名称</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读环境变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读环境变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>读取系统环境变量</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写环境变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写环境变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置系统环境变量</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="拼音处理"></a>
+	<p>&nbsp;</p>
+	<h4>八、拼音处理</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取所有发音</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回包含指定汉字所有拼音编码的文本数组（支持多音字），目前仅支持国标汉字。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取发音数目</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定汉字的发音数目</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取拼音</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回包含指定汉字的指定拼音编码的文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取声母</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回包含指定汉字指定拼音编码的声母部分文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取韵母</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回包含指定汉字指定拼音编码的韵母部分文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">发音比较</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>比较两段文本的发音，如果发音相同返回真，否则返回假。对于文本中的非国标汉字部分，将仅进行简单的值比较。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">输入字比较</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将一个拼音输入字文本与另外一个普通文本比较，如果两者相符，返回真，否则返回假。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="文本操作"></a>
+	<p>&nbsp;</p>
+	<h4>九、文本操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所指定文本型数据的长度</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本左边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本左边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，其中包含指定文本中从左边算起指定数量的字符。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本右边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本右边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，其中包含指定文本中从右边算起指定数量的字符。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本中间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本中间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，其中包含指定文本中从指定位置算起指定数量的字符。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">字符</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>到文本((字符)整数值)</p>
+							
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>返回一个文本，其中包含有与指定字符代码相关的字符。</p>
+							<p>火山视窗示例：<strong>到文本((字符)66)</strong>，最终返回英文字母B。</p>
+							</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取代码</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>(整数)取字符()</p>
+							
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回文本中指定位置处字符的代码。</p>
+						<p>火山视窗示例：<strong>(整数)取字符("B",0)</strong>，最终返回66.</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>查找当前文本中所指定文本的所处索引位置，未找到则返回-1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">倒找文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">倒找文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>逆向查找当前文本中所指定文本的所处索引位置，未找到则返回-1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到小写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到小写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将当前文本中的所有英文字母转换为小写，返回转换后的结果文本.</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到大写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到大写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本中的小写英文字母变换为大写，返回变换后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到全角</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到全角</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本中的半角字母、空格或数字变换为全角，返回变换后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到半角</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到半角</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本中的全角字母、空格或数字变换为半角，返回变换后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定数据的文本形式</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删首空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删首空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除当前文本首部的所有空白字符，返回删除后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删尾空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删尾空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除当前文本尾部的所有空白字符，返回删除后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删首尾空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删首尾空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除当前文本首部和尾部的所有空白字符，返回删除后的结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删全部空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除指定文本中所有的空白文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定文本的某一部分用其它的文本替换</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">子文本替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">子文本替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>将所指定文本中的指定内容子文本替换为另一个文本。</p>
+							<p>注：在火山视窗中，是通过参数1直接返回被替换后的内容。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取空白文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取空白文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回具有指定数目半角空格的文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取重复文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取重复文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定文本重复指定次数，返回结果文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本比较</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本比较</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>比较两个文本，返回比较结果。</p>
+							<p>如果返回值小于0，表示本文本小于所比较文本;</p>
+							<p>如果等于0，表示本文本等于所比较文本;</p>
+							<p>如果大于0，表示本文本大于所比较文本。</p>
+
+							</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">分割文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>分割文本</p>
+							<p>分割子文本</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>将指定文本进行分割，在火山视窗中是通过参数返回分割后的数组。</p>
+							<p>注：火山视窗中的<strong>“分割文本”</strong>，分割的是字符集，遇到任意字符都会进行分割。如果想实现和易语言中同样的效果需使用<strong>“分割子文本”</strong>即可。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>根据指定指针所指向的文本数据建立并返回一个文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到UTF8</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到UTF8</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将当前文本转换到UTF8字符集格式后返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">UTF8到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">UTF8到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定UTF8格式的文本数据转换到文本后返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到UTF16</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定文本转换到UTF16格式后返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">UTF16到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">字节集到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定的字节集数据转换到文本后返回。</p>
+				
+						</td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="时间操作"></a>
+	<p>&nbsp;</p>
+	<h4>十、时间操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定文本转换为时间并返回。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">增减时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">增减时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回一个时间，这一时间被加上或减去了一段间隔。如果改变后的时间无效，将自动靠近最近的有效时间。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间间隔</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间间隔</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个数值，表示“时间1”减去“时间2”之后的间隔数目。注意：每个星期以星期天为第一天。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取某月天数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取某月天数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定月份所包含的天数。如果给定的月份无效，返回0。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">时间到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">时间到文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 将指定时间转换为文本并返回。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间部分</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间部分</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个包含已知时间指定部分的整数。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取年份</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取年份</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回一个值为 100 到 9999 之间的整数，表示指定时间中的年份。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取月份</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取月份</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 1 到 12 之间的整数，表示指定时间中的月份。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取日</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取日</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 1 到 31 之间的整数，表示一个月中的某一日。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取星期几</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取星期几</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 1 到 7 之间的整数，表示一个星期中的某一日。星期日为 1，星期一为 2，依此类推。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取小时</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取小时</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 0 到 23 之间的整数，表示一天中的某一小时。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取分钟</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取分钟</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 0 到 59 之间的整数，表示一小时中的某一分钟。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取秒</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取秒</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个值为 0 到 59 之间的整数，表示一分钟中的某一秒。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指定时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指定时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回包含指定年、月、日、小时、分、秒的时间。如果指定了无效时间，将自动使用最相近的有效时间代替。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取现行时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取现行时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前系统日期及时间。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置现行时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置现行时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置当前系统日期及时间。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取日期</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取日期</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个日期时间型数据的日期部分，其小时、分钟、秒被固定设置为0时0分0秒。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个日期时间型数据的时间部分，其年、月、日被固定设置为2000年1月1日。</p></td>
+					</tr>
+				</tbody></table>
+	</blockquote>
+	<a name="数值转换"></a>
+	<p>&nbsp;</p>
+	<h4>十一、数值转换</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到数值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到小数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定文本转换到小数并返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数值到大写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数值到大写</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将数值转换为简体或繁体的大写形式，返回转换后的文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数值到金额</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将数值转换为金额的简体或繁体大写形式，返回转换后的文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数值到格式文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">数值到格式文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，代表指定数值被格式转换后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取十六进制文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>取十六进制文本</p>
+							<p>取长整数十六进制文本</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，代表指定数值的十六进制形式。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取八进制文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，代表指定数值的八进制形式。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到字节</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">(字节)欲转换的数据</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回包含于文本内的字节值，文本中是一个适当类型的数值，支持全角书写方式。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到短整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到短整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本转换成短整数并返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本转换成整数并返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到长整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到长整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本转换成长整数并返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到小数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到小数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文本转换成小数并返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">十六进制</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>计算返回所指定十六进制文本常量对应的整数值。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">二进制</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>计算返回所指定二进制文本常量对应的整数值。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">反转整数字节序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">反转整数字节序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定整数的字节序反转，返回反转后的结果值。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="字节集操作"></a>
+	<p>&nbsp;</p>
+	<h4>十二、字节集操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取字节集数据的长度</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定数据转换为字节集后返回转换结果</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集数据</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集数据</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取出字节集中指定位置指定数据类型的数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集左边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集左边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，其中包含指定字节集中从左边算起指定数量的字节。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集右边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集右边</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，其中包含指定字节集中从右边算起指定数量的字节。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集中间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集中间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，其中包含指定字节集中从指定位置算起指定数量的字节。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一字节集在另一字节集中最先出现的位置</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">倒找字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">倒找字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一字节集在另一字节集中最后出现的位置</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">字节集替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">字节集替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定字节集的某一部分用其它的字节集替换，然后返回替换后的结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">子字节集替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">子字节集替换</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，该字节集中指定的子字节集已被替换成另一子字节集，并且替换发生的次数也是被指定的。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取空白字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取空白字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回具有特定数目 0 字节的字节集。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取重复字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取重复字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，其中包含指定次数的字节集重复结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">分割字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">分割字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定字节集进行分割，返回分割后的一维字节集数组。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定内存指针所指向地址处的一段数据，注意调用本命令前一定要确保所提供的内存地址段真实有效。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定内存指针所指向地址处的一个整数(INT)，注意调用本命令前一定要确保所提供的内存地址段真实有效。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到小数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定内存指针所指向地址处的一个小数(FLOAT)，注意调用本命令前一定要确保所提供的内存地址段真实有效。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">指针到双精度小数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定内存指针所指向地址处的一个双精度小数(DOUBLE)，注意调用本命令前一定要确保所提供的内存地址段真实有效。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集内整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回字节集中所指定位置处的整数。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置字节集内整数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置字节集中所指定位置处的整数值。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="磁盘操作"></a>
+	<p>&nbsp;</p>
+	<h4>十三、磁盘操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘总空间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘总空间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回以 1024 字节（KB）为单位的指定磁盘全部空间。如果失败，返回-1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘剩余空间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘剩余空间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回以 1024 字节（KB）为单位的指定磁盘现行剩余空间。如果失败，返回-1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘卷标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取磁盘卷标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定磁盘的卷标文本</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置磁盘卷标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置磁盘卷标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置指定磁盘的卷标文本。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">改变驱动器</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">改变驱动器</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>改变当前的缺省驱动器。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">改变目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">改变目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>改变当前的目录，但不会改变缺省驱动器位置。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取当前目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取当前目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，用来代表当前的目录。如果失败，返回空文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">创建目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">创建目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>创建一个新的目录。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取当前目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取当前目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文本，用来代表当前的目录。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除目录</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除一个存在的目录及其中的所有子目录和下属文件，请务必谨慎使用本命令。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">复制文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">复制文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>复制一个文件到另外一个位置，成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">移动文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">移动文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将文件从一个位置移动到另外一个位置。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>删除一个文件，成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文件更名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文件更名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>重新命名一个文件或目录。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文件是否存在</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文件是否存在</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>判断指定的磁盘文件是否真实存在。如存在返回真，否则返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文件查找类</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>用于寻找文件，在火山视窗中需要定义变量才可以使用。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定文件被创建或最后修改后的日期和时间。如果该文件不存在，将返回100年1月1日。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件尺寸</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件尺寸</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回一个文件的长度，单位是字节。如果该文件不存在，将返回 -1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件属性</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文件属性</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个文件或目录的属性。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置文件属性</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置文件属性</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>为一个文件设置属性信息。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取临时文件名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取临时文件名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个在指定目录中确定不存在的 .TMP 全路径文件名称。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读入文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读入文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个字节集，其中包含指定文件的所有数据。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写到文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写到文件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作将一个或数个字节集顺序写到指定文件中，文件原有内容被覆盖。成功返回真，失败返回假。</p></td>
+					</tr>
+				</tbody></table>
+	</blockquote>
+	<a name="文件读写"></a>
+	<p>&nbsp;</p>
+	<h4>十四、文件读写</h4>
+	<blockquote>
+		<p>在火山视窗中需要定义<strong>“文件读写类”</strong>变量才可以使用。</p>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+			<tbody>
+				<tr>
+					<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+					<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+					<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">打开文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.打开文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>打开一个普通文件，以对文件进行输入或输出。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">打开内存文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>建立一个内存文件，以计算机内存为存储介质对数据进行文件式的快速输入或输出。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">关闭文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.关闭文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>关闭被打开的文件</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">关闭所有文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>关闭所有现行被打开的文件</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">锁住文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.锁住文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>在有若干个进程访问同一个文件的环境中，使用本命令拒绝其它用户对被打开文件中的某个区域进行读写访问。成功返回真，失败返回假。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">解锁文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.解锁文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>解除由“锁住文件”命令对文件所进行的锁定。成功返回真，失败返回假。注意：本命令调用时所提供的参数值必须与调用“锁住文件”命令时所提供的参数值完全一致。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">移动读写位置</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.移动读写位置</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>在被打开的文件中，设置下一个读或写操作的位置。成功返回真，失败返回假。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">移到文件首</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.移到文件首</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>在被打开的文件中，设置下一个读或写操作的位置到文件首。成功返回真，失败返回假。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">移到文件尾</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.移到文件尾 </td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>在被打开的文件中，设置下一个读或写操作的位置到文件尾。成功返回真，失败返回假。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">读入字节集</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.读入字节集</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">
+						<p>从文件中当前读写位置读取并返回一段字节集数据，实际读入长度(即所返回字节集的尺寸)可能会小于欲读入长度。</p>
+					<p>如果读入失败,将返回一个空字节集并且自动将当前文件读写位置移到文件尾部。</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">写出字节集</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.写出字节集</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>写出一个字节集数据到文件中当前读写位置处，返回是否成功。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">读入文本</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.读入文本</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>从文件中当前读写位置读取并返回一段文本数据，实际读入长度(即返回文本的尺寸)可能会小于欲读入长度。如果该数据中存在字符值0或26(文本结束标志)，将仅返回该字符之前的数据(后续读写将跳过该字符)。如果读入失败，将返回一个空文本并且自动将当前文件读写位置移到文件尾部。</p>
+			<p> 注: 在火山视窗中，文本文件的编码格式必须为UTF-16。</p>		
+					</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">写出文本</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.写出文本</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">
+						<p>本命令用作写出一段文本数据到文件中当前读写位置处。成功返回真，失败返回假。</p>
+						<p>注：在火山视窗中写出的文本编码为UTF-16。</p>
+					
+					</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">读入一行</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.读入一行</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作从文件中当前读写位置读取并返回一行文本数据，行末的回车及换行符将被抛弃。如果读入失败，将返回一个空文本并且自动将当前文件读写位置移到文件尾部。</p>
+					<p> 注: 在火山视窗中，文本文件的编码格式必须为UTF-16。</p>	
+					</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">写文本行</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.写文本行</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作写出一行文本数据到文件中当前读写位置处，每行的尾部将被自动加上回车及换行符。</p>
+					<p>注：在火山视窗中写出的文本编码为UTF-16。</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">读入数据</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.读入数据</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>从文件中当前读写位置读取并返回指定类型的数据，如果读入成功，返回真，否则将返回假并且自动将当前文件读写位置移到文件尾部。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">写出数据</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.写出数据</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>将所指定数据写出到文件中当前读写位置，返回是否成功。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">是否在文件尾</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.是否在文件尾</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前读写位置是否已经处于文件数据的尾部</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">取读写位置</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.取读写位置</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回指定被打开文件的当前读/写位置，位置值从0开始。失败返回-1。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">取文件长度</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">文件读写变量.取文件长度</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前被打开文件的长度，单位为字节。失败返回 -1 。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">插入字节集</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作插入一段字节集数据到文件中当前读写位置处</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">插入文本</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作插入一段文本数据到文件中当前读写位置处</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">插入文本行</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作插入一段文本行到文件中当前读写位置处</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">删除数据</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用作在文件中当前读写位置处删除一段字节数据，文件后面的数据顺序前移。</p></td>
+				</tr>
+				<tr>
+					<td align="center"  height="40" bgcolor="#F2F3F8">打开加密文件</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+					<td align="center"  height="40" bgcolor="#F2F3F8"><p>打开一个以指定密码加密的文件，以对此文件进行快速安全访问，支持大尺寸文件。</p></td>
+				</tr>	
+					
+			</tbody>
+		</table>
+	</blockquote>
+	<a name="系统处理"></a>
+	<p>&nbsp;</p>
+	<h4>十五、系统处理</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">运行</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">运行</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令运行指定的可执行文件或者外部命令。如果成功，返回真，否则返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取剪辑板文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取剪辑板文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回存放于当前 Windows 系统剪辑板中的文本。如果当前剪辑板中无文本数据，将返回空文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置剪辑板文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置剪辑板文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定文本存放到当前 Windows 系统剪辑板中去，剪辑板中的原有内容被覆盖。成功返回真，失败返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">剪辑板中可有文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">剪辑板中可有文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果当前 Windows 系统剪辑板中有文本数据，则返回真，否则返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">清除剪辑板</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">清除剪辑板</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>清除当前 Windows 系统剪辑板中的所有数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取屏幕宽度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取屏幕宽度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回屏幕当前显示区域的宽度，单位为像素。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取屏幕高度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取屏幕高度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回屏幕当前显示区域的高度，单位为像素。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取鼠标水平位置</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取鼠标水平位置</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回鼠标指针的当前水平位置，单位为像素。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取鼠标垂直位置</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取鼠标垂直位置</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回鼠标指针的当前垂直位置，单位为像素。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取颜色数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取颜色数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前显示方式所提供的最大颜色显示数目</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">输入框</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">输入框</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 在一对话框中显示提示，等待用户输入正文并按下按钮。如果用户在确认输入后（按下“确认输入”按钮或回车键）退出，返回真，否则返回假。/p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">信息框</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>信息框</p>
+							<p>全局信息框</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>显示一个信息框等待用户点击按钮，并返回一个值告诉用户单击哪一个按钮。</p>
+						<p> 如果信息框有“取消”按钮，则按下 ESC 键与单击“取消”按钮的效果相同。</p>
+						<p>注：火山视窗中的信息框依赖窗口类，全局信息框可以在任意类中调用。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">鸣叫</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">鸣叫</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>通过计算机媒体设备或者喇叭发出一个声音</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取启动时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取启动时间</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回自 Windows 系统启动后到现在为止所经历过的毫秒数</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置等待鼠标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">鼠标等待器</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令设置现行鼠标的形状为沙漏形，用作在即将长时间执行程序前提示操作者。</p>
+						<p>在火山视窗中需要定义“鼠标等待器”变量才可以使用。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">恢复鼠标</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">鼠标等待器</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令恢复现行鼠标的原有形状</p>
+							<p>在火山视窗中，当“鼠标等待器”变量被销毁时，会自动恢复鼠标。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">延时</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">延时</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>暂停当前程序的运行并等待指定的时间</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在 Windows 注册表中返回指定的文本类型注册表项值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数值注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数值注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在 Windows 注册表中返回指定的数值类型注册表项值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取字节集注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在 Windows 注册表中返回指定的字节集类型注册表项值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>写文本注册项</p>
+							<p>写数值注册项</p>
+							<p>写字节集注册项</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在 Windows 注册表中保存或建立指定的注册表项</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">删除注册项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在 Windows 注册表中删除指定注册表项或注册表目录</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">注册项是否存在</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">注册项是否存在</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果指定注册表项存在，返回真，否则返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取默认底色</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取默认底色</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取回Windows系统的默认窗口背景颜色</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">快照</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">快照</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取回指定窗口或屏幕上所有现有显示内容的图片数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读配置项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">读配置项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>读取指定配置文件中指定项目的文本内容</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写配置项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写配置项</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定文本内容写入指定配置项中或者删除指定的配置项或节，如果指定配置文件不存在，将会自动创建。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取配置节名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取配置节名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定配置文件中所有已有节名的文本数组</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取操作系统类别</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取操作系统类型</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前操作系统的版本类型</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">多文件对话框</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>打开一个多文件选择对话框</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取程序名称</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所指定类型的程序名称</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">交换变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">交换变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>交换两个同类型变量的值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">强制交换变量</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>强制交换两个变量内容</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取运行时数据类型</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所提供参数的运行时数据类型值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">宏</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在编译程序时，通过提供一系列自定义的常量数据参数来调用系统内置或者外部提供的程序接口，获得其处理结果并将其整合进编译结果中。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">类自身</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">本对象</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>表示当前类对象</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取最后错误</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取最后错误</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>调用操作系统的GetLastError函数，返回该API函数被调用后的返回值。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取统一文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">文本到字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所指定文本的Unicode格式字节集</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取统一文本长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取文本长度</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所指定文本转换到Unicode格式文本后的字符数目</p></td>
+					</tr>
+					
+					
+				</tbody></table>
+	</blockquote>
+	<a name="媒体播放"></a>
+	<p>&nbsp;</p>
+	<h4>十六、媒体播放</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">播放音乐</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>可以播放 .WAV、.MID 声音文件或相应格式的字节集声音数据、声音资源。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">停止播放</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>停止正在播放的音乐</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">播放MID</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>可以自动连续播放多个 MIDI 声音文件（注意不支持 WAV ）或相应格式的字节集声音数据、声音资源。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">播放MP3</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>可以自动连续播放多个 MP3 音乐文件</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">同步播放MP3</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>播放一次指定的MP3音乐文件，在播放过程中，会自动给指定标签组件发送反馈事件通知，以同步提供当前播放进度百分比。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">暂停播放MP3</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果当前正在播放由“播放MP3”或“同步播放MP3”命令所指定的MP3音乐，则将其暂停。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">继续播放MP3</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果当前由“播放MP3”或“同步播放MP3”命令所播放MP3音乐已经被暂停，则继续播放。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取MP3播放状态</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 返回当前由“播放MP3”或“同步播放MP3”命令所播放MP3音乐的播放状态</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="程序调试"></a>
+	<p>&nbsp;</p>
+	<h4>十七、程序调试</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">输出调试文本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>调试输出</p>
+							<p>调试输出2</p>
+							<p>调试输出3</p>
+							<p>调试输出当前语句位置</p>
+				
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>向系统调试器内输出所指定数据的调试用文本并自动换行</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">暂停</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">编译出错</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>暂停当前程序运行，相当于在程序代码中设置断点。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">检查</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">调试检查</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在调试版中，当所提供的参数值为假时，程序将在此处中断执行并报错。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否为调试版</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">为调试版</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>检查当前程序是否为调试版</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="其它"></a>
+	<p>&nbsp;</p>
+	<h4>十八、其它</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, , 真)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建对话框 ()</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+						<p>以模态对话框的方式创建并显示本窗口。</p>
+						<p>对话框窗口创建后，鼠标只能控制对话框窗口，关闭后才可以操作其它窗口。</p>
+						</td>
+							
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, , 假)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建窗口 ()</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+						<p>创建一个普通窗口。</p>
+						<p>在普通窗口模式下，新窗口被创建后依然可以操作其它窗口，并且在操作其它窗口时可以覆盖当前被操作的窗口。</p>
+							</td>
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, 父窗口名字, 假)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建弹出子窗口 (父窗口名字)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+						<p>创建一个窗口并将其作为其它窗口的弹出风格子窗口。</p>
+						<p>当新窗口被创建后，依然可以操作原来的窗口，但操作原窗口时不会覆盖新窗口。</p>
+							</td>
+						
+					</tr> 
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">选择</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">选择</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>根据所提供参数的值，返回两部分中的其中一个。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">多项选择</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">多项选择</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>从参数列表项目中选择并返回一个值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否为空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回一个逻辑值，指出在调用子程序时是否为指定参数提供了数据。</p>
+							<p>注：在火山视窗中参数可提供默认值，可通过“如果”命令直接判断其参数内容即可。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">是否已创建</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果指定的窗口或窗口组件有效且已经被载入或创建，返回真，否则返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数据类型尺寸</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取数据类型尺寸</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>取指定数据类型的数据尺寸</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取颜色值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取颜色值</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定的RGB颜色分量组合为颜色值返回</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取事件组件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>在易语言中是用于判断当前事件是何组件产生的。</p>
+							<p>在火山视窗中可通过事件方法的“来源对象”参数获取。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">事件转移</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在易语言中，设置将第一个组件上产生的所有事件转交由第二个同窗口同类型组件的事件处理子程序去处理，就好象此事件是在第二个组件上实际发生的一样。</p>
+						<p>在火山视窗中无需处理，因为所有相同类型的组件，都是在同一个事件方法下处理。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">复制窗口组件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>复制创建与指定窗口组件设计状态完全一致的新组件</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">处理事件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">处理事件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 暂时转让控制权，以便让 Windows 操作系统有机会处理其它的如用户键盘或鼠标输入等事件。直到操作系统处理并发送完程序队列中的所有事件后，命令才会返回。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							
+							<p>载入图片</p>
+							<p>卸载图片</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在火山视窗中统一使用“位图对象类”处理。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取硬盘特征字</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回电脑中第一个物理硬盘的物理特征字，该特征字是仅硬件相关的，也就是说与任何软件系统都无关（包括操作系统）。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取系统语言</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回当前系统运行时环境所支持的语言版本类型</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">写到内存</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">内存填充</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将数据写出到指定的内存区域，注意调用本命令前一定要确保所提供的内存区域真实有效。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">DLL命令调用转向</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>本命令用来设置下次程序中执行任意一条DLL命令时所使用的DLL库文件名和在DLL库文件中的调用命令名，此设置将覆盖该被调用DLL命令在程序设计时所提供的原始值。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取组件名称</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回指定窗口组件的名称</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取对象类型</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果指定对象的类型为在支持库内定义的数据类型，则返回该数据类型的名称，否则返回空文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">寻找组件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>按照指定条件寻找符合要求的窗口组件，成功返回非零寻找句柄，未找到返回零。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取找到组件数目</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回“寻找组件”命令所找到的组件数目。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取所找到组件</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回“寻找组件”命令所找到的指定索引位置处的组件。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">清除组件寻找句柄</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p> 释放“寻找组件”命令所返回的组件寻找句柄，此句柄以后不能再使用。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置入代码</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">置入代码</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在编译后文件代码段中当前语句位置置入指定的机器指令码数据。</p>
+		<p>注：在火山视窗中只能32位程序使用。</p>				
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">运行控制台程序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">运行控制台程序</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>运行指定的控制台程序(不会打开控制台窗口)，返回运行结果。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取核心库版本</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回核心库的当前版本号</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">条件宏是否存在</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回所指定的编译条件宏是否已经被定义</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="数据库"></a>
+	<p>&nbsp;</p>
+	<h4>十九、数据库</h4>
+	<blockquote>
+		<p>火山视窗中暂无EDB数据库操作方法。</p>
+	</blockquote>
+	<a name="网络通讯"></a>
+	<p>&nbsp;</p>
+	<h4>二十、网络通讯</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">取主机名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本机的主机名，用作在网络通讯中标志本机地址。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">通信测试</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>测试与指定主机是否能够正常通讯。返回被测试主机的通讯响应时间。如果无法通讯或者测试失败，返回 -1。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">转换为主机名</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定的 IP 地址转换为其主机名</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">转换为IP地址</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将指定的主机名转换为其 IP 地址</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="控制台操作"></a>
+	<p>&nbsp;</p>
+	<h4>二十一、控制台操作</h4>
+	<blockquote>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">标准输出</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">标准输出</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在标准输出设备或标准错误设备上输出指定的内容</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">标准输入</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">标准输入</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在标准输入设备上请求输入最多包含2048个字符的一行文本，返回用户所输入的内容。</p></td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	<a name="COM1"></a>
+	<p>&nbsp;</p>
+	<h4>二十二、COM对象类</h4>
+	<blockquote>
+		<p>在易语言中需要定义类型为<strong>“对象”</strong>的变量。</p>
+		<p>在火山视窗中需要定义类型为<strong>“COM对象类”</strong>的变量。</p>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>创建指定类型的 COM 对象，本对象中的原有内容将被释放。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.获取</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.获取</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>获取当前操作系统中已经存在的指定类型 COM 对象，本对象中的原有内容将被释放。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.清除</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.清除</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将本对象的内容释放并清空</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.是否为空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.是否为空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象的内容是否为空</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.是否相等</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.是否相等</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象的内容是否与指定对象的内容相等</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读文本属性("属性名",参数N……)</p>
+							<p>COM变量.读文本属性("属性名")</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名",文本型, 参数N……)</p>
+							<p>COM变量.读无参数属性 ("属性名",文本型)</p>
+							
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>读取并返回本对象的指定文本类型属性值，如果失败将返回空文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读数值属性("属性名",参数N……)</p>
+							<p>COM变量.读数值属性("属性名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名",小数, 参数N……)</p>
+							<p>COM变量.读无参数属性 ("属性名",小数)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>读取并返回本对象的指定数值类型属性值，如果失败将返回数值0。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读逻辑属性("属性名",参数N……)</p>
+							<p>COM变量.读逻辑属性("属性名")</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名",逻辑型, 参数N……)</p>
+							<p>COM变量.读无参数属性 ("属性名",逻辑型)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>读取并返回本对象的指定逻辑型属性值，如果失败将返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读日期属性("属性名",参数N……)</p>
+							<p>COM变量.读日期属性("属性名")</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名",小数, 参数N……)</p>
+							<p>COM变量.读无参数属性 ("属性名",小数)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在火山视窗中无日期时间型，都是通过小数来处理，直接读小数属性即可。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读对象型属性 ("属性名",参数N……)</p>
+							<p>COM变量.读对象型属性 ("属性名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读对象型属性 ("属性名",COM对象类, 参数N……)</p>
+							<p>COM变量.读无参数对象型属性 ("属性名",COM对象类)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>读取当前对象中的COM对象属性值</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名", 参数N……)</p>
+							<p>COM变量.读属性 ("属性名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.读属性 ("属性名",COM变体型, 参数N……)</p>
+							<p>COM变量.读无参数属性 ("属性名",COM变体型)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>读取当前对象中的COM变体属性值</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.写属性 ("属性名", 参数N……)</p>
+							<p>COM变量.写属性 ("属性名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.写属性 ("属性名", 参数N……)</p>
+							<p>COM变量.写无参数属性 ("属性名")</p>
+							
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置本对象指定属性的值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", 参数N……)</p>
+							<p>COM变量.方法 ("方法名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.无返回值方法 ("方法名", 参数N……)</p>
+							<p>COM变量.无参数及返回值方法 ("方法名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象的指定方法并忽略其返回值</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.通用方法 ("方法名", 参数N……)</p>
+							<p>COM变量.通用方法 ("方法名")</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", COM变体型, 参数N……)</p>
+							<p>COM变量.无参数方法 ("方法名", COM变体型)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象的指定方法并返回一个变体型对象值</p>
+						<p>注：在火山视窗中是通过参数返回。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.文本方法("方法名",参数N……)</p>
+							<p>COM变量.文本方法("方法名")</p>
+							</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", 文本型, 参数N……)</p>
+							<p>COM变量.无参数方法 ("方法名", 文本型)</p>
+							
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象返回文本类型数据的方法，如果失败将返回空文本。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.数值方法("方法名",参数N……)</p>
+							<p>COM变量.数值方法("方法名")</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", 小数, 参数N……)</p>
+							<p>COM变量.无参数方法 ("方法名", 小数)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象返回数值类型数据的方法，如果失败将返回数值0。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.逻辑方法("方法名",参数N……)</p>
+							<p>COM变量.逻辑方法("方法名")</p>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", 逻辑型, 参数N……)</p>
+							<p>COM变量.无参数方法 ("方法名", 逻辑型)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象返回逻辑型数据的方法，如果失败将返回假。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.日期方法("方法名",参数N……)</p>
+							<p>COM变量.日期方法("方法名")</p>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.方法 ("方法名", 小数, 参数N……)</p>
+							<p>COM变量.无参数方法 ("方法名", 小数)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在火山视窗中无日期时间型，都是通过小数来处理，因此读取小数方法即可。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.对象型方法("方法名",参数N……)</p>
+							<p>COM变量.对象型方法("方法名")</p>
+							
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>COM变量.对象型方法 ("方法名", COM对象类,参数N……)</p>
+							<p>COM变量.无参数对象型方法 ("方法名", COM对象类)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>执行本对象返回对象型数据的方法</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建图片对象</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建图片对象</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>为指定图片创建对应的 COM 图片对象并填入本对象中</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建字体对象</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.创建字体对象</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>为指定字体数据创建对应的 COM 字体对象并填入本对象中</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取回图片</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取回图片</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果本对象为 COM 图片对象，则取回其具体图片数据。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取回字体</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取回字体</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果本对象为 COM 字体对象，则取回其中的具体字体数据。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取错误</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取错误</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>当读写对象属性/执行对象方法时，紧跟该语句后执行本方法可以检查其是否执行成功。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.查看</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>通过对话框的方式查看本对象的调用格式信息，便于编写相关程序。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取接口</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">COM变量.取接口</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>获取本对象中的指定接口，然后将其填入所指定对象中。</p></td>
+					</tr>
+				</tbody></table>
+	</blockquote>
+	<a name="COM2"></a>
+	<p>&nbsp;</p>
+	<h4>二十三、COM变体型</h4>
+	<blockquote>
+		<p>在易语言中需要定义类型为<strong>“变体型”</strong>的变量。</p>
+		<p>在火山视窗中需要定义类型为<strong>“COM变体型”</strong>的变量。</p>
+		<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+					<tbody>
+					<tr>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+						<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+						<td align="center"  height="40" width="50%"  bgcolor="#D2D2DE">注释</td>
+						
+						
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.清除</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.清空</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>将本对象的内容释放并清空</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取类型 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取类型 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中值的数据类型</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取数组成员数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取数组成员数</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>如果本对象中存放的是数组数据，执行本方法将返回其成员数目。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取文本 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取值 (文本型, 索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的文本数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取数值 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取值 (小数, 索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的数值数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取逻辑值 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取值 (逻辑型, 索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的逻辑值数据</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取日期 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取值 (小数, 索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>在火山视窗中无日期时间型，统一采用小数来处理，因此使用小数类型即可。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取对象 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取COM对象 (COM结果变量,索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的COM对象型数据</p>
+						<p>注：在火山视窗中是通过参数返回。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取变体型 (索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取变体型 (COM变体结果变量,索引)</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的变体型数据类型数据</p>
+						<p>注：在火山视窗中是通过参数返回。</p>
+						</td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>变体变量.赋值 (基本类型, 索引)</p>
+							<p>变体变量.赋值 (数组类型, 索引)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>变体变量.赋值 (基本类型, 索引)</p>
+							<p>变体变量.置数组 (基本数组,首索引,成员数)</p>
+							<p>变体变量.置COM对象数组 (COM对象数组,首索引,成员数)</p>
+							<p>变体变量.置变体型数组 (变体数组,首索引,成员数)</p>
+						</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>设置本对象的内容</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.创建数组</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.创建数组</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>创建指定类型和指定成员数的空白数组</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.置类型 </td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.置类型</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>清除当前变体型对象中的原有内容，并改变它的数据类型。</p></td>
+					</tr>
+					<tr>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8">变体变量.取字节集</td>
+						<td align="center"  height="40" bgcolor="#F2F3F8"><p>返回本对象中或本对象数组成员中的字节集数据，如果当前数据的数据类型不为字节集型，将自动进行转换，如果转换失败将返回空字节集。</p>
+						<p>注：在火山视窗中是通过参数来返回数据。</p>
+						</td>
+					</tr>
+					
+				</tbody></table>
+	</blockquote>
+	
+	
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left"> [<a href="dll.html">上一章</a>]&nbsp;&nbsp;  [<a href="flie.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

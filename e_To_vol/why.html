@@ -1,0 +1,204 @@
+
+<html>
+
+<head>
+<title>为什么要使用火山视窗_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,为什么要使用火山视窗" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> <!-- [<a href="dataType.html">上一章</a>] -->&nbsp;&nbsp;  [<a href="sdk.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">一、为什么要使用火山视窗？</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<h4>1、基本介绍</h4>
+	<blockquote>
+		<p  style="text-indent:2em">火山软件开发平台是完全拥有自主知识产权、一种目的<strong>硬件设备无关、目的软件环境无关、易学易用实用、完全本地化</strong>的中文软件快速开发平台。</p>
+		<p style="text-indent:2em">火山平台采用独创的<strong>“语言之上的语言”</strong>（LOL）技术，成功屏蔽了火山程序对特定目标环境的依赖。用户只需要学习掌握火山程序语言，就可以针对各种目的环境进行软件开发。同时由于火山程序编译器所编译出来的是目标语言的源代码，因此能够最大限度地提升火山程序员与第三方的合作和资源共享效率， 以及所开发火山程序被社会的认可程度。</p>
+		<p style="text-indent:2em"><a href="http://www.voldp.com/nav_lang.htm" target="_blank">本地化编程语言具有极其重要的价值及社会意义</a>。</p>
+		<p style="text-indent:2em">以下为火山软件开发平台的架构图：</p>
+		<div align="center">
+		<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#D2D2DE">火山平台用户源程序 </td>
+			</tr>
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#F2F3F8">支持对应目标环境的火山类库</td>
+			</tr>
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#F2F3F8">支持对应目标环境的火山编译器</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">
+				Assembly / C / C++ / C# ......</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">Java</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">Objective C 
+				/ Swift</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">HTML5 + JavaScript + CSS</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">PHP</td>
+				<td align="center" width="10%" rowspan="3" height="40">其它 .....</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言解释器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言解释器</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40">Windows桌面、Linux/Unix服务器端、嵌入式设备、单片机 ......</td>
+				<td align="center" width="15%" height="40">安卓移动端、安卓嵌入式设备、服务器 ......</td>
+				<td align="center" width="15%" height="40">ios应用</td>
+				<td align="center" width="15%" height="40">网站前端展示、HTML5跨平台应用。</td>
+				<td align="center" width="15%" height="40">WEB服务器端</td>
+			</tr>
+		</table>
+		</div>
+		<p>&nbsp;</p>
+		<p style="text-indent:2em">而易语言相对火山就比较单薄，虽然易语言支持跨平台，但其程序对linux和unix的支持相对较弱，大部分库也不支持在linux和unix运行。</p>
+	
+		
+	</blockquote>	
+	<p>&nbsp;</p>
+	<h4>2、全面支持Unicode(统一码）字符集：</h4>
+	<blockquote>
+		<p>利用Unicode字符集可以非常方便的开发多国语言程序，可以使用Unicode字符串或者直接输入目标语言文本就可以显示出来，这是易语言所不能办到的。</p>
+		<blockquote>
+			<p><img src="why_img/2.png" border="0"></p>
+		</blockquote>
+		
+		<p>运行效果如下图：</p>
+		<blockquote>
+			<p><img src="why_img/1.png" border="0"></p>
+		</blockquote>
+		<p>易语言不支持Unicode字符串显示目标语言，也不支持直接输入目标语言，其运行效果如下：</p>
+		<blockquote>
+			<p><img src="why_img/12.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>3、支持32/64位程序开发：</h4>
+	<blockquote>
+		<p>易语言因为历史遗留问题导致无法支持64位程序设计，不支持64位也就意味着无法申请更大的内存空间，无法开发一些对于内存要求非常高的大型软件。</p>
+		<p>而这一问题在火山视窗上不复存在，火山视窗支持编译32/64位程序，可以根据需求选择。</p>
+		<blockquote>
+			<p>右键项目找到<strong>“属性”</strong>菜单。</p>
+			<blockquote>
+				<p><img src="why_img/3.png" border="0"></p>
+			</blockquote>
+			
+			<p>找到<strong>“目标平台”</strong>，就可以根据需求选择程序位数（默认为64位）。 </p>
+			<blockquote> 
+				<p><img src="why_img/4.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>4、系统核心库全部开源：</h4>
+	<blockquote>
+		<p>系统核心类库全部开源可自行随意更改。</p>
+		<p>因为火山视窗是源码级编译，所以不会存在像易语言一样大规模的误报问题，即便是发生了误报也可以通过修改源码或者更换编译器解决误报问题。</p>
+		<p></p>
+		<blockquote>
+			<p>展开<strong>“模块”</strong>可以查看核心库源码。</p>
+			<blockquote>
+				<p><img src="why_img/5.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中不支持查看源码，只能通过类库查看帮助信息。</p>
+			<blockquote>
+				<p><img src="why_img/13.png" border="0"></p>
+			</blockquote>
+		
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>5、支持使用一系列不同的本地编译器：</h4>
+	<blockquote>
+		<p>在火山中，点击<strong>“工具->选项”</strong>菜单可以打开系统设置。 </p>
+		<blockquote> 
+			<p><img src="why_img/6.png" border="0"></p>
+		</blockquote>
+			<p>点击左侧<strong>“视窗项目管理器”</strong>，右侧<strong>“本地编译器”</strong>就可以修改编译器（需要自行下载对应编译器），此处可以下拉选择也可以直接设置编译器安装路径。 </p>
+		<blockquote>
+			<p><img src="why_img/7.png" border="0"></p>
+		</blockquote>
+		<p>在易语言中虽然普通编译不需要设置编译器，但如果想要静态编译只能手动修改<strong>“tools\link.ini”</strong>文件中的相关配置项，非常不友好。</p>
+		<blockquote>
+			<p>在<strong>link.ini</strong>文件中找到<strong>“linker”</strong>配置项，然后设置链接器路径。</p>
+			<p><img src="why_img/14.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+    <p>&nbsp;</p>
+	<h4>6、程序代码支持嵌入C，C++：</h4>
+	<blockquote>
+		<p>易语言代码中只能使用易语言支持库或模块来编写程序，如果缺少一些小功能还需要额外封装支持库或模块，使用起来极其不便。</p>
+		<p>在火上视窗中可以通过阅读封装手册，直接在火山源码中嵌入c、c++代码实现功能，无需额外封装类库。</p>
+			<blockquote>
+				<p><img src="why_img/8.png" border="0"></p>
+			</blockquote>
+	</blockquote>
+  <p>&nbsp;</p>
+	<h4>7、C++源码编译：</h4>
+	<blockquote>
+		<p>用火山视窗写程序，虽然表面上是中文的，但是实际上生成的是C++程序，具有和C++一样的运行速度，而且可以与其它C++程序员协同开发。</p>
+		<p>在程序编译或调试后会在解决方案所处目录生成一个<strong>“_int”</strong>文件夹，在此文件夹中就可以找到输出的C++源码。</p>
+		<blockquote>
+			<p><img src="why_img/11.png" border="0"></p>
+		</blockquote>
+		<p>c++源码详细输出位置如下：</p>
+		<blockquote>
+			<p><strong>调试版</strong>程序默认输出在：<strong>“_int\项目文件名\debug\x64(或win32)\project”</strong>目录中。</p>
+			<p><strong>发布版</strong>程序默认输出在：<strong>“_int\项目文件名\release\x64(或win32)\project”</strong>目录中。</p>
+			<p>注：x64指64位程序，win32指32位程序。</p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<p><h4>8、程序代码即类库：</h4></p>
+	<blockquote>
+		<p>火山平台支持用火山代码直接封装火山类库，这是易语言所不具备的功能。</p>
+		<p>关于火山类库封装可以看：<a href="project.html#部件DLL">部件DLL</a>一文中的介绍。 </p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h4>9、跨平台实现语法统一：</h4></p>
+	<blockquote>
+		<p>由下图可知，即使是开发平台不同，但程序语法几乎是一致的。</p>
+		<p>最终可以达到，学会火山视窗平台后也能轻松掌握安卓程序开发，实现软件开发一通百通。</p>
+		<p>火山视窗部分演示代码：</p>
+		<blockquote>
+			<p><img src="why_img/9.png" border="0"></p>
+		</blockquote>
+		<p>火山安卓部分演示代码：</p>
+		<blockquote>
+			<p><img src="why_img/10.png" border="0"></p>
+		</blockquote>
+		
+	</blockquote>
+
+
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"><!-- [<a href="dataType.html">上一章</a>] -->&nbsp; &nbsp;  [<a href="sdk.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

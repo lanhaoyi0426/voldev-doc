@@ -1,0 +1,323 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言窗口程序差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言窗口程序差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Designer.html">上一章</a>]&nbsp;&nbsp;  [<a href="view.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">二、火山视窗与易语言窗口程序操作差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="窗口事件"></a>
+	<p>&nbsp;</p>
+	<h4>1、窗口事件</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中可通过双击设计器添加默认窗口事件。</p>
+			<blockquote>
+				<p><img src="win_img/1.gif" border="0"></p>
+			</blockquote>
+			<p>或者通过属性栏中的组合框，点击选择事件并添加。</p>
+			<blockquote>
+				<p><img src="win_img/2.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中有四种事件添加方式，分别如下：</p>
+			<p>1. 双击窗口设计器添加默认事件。</p>
+			<blockquote>
+				<p><img src="win_img/3.gif" border="0"></p>
+			</blockquote>
+			<p>2. 点击属性栏下方的组合框添加事件。</p>
+			<blockquote>
+				<p><img src="win_img/4.png" border="0"></p>
+			</blockquote>
+			<p>3. 从窗口类名添加事件。</p>
+			<blockquote>
+				<p><img src="win_img/5.png" border="0"></p>
+			</blockquote>
+			<p>4. 从窗口变量添加事件。</p>
+			<blockquote>
+				<p><img src="win_img/6.png" border="0"></p>
+			</blockquote>
+			<p>注：如果类和窗口变量同时添加事件，那么最终会以类添加的事件为准，变量中添加的事件会被覆盖。</p>
+			<blockquote>
+				<p><img src="win_img/7.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="窗口属性"></a>
+	<p>&nbsp;</p>
+	<h4>2、窗口属性</h4>
+	<blockquote>
+		<p>易语言窗口属性有两种调用方式，分别如下：</p>
+		<blockquote>
+			<p>1. 通过属性栏设置属性。</p>
+			<blockquote>
+				<p><img src="win_img/8.png" border="0"></p>
+			</blockquote> 
+			<p>2. 通过代码动态设置。</p>
+			<blockquote>
+				<p><img src="win_img/9.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>在火山中则有五种调用方式，分别如下：</p>
+		<blockquote>
+			<p>1. 通过窗口设计器属性栏设置属性。</p>
+			<blockquote>
+				<p><img src="win_img/10.png" border="0"></p>
+			</blockquote> 
+			<p>2. 通过窗口类属性表设置。</p>
+			<blockquote>
+				<p><img src="win_img/11.png" border="0"></p>
+			</blockquote>
+			<p>3. 通过变量表设置属性。</p>
+			<blockquote>
+				<p><img src="win_img/12.png" border="0"></p>
+				<p>需要注意的是，如果变量表和类表格同时存在属性，最终结果会以变量表中的属性为准。</p> 
+				<p>注：并不是类中填写是属性不生效，而是被变量表中的属性覆盖了。</p>
+				<p><img src="win_img/13.png" border="0"></p> 
+			</blockquote>
+			<p>4. 光标定位类表中，按快捷<b>“Alt + Enter”</b>可以打开一个独立的属性表填写窗口，进行属性设置。</p>
+			<blockquote>
+				<p>注：此操作并非只有窗口可以用，只要定义的变量或类存在属性就可以使用。</p>
+				<p><img src="win_img/14.gif" border="0"></p>
+			</blockquote>
+			<p>5. 通过代码动态设置。</p>
+			<blockquote>
+				<p><img src="win_img/15.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="创建新窗口"></a>
+	<p>&nbsp;</p>
+	<h4>3、创建新窗口</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中需要右键窗口分类进行插入新窗口。</p>
+			<blockquote>
+				<p><img src="win_img/16.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中就简单很多，使用快捷键<b>“Ctrl+D”</b>新建一个类，基础类填写窗口即可。</p>
+			<blockquote>
+				<p><img src="win_img/17.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="载入窗口"></a>
+	<p>&nbsp;</p>
+	<h4>4、载入窗口</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中调用<b>“载入()”</b>方法，将窗口名填入参数1即可。</p>
+			<p><img src="win_img/18.png" border="0"></p>
+			<p>效果如下：</p>
+			<p><img src="win_img/19.gif" border="0"></p>
+		</blockquote> 
+		<p>火山演示：</p> 
+		<blockquote>
+			<p>在火山中载入窗口需要定义一个变量，基础类填写窗口类名，然后通过窗口变量名调用<b>“创建窗口”</b>即可进入新窗口。</p>
+			<p>注：除对话框窗口外，其余所有类型窗口都需要定义成员变量。</p>
+			<p><img src="win_img/20.png" border="0"></p>
+			<p>效果如下：</p>
+			<p><img src="win_img/21.gif" border="0"></p>
+		</blockquote>
+		<p>易语言和火山视窗载入窗口方法对照表：</p>
+		<blockquote>
+			<table border="1" width="90%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+						<tbody>
+					
+						<tr>
+							<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">易语言</td>
+							<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">火山</td>
+							<td align="center"  height="40" width="30%"  bgcolor="#D2D2DE">注释</td>
+							<td align="center"  height="40" width="20%"  bgcolor="#D2D2DE">演示图</td>
+							
+						</tr>
+						<tr>
+							<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, , 真)</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建对话框 ()</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>以模态对话框的方式创建并显示本窗口。</p>
+							<p>对话框窗口创建后，鼠标只能控制对话框窗口，关闭后才可以操作其它窗口。</p>
+							</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8"><img src="win_img/22.gif" border="0"></td>
+						</tr>
+						<tr>
+							<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, , 假)</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建窗口 ()</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>创建一个普通窗口。</p>
+							<p>在普通窗口模式下，新窗口被创建后依然可以操作其它窗口，并且在操作其它窗口时可以覆盖当前被操作的窗口。</p>
+								</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8"><img src="win_img/23.gif" border="0"></td> 
+						</tr>
+						<tr>
+							<td align="center"  height="40" bgcolor="#F2F3F8">载入 (窗口名字, 父窗口名字, 假)</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建弹出子窗口 (父窗口名字)</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">
+							<p>创建一个窗口并将其作为其它窗口的弹出风格子窗口。</p>
+							<p>当新窗口被创建后，依然可以操作原来的窗口，但操作原窗口时不会覆盖新窗口。</p>
+								</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8"><img src="win_img/24.gif" border="0"></td>
+						</tr> 
+						<tr>
+							<td align="center"  height="40" bgcolor="#F2F3F8">无</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">窗口变量.创建子窗口 (父窗口名字)</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8">
+					 		<p>创建一个嵌入式的子窗口。</p>
+							
+								</td>
+							<td align="center"  height="40" bgcolor="#F2F3F8"><img src="win_img/25.gif" border="0"></td>
+						</tr> 
+	
+	
+					</tbody></table>
+					
+		</blockquote>
+	</blockquote>
+
+	
+	<a name="取程序"></a>
+	<p>&nbsp;</p>
+	<h4>5、火山视窗扩展知识“取程序()”</h4>
+	<blockquote>
+		<p><h5>5.1 在火山新建MFC窗口之后会看到如下代码</h5></p>
+		<blockquote>
+			<p>代码共有4个区域：</p>
+			<blockquote>
+				<p>(1) <b>“启动类”</b>整个程序的主要入口，整个程序都是由此进入，并且在程序运行过程中，此类不会被销毁一直存在，可以在此类中放置一些不想被销毁释放的变量。</p>
+				<p>(2) 主窗口变量，在火山中必须定义变量才能载入。</p>
+				<p>(3) 启动方法，程序唯一的启动区域，启动主窗口的代码也是在此编写，通过窗口变量名称载入主窗口。</p>
+				<p>(4) 最后就是软件的主窗口类。</p>
+				<p><img src="win_img/26.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+		<p><h5>5.2 “取程序()”取的是谁？</h5></p>
+		<blockquote>
+			<p>1、<b>“取程序”</b>方法，实际上就是取上图中全局唯一的<b>“启动类”</b>对象，这个类在整个软件程序中只有一个，在任何类中都可以调用此方法来获取启动类。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="win_img/27.png" border="0"></p>
+			</blockquote>
+			<p>2、 在<b>“启动类”</b>中定义一个成员变量，勾选公开，设置初始值。</p>
+			<blockquote>
+				<p><img src="win_img/28.png" border="0"></p>
+			</blockquote>
+			<p>3、在窗口类右键，可以进行界面设计。</p>
+			<blockquote>
+				<p><img src="win_img/29.png" border="0"></p>
+			</blockquote>
+			<p>4、 找到按钮，设置按钮，设置按钮标题。</p>
+			<blockquote>
+				<p><img src="win_img/30.png" border="0"></p>
+			</blockquote>
+			<p>5、保存后会看到按钮变量，添加按钮被点击事件。</p>
+			<blockquote>
+				<p><img src="win_img/31.png" border="0"></p>
+			</blockquote>
+			<p>6、 通过<b>“取程序()”</b>取出启动类对象，然后就可以访问启动类中任何公开的成员变量或常量。  </p>
+			<blockquote>
+				<p><img src="win_img/32.png" border="0"></p>
+			</blockquote>
+			<p>7、运行结果如下。</p> 
+			<blockquote>
+				<p><img src="win_img/33.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	      
+	</blockquote>
+	
+	<a name="多窗口交互"></a>
+	<p>&nbsp;</p>
+	<h4>6、多窗口交互</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中多窗口交互较为简单，直接通过窗口名称就可以实现。</p>
+			<p>代码编写如下：</p>
+			<blockquote>
+				<p><img src="win_img/34.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="win_img/35.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>因在火山视窗中组件不支持静态，所以无法通过窗口类名直接操作组件，必须通过窗口变量操作。</p> 
+			<p>通过这一点可以结合<b>“取程序”</b>方法，以实现多窗口交互。</p> 
+			<p>操作步骤如下：</p>
+			<blockquote>
+				<p>(1) 首先公开启动类中的主窗口变量。</p>
+				<blockquote>
+					<p><img src="win_img/36.png" border="0"></p>
+				</blockquote>
+				<p>(2) 设计主窗口界面，放一个按钮和编辑框组件。</p>
+				<blockquote>
+					<p><img src="win_img/37.png" border="0"></p>
+				</blockquote>
+				<p>(3) 设计窗口2界面，放一个按钮组件。</p>
+				<blockquote>
+					<p><img src="win_img/38.png" border="0"></p>
+				</blockquote>
+				<p>(4) 公开主窗口编辑框组件。</p>
+				<p>(5) 定义第二个窗口变量，以便于创建窗口。</p>
+				<p>(6) 主窗口创建完毕后载入第二个窗口。</p>
+				<p>(7) 按钮点击后操作第二个窗口。</p>
+				<blockquote>
+					<p><img src="win_img/39.png" border="0"></p>
+				</blockquote>
+				<p>(8) 在第二个窗口按钮被点击时，就需要利用<b>“取程序()”</b>首先取出启动类对象，然后获取主窗口对象，通过主窗口对象就可以操作被公开的编辑框组件。</p>
+				<blockquote>
+					<p><img src="win_img/40.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="win_img/41.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Designer.html">上一章</a>]&nbsp;&nbsp;  [<a href="view.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

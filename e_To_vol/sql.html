@@ -1,0 +1,446 @@
+
+<html>
+<head>
+<title>火山视窗MySQL网站密码管理工具_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗MySQL网站密码管理工具" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="flie.html">上一章</a>]&nbsp;&nbsp;  [<a href="game.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">二、易语言转火山视窗网站密码管理工具</h2>
+<p>&nbsp;</p>
+	<p>&nbsp;</p><a name="概述"></a>
+	<h4>1、基本概述</h4>
+	<blockquote>
+		<p>本篇教程将基于一个易语言基于MySQL的<b>“网站密码管理工具”</b>，用火山视窗将其进行重写，以学习如何从易语言转移到火山视窗。</p>
+		<p>易语言例程：<a href="flie/mysql.e">点击下载</a>。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+
+	<h4>2、易语言例程</h4>
+	<blockquote>
+		<p>首先打开易语言例程，进行简单的分析：</p>
+		<blockquote>
+			<p>当前例程有三个窗口和三个窗口程序集：</p>
+			<blockquote>
+				<img src="sql_img/1.png" border="0">
+			</blockquote>
+			<p>移植注意事项如下：</p>
+			<blockquote>
+				<p>在易语言主窗口中存在菜单，在火山操作菜单时需要单独定义一个<b>菜单类</b>来解决，并且在火山中不支持实时在设计器中预览菜单效果。</p>
+				<img src="sql_img/2.png" border="0">
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>3、MySQL数据库搭建</h4>
+	<blockquote>
+		<p>MySQL数据库搭建方式有很多，可以去<a href="https://www.mysql.com/cn/" target="_blank">MySQL官网</a>下载或者直接使用第三方集成环境工具创建，譬如<a href="https://www.xp.cn/" target="_blank">小皮面板</a>或<a href="https://www.bt.cn/" target="_blank">宝塔面板</a>等。</p>
+		<p>这里采用小皮面板来搭建MySQL数据库：</p>
+		<blockquote>
+			<p>(1) 下载并安装小皮面板后，点击<b>“软件管理”</b>找到MySQL进行安装，建议安装高版本。</p>
+			<blockquote> 
+				<p><img src="sql_img/5.png" border="0"></p>
+			</blockquote>
+			<p>(2) 点击<b>“首页”</b>选择启动mysql数据库。</p>
+			<blockquote> 
+				<p><img src="sql_img/6.png" border="0"></p>
+			</blockquote>
+			<p>(3) 数据库启动成功后，点击<b>“数据库”</b>选择<b>“创建数据库”</b></p>
+			<blockquote> 
+				<p><img src="sql_img/7.png" border="0"></p>
+			</blockquote>
+			<p>(4) 输入数据库名称账号和密码，点击<b>“确认”</b>。</p>
+			<blockquote> 
+				<p><img src="sql_img/8.png" border="0"></p>
+			</blockquote>
+			<p>(5) 点击<b>“软件管理->工具->数据库工具”</b>选择<b>“HeidiSQL”</b>进行数据库管理，如果未安装会显示<b>“安装”</b>，安装后点击管理。</p>
+			<blockquote> 
+				<p><img src="sql_img/9.png" border="0"></p>
+			</blockquote>
+			<p>(6) 进入数据库管理软件后点击<b>“新建”</b>。</p>
+			<blockquote> 
+				<p><img src="sql_img/10.png" border="0"></p>
+			</blockquote>
+			<p>(7) 输入账号密码后点击<b>“打开”</b>。</p>
+			<blockquote> 
+				<p><img src="sql_img/11.png" border="0"></p>
+			</blockquote>
+			<p>(8) 右键数据库选择<b>“创建新的->表”</b>菜单，进行数据表创建。</p>
+			<blockquote> 
+				<p><img src="sql_img/12.png" border="0"></p>
+			</blockquote>
+			<p>(9) 输入表名后，进行字段添加，首个字段务必为“INT”整数型，用于存储唯一ID值。</p>
+		
+			<blockquote> 
+				<p>注：默认一栏无法点击时可双击打开，<b>“AUTO_INCREMENT”</b>表示自增ID，务必勾选后点击<b>“确定”</b>。</p>
+				<p><img src="sql_img/13.png" border="0"></p>
+			</blockquote>
+			<p>(10) 重复添加字段，以便于满足所有存储需求。</p>
+			<blockquote> 
+			<p>注：其余类型为<b>“VARCHAR”</b>表示存储文本。</p>
+				<p><img src="sql_img/14.png" border="0"></p>
+			</blockquote>
+			<p>(11) 右键<b>“id”</b>进行主键设置。</p>
+			<blockquote> 
+				<p><img src="sql_img/15.png" border="0"></p>
+			</blockquote>
+			<p>(12) 主键设置后会出现一个小图标，最后点击<b>“保存”</b>即可完成数据库表创建。</p>
+			<blockquote> 
+				<p><img src="sql_img/16.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>4、视窗项目创建</h4>
+	<blockquote>
+		<p>点击<b>“文件->新建->项目”</b>菜单，创建一个MFC窗口程序。</p>
+		<blockquote>
+			<p><img src="sql_img/3.png" border="0"></p>
+		</blockquote>
+		<p>创建后注意<b>“标题”</b>属性问题，其默认位于窗口变量中。</p>
+		<blockquote> 
+			<p><img src="sql_img/4.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>5、“_启动窗口”移植</h4>
+	<blockquote>
+		<h5>5.1 易语言界面分析</h5>
+		<blockquote>
+			<p>当前窗口中有以下几种组件：</p>
+			<blockquote>
+				<p>(1) 菜单</p>
+				<p>(2) 按钮</p>
+				<p>(3) 超级列表框</p>
+				<p><img src="sql_img/17.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<h5>5.2 火山视窗界面设计</h5>
+		<blockquote>
+			<b>5.2.1 界面设计</b>
+			<blockquote>
+				<p>打开视窗界面设计器，将易语言中所使用的组件在火山视窗中复现出来。</p>
+				<blockquote>
+					<p><img src="sql_img/18.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<b>5.2.2 超级列表框报表列设置</b>
+			<blockquote>
+				<p>在易语言中需要右键组件选择<b>“设置报表列”</b>。</p>
+				<blockquote>
+					<p><img src="sql_img/19.png" border="0"></p>
+				</blockquote>
+				<p>报表列设置界面如下：</p>
+				<blockquote>
+					<p><img src="sql_img/20.png" border="0"></p>
+				</blockquote>
+				<p>在火山中通过<b>“报表列”</b>属性进行设置。</p>
+				<blockquote>
+					<p><img src="sql_img/21.png" border="0"></p>
+				</blockquote>
+				<p>其界面如下，与易语言使用方式基本一致，设置完成后点击<b>“确定”</b>即可。</p>
+				<blockquote>
+					<p><img src="sql_img/22.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<b>5.2.3 菜单设计</b>
+			<blockquote>
+				<p>在易语言中需要在界面设计器中右键选择“菜单编辑框”进行菜单设计。</p>
+				<blockquote>
+					<p><img src="sql_img/23.png" border="0"></p>
+				</blockquote>
+				<p>易语言菜单设计效果如下：</p>
+				<blockquote>
+					<p><img src="sql_img/24.png" border="0"></p>
+				</blockquote>
+				<p>在火山视窗中需要新建一个基础类为<b>“菜单类”</b>的类，右键选择<b>“打开菜单设计器”</b>即可进行菜单设计。</p>
+				<blockquote>
+					<p><img src="sql_img/25.png" border="0"></p>
+				</blockquote>
+				<p>火山视窗菜单设计器如下，其实用方式和易语言基本一致：</p>
+				<blockquote>
+					<p><img src="sql_img/26.png" border="0"></p>
+				</blockquote> 
+				<p>在易语言中设计完毕会自动在界面设计器预览，在火山中会生成菜单常量。</p>
+				<blockquote>
+					<p><img src="sql_img/27.png" border="0"></p>
+				</blockquote> 
+				<p>添加超级列表框<b>“右键单击表项”</b>事件。</p>
+				<blockquote>
+					<p><img src="sql_img/28.png" border="0"></p>
+				</blockquote>
+				<p>在事件下调用<b>“弹出菜单()”</b>方法进行菜单弹出操作。</p>
+				<blockquote>
+					<p><img src="sql_img/29.png" border="0"></p>
+				</blockquote>
+				<p>火山视窗右键菜单演示效果如下：</p>
+				<blockquote>
+					<p><img src="sql_img/30.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>6、“窗口_查找”移植</h4>
+	<blockquote>
+		<h5>6.1 易语言界面分析</h5>
+		<blockquote>
+			<p>当前窗口中有以下几种组件：</p>
+			<blockquote>
+				<p>(1) 标签</p>
+				<p>(2) 组合框</p>
+				<p>(3) 编辑框</p>
+				<p>(4) 按钮</p>
+				<p><img src="sql_img/31.png" border="0"></p>
+			</blockquote> 
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.2 火山视窗界面设计<h5>
+		<blockquote>
+			<b>6.2.1 界面设计</b>
+			<blockquote>
+				<p>(1) 新建窗口类，同时设置相关属性。</p>
+				<blockquote>
+					<p><img src="sql_img/32.png" border="0"></p>
+				</blockquote>
+				<p>(2) 在火山视窗中将界面复现出来。</p>
+				<blockquote>
+					<p><img src="sql_img/33.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<b>6.2.2 组合框列表项目设置</b>
+			<blockquote>
+				<p>在易语言中需要右键组件选择<b>“设置列表项目”</b>菜单进行设置。</p>
+				<blockquote> 
+					<p><img src="sql_img/34.png" border="0"></p>
+				</blockquote>
+				<p>其界面效果如下：</p>
+				<blockquote>
+					<p><img src="sql_img/35.png" border="0"></p>
+				</blockquote>
+				<p>在火山中需要使用<b>“列表项目”</b>属性进行设置。</p>
+				<blockquote>
+					<p><img src="sql_img/36.png" border="0"></p>
+				</blockquote>
+				<p>其界面如下，与易语言使用方式基本一致，设置完成后点击<b>“确定”</b>即可。</p>
+				<blockquote>
+					<p><img src="sql_img/38.png" border="0"></p>
+				</blockquote>
+				<p>列表项目设置完毕后，同时设置一下<b>“现行选中项”</b>属性为0。</p>
+				<blockquote>
+					<p><img src="sql_img/37.png" border="0"></p>
+				</blockquote>
+				<p>最终效果如下：</p>
+				<blockquote>
+					<p><img src="sql_img/39.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>7、“窗口_添加修改”移植</h4>
+	<blockquote>
+		<h5>7.1 易语言界面分析</h5>
+		<blockquote>
+			<p>当前窗口中有以下几种组件：</p>
+			<blockquote>
+				<p>(1) 标签</p>
+				<p>(2) 编辑框</p>
+				<p>(3) 按钮</p>
+				<p><img src="sql_img/40.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>7.2 火山视窗界面设计<h5>
+		<blockquote>
+			<p>新建一个窗口类，同时设置相关属性。</p>
+			<blockquote>
+				<p><img src="sql_img/41.png" border="0"></p>
+			</blockquote>
+			<p>打开视窗界面设计器，将易语言中所使用的组件在火山视窗中复现出来。</p>
+			<blockquote> 
+				<p><img src="sql_img/42.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>8、启动窗口程序集代码移植</h4>
+	<blockquote>
+		<p><h5>8.1 “__启动窗口_创建完毕”代码移植：</h5> </p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p><img src="sql_img/43.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山后，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 火山中的数据库操作需要定义<b>“Mysql数据类”</b>的变量，调用<b>“连接”</b>方法连接数据库。</p>
+				<p>(2) 可调用“置当前字符集()”方法代替易语言中的执行sql语句方法，进行编码设置。</p>
+				<p>(3) <b>“销毁()”</b>方法使用<b>“关闭窗口()”</b>方法代替。</p>
+				<p>(4) 新建一个<b>“刷新”</b>方法用于刷新数据库，代替<b>“_按钮_刷新_被单击 ()”</b>事件。</p>
+				<p><img src="sql_img/44.png" border="0"></p>
+			</blockquote> 
+		</blockquote>	
+		
+		<p>&nbsp;</p>
+		<p><h5>8.2 “_按钮_刷新_被单击”代码移植：</h5></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p><img src="sql_img/45.png" border="0"></p>
+			</blockquote> 
+			<p>移植到火山后，注意事项如下：</p>
+			<blockquote> 
+				<p>(1) 将易语言中按钮点击执行的刷新代码放到火山视窗的刷新方法中。</p>
+				<p>(2) 火山视窗中无记录集句柄，需要通过<b>“取记录集()”</b>方法取出<b>“Mysql记录集类”</b>。</p>
+				<p>(3) 火山中可利用<b>“判断循环”</b>语句，循环的判断<b>“到下一行”</b>不断取出下一行数据，直到全部取出完毕后自动跳出循环。</p>
+				<p>(4) 在火山中可利用<b>“取当前行文本数据()”</b>方法代替易语言中的<b>“读字段值()”</b>。</p>
+				<blockquote>
+					<p>注：取出的数据库数据都存储在文本数组类中，数组中的第一个成员为数据库中的第一个字段值，以此类推。</p>
+				</blockquote>
+				<p><img src="sql_img/46.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><h5>8.3 按钮点击移植</h5></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+					<p><img src="sql_img/47.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山后，注意事项如下：</p>
+			<blockquote>
+				<p>(1) 在火山视窗中同类型的事件都是统一管理，需要通过<b>“来源对象”</b>参数判断事件来源。</p>
+				<p>(2) <b>“载入标记”</b>成员变量注意勾选公开。</p>
+				<p>(3) 刷新按钮点击时，直接调用<b>“刷新()”</b>方法即可。</p>
+				<p><img src="sql_img/48.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<p><h5>8.4 “删除”菜单事件移植</h5></p>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+					<p><img src="sql_img/49.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山后，注意事项如下：</p>
+			<blockquote>
+				<p>在火山视窗中菜单事件需要使用窗口的<b>“接收到命令”</b>事件，通过<b>“命令代码”</b>参数来判断是哪个菜单单击。</p>
+				<p><img src="sql_img/50.png" border="0"></p>
+			</blockquote>										
+		</blockquote>
+	</blockquote>	
+	
+	<p>&nbsp;</p>
+	<h4>9、查找窗口程序集代码移植</h4>
+	<blockquote>
+		<p>本程序集下只有一个按钮点击事件，如下所示：</p>
+		<blockquote>
+			<p><img src="sql_img/51.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山时，流程如下：</p>
+		<blockquote>
+			<p>(1) 首先公开启动类中的主窗口变量。</p>
+			<blockquote>
+				<p><img src="sql_img/52.png" border="0"></p>
+			</blockquote>
+			<p>(2) 公开主窗口中的超级列表框变量。</p>
+			<blockquote>
+				<p><img src="sql_img/53.png" border="0"></p>
+			</blockquote>
+			<p>(3) 公开刷新方法。</p>
+			<blockquote>
+				<p><img src="sql_img/54.png" border="0"></p>
+			</blockquote>
+			<p>(4) 移植后的注意事项如下：</p>
+			<blockquote>
+				<p>1. 在火山中访问主窗口的超级列表框，需要利用<b>“取程序()”</b>方法一级一级访问，为方便后续操作可以提前将超级列表框组件取出，后续直接使用列表框变量即可操作。</p>
+				<p>2. 调用主窗口中的刷新方法，也需要利用<b>“取程序()”</b>方法一级一级访问。</p>
+				<p>3. 易语言中的<b>“销毁()”</b>方法使用<b>“关闭窗口()”</b>代替。</p>
+				<p><img src="sql_img/55.png" border="0"></p>
+			</blockquote>
+		</blockquote> 
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>10、添加修改窗口程序集代码移植</h4>
+	<blockquote>
+		<h5>10.1 “_窗口_添加修改_创建完毕”代码移植</h5>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p><img src="sql_img/56.png" border="0"></p>
+			</blockquote>	
+			<p>移植到火山时注意事项如下：</p>
+			<blockquote>
+					<p>提前利用<b>“取程序()”</b>方法将超级列表框组件和载入标记取出，后续使用时就不需要逐级访问。</p>
+					<p><img src="sql_img/57.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<h5>10.2 “_按钮_添加修改_被单击”代码移植</h5>
+		<blockquote>
+			<p>易语言代码如下：</p>
+			<blockquote>
+				<p><img src="sql_img/58.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山时注意事项如下：</p>
+			<blockquote>
+				<p>(1) 首先将主窗口中的<b>“数据库”</b>变量公开。</p>
+				<p><img src="sql_img/60.png" border="0"></p>
+				<p>(2) 在火山中访问数据库时需要利用<b>“取程序()”</b>方法逐级访问。</p>
+				<p>(3) 易语言中的<b>“销毁()”</b>方法使用<b>“关闭窗口()”</b>代替。</p>
+				<p><img src="sql_img/59.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+
+	<p>&nbsp;</p>
+	<h4>11 运行效果如下</h4>
+	<blockquote>
+		<p>添加演示：</p>
+		<p><img src="sql_img/61.gif" border="0"></p>
+		<p>修改演示：</p>
+		<p><img src="sql_img/62.gif" border="0"></p>
+		<p>查找演示：</p>
+		<p><img src="sql_img/63.gif" border="0"></p>
+		<p>删除演示：</p>
+		<p><img src="sql_img/64.gif" border="0"></p>
+	</blockquote> 
+	<p>&nbsp;</p>
+	<h4>9、视窗例程下载</h4>
+	<blockquote>
+		<p><a href="flie/vol_mysql.zip">点击下载</a></p>
+	</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left"> [<a href="flie.html">上一章</a>]&nbsp;&nbsp;  [<a href="game.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

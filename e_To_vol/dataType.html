@@ -1,0 +1,566 @@
+
+<html>
+
+<head>
+<title>火山视窗和易语言基本类型差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗和易语言基本类型差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Symbol.html">上一章</a>]&nbsp;&nbsp;  [<a href="keyword.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">三、火山视窗和易语言基本类型差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="对比"></a>
+	<p>&nbsp;</p>
+	<h4>1、数据类型对照表</h4>
+	<blockquote>
+		<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+			<tbody>
+		
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">易语言</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">火山</td>
+				<td align="center" width="50%" height="40" bgcolor="#D2D2DE">注释</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#字节">字节型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#字节">字节</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8"><p>易语言字节有效值范围：0~255；</p>
+				<p>火山字节有效值范围：-128~127；</p>
+				<p>占用1个字节空间。</p>
+				</td>
+				
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#短整数">短整数型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#短整数">短整数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">有效值范围：-32768~32767，占用2个字节空间。</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#整数">整数型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#整数">整数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">有效值范围：-2147483648~2147483647，占用4个字节空间。</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#长整数">长整数型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#长整数">长整数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">有效值范围：-9223372036854775808~9223372036854775807，占用8个字节空间。</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">小数型</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><font color="#DA2731">无</font> </td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">
+			<p>易语言的小数为单精度小数（float），其数值范围为-3.4E38～3.4E38（最长小数点后有6位小数），占用4字节。</p>
+			<p><font color="#DA2731">火山中暂无此类型。</font> </p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#双精度小数型">双精度小数型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#双精度小数型">小数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">
+				<p>有效值范围：2.2250738585072014e-308~1.7976931348623158e+308（最长小数点后15位），占用8个字节空间。</p>
+				<p><font color="#DA2731">注：火山中的小数为双精度小数（double）。</font> </p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#逻辑型">逻辑型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#逻辑型">逻辑型</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">有效值为“真”或“假”</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#日期时间">日期时间型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#日期时间">小数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">在火山中无日期时间型，改用小数代替。</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#变整数">子程序指针</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#变整数">变整数</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">表示指针数据</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#文本型">文本型</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#文本型">文本型</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">表示字符串数据</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#字节集">字节集</a></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#字节集">字节集类</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">表示字节集数据</td>
+			</tr>
+<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><font color="#DA2731">无</font></td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#字符">字符</a></td>
+				<td align="center" width="50%" height="40" bgcolor="#F2F3F8">
+				<p>宽字符有效值范围从0到65535，占用2个字节空间。</p>
+				<p><font color="#DA2731">注：火山平台使用Unicode-16(即双字节统一码)字符编码格式。</font></p>
+</td>
+			</tr>
+		</tbody></table>
+		<p>&nbsp;</p>
+		<a name="字节"></a>
+		<p><h5>1.1 字节型</h5></p>
+		<blockquote>
+			<p>在火山中叫<b>字节</b>（有符号字节），有效值范围从<b>-128到127</b>，占用1个字节空间。</p>
+			<p>如下图所示写法是错误的：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/3.png" border="0"></p>
+				<p>如果按照上图所写进行调试程序，最终会在火山输出栏提示如下错误：</p>
+				<p><img src="../vol/data_img/4.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中的<strong>“到字节()”</strong>方法，火山中可使用强制转换来操作。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="data_img/7.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote>
+				<p><img src="data_img/8.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="短整数"></a>
+		<p><h5>1.2 短整数型</h5></p>
+		<blockquote>
+			<p>在火山中叫<b>短整数</b>，有效值范围从<b>-32768到32767</b>，占用2个字节空间。</p>
+			<blockquote>
+				<p><img src="../vol/data_img/5.png" border="0"></p>
+			</blockquote>
+			<p>如果想要让短整数转换成整数或长整数，直接赋值即可，如下图：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/13.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中的<strong>“到短整数()”</strong>方法，火山中可使用强制转换或<strong>“文本到短整数()”</strong>来操作。</p>
+			<p>易语言演示：</p> 
+			<blockquote>
+				<p><img src="data_img/9.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote> 
+				<p><img src="data_img/10.png" border="0"></p>
+			</blockquote>
+			
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="整数"></a>
+		<p><h5>1.3 整数型</h5></p>
+		<blockquote>
+			<p>在火山中叫<b>整数</b>，有效值范围从<b>-2147483648到2147483647</b>，占用4个字节空间。</p>
+			<p>整数是处理和存储效率最高的数值数据类型，如果所欲处理的数值不包含小数部分，一般都使用本数据类型。</p>
+			<blockquote>
+				<p><img src="../vol/data_img/6.png" border="0"></p>
+			</blockquote> 
+			<p>如果想要让整数转换成短整数需要进行强制转换操作，需要注意整数值的范围是否在短整数的范围之内，如下图所示：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/14.png" border="0"></p>
+			</blockquote>
+			<p>整数想要转换成长整数，直接赋值即可： </p>
+			<blockquote>
+				<p><img src="../vol/data_img/15.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中的<strong>“到整数()”</strong>方法，火山中可使用强制转换或<strong>“文本到整数()”</strong>来操作。</p>
+			<p>易语言演示：</p>  
+			<blockquote>
+				<p><img src="data_img/11.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote> 
+				<p><img src="data_img/12.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="长整数"></a>
+		<p><h5>1.4 长整数型</h5></p>
+		<blockquote>
+			<p>在火山中叫<b>长整数</b>，有效值范围从<b>-9223372036854775808到9223372036854775807</b>，占用8个字节空间。</p>
+			<p>在软件开发过程中，如果数值超过了整数范围，那就必须使用长整数类型。如果在你不确定数值范围是否会超过整数，例如：两个较大整数的相乘，结果可以使用<b>长整数</b>类型来表达。</p>
+			<blockquote>
+				<p><img src="../vol/data_img/7.png" border="0"></p>
+			</blockquote> 
+			<p>长整数转换成整数或短整数需要进行强制转换，且必须保证在目标类型的范围值之内，如下图所示：</p>
+			<blockquote> 
+				<p><img src="../vol/data_img/16.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中的<strong>“到长整数()”</strong>方法，火山中可使用强制转换或<strong>“文本到长整数()”</strong>来操作。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="data_img/13.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote> 
+				<p><img src="data_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="小数型"></a>
+		<p><h5>1.5 小数型</h5></p>
+		<blockquote>
+			<p>易语言的小数型为单精度小数（float），在火山中暂无单精度小数类型。</p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="双精度小数型"></a>
+		<p><h5>1.6 双精度小数型</h5></p>
+		<blockquote>
+			<p>在火山中的<b>小数</b>为双精度小数（double），有效值范围从<b>2.2250738585072014e-308到1.7976931348623158e+308</b>（最长小数点后15位），占用8个字节空间。</p>
+			
+			<blockquote>
+				<p><img src="../vol/data_img/10.png" border="0"></p>
+			</blockquote>
+			<p>小数数值也可以通过强制转换，转换成整数、短整数或长整数，但是会丢失精度，如下图所示：</p>
+			<blockquote> 
+				<p>将一个初始值为1.6小数变量强制转换成整数。</p>
+				<p><img src="../vol/data_img/17.png" border="0"></p>
+				<p>最终可以看到结果为1，小数部分的内容会全部丢失。</p>
+				<p><img src="../vol/data_img/18.png" border="0"></p>
+			</blockquote>
+			<p>在易语言中的<strong>“到数值()”</strong>方法，火山中可使用强制转换或<strong>“文本到小数()”</strong>来操作。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="data_img/15.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote> 
+				<p><img src="data_img/16.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="逻辑型"></a>
+		<p><h5>1.7 逻辑型</h5></p>
+		<blockquote>
+			<p>易语言的逻辑型和火山一致，也就是说有效值为<b>“真”</b>或<b>“假”</b></p>
+			<blockquote> 
+				<p><img src="../vol/data_img/11.png" border="0"></p>
+			</blockquote>
+			<p>在火山中，逻辑值也可以转换为文本格式，使用<b>“到文本()”</b>进行转换。</p>
+			<blockquote>
+				<p>当逻辑值以文本格式展示时：其中<b>“1”</b>表示<b>“真”</b>，<b>“0”</b>表示<b>“假”</b>，如下图所示，使用<b>“到文本()”</b>方法转换：</p>
+				<blockquote>
+					<p><img src="../vol/data_img/19.png" border="0"></p>
+					<p>运行结果：</p>
+					<p><img src="../vol/data_img/20.png" border="0"></p>
+				</blockquote>
+				<p>如果想要重新转换为逻辑值，可以使用<b>“文本到逻辑值()”</b>方法转换。</p>
+				<blockquote>
+					<p>在<b>“文本到逻辑值()”</b>方法的帮助页中可以看到，只要参数提供<b>“真”</b>、<b>“true”</b>、<b>“1”</b>结果值都会返回真，其它任意文本都会返回假。</p>
+					<p><img src="../vol/data_img/21.png" border="0"></p>
+					<p>因此想要结果返回真，正确的方式就是从如下三个方法中选择其中一个即可。</p>
+					<p><img src="../vol/data_img/22.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="日期时间"></a>
+		<p><h5>1.8 时间日期型</h5></p>
+		<blockquote>
+			<p>在火山中可用小数可代替此类型，易语言和火山视窗对比如下：</p>
+			<blockquote>
+				<p>易语言如下：</p>
+				<p><img src="data_img/1.png" ></p>
+				<p>火山视窗如下：</p>
+				<p><img src="data_img/2.png" ></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="变整数"></a>
+		<p><h5>1.9 子程序指针</h5></p>
+		<blockquote>
+			<p>火山视窗中无此类型，可用变整数代替。</p>
+			<p>变整数概述：在编译64位程序时等效于长整数类型，编译32位程序时等效于整数类型。在火山视窗中，变整数用来表示指针类数据。</p>
+			<p>除此之外在易语言中使用<b>“& + 子程序名”</b>来表示子程序指针，在火山视窗中则不需要输入<b>“&”</b>符号。</p>
+			
+			<p>对比如下图所示：</p>
+			<blockquote>
+				<p>易语言：</p>
+				<p><img src="data_img/3.png" border="0"></p>
+				<p>火山视窗：</p>
+				<p><img src="data_img/4.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="文本型"></a>
+		<p><h5>1.10 文本型</h5></p>
+		<blockquote>
+			<p>易语言的文本型为多字节编码，火山视窗的文本型编码为Unicode字符编码。虽然编码不同，但是作用都是用作记录一段字符串文本，使用立即数表达时需要在文本的左右两边使用英文双引号括起来。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/41.png" border="0" ></p>
+			</blockquote>
+			<p>文本型中支持<b>\n</b>、<b>\t</b>等转义符操作，例如：在文本中使用<b>“\r\n”</b>可以表示换行，有效等同于易语言中的<b>“#换行符”</b>。</p>
+			<p>易语言换行符：</p>
+			<blockquote>
+				<p><img src="data_img/17.png" border="0" ></p>
+			</blockquote>
+			<p>火山换行符演示：</p>
+			<blockquote>
+				<p><img src="data_img/18.png" border="0" ></p>
+			</blockquote>
+			<p>如果需要将数值型数据转换成文本型，可以直接使用<b>“到文本()”</b>方法即可，重新转换会目标数值型则需要对应的<b>“文本到XX()”</b>系列方法。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/42.png" border="0" ></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="字节集"></a>
+		<p><h5>1.11 字节集</h5></p>
+		<blockquote>
+			<p>在火山视窗中名叫<strong>“字节集类”</strong>，其作用和易语言一样，都是<b>“字节”</b>基本数据类型的集合，用于表达二进制数据。</p>
+			<p>对比演示如下：</p>
+			<blockquote>
+				<p>易语言：</p>
+				<p><img src="data_img/5.png" border="0" ></p>
+				<p>火山视窗：</p>
+				<p>注：取运行目录方法会自动添加路径符号，因此引用文件时不需要额外加路径符。</p>
+				<p><img src="data_img/6.png" border="0" ></p>
+			</blockquote>
+			<p>如果将文本数据转换成二进制数据需要注意文本编码问题。</p>
+			<p>火山视窗中使用<b>“文本到字节集()”</b>转换出来的文本编码是<b>“UTF-16LE”</b>(也就是常说的Unicode编码，万国码)。</p>
+			<p>而易语言的<strong>“到字节集 ()”</strong>转换的编码为多字节编码（GBK、ansi等都是多字节编码）。</p>
+			<p><b>易语言和火山视窗常用字符集编码转换对照表：</b></p>
+			<blockquote>
+				<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+							<tbody>
+						
+							<tr>
+								<td align="center" width="20%" height="40" bgcolor="#D2D2DE">易语言</td>
+								<td align="center" width="20%" height="40" bgcolor="#D2D2DE">火山</td>
+								<td align="center" width="40%" height="40" bgcolor="#D2D2DE">注释</td>
+							</tr>
+							<tr>
+								<td align="center" height="40" bgcolor="#F2F3F8">文本到UTF8()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">文本到UTF8()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">表示将文本转换成UTF-8编码字节集
+								</td>
+							</tr>
+							<tr>
+								<td align="center"  height="40" bgcolor="#F2F3F8">文本到UTF16()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">文本到字节集() / 到字节集()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">表示将文本转换成UTF-16编码字节集
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="40" bgcolor="#F2F3F8">到字节集()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">文本到多字节()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">表示将文本转换成多字节编码字节集，常见的GBK，ANSI编码等都是多字节编码。
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="40" bgcolor="#F2F3F8">UTF8到文本()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">UTF8到文本()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">表示将UTF-8编码字节集重新转换为文本数据
+								</td>
+							</tr>
+							<tr>
+								<td align="center"  height="40" bgcolor="#F2F3F8">UTF16到文本()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">字节集到文本()</td>
+								<td align="center"  height="40" bgcolor="#F2F3F8">表示将UTF-16编码字节集重新转换为文本数据
+								</td>
+							</tr>
+							<tr>
+								<td align="center" height="40" bgcolor="#F2F3F8">到文本()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">多字节到文本()</td>
+								<td align="center" height="40" bgcolor="#F2F3F8">表示将多字节编码字节集重新转换为文本数据</td>
+							</tr>
+	
+						</tbody></table>
+				
+				
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="字符"></a>
+		<p><h5>1.12 字符</h5></p>
+		<blockquote>
+			<p>字符为火山新增类型，火山中的字符为宽字符，有效值范围从<b>0到65535</b>，占用2个字节空间。字符主要指包括汉字、英文字母、英文数字、标点符号等。</p>
+			<p>在火山中想要表达立即数字符，需要使用单引号<b>''</b>来操作，例如：<b>'火'</b>、<b>'山'</b>，字符也支持转义符，譬如<b>'\n'</b>。</p>
+			<p>注：火山平台使用Unicode-16(即双字节统一码)字符编码格式。</p>
+			<blockquote> 
+				<p><img src="../vol/data_img/12.png" border="0"></p>
+			</blockquote>
+			<p><b>1.12.1 字符转整数</b></p>
+			<blockquote>
+				<p>在火山视窗中，可以通过强制转换实现将字符转换成对应的整数值。</p>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="../vol/data_img/28.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="../vol/data_img/29.png" border="0" >
+					</blockquote>
+			
+			</blockquote>
+			<p><b>1.12.2 整数转字符</b></p>
+			<blockquote>
+				<p>当字符被转换成整数后，如果想要重新转换成字符也可通过强制转换进行操作。</p>
+
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="../vol/data_img/32.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="../vol/data_img/33.png" border="0" >
+					</blockquote>
+			</blockquote>
+			<p><b>1.12.3 文本取字符</b></p>
+			<blockquote>
+				
+					<p>在火山视窗平台中直接调用<b>“取字符()”</b>方法就可以取出一串文本中指定位置的字符。</p>
+					<p>帮助文档如下图：</p>
+					<blockquote>
+						<p>方法中提供了两个参数。</p>
+						<p>参数1：用于提供要取字符的文本。</p>
+						<p>参数2：提供索引位置值即可，位置从0开始。</p>
+						<p><img src="../vol/data_img/38.png" border="0" ></p>
+					</blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<p>直接调用本方法提供对应参数就可以获取指定位置字符。</p>
+						<p><img src="../vol/data_img/39.png" border="0" ></p>
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<p>最终可以看到指定位置的字符被取出。</p>
+						<p><img src="../vol/data_img/40.png" border="0" ></p>
+					</blockquote>
+
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+	
+		
+		<a name="模板类型"></a>
+		<p><h5>1.13 模板类型1~模板类型8</h5></p>
+		<blockquote>
+			<p>注意: 本类型为火山新增类型，普通用户知道即可，无需深入了解。</p>
+			<p>模板数据类型，只能在模板基础类中使用。</p>
+			<p>模板数据类型本身并不是真实存在的数据类型，所对应的真实数据类型需要由模板实现类来提供。</p>
+			<p>我们举个例子，假设我们需要开发一个数组操作类，用作支持对各种数组类型进行操作，如果不使用模板类型，那么我们需要写很多类似的类：</p>
+			<blockquote>
+				<p>整数数组操作类、小数数组操作类、文本数组操作类等等……</p>
+			</blockquote>
+			<p>而这些类的处理代码是完全一样的,唯一不同之处就是其所操作的数据类型不同，使用模板类型，我们可以把所有代码都放到模板基础类里面，然后定义对应的模板实现类即可。
+					如:</p>
+			<blockquote>
+				<p><img border="0" src="../images/b121.png" width="648" height="519"></p>
+			</blockquote>
+			<p>这样能大大减少工作量，也能让程序具有更好的可维护性(只需维护一处即可)。</p>
+			<p>对于火山普通用户而言，不需要深入了解如何具体定义这些模板类型，掌握如何使用已有模板类型即可。</p>
+			<blockquote>
+					<p>假设有下面这段代码：</p>
+					<blockquote>
+						<p><img border="0" src="../vol/data_img/60.png" ></p>
+					</blockquote>
+					<p>当你右键单击末语句行上的<b>“插入”</b>方法，然后选择查看其帮助菜单项后，看到帮助页面中参数部分为以下内容：</p>
+					<blockquote>
+						<p><img border="0" src="../vol/data_img/61.png"></p>
+					</blockquote>
+					<p>你一定会感到困惑，<b>“模板类型1”</b>和<b>“模板类型2”</b>所对应的真实数据类型到底是什么呢？</p>
+					<p>很简单，请继续单击该<b>“模板类型1”</b>/<b>“模板类型2”</b>链接，譬如点击前者将看到如下页面：</p>
+					<blockquote>
+						<p><img border="0" src="../vol/data_img/62.png"></p>
+					</blockquote>
+					<p>
+					根据<b>“变量1”</b>的当前数据类型<b>“整数到文本哈希表”</b>，就可以得知，<b>“模板类型1”</b>当前所对应的真实数据类型为<b>“整数”</b>，这就是<b>“插入”</b>方法第一个参数提供的真实数据类型。</p>
+					<p>利用同样的方法，可以得知<b>“插入”</b>方法的第二个参数的实际类型为<b>“文本型”</b>。</p>
+					<p>由此可得出如下正确的调用代码：</p>
+					<blockquote>
+						<p><img src="../vol/data_img/63.png"  border="0"></p>
+					</blockquote>
+				</blockquote>
+		</blockquote>
+		
+		
+	</blockquote>
+
+	
+	<a name="其它"></a>
+	<p>&nbsp;</p>
+	<h4>2、基本数据类型扩展类与对象类</h4>
+	<blockquote>
+		<a name="包装类"></a>
+		<p><h5>2.1 基本数据类型包装类</h5></p>
+		<blockquote>
+			<p>所有基本类型包装类如下：</p>
+			<blockquote>
+				<p>1. 字节类；</p>
+				<p>2. 短整数类；</p>
+				<p>3. 整数类；</p>
+				<p>4. 长整数类；</p>
+				<p>5. 变整数类；</p>
+				<p>6. 小数类；</p>
+				<p>7. 字符类；</p>
+				<p>8. 逻辑型类；</p>
+			</blockquote>
+			 <p>在火山视窗平台中，由于基本数据类型数据暂不支持以参考的方式传递到方法参数上，从而导致在被调用方法中不能以修改参数值的方式来对外返回基本数据类型数据。</p>
+			<p>这些包装类的作用就是为了方便上述操作。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p>打开<b>“整数类”</b>的帮助页，可以看到会存在一个名叫<b>“值”</b>的成员变量，而这个变量的类型就是<b>“整数”</b>。</p>
+				<p>如果你使用的是<b>“长整数类”</b>，那么这个变量的类型就是<b>长整数</b>。</p>
+				<p><img src="../vol/data_img/51.png" ></p>
+				<p><b>“Ctrl+D”</b>插入一个方法后，设置一个<b>“整数类”</b>的参数并赋值。</p>
+				<p><img src="../vol/data_img/52.png" ></p>
+				<p>在窗口<b>“创建完毕”</b>事件下调用这个方法，定义<b>“整数类”</b>变量并传参，最后取出整数类中的值。</p>
+				<p><img src="../vol/data_img/53.png" ></p>
+				<p>最终可以看到值被取出，也就间接实现了基本数据类型参数返回数据。</p>
+				<p><img src="../vol/data_img/54.png" ></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="对象类"></a>
+		<p><h5>2.2 对象类</h5></p>
+		<blockquote>
+			<p>对象类是火山中所有类的最底层基础类，无论是自定义的类，还是火山系统库中的类，都会继承对象类。</p>
+			
+			<p>如下所示：</p>
+			<blockquote>
+				<p>火山视窗平台：</p>
+				<p><img src="../vol/data_img/55.png" border="0"></p>
+				
+			</blockquote>
+			<p>如果在实际开发过程中，遇到某个方法的参数是<b>“对象类”</b>，并且没有特别的注释，就代表这个参数可以提供任意的对象类数据进去。</p>
+			<p>例如：在火山视窗平台<b>“对象数组类”</b>的<b>“加入成员()”</b>方法就需要提供对象类的数据，本类为最基本的对象类数组。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/57.png" border="0"></p>
+			</blockquote>
+			<p>如果想从对象数组类中取出对象，取出的数据是对象类，需要使用强制转换操作。</p>
+			<p>如下所示，必须保证强制转换的类型与添加时的类型一致：</p>
+			<blockquote>
+				<p><img src="../vol/data_img/58.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="Symbol.html">上一章</a>]&nbsp; &nbsp;  [<a href="keyword.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

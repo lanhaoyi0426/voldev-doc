@@ -1,0 +1,375 @@
+
+<html>
+
+<head>
+<title>火山视窗扫雷小游戏_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗扫雷小游戏" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="sql.html">上一章</a>]&nbsp;&nbsp; <!-- [<a href="sql.html">下一章</a>] --></p> 
+</blockquote>
+
+<h2 align="center">三、易语言转火山视窗扫雷小游戏</h2>
+<p>&nbsp;</p>
+	<p>&nbsp;</p><a name="概述"></a>
+	<h4>1、基本概述</h4>
+	<blockquote>
+		<p>本篇教程将基于一个易语言程序<b>“扫雷”</b>小游戏，用火山视窗将其进行重写，以学习如何从易语言转移到火山视窗。</p>
+		<p>易语言例程：<a href="flie/game.e">点击下载</a>。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+
+	<h4>2、易语言例程</h4>
+	<blockquote>
+		<p>首先打开易语言例程，对程序进行简单分析，其内容分别如下：</p>
+		<blockquote>
+			<p>(1) 1个窗口和1个窗口程序集</p>
+			<blockquote>
+				<p>移植到火山时，定义1个主窗口类即可。</p>
+				<p><img src="game_img/2.png" border="0"></p></blockquote>
+			<p>(2) 图片资源表</p>
+			<blockquote>
+				<p>移植到火山时，可以直接在主窗口类中直接定义成员常量解决。</p>
+				<p><img src="game_img/3.png" border="0"></p></blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>3、视窗项目创建</h4>
+	<blockquote>
+		<p>点击<b>“文件->新建->项目”</b>菜单，创建一个MFC窗口程序。</p>
+		<blockquote>
+			<p><img src="game_img/4.png" border="0"></p>
+		</blockquote>
+		<p>创建后注意<b>标题</b>属性问题，其默认位于窗口变量中。</p>
+		<blockquote>
+			<p><img src="game_img/5.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>4、“_启动窗口”移植</h4>
+	<blockquote>
+		<h5>4.1 界面设计</h5>
+		<blockquote>
+			<p>易语言界面分析：</p>
+			<blockquote>
+				<p>在当前窗口中使用了以下组件：</p>
+				<p>(1) 菜单</p>
+				<p>(2) 标签</p>
+				<p>(3) 图形按钮</p>
+				<p>(4) 画板</p>
+				<p><img src="game_img/1.png" border="0"></p>
+			</blockquote>
+			<p>移植到火山步骤如下：</p>
+			<blockquote>
+				<p>(1) 将易语言中的画板底图导出备用，右键<strong>底图</strong>选择<strong>“写到文件”</strong>。</p>
+				<p><img src="game_img/6.png" border="0"></p>
+				<p>(2) 同时将图形按钮的图标导出，依次右键选择<strong>“写到文件”</strong>即可。</p>
+				<p><img src="game_img/7.png" border="0"></p>
+				 <p>(3) 打开火山视窗设计器，将易语言界面在火山中复现出来。</p>
+				 <p><img src="game_img/8.png" border="0"></p> 
+			</blockquote>
+		</blockquote>
+		<h5>4.2 菜单设计</h5>
+		<blockquote>
+			<p>易语言菜单设计：</p>
+			<blockquote>
+				<p>在易语言中需要右键窗口设计器选择<strong>“菜单编辑器”</strong>。</p>
+				<p><img src="game_img/9.png" border="0"></p>
+				<p>其界面效果如下：</p>
+				<p><img src="game_img/10.png" border="0"></p>
+			</blockquote>
+			<p>火山视窗菜单设计：</p>
+			<blockquote>
+				<p>在火山中需要新建一个基础类为<strong>“菜单类”</strong>的类，通过右键选择<strong>“打开菜单设计器”</strong>。</p>
+				<p><img src="game_img/11.png" border="0"></p>
+				<p>其界面效果如下，使用方式基本和易语言一致：</p>
+				<p><img src="game_img/12.png" border="0"></p>
+			</blockquote>
+			<p>火山视窗菜单显示：</p>
+			<blockquote>
+				<p>添加主窗口创建完毕事件，调用<strong>“置菜单()”</strong>方法就可以将菜单设置到窗口上。</p>
+				<p><img src="game_img/13.png" border="0"></p>
+				<p>最终效果如下：</p>
+				<p><img src="game_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>5、图片资源表移植</h4>
+	<blockquote>
+		<p>易语言资源导出：</p>
+		<blockquote>
+			<p>双击要导出的图片，点击<strong>“输出到文件”</strong>即可导出。</p>
+			<blockquote>
+				<p><img src="game_img/15.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<p>火山视窗图片资源引用：</p>
+		<blockquote>
+			<p>在主窗口中定义三个成员常量，类型提供<strong>“位图资源”</strong>后就可以通过<strong>“初始值”</strong>引用图片。</p>
+			<blockquote>
+				<p><img src="game_img/16.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>6、程序集变量和窗口创建完毕事件移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/17.png" border="0"></p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p>移植到火山视窗后注意事项如下：</p>
+		<blockquote>
+			<p>(1) 初始值可以直接在表格中设置，无需使用代码赋值。</p>
+			<p>(2) 火山中使用<strong>“位图对象类.载入位图资源()”</strong>方法来载入图片。</p>
+			<p>(3) 开始游戏可以额外新建一个方法来代替易语言中的<strong>“图形按钮被单击”</strong>。</p>
+			<p>(4) 火山中二维数组需要使用<strong>整数[16][16]</strong>代替。</p>
+			<p><img src="game_img/18.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>7、“_图形按钮_重新开始_被单击”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/19.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗后，注意事项如下：</p>
+		<blockquote> 
+			<p>(1) 建立一个<strong>“开始游戏”</strong>方法，将代码移植到此方法中。</p>
+			<p>(2) 火山视窗中暂无重定义数组方法，需要单独封装，利用<strong>“计次循环”</strong>实现重定义数组功能。</p>
+			<p>(3) 在<strong>“图形按钮_被单击”</strong>事件下直接调用封装好的<strong>“开始游戏”</strong>方法即可。</p>
+			<p><img src="game_img/20.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	<p>&nbsp;</p>
+	<h4>8、“菜单单击事件”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/21.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗流程如下：</p>
+		<blockquote>  
+			<p>(1) 添加主窗口<strong>“接收到命令”</strong>事件。</p>
+			<p><img src="game_img/22.png" border="0"></p>
+			<p>(2) 通过判断<strong>“命令代码”</strong>参数来确认是哪个菜单单击。</p>
+			<p>(4) 易语言中的<strong>“销毁()”</strong>方法在火山视窗中使用<strong>“关闭窗口()”</strong>代替。</p>
+			<p><img src="game_img/23.png" border="0"></p> 
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>9、“_画板_雷区_鼠标左键被按下”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/25.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中的整除使用除法运算符代替即可。</p>
+			<p>(2) 火山中的<strong>“且”</strong>需要使用<strong>“&&”</strong>代替。</p>
+			<p><img src="game_img/24.png" border="0"></p>
+		</blockquote>
+		
+	</blockquote>
+
+	<p>&nbsp;</p>
+	<h4>10、“_画板_雷区_鼠标左键被放开”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/26.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 因火山数组是从0开始，在x、y位置进行计算时不需要+1，否则影响后续的数组操作。</p>
+			<p>(2) 判断雷区时，也需要稍作修改：</p>
+			<blockquote>
+				<p>将：<strong>如果真 (x ≥ 1 且 x ≤ 横 且 y ≥ 1 且 y ≤ 纵 且 布雷区 [x] [y] ＜ 10)</strong></p>
+				<p>修改成：<strong>如果真 (x >= 0 && x < 横 && y >= 0 && y < 纵 && 布雷区 [x][y] < 10)</strong> </p>
+			</blockquote>
+			<p>(3) 同时绘制图标时也不需要进行-1操作，否则位置会发生偏移。</p>
+			<p><img src="game_img/27.png" border="0"></p>
+		</blockquote>
+		
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>11、“_画板_雷区_鼠标右键被放开”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/28.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 因火山数组是从0开始，在x、y位置进行计算时不需要+1，否则影响后续的数组操作。</p>
+			<p>(2) 判断雷区时，也需要稍作修改：</p>
+			<blockquote>
+				<p>将：<strong>如果真 (x ≥ 1 且 x ≤ 横 且 y ≥ 1 且 y ≤ 纵)</strong></p>
+				<p>修改成：<strong>如果真 (x >= 0 && x < 横 && y >= 0 && y < 纵)</strong> </p>
+			</blockquote>
+			<p>(3) 同时绘制图标和定位写出文本时也不需要进行-1操作，否则位置会发生偏移。</p>
+			<p>(4) 易语言的<strong>“判断”</strong>方法，在火山中使用<strong>“如果否则”</strong>语句代替即可。</p>
+			<p><img src="game_img/29.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>12、“_画板_雷区_鼠标位置被移动”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/30.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 注意运算符问题<strong>“＼”</strong>使用<strong>“/”</strong>,<strong>“×”</strong>使用<strong>“*”</strong>。</p>
+			<p>(2) 因火山中数组索引是从0开始，所以访问数组成员时无需+1。</p>
+			<p>(3) 易语言中<strong>“判断”</strong>方法，在火山中使用<strong>“如果否则”</strong>语句代替即可。</p>
+			<p><img src="game_img/31.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>13、“挖完了”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/32.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中“计次循环首”在火山中使用“循环”语句代替。</p>
+			<p>(2) 因火山循环从0开始，所以画板绘制图标时x和y坐标无需-1，否则位置会发生偏移。</p>
+			<p>(2) 易语言中<strong>“判断”</strong>方法，在火山中使用<strong>“如果否则”</strong>语句代替即可。</p>
+			<p><img src="game_img/33.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>14、“布雷”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/34.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中的<strong>“判断循环首”</strong>在火山中使用<strong>“判断循环”</strong>语句。</p>
+			<p>(2) 因火山数组从0开始，因此在使用<strong>“取随机数”</strong>方法是，随机数的起始值应从0开始，横纵坐标也均需要-1。</p>
+			<p><img src="game_img/35.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<h4>15、“踩中”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/36.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中<strong>“计次循环首”</strong>使用<strong>“循环”</strong>语句代替。</p> 
+			<p>(2) 因<strong>“计次2”</strong>变量定义在第一个循环内部，因此在第二个循环结束时，无需对此变量进行重置。</p>
+			<p>(3) 因火山循环索引从0开始，因此在画板绘制图标时，无需对计次变量进行-1操作。</p>
+			<p><img src="game_img/37.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p> 
+	<h4>16、“周围雷数”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/38.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中的<strong>“计次循环首”</strong>使用<strong>“循环”</strong>语句代替。</p>
+			<p>(2) 因数组索引从0开始，判断雷区时也需要从0开始。</p>
+			<p><img src="game_img/39.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>17、“找空白”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/40.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>(1) 易语言中的<strong>“计次循环首”</strong>使用<strong>“循环”</strong>语句代替。</p>
+			<p>(2) 因数组索引从0开始，判断雷区时也需要从0开始。</p>
+			<p><img src="game_img/41.png" border="0"></p>
+		</blockquote>
+	</blockquote> 
+	 
+	<p>&nbsp;</p>
+	<h4>18、“写入”移植</h4>
+	<blockquote>
+		<p>易语言代码如下：</p>
+		<blockquote>
+			<p><img src="game_img/42.png" border="0"></p>
+		</blockquote>	
+		<p>移植到火山视窗时注意事项如下：</p>
+		<blockquote>  
+			<p>因数组索引从0开始，在画板绘制图标时x、y坐标无需进行-1。</p>
+			<p><img src="game_img/43.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>19、运行效果演示</h4>
+	<blockquote>
+		<p>扫雷演示：</p>
+		<blockquote>
+			<p><img src="game_img/44.gif" border="0"></p>
+		</blockquote>
+		<p>标记演示：</p>
+		<blockquote> 
+		   <p>注：点击鼠标右键可以标记地雷。</p>
+			<p><img src="game_img/45.gif" border="0"></p>
+		</blockquote>
+			
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	<h4>20、视窗例程下载</h4>
+	<blockquote>
+		<p><a href="flie/vol_game.zip">点击下载</a></p>
+	</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left"> [<a href="table.html">上一章</a>]&nbsp;&nbsp; <!-- [<a href="sql.html">下一章</a>] --></p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

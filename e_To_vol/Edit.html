@@ -1,0 +1,175 @@
+
+<html>
+
+<head>
+<title>火山视窗和易语言基本编辑环境差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗和易语言基本编辑环境差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="project.html">上一章</a>]&nbsp;&nbsp;  [<a href="help.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">四、火山视窗和易语言基本编辑环境差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="输入"></a>
+	<p>&nbsp;</p>
+	<h4>1、代码输入方式差异</h4>
+	<blockquote>
+		<p>易语言支持<strong>首拼、全拼、汉字、双拼</strong>，同时也支持<strong>汉字与拼音混输</strong>的智能输入方式。</p>
+		<p>在火山平台中除了暂不支持双拼外，其余输入方式都支持。并且也可以在按下空格或回车键可将首个提示内容输入到代码编辑框中。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p><img src="../vol/edit_img/1.png" border="0"></p>
+		</blockquote>
+		<p>输入方式演示如下：</p>
+		<blockquote>
+			<p><b>(1) 首拼输入</b></p>
+			<blockquote>
+				<p>易语言输入演示：</p>
+				<blockquote>
+					<p>如下所示，输入<b>“jbbl”</b>就可以表示<b>“局部变量”</b>。</p>
+					<p><img src="edit_img/2.gif" border="0"></p>
+				</blockquote>
+				<p>火山输入演示：</p>
+				<blockquote>
+					<p>如下所示，输入<b>“jbbl”</b>就可以表示<b>“局部变量”</b>。</p>
+					<p><img src="../vol/edit_img/1.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p><b>(2) 全拼输入</b></p>
+			<blockquote>
+				<p>易语言输入演示：</p> 
+				<blockquote>
+					<p>如下所示，输入<b>“jubu”</b>加空格就可以快速输入<b>“局部变量”</b>。</p>
+					<p><img src="edit_img/3.gif" border="0"></p>
+				</blockquote>
+				<p>火山输入演示：</p>
+				<blockquote>
+					<p>如下所示，输入<b>“jubu”</b>加空格就可以快速输入<b>“局部变量”</b>。</p>
+					<p><img src="../vol/edit_img/2.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p><b>(3) 汉字输入</b></p>
+			<blockquote> 
+				<p>易语言输入演示：</p>
+				<blockquote>
+					<p>如下所示，输入<b>“局部”</b>也可以将<b>“局部变量”</b>完整的提示并输入。</p>
+					<p><img src="edit_img/4.gif" border="0"></p> 
+				</blockquote>
+				<p>火山输入演示：</p>
+				<blockquote>
+					<p>如下所示，输入<b>“局部”</b>也可以将<b>“局部变量”</b>完整的提示并输入。</p>
+					<p><img src="../vol/edit_img/3.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>火山平台暂不支持以下功能：</p>
+		<blockquote> 
+			<p>(1) 在易语言中输入“ <strong>bjk1.nr=“”</strong> ”，可以将此语句直接转换成“ <strong>编辑框1.内容=“”</strong> ”从而实现对编辑框内容的赋值，火山中<strong>暂不支持</strong>此输入方式，如下所示：</p>
+			<blockquote>
+				<p><img src="edit_img/5.gif" border="0"></p> 
+			</blockquote>
+			<p>(2) 易语言中当光标离开当前行后会对当前行进行自动整理并预编译，火山中暂时需要依赖<strong>“Enter(回车键)”</strong>或者<strong>“Ctrl+Shift+Enter”</strong>对当前语句编译，如下所示：</p>
+			<blockquote>
+				<p>易语言演示：</p>
+				<blockquote>
+					<p><img src="edit_img/6.gif" border="0" ></p>
+				</blockquote>
+				<p>火山演示：</p>
+				<blockquote>
+					<p>注：扳手图标表示当前行被修改且没有进行预编译。</p>
+					<p><img src="edit_img/1.gif" border="0" ></p>
+				</blockquote> 
+				
+			</blockquote>
+			<p>(3) 暂不支持使用中文引号用来表示文本字符串，也同样不支持中英混输的形式来表达字符串，如下所示：</p>
+			<blockquote>
+				<p>易语言演示：</p> 
+				<blockquote>
+					<p>易语言会自动纠正符号错误。</p>
+					<p><img src="edit_img/7.gif" border="0" ></p>
+				</blockquote>
+				<p>火山演示：</p>
+				<blockquote>
+					<p>火山中暂时必须全部使用英文引号才能表达文本字符串。</p>
+					<p><img src="edit_img/2.png" border="0"></p>
+				</blockquote>
+				
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="代码"></a>
+	<p>&nbsp;</p>
+	<h4>2、代码结构基本差异</h4>
+	<blockquote>
+		<p>易语言主要使用面向过程编程，额外也提供了类模块实现面向对象程序设计。</p>
+		<p>而火山平台全部采用面向对象设计，所有代码全部基于类操作。</p>
+		<p>火山中的代码的表现形式都是一层一层，如下：</p>
+		<blockquote>
+			<p>可以清晰的看出<b><a href="../vol/structure.html#类">类</a></b>位于一层，<b><a href="../vol/structure.html#变量">成员变量</a></b>和<b><a href="../vol/structure.html#方法">方法</a></b>位于同一层，方法内的<b><a href="../vol/structure.html#局部变量">局部变量</a></b>和方法语句调用，又是一层。</p>
+			<p><img src="../vol/edit_img/4.png" border="0"></p>
+		</blockquote>
+		<p>而在易语言中则没有层级关系，演示如下：</p>
+		<blockquote> 
+			<p><img src="edit_img/3.png" border="0"></p>
+		</blockquote>
+		<p>在火山中除了类和方法的层级是固定的无法调整外，其它<b>变量、常量、方法语句</b>等都可以进行层级调整。</p>
+		<p>例如：局部变量也可通过调整层级变为成员变量，也可以重新修改为局部变量。</p>
+		<p>在易语言中，没有层级操作概念。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p>选中局部变量右键选择<b>“块操作 -> 向内缩进”</b>或者使用快捷键<b>“ctrl + [”</b>。</p> 
+			<blockquote>
+				<p><img src="../vol/edit_img/5.png" border="0"></p>
+			</blockquote>
+			<p>就可以将局部变量改为成员变量。</p>
+			<blockquote>
+				<p><img src="../vol/edit_img/6.png" border="0"></p>
+			</blockquote>
+			<p>同理使用<b>“向外缩进”</b>或快捷键<b>“ctrl + ]”</b>，可以重新将成员变量改为局部变量。</p>
+			<blockquote>
+				<p><img src="../vol/edit_img/7.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>如果在方法中输入代码时，发现代码为绿色，证明代码输入到了注释层，此时可通过快捷键<b>“ctrl + ]”</b>进行向外缩进，就可以让代码重新恢复正常。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p><img src="../vol/edit_img/8.gif" border="0"></p>
+		</blockquote> 
+		<p>另外还有几个使用较多的快捷键为<b>“Ctrl + Insert”</b>和<b>“Shift + Insert”</b>，用作向前/向后插入行，部分电脑需要配合<b>“Fn”</b>键使用。</p>
+		<p>其中，在方法的参数/常量/变量定义表格上按下<b>“Shift + Insert”</b>快捷键，将固定在其下方插入一条空白语句行，如图：</p>
+		<blockquote> 
+			<p><img src="../vol/edit_img/9.gif" border="0"></p>
+		</blockquote>
+		<p>在<b>“变量1”</b>的定义行上按下<b>“Shift + Insert”</b>快捷键后的结果如下：</p>
+<blockquote> 
+			<p><img src="../vol/edit_img/10.gif" border="0"></p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p>关于火山平台程序结构详细介绍，可看<a href="../vol/structure.html">新手入门教程</a>第二章第三节中的介绍。</p>
+	</blockquote>	
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="project.html">上一章</a>]&nbsp;&nbsp;  [<a href="help.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

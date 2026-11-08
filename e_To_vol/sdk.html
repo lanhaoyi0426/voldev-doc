@@ -1,0 +1,164 @@
+<html>
+<head>
+<title>火山视窗和易语言编译环境差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗和易语言编译环境差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">  [<a href="why.html">上一章</a> &nbsp;&nbsp;  [<a href="project.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">二、火山视窗和易语言编译环境差异</h2>
+<p>&nbsp;</p>
+<blockquote><a name="sdk"></a>
+	<p>&nbsp;</p>
+	<p><h5>在易语言中编译模式共分为三种：</h5></p>
+	<blockquote>
+		<p>1、普通编译：发布时必须带上支持库(fne、fnr)才能运行。</p>
+		<p>2、独立编译：把支持库(fne、fnr)打包进EXE，运行时释放到临时目录(接近自解压的RAR)；</p>
+		<p>3、静态编译：把静态支持库(LIB)编译进EXE，直接成为一体,不再释放(和VC一样)。</p>
+		
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h5>在火山视窗中有两种编译模式：</h5></p>
+	<blockquote>
+		<p>1、<a href="#普通编译">普通编译</a>：如果软件所使用的类库需要依赖DLL文件才可以运行，则发布时必须带上DLL才能运行。</p>
+		<p>2、<a href="#静态编译">静态编译</a>：可以将类库所使用的的静态库文件(lib)编译进exe文件中、无需dll即可运行。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h5>火山视窗编译注意事项：</h5></p>
+	<blockquote>
+		<p>1、无论是普通编译还是静态编译都需要vs编译器才可以编译。</p>
+		<p>2、并非所有类库都支持静态编译，如果设置静态编译后依然有dll文件输出，就证明软件所使用的类库并不支持静态编译。</p>
+		<p>3、火山默认提供的vs编译器是2019版本，所编译的程序不支持在xp系统运行，想要支持在xp系统中运行，需要自行下载vs2017（包含及以下版本）。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h5>易语言编译环境配置：</h5></p>
+	<blockquote>
+		<p>在易语言中普通编译和独立编译不需要vc链接器就可以进行编译，而静态编译则需要vc链接器才可以编译，具体可看<a href="http://www.dywt.com.cn/first/index.htm" target="_blank">易语言新手用户手册</a>。</p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h5>火山视窗编译环境配置：</h5></p>
+	<blockquote>
+		<p>在<a href="http://www.voldp.com/voldev.html" target="_blank">官网</a>中，可以看到<b>“相关附属资源下载”</b>栏目，此栏目中提供了火山视窗编译所需要的sdk包，下载自己所需要的即可。</p> 
+		<blockquote>
+			<p><img src="sdk_img/1.png" border="0"></p>
+		</blockquote>
+		<p>如下图为64位sdk下载后：</p>
+		<blockquote>
+			<p><img src="sdk_img/2.png" border="0"></p>
+		</blockquote>
+		<p>打开下载好的sdk压缩包后，会看到一个<b>“vs_sdk.rar”</b>的压缩包，继续打开此压缩包会看到一个<b>“plugins”</b>文件夹，将这个文件夹解压到火山平台的安装路径即可。</p>
+		<blockquote>
+			<p><img src="sdk_img/3.png" border="0"></p>
+		</blockquote>
+		<p>如果是自行下载的vs编译器，点击<b>“工具->选项”</b>菜单进入系统设置，选择<b>“视窗项目管理器”</b>，设置<b>“本地编译器”</b>版本，如果未能识别到，可以直接提供VS编译器路径。</p>
+		<p>点击可查看<a href="http://bbs.voldp.com/forum.php?mod=viewthread&tid=12749" target="_blank">《VS2019生成工具使用教程》</a>，推荐自行下载生成工具进行编译程序。</p>
+		<blockquote>
+			<p><img src="sdk_img/4.png" border="0"></p>
+		</blockquote>
+		
+		
+	</blockquote>
+	<p>&nbsp;</p>
+	<p><h5>程序调试：</h5></p>
+	<blockquote>
+		<p>火山视窗的程序调试和易语言一致，按快捷键F5或点击下图中的三角按钮即可调试程序。</p>
+		<p>易语言程序调试：</p>
+		<blockquote>
+			<p><img src="sdk_img/12.png" border="0"></p>
+		</blockquote>
+		<p>火山程序调试：</p>
+		<blockquote>
+			<p>注：调试程序也需要配置好编译环境后才可以调试。如果遇到程序无法调试的问题，可以尝试点击菜单<b>“生成->清理解决方案”</b>清理后重新调试。</p>
+			<p><img src="sdk_img/5.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<a name="普通编译"></a>
+	<p><h5>普通编译：</h5></p>
+	<blockquote>
+		<p>易语言普通编译：</p>
+		<blockquote>
+			<p>通过菜单<strong>“编译->编译”</strong>进行普通编译。</p>
+			<blockquote>
+				<p><img src="sdk_img/13.png" border="0"></p>
+			</blockquote>
+			<p>易语言进行普通编译后会依赖易支持库文件，不同的功能会输出不同的库文件。</p>
+			<blockquote>
+				<p><img src="sdk_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山视窗普通编译：</p>
+		<blockquote>
+			<p>因为火山软件开发平台是多项目管理模式，因此在编译之前要确定当前项目是否为活动项目。</p>
+			<p>最简单的办法可以通过项目颜色来区分，如果要编译的项目文本颜色为蓝色，则证明当前项目为活动项目。</p>
+			<blockquote>
+				<p><img src="sdk_img/6.png" border="0"></p>
+			</blockquote>
+			<p>确认要编译的项目是活动项目后，通过<b>“生成-生成活动项目”</b>菜单即可完成普通编译。</p>
+			<blockquote>
+				<p><img src="sdk_img/7.png" border="0"></p>
+			</blockquote>
+			<p>编译完成后在程序输出栏可以看到程序输出位置，双击可以跳转。</p>
+			<blockquote>
+				<p><img src="sdk_img/8.png" border="0"></p>
+			</blockquote>
+			<p>如果所编写的程序需要依赖DLL文件，会在程序输出位置看到这些DLL文件，除了<b>“out”</b>文件夹之外，其它的所有文件都是发布程序所需要的文件。</p>
+			<blockquote>
+				<p><img src="sdk_img/9.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p>
+	<a name="静态编译"></a>
+	<p><h5>静态编译：</h5></p>
+	<blockquote>
+		<p>易语言静态编译：</p>
+		<blockquote>
+			<p>在易语言中使用静态编译需要使用vc链接器，推荐使用vc6版本。</p>
+			<p>下载后手动修改易语言安装路径下<strong>“tools\link.ini”</strong>文件中的相关配置项。</p>
+			<p>在<strong>link.ini</strong>文件中找到<strong>“linker”</strong>配置项，然后设置链接器路径。</p>
+			<blockquote>
+				<p><img src="why_img/14.png" border="0"></p>
+			</blockquote>
+		<p>火山视窗静态编译：</p>
+		<blockquote>
+			<p>鼠标右键项目，选择<b>“属性”</b>。</p>
+			<blockquote>
+				<p><img src="sdk_img/10.png" border="0"></p>
+			</blockquote>
+			<p>找到<b>“火山模块链接方式”</b>选择<b>“静态”</b>即可，如果所使用的火山模块(类库)支持静态编译，最终<b>“生成活动项目”</b>时就会进行静态编译操作，如果不支持静态编译并且依赖了DLL动态链接库、编译完成后会输出DLL文件。</p>
+			<blockquote>
+				<p><img src="sdk_img/11.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+	</blockquote>
+	
+	<p>&nbsp;</p>
+	
+
+	
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+		 <p align="left">  [<a href="why.html">上一章</a> &nbsp;&nbsp;  [<a href="project.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

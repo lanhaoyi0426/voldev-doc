@@ -1,0 +1,683 @@
+
+<html>
+
+<head>
+<title>火山视窗和易语言符号差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗和易语言符号差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="structure.html">上一章</a>]&nbsp;&nbsp;  [<a href="dataType.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">二、火山视窗和易语言符号差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="操作符"></a>
+	<p>&nbsp;</p>
+	<h4>1、操作符差异</h4>
+	<blockquote>
+		<a name="符号对比"></a>
+		<p><h5>1.1 符号对比</h5></p>
+		<blockquote>
+			<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+				<tbody>
+			
+				<tr>
+					<td align="center" width="15%" height="40" bgcolor="#D2D2DE">符号名称</td>
+					<td align="center" width="10%" height="40" bgcolor="#D2D2DE">易语言</td>
+					<td align="center" width="10%" height="40" bgcolor="#D2D2DE">火山</td>
+					<td align="center" width="45%" height="40" bgcolor="#D2D2DE">注释</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#点">点</a></td>
+					<td align="center" width="10%" height="40" bgcolor="#F2F3F8">.</td>
+					<td align="center" width="10%" height="40" bgcolor="#F2F3F8">.</td>
+					<td align="center" width="45%" height="40" bgcolor="#F2F3F8">
+					<p>用来作为分隔类/类对象与其成员名称。</p>
+					<p>譬如：编辑框1.内容</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#方法括号">方法符小括号</a></td>
+					<td align="center" width="10%" height="40">()</td>
+					<td align="center" width="10%" height="40">()</td>
+					<td align="center" width="45%" height="40">
+						<p>其作用是提供调用方法时所需要的参数表，无论方法是否有参数都需要输入括号。</p>
+						<p>譬如：信息框()</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#逗号">参数分隔符</a></td>
+					<td align="center" width="10%" height="40">,</td>
+					<td align="center" width="10%" height="40">,</td>
+					<td align="center" width="45%" height="40">
+						<p>本符号用于分隔参数表中的各个参数。</p>
+						<p>譬如：某方法(参数1,参数2,参数3)</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#数组">数组符号</a></td>
+					<td align="center" width="10%" height="40">[] </td>
+					<td align="center" width="10%" height="40"> [] </td>
+					<td align="center" width="45%" height="40"> 
+						<p>用于表示数组类型。</p>
+						<p>注：火山视窗中数组下标从0开始。</p>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#注释符">注释符</a></td>
+					<td align="center" width="10%" height="40">' </td>
+					<td align="center" width="10%" height="40">//</td>
+					<td align="center" width="45%" height="40">用于表达注释信息。</td>
+				</tr>
+				
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#双引号">双引号</a></td>
+					<td align="center" width="10%" height="40">“ ”</td>
+					<td align="center" width="10%" height="40">" "</td>
+					<td align="center" width="45%" height="40">用于表达字符串立即数。
+					<p>注：火山视窗中必须是英文状态下的双引号。</p>
+					</td>
+				</tr>
+			
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#单引号">单引号</a></td>
+					<td align="center" width="10%" height="40">无</td>
+					<td align="center" width="10%" height="40"> ' ' </td>
+					<td align="center" width="45%" height="40"> 用于表达字符立即数 </td>
+				</tr>
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#转义符">转义符</a></td>
+				<td align="center" width="10%" height="40">无</td>
+				<td align="center" width="10%" height="40"> \ </td>
+				<td align="center" width="45%" height="40"> 用于转义文本操作</td>
+			</tr>
+			</tbody></table>
+		</blockquote>
+		 	<p>&nbsp;</p>
+		<a name="点"></a>
+				<p><h5>1.2 点</h5></p>
+				<blockquote>
+					<p>点即<b>〝 . 〞</b>此符号在火山中有两个作用，一是用于建立包/类的全名称，二是用来作为分隔类/类对象与其成员名称。</p>
+					<p>如下图所示：</p>
+					<blockquote>
+						<p><img src="../vol/symbol_img/1.png" border="0"></p>
+						<p>在输入句点时会激活火山代码提示，和易语言效果一致。</p>
+						<p>易语言效果演示：</p>
+						<blockquote>
+							<p><img src="symbol_img/2.gif" border="0"></p>
+						</blockquote>
+						<p>火山效果演示：</p>
+						
+						<blockquote>
+							<p><img src="../vol/symbol_img/1.gif" border="0"></p>
+						</blockquote>
+					</blockquote>
+					
+				</blockquote>
+				<p>&nbsp;</p>
+		 
+		<a name="方法括号"></a>
+		<p><h5>1.3 方法符小括号</h5></p>
+		<blockquote>
+			<p>方法符即<b>〝 ( ) 〞</b> ，其作用和易语言中一致，提供调用方法时所需的参数表。</p>
+			<p>易语言效果演示：</p>
+			<blockquote>  
+				<p><img src="symbol_img/2.png" border="0"></p> 
+			</blockquote> 
+			<p>火山效果演示：</p>
+			<blockquote> 
+				<p><img src="../vol/symbol_img/2.png" border="0"></p>
+			</blockquote> 
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="逗号"></a>
+		<p><h5>1.4 参数分隔符</h5></p>
+		<blockquote>
+			<p>参数分隔符即<b>〝 , 〞</b>，必须是英文状态下的逗号。本符号用于分隔参数表中的各个参数。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><b>“子程序1”</b>存在三个参数就需要输入两个逗号。</p>
+				<p><img src="symbol_img/3.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><b>“通常方法2”</b>存在三个参数就需要输入两个逗号。</p>
+				<p><img src="../vol/symbol_img/3.png" border="0"></p>
+			</blockquote>
+			<p>参数分隔符也是可以省略的，假如最后一个参数存在默认值，如果你不需要输入这个参数可以省略。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><b>“通常方法2”</b>的第三个参数存在默认值，如果调用此方法时，不需要输入这个参数，可以省略一个逗号的输入。</p>
+				<p><img src="../vol/symbol_img/4.png" border="0"></p>
+			</blockquote>
+			<p>需要注意的是，如果被调用的方法是<a href="structure.html#动态方法"><b>“支持以动态格式调用的静态方法”</b></a>，那么参数逗号数量则根据调用方式动态选择。</p>
+			<p>如下图所示：</p>
+			<blockquote> 
+				<p>通过变量调用需要输入三个参数，通过类名调用需要输入四个参数。</p>
+				<p><img src="../vol/symbol_img/5.png" border="0"></p>
+			</blockquote>
+			<p>如果你不太确定到底需要输入几个逗号来分隔参数，可以如下图所示：</p>
+			<blockquote>
+				<p>在方法中输入逗号时，注意观察参数名称的颜色变化，当参数名称颜色非白色时，证明当前要输入的参数为此参数，从而可以判定要输入几个逗号。</p>
+				<p><img src="../vol/symbol_img/6.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="数组"></a>
+		<p><h5>1.5 数组符号</h5></p>
+		<blockquote>
+			<p>数组符号即<b>〝 [] 〞</b>，用于表示数组类型，在火山中需要将其填写到类型一栏才可以表示数组。</p>
+			<p>易语言数组定义演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/4.png" border="0"></p>
+			</blockquote>
+			<p>火山数组定义演示：</p>
+			<blockquote> 
+				<p><img src="../vol/symbol_img/7.png" border="0"></p>
+			</blockquote>
+			<p>数组下标（索引）：</p>
+			<blockquote>
+				<p>在易语言中数组下标从1开始，提供1表示为数组第一个成员，如下所示：</p>
+				<blockquote>
+					<p><img src="symbol_img/5.png" border="0"></p>
+				</blockquote> 
+				<p>在火山中数组下标从0开始，如下图所示：</p>
+				<blockquote>
+					<p><b>“数组变量[0]”</b>最终值将为<b>“1”</b>，如果下标提供1则此数组变量的最终值将返回2，以此类推。</p>
+					<p><img src="../vol/symbol_img/8.png" border="0"></p>
+					<p>下标除了用于访问成员外还可以替换成员，如下所示：</p>
+					<p><img src="../vol/symbol_img/23.png" border="0"></p>
+				</blockquote>
+				<p>数组符号中还可以提前设置数组成员数量，如下所示：</p>
+				<blockquote> 
+					<p><img src="../vol/symbol_img/9.png" border="0"></p>
+				</blockquote>
+				<p>多维数组定义及赋值：</p>
+				<blockquote> 
+					<p><img src="../vol/symbol_img/24.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+			<p>注：在火山视窗暂不支持参数和返回值使用数组。</p>
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="注释符"></a>
+		<p><h5>1.6 注释符</h5></p>
+		<blockquote>
+			<p>在易语言中注释符使用' 表示，并且只能注释代码语句。</p>
+			<blockquote>
+				<p><img src="symbol_img/6.png" border="0"></p>
+			</blockquote>
+			<p>在火山中注释符即<b>〝 // 〞</b>用于表达注释信息，想比易语言强大很多，它可用于类名、变量、常量、方法名、参数和方法语句的注释。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/10.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="引号"></a>
+		<p><h5>1.7 双引号</h5></p>
+		<blockquote>
+			<p>在易语言中双引号需要使用中文引号，用于表达字符串立即数。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p><img src="symbol_img/7.png" border="0"></p>
+			</blockquote>
+			<p>在火山中，必须是英文状态下的双引号。用于表达字符串立即数，可用于变量、常量的初始值以及变量的赋值中。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>字符串立即数中也支持<a href="#转义符">转义符</a>操作，这是易语言所不具备的功能。</p>
+				<p><img src="../vol/symbol_img/11.png" border="0"></p>
+			</blockquote>
+			
+			
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="单引号"></a>
+		<p><h5>1.8 单引号</h5></p>
+		<blockquote>
+			<p>单引号即&nbsp;<b>〝 &nbsp;''&nbsp; 〞</b>&nbsp;，易语言中并无此符号，在火山中用于表达字符立即数，可用于变量、常量的初始值以及变量的赋值中。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>字符立即数中支持<a href="#转义符">转义符</a>操作。</p>
+				<p><img src="../vol/symbol_img/12.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+			<p>&nbsp;</p>
+		<a name="转义符"></a>
+		<p><h5>1.9 转义符</h5></p>
+		<blockquote>
+			<p>转义符即<b>〝 \ 〞</b>，易语言中并无此符号，在火山中用于转义文本操作，例如：<b>“\r\n”</b>可以用来表示文本换行，相当于易语言中的<strong>“#换行符”</strong>。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>字符串立即数表达需要使用英文状态下的双引号，如果需要在字符串立即数中表达同样的双引号文本就需要进行转义操作，便于程序编译器识别信息。</p>
+				<p><img src="../vol/symbol_img/13.png" border="0"></p>
+			</blockquote>
+			<p>转义字符表：</p>
+			<blockquote>
+				<table border="1" style="border-collapse: collapse">
+					<tr>
+						<td bgcolor="#808080" width="150" align="center"><b>转义符</b></td>
+						<td bgcolor="#808080" align="center"><b>解释</b></td>
+					</tr>
+					<tr>
+						<td width="150">\b</td>
+						<td>退格符</td>
+					</tr>
+					<tr>
+						<td width="150">\f</td>
+						<td>换页符</td>
+					</tr>
+					<tr>
+						<td width="!50">\r</td>
+						<td>回车符</td>
+					</tr>
+					<tr>
+						<td width="150">\n</td>
+						<td>换行符</td>
+					</tr>
+					<tr>
+						<td width="150">\t</td>
+						<td>水平制表符</td>
+					</tr>
+					<tr>
+						<td width="150">\'</td>
+						<td>单引号</td>
+					</tr>
+					<tr>
+						<td width="150">\&quot;</td>
+						<td>双引号</td>
+					</tr>
+					<tr>
+						<td width="150">\\</td>
+						<td>反斜杠</td>
+					</tr>
+					<tr>
+						<td width="150">\x</td>
+						<td>后跟1-3个十六进制字符,为所对应字符的代码值.</td>
+					</tr>
+				</table>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="运算符"></a>
+	<p>&nbsp;</p>
+	<h4>2、运算符</h4>
+	<blockquote>
+		<a name="运算符号对比"></a>
+		<p><h5>2.1 运算符号对比</h5></p>
+		<blockquote>
+			<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+				<tbody>
+			
+				<tr>
+					<td align="center" width="15%" height="40" bgcolor="#D2D2DE">符号名称</td>
+					<td align="center" width="10%" height="40" bgcolor="#D2D2DE">易语言</td>
+					<td align="center" width="10%" height="40" bgcolor="#D2D2DE">火山</td>
+					<td align="center" width="45%" height="40" bgcolor="#D2D2DE">注释</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40" bgcolor="#F2F3F8"><a href="#四则运算符">四则运算</a></td>
+					<td align="center" width="10%" height="40" bgcolor="#F2F3F8"> ＋－ ×  ÷ </td>
+					<td align="center" width="10%" height="40" bgcolor="#F2F3F8"> + - * / </td>
+					<td align="center" width="45%" height="40" bgcolor="#F2F3F8">
+					进行数学四则运算
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#取反符">取反符</a></td>
+					<td align="center" width="10%" height="40">－</td>
+					<td align="center" width="10%" height="40">-</td>
+					<td align="center" width="45%" height="40">
+						用作返回将指定数值进行符号翻转后的结果值
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#强制类型">强制类型转换符</a></td>
+					<td align="center" width="10%" height="40">无</td>
+					<td align="center" width="10%" height="40">( )</td>
+					<td align="center" width="45%" height="40">
+						用作将数据强行转换到所指定的数据类型
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#求余符">求余运算符</a></td>
+					<td align="center" width="10%" height="40">％</td>
+					<td align="center" width="10%" height="40">%</td>
+					<td align="center" width="45%" height="40"> 
+						用于用于取出一个数和另一个数相除的余数
+					</td>
+				</tr>
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#且">且</a></td>
+					<td align="center" width="10%" height="40">且</td>
+					<td align="center" width="10%" height="40">&&</td>
+					<td align="center" width="45%" height="40">用于并且逻辑操作，当左侧参数和右侧参数均为逻辑值真时，最终整个表达式的结果返回真。</td>
+				</tr>
+				
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#或">或</a></td>
+					<td align="center" width="10%" height="40">或</td>
+					<td align="center" width="10%" height="40">||</td>
+					<td align="center" width="45%" height="40">用于或者逻辑操作，当左侧参数或右侧参数其中任意一个的逻辑值为真，最终整个表达式的结果返回真。
+					</td>
+				</tr>
+			
+				<tr>
+					<td align="center" width="15%" height="40"><a href="#小于等于">小于等于</a></td>
+					<td align="center" width="10%" height="40">≤</td>
+					<td align="center" width="10%" height="40"><=</td>
+					<td align="center" width="45%" height="40"> 当左侧参数小于等于右侧参数时返回真 </td>
+				</tr>
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#大于等于">大于等于</a></td>
+				<td align="center" width="10%" height="40">≥</td>
+				<td align="center" width="10%" height="40">>= </td>
+				<td align="center" width="45%" height="40"> 当左侧参数大于等于右侧参数时返回真</td>
+			</tr>
+			
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#小于">小于</a></td>
+				<td align="center" width="10%" height="40">＜</td>
+				<td align="center" width="10%" height="40"> < </td>
+				<td align="center" width="45%" height="40"> 当左侧参数小于右侧参数时返回真</td>
+			</tr>
+			
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#大于">大于</a></td>
+				<td align="center" width="10%" height="40">＞</td>
+				<td align="center" width="10%" height="40">> </td>
+				<td align="center" width="45%" height="40"> 当左侧参数大于右侧参数时返回真</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#不等于">不等号</a></td>
+				<td align="center" width="10%" height="40">≠ </td>
+				<td align="center" width="10%" height="40">!=</td>
+				<td align="center" width="45%" height="40"> 当左侧参数不等于右侧参数时返回真</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#双等号">相等号</a></td>
+				<td align="center" width="10%" height="40">＝</td>
+				<td align="center" width="10%" height="40">==</td>
+				<td align="center" width="45%" height="40"> 用于比较左侧参数与右侧参数是否相等</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40"><a href="#赋值运算">赋值运算符</a></td>
+				<td align="center" width="10%" height="40">＝</td>
+				<td align="center" width="10%" height="40">=</td>
+				<td align="center" width="45%" height="40"> 用于将右侧的参数值赋予给左侧参数内容</td>
+			</tr>
+			
+		
+			</tbody></table>
+		</blockquote>
+		
+		<p>&nbsp;</p>
+		<a name="四则运算符"></a>
+		<p><h5>2.2 四则运算符</h5></p>
+		<blockquote>
+			<p>在易语言中对四则运算的乘和除使用的是数学运算的<strong>×和÷</strong>，在火山中采用了和其它编程语言一致的<strong>*表示乘</strong>、<strong>/表示除</strong>。</p>
+			<p>易语言演示如下：</p>
+			<blockquote>
+				<p><img src="symbol_img/8.png" border="0"></p>
+			</blockquote>
+		<p>火山视窗演示如下：</p>
+		<blockquote>
+			<p><img src="symbol_img/9.png" border="0"></p>
+			<p>在上述计算中，最终值应当为<strong>3 * 3 / 2 = 4.5</strong>，但是为什么显示为<strong>4</strong>呢？这是因为在火山平台中，其最终的计算结果数据类型由表达式中参与运算的各个数值的最大精度决定，譬如计算过程中所有数值均为整数，则最终结果值也将被剪切到整数(不管计算结果是否存在小数)，如果表达式中存在一个是小数类型，则最终结果值将为小数。</p>
+			<p>因此上述计算公式想要得到正确的结果，只需要将其中任意一个数值声明小数即可。</p>
+			<p>声明方式有两种分别如下：</p>
+			<blockquote>
+				<p>可以直接将某个数值改成小数类型。</p>
+				<p><img src="../vol/symbol_img/20.png" border="0"></p>
+				<p>如果为整数变量，可以采取强制转换的方式，强制转换成小数。</p>
+				<p><img src="../vol/symbol_img/21.png" border="0"></p>
+				<p>最终正确结果如下：</p>
+				<p><img src="../vol/symbol_img/22.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>对于加号符，除了进行数学运算外，还可以用于连接文本数据，如下所示：</p>	
+		<blockquote>
+			<p><img src="../vol/symbol_img/16.png" border="0"></p>
+			<p>最终结果：</p>
+			<p><img src="../vol/symbol_img/17.png" border="0"></p>
+			<p><font color="#FF0000">注：</font>除文本和数值数据外，其它类型均不支持相加。</p>
+		</blockquote>	
+		<p>&nbsp;</p>
+		<a name="取反符"></a>
+		<p><h5>2.3 取反运算符</h5></p>
+		<blockquote>
+			<p>算术取反操作符即<b>〝 - 〞</b>，在火山中和易语言的作用一致，用作返回将指定数值进行符号翻转后的结果值。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/10.png" border="0"></p> 
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../images/b102.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="强制类型"></a>
+		<p><h5>2.4 强制类型转换符</h5></p>
+		<blockquote>
+			<p>易语言中并无此符号，此符号为火山新增功能。</p>
+			<p>强制类型转换符即<strong>〝 ( ) 〞</strong>，用作将数据强行转换到所指定的数据类型。</p>
+			<p>调用格式为: (欲强行转换到的数据类型)欲转换类型的数据。</p>
+			<p>允许以下数据类型之间进行强制转换：</p>
+			<blockquote>
+				<p>(1) <b>“空对象”</b>可以强制转换到任何非常量类的类数据类型或文本型：</p>
+				<blockquote>
+					<p><img src="../images/b103.png" border="0"></p>
+				</blockquote>
+				<p>(2) 数值数据类型之间可以强行转换。</p>
+				<blockquote>
+					<p>注意: 当从容量大的数值数据类型强制转换到容量小的数值数据类型时，其中数值精度将会存在被丢失的风险。譬如，将小数数值强行转换到整数数值将丢失所有小数点后面的数值部分。</p>
+					<p><img src="../images/b104.png" border="0"></p>
+				</blockquote>
+				<p>(3) 常量类可以强制转换到其所对应的基本数据类型(普通用户知道一下即可,无需过多了解)。</p>
+				<p>(4) 类数据类型只能强制转换到其直接/间接基础类或继承类。</p>
+				<blockquote>
+					<p>注意: 用户必须确保对象实例的运行时数据类型匹配该被强行转换到的数据类型，否则将导致程序运行时出错。</p>
+					<p><img src="../images/b105.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="求余符"></a>
+		<p><h5>2.5 求余运算符</h5></p>
+		<blockquote>
+			<p>求余运算符即<b>〝 % 〞</b>，与易语言效果一致，用于用于取出一个数和另一个数相除的余数。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/11.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p> 
+			<blockquote>
+				<p><img src="symbol_img/12.png" border="0"></p>
+
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="且"></a>
+		<p><h5>2.6 关系运算符且</h5></p>
+		<blockquote>
+			<p><strong>“&&”</strong>和易语言中的<strong>“且”</strong>作用一致，都是用于并且逻辑操作，当左侧参数和右侧参数均为逻辑值真时，最终整个表达式的结果返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/13.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/27.png" border="0"></p>
+				<p>上述例子的最终运行结果并不会执行信息框，因变量1不等于100并且变量2也不等于20。</p>
+			</blockquote>
+			<p>输入字：</p>
+			<blockquote>
+				<p>在火山中除了直接输入字符外，还可以输入<b>“qie”</b>来输入此符号。</p>
+				<p><img src="../vol/symbol_img/28.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="或"></a>
+		<p><h5>2.7 关系运算符或</h5></p>
+		<blockquote>
+			<p><strong>〝 || 〞</strong>和易语言中的“或”作用一致，都是用于或者逻辑操作，当左侧参数或右侧参数其中任意一个的逻辑值为真，最终整个表达式的结果返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote> 
+				<p><img src="symbol_img/14.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/29.png" border="0"></p>
+				<p>上述例子的最终运行结果并不会执行信息框，因变量1不等于100也不等于20。</p>
+			</blockquote>
+			<p>输入字：</p>
+			<blockquote>
+				<p>在火山中除了直接输入字符外，还可以输入<b>“huo”</b>来输入此符号。</p>
+				<p><img src="../vol/symbol_img/30.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="小于等于"></a>
+		<p><h5>2.8 关系运算符小于等于</h5></p>
+		<blockquote>
+			<p>小于等于和易语言中输入的符号一致，都是输入<strong>“<=”</strong>，不同之处为易语言会自动转换成<strong>“≤”</strong>火山会保持原样，其作用都是当左侧参数小于等于右侧参数时返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote> 
+				<p><img src="symbol_img/15.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/31.png" border="0"></p>
+				<p>上述例子的最终运行结果会执行信息框，因变量1默认值为0，满足小于等于100的条件。</p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="大于等于"></a>
+		<p><h5>2.9 关系运算符大于等于</h5></p>
+		<blockquote>
+			<p>大于等于和易语言中输入的符号一致，都是输入<strong>“>=”</strong>，不同之处为易语言会自动转换成<strong>“≥”</strong>火山会保持原样，其作用都是当左侧参数大于等于右侧参数时返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/16.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/32.png" border="0"></p>
+				<p>上述例子的最终运行结果不会执行信息框，因变量1默认值为0，不满足大于等于100的条件。</p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="小于"></a>
+		<p><h5>2.10 关系运算符小于</h5></p>
+		<blockquote>
+			<p>小于和易语言中输入的符号一致，都是输入<strong>“<”</strong>，不同之处为易语言会自动转换成全角符<strong>“＜”</strong>火山会保持原样，其作用都是当左侧参数小于右侧参数时返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/17.png" border="0"></p> 
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/33.png" border="0"></p>
+				<p>上述例子的最终运行结果会执行信息框，因变量1默认值为0，满足小于100的条件。</p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="大于"></a>
+		<p><h5>2.11 关系运算符大于</h5></p>
+		<blockquote>
+			<p>大于和易语言中输入的符号一致，都是输入<strong>“>”</strong>，不同之处为易语言会自动转换成全角符<strong>“＞”</strong>火山会保持原样，其作用都是当左侧参数大于右侧参数时返回真。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="symbol_img/18.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/34.png" border="0"></p>
+				<p>上述例子的最终运行结果不会执行信息框，因变量1默认值为0，不满足大于100的条件。</p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="不等于"></a>
+		<p><h5>2.12 关系运算符不等号</h5></p>
+		<blockquote>
+			<p>在易语言中不等号可以输入<strong>“!=”</strong>也可以输入<strong>“<>”</strong>来表示不等于，但是最终都会转换成不等号<strong>“≠”</strong>。</p>
+			<p>易语言演示：</p>
+			<blockquote> 
+				<p><img src="symbol_img/19.png" border="0"></p>
+			</blockquote>
+			<p>在火山中不等号只能输入<b>〝 != 〞</b>并且不会转换成其它符号，其作用和易语言一致，都是当左侧参数不等于右侧参数时返回真。</p>
+			<p>注意：</p>
+			<blockquote>
+				<p>(1) 对于数组对象，唯一能够与其进行比较的是<b>“空对象”</b>；</p>
+				<p>(2) 对于文本数据，将比较两者实际文本内容是否相同(区分字母大小写)，也可以将文本数据与<b>“空对象”</b>进行比较；</p>
+				<p>(3) 类对象比较仅比较两者是否指向同一个对象实例，而不会去对比两者所指向对象实例中存放的数据内容是否相同(火山安卓平台比较两个对象是否参考到同一对象实例，火山视窗平台比较两个对象的所处内存地址是否相同)。</p>
+				<p>在火山视窗平台中：</p>
+				<blockquote>
+					<p>(1) 如欲比较两个对象的数据内容是否相同，可以使用系统类库中所提供的<b>“对象内容是否相同()”</b>全局静态方法；</p>
+					<p>(2) <b>“字节集类”</b>是一个特例，该类的对象之间进行比较将比较两者的实际数据内容是否相同。</p>
+				</blockquote>
+			</blockquote>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/35.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="双等号"></a>
+		<p><h5>2.13 相等号</h5></p>
+		<blockquote>
+			<p>比较左侧参数与右侧参数是否相等，在易语言中使用一个等于号，在火山中需要使用双等号，即<b>〝 == 〞</b>，其使用方式和注意事项与<a href="#不等于"><b>“不等号”</b></a>相同，将上述图中的<b>“!=”</b>换成<b>“==”</b>即可。</p>
+			<p>在实际使用时，输入一个等于号即可，火山会自动转换为双等号，如下：</p>
+			<blockquote>
+				<p><img src="symbol_img/1.gif" border="0"></p>
+			</blockquote>
+			<p>而易语言只需要提供一个等号即可：</p> 
+			<blockquote>
+				<p><img src="symbol_img/20.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="赋值运算"></a>
+		<p><h5>2.14 赋值运算符</h5></p>
+		<blockquote>
+			<p>赋值符和易语言中的符号一致，即<b>〝 = 〞</b>，都是用于将右侧的参数值赋予给左侧参数内容，可用于变量、写属性等。</p>
+			<p>易语言演示演示：</p> 
+			<blockquote>
+				<p><img src="symbol_img/21.png" border="0"></p>
+			</blockquote>
+			<p>火山演示：</p>
+			<blockquote>
+				<p><img src="../vol/symbol_img/36.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="structure.html">上一章</a>]&nbsp; &nbsp;  [<a href="dataType.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

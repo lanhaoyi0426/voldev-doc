@@ -1,0 +1,164 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言流程控制语句差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言流程控制语句差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="keyword.html">上一章</a>]&nbsp;&nbsp;  [<a href="loop.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">五、火山视窗与易语言流程控制语句差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="如果"></a>
+	<p>&nbsp;</p>
+	<h4>1、如果差异</h4>
+	<blockquote>
+		<p>在易语言中，如果语句满足条件时执行第一个信息框后继续向下执行其它代码。不满足时则执行第二个信息框，然后继续向下执行其它代码。</p>
+		<blockquote>
+			<p><img src="Process_img/1.png" border="0"></p>
+		</blockquote>
+		<p>而在火山中，<strong>如果</strong>命令和易语言中的<strong>如果真</strong>类似，只有当参数值满足条件时才会执行子语句体的内容。</p>
+		<p>不满足条件时，会执行如果语句体外的其它代码。</p>
+		<blockquote>
+			<p><img src="Process_img/2.png" border="0"></p>
+		</blockquote>
+		<p>当然在火山中同样也可以实现易语言中一样的效果，这时需要配合<strong>“否则”</strong>来使用。</p>
+		<p>示例如下：</p>
+		<blockquote> 
+			<p><img src="../vol/process_img/6.png" border="0"></p>
+		</blockquote> 
+		<p>除此之外，<b>如果</b>语句后面可以跟多个<b>否则</b>语句，可用于判断多种可能的情况。</p>
+		<p>使用时需要注意以下几点：</p>
+		<blockquote>
+			<p>(1) <b>如果</b>语句后可以跟N个<b>否则</b>语句，但<b>否则</b>语句不能在<b>如果</b>语句之前。</p>
+			<p>(2) 一旦其中任意一个语句执行结果为真，将执行其子语句体的内容，剩余的所有<b>“否则”</b>语句将跳过。</p>
+		</blockquote>
+		<p>示例如下：</p>
+		<blockquote>
+			<p><img src="../vol/process_img/5.png" border="0"></p>
+		</blockquote>
+		<p>如果判断两个相同的条件，则只会执行首次判断成功的条件。</p>
+		<p>示例如下：</p>
+		<blockquote>
+			<p>只会执行第一个满足条件的子语句体，其它条件会跳过。</p>
+			<p><img src="../vol/process_img/7.png" border="0"></p>
+		</blockquote>
+		<p>注意：满足条件后执行的代码必须保证是位于子语句体中，如下图所示是错误的。</p>
+		<blockquote>
+			<p><img src="../vol/process_img/3.png" border="0"></p>
+			<p>可通过右键菜单<strong>“块操作 -> 向外缩进”</strong>，让要执行的代码重新回到子语句体中。</p>
+			<p><img src="../vol/process_img/4.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	
+	<a name="如果真"></a>
+	<p>&nbsp;</p>
+	<h4>2、如果真差异</h4>
+	<blockquote>
+			<p>本语句同易语言中的<strong>“如果真”</strong>语句，本语句只能单独使用，无法配合<b>“否则”</b>语句来使用。</p>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p><img src="process_img/5.png" border="0"></p>
+			</blockquote>	
+			<p>火山演示：</p>
+			<blockquote>
+				<p>当满足条件后执行子语句体的内容，否则执行<b>“如果真”</b>语句之外的其它代码。</p>
+				<p><img src="../vol/process_img/8.png" border="0"></p>
+			</blockquote>	
+	</blockquote>	
+	<a name="判断"></a>	
+	<p>&nbsp;</p>
+	<h4>3、判断差异</h4>
+	<blockquote>
+		<p>易语言中的判断和火山中的<strong>“如果否则”</strong>语句类似。</p>
+		<p>可以单独使用，如下所示：</p>
+		<blockquote>
+			<p><img src="Process_img/3.png" border="0"></p>
+		</blockquote>
+		<p>也可以合并起来使用，如下所示：</p>
+		<blockquote>
+			<p><img src="Process_img/4.png" border="0"></p>
+		</blockquote>
+		<p>在火山中实际上并<strong>“判断”</strong>方法，但是提供了<strong>“分支判断”</strong>。</p>
+		<a name="分支判断"></a>
+		<h5>3.1 分支判断与分支</h5>
+		<blockquote>
+			<p>其作用和判断也不相同，判断是用于判断逻辑值，而分支判断用于判断一个整数值与一系列整数值中某个值是否相等。</p>
+			<p>这其中要判断的整数值位于<b>“分支判断”</b>语句的参数中，而这一系列整数值则位于<b>“分支”</b>语句的参数中，每个值称为一个分支。</p>
+			<p><b>分支判断帮助如下图：</b></p>
+			<blockquote>
+				<p>本语句需要提供一个整数类型的数据，用于<b>“欲判断检查的值”</b>，其要判断的值由<b>“分支”</b>语句提供。</p>
+				<p>注：本方法的子语句体内只能存在<b>分支</b>或<b>默认分支</b>，并且至少包含一个。</p>
+				<p><img src="../vol/process_img/9.png" border="0"></p>
+			</blockquote>
+			<p><b>分支帮助如下图：</b></p>
+			<blockquote>
+				<p>本语句只能位于<strong>“分支判断”</strong>的子语句体内，用于检查<strong>“分支判断”</strong>参数中提供的整数数据，是否等于本语句中的参数值。</p>
+				<p>如果相等，将去执行本语句的子语句体中的代码，并跳过后续所有其它判断检查分支，否则将跳过本语句的子语句体转去检查后续的下一分支是否满足要求。</p>
+				<p>注：本语句的参数只能提供立即数或常量。</p>
+				<p><img src="../vol/process_img/10.png" border="0"></p>
+			</blockquote>
+			<p>示例如下：</p>
+			<blockquote>
+				<p>(1) <b>分支判断</b>语句提供欲判断检查的值。</p>
+				<p>(2) <b>分支</b>语句提供欲检查是否相等的值。</p>
+				<p><img src="../vol/process_img/11.png" border="0"></p>
+				<p>如果分支判断语句的值和某个分支中的值相等，则执行对应分支子语句体的代码。</p> 
+				<p>上图中的<strong>“变量”</strong>的值为<strong>1</strong>，则最终结果会弹出<strong>“满足条件1”</strong>的信息框。</p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="默认分支"></a>
+		<h5>3.2 默认分支</h5>
+		<blockquote>
+			<p>本语句需要在<strong>“分支判断”</strong>的子语句体中使用，用于指定<strong>“默认分支”</strong>，如果所有的<strong>“分支”</strong>都不满足时则执行本语句下的子语句体的内容。</p>
+			<blockquote>
+				<p><img src="../vol/process_img/12.png" border="0"></p>
+			</blockquote>
+			<p>示例如下：</p>
+			<blockquote>
+				<p>最终结果会弹出<strong>“默认分支”</strong>下的信息框，因整数变量的初始值为0，并不满足前两个分支。</p>
+				<p><img src="../vol/process_img/13.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="跳出分支"></a>
+		<h5>4.3 跳出分支</h5>
+		<blockquote>
+			<p>本语句只能在<strong>“分支”</strong>或<strong>“默认分支”</strong>的直接/间接的子语句中使用，用于跳出整个<strong>“分支判断”</strong>去执行下一条语句。</p>
+			<blockquote>
+				<p><img src="../vol/process_img/14.png" border="0"></p>
+			</blockquote>
+			<p>示例如下：</p> 
+			<blockquote> 
+				<p><img src="../vol/process_img/15.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="keyword.html">上一章</a>]&nbsp; &nbsp;  [<a href="loop.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

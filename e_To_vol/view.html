@@ -1,0 +1,426 @@
+
+<html>
+
+<head>
+<title>火山视窗与易语言部分组件差异_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山视窗与易语言部分组件差异" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="win.html">上一章</a>]&nbsp;&nbsp;  [<a href="arr.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">三、火山视窗与易语言部分组件差异</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="图片框"></a>
+	<p>&nbsp;</p>
+	<p>在火山视窗中提供了大量的组件，大部分组件和易语言操作方式一样，部分组件在使用方式上有所差异。</p>
+	<p>下面介绍部分组件使用上的小差异。</p>
+	<p>&nbsp;</p>
+	<h4>1、图片框</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中图片框组件设置图片都是通过<b>“图片”</b>属性设置，其类型是字节集。</p> 
+			<blockquote>
+				<p><img src="view_img/1.png" border="0"></p>
+			</blockquote>
+			<p><b>“图片”</b>属性为可读可写属性，可以取出一个图片框的图片赋值给另外一个图片框显示。</p>
+			<blockquote>
+				<p><img src="view_img/2.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="view_img/3.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中想要实现和易语言一样的效果，稍微有点复杂，因为火山视窗中图片属性的类型为<b>“位图资源”</b>，并且只有写属性，无法取出位图资源。</p>
+			<p>注：资源类型并不能动态设置，譬如通过文件载入等形式转换成资源。</p>
+			<blockquote>
+				<p><img src="view_img/4.png" border="0"></p>
+			</blockquote>
+			<p>想要实现设置字节集图片数据，在火山中需要使用<b>“置底图数据()”</b>方法。</p>
+			<blockquote>
+				<p><img src="view_img/5.png" border="0"></p>
+			</blockquote>
+			
+			<p>如果想要取出图片则需要使用<b>“取底图()”</b>方法。</p>
+			<p>注：本方法取出的图片为<b>“位图对象类”</b>，并且是通过参数返回。</p>
+			<blockquote>
+				<p><img src="view_img/6.png" border="0"></p>
+			</blockquote>
+			<p>取出一个图片框的图片赋值给另外一个图片框显示，代码编写如下：</p>
+			<blockquote>
+				<p><img src="view_img/7.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="view_img/8.gif" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>
+	
+	<a name="选择夹"></a>
+	<p>&nbsp;</p>
+	<h4>2、选择夹</h4>
+	<blockquote>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中选择夹的使用相对简单，直接可以在设计器中对选择夹的子夹内容进行设计。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="view_img/9.gif" border="0"></p>
+			</blockquote> 
+			<p>选择夹中组件交互也比较简单，如下所示：</p>
+			<blockquote>
+				<p>直接输入组件名就可以控制组件。</p>
+				<p><img src="view_img/19.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/20.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山中想要使用选择夹必须依赖<b>“组件布局器”</b>，组件布局器是火山视窗中提供的一种针对局部界面设计的通用窗口容器，它可以像窗口设计器一样进行界面设计，设计后的界面可以在任意窗口或容器中重复使用。</p>
+			<p>简单演示如下：</p>
+			<blockquote>
+				<p><b>“Ctrl+D”</b>新建一个类，基础类填写组件布局器，然后在右键菜单中就可以打开组件布局器的界面设计器。</p>
+				<p><img src="view_img/10.png" border="0"></p>
+				<p>其界面设计器相对于窗口的设计器少了一个标题栏、除此之外没有任何区别。</p>
+				<p><img src="view_img/11.png" border="0"></p>
+				<p>界面设计完毕后也会自动生成组件变量。</p>
+				<p><img src="view_img/12.png" border="0"></p>
+			</blockquote>
+			<p>首先利用组件布局器设计两个界面出来，如下：</p>
+			<blockquote>
+				<p><img src="view_img/13.png" border="0"><img src="view_img/14.png" border="0"></p>
+			</blockquote>
+			<p>设计完成后公开组件，以便于后续选择夹交互操作。</p>
+			<blockquote>
+				<p><img src="view_img/15.png" border="0"></p>
+			</blockquote>
+			<p>打开主窗口设计器，将选择夹组件放到窗口中。</p>
+			<blockquote>
+				<p><img src="view_img/16.png" border="0"></p>
+			</blockquote>
+			<p>添加主窗口创建完毕事件，调用<b>“选择夹”</b>组件的<b>“添加子夹()”</b>方法就可以添加选择夹内容。</p>
+			<blockquote>
+				<p><img src="view_img/17.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="view_img/18.gif" border="0"></p>
+			</blockquote> 
+			<p>在火山视窗中选择夹的组件交互，如下所示：</p>
+			<blockquote>
+				<p>(1) 首先定义组件布局器变量。</p>
+				<blockquote>
+					<p><img src="view_img/21.png" border="0"></p>
+				</blockquote>
+				<p>(2) 利用“取子夹内容组件()”方法取出子夹内容，务必注意子夹索引从0开始。</p>
+				<p>(3) 利用“挂接事件()”方法挂接组件布局器中的按钮事件。</p>
+				<blockquote>
+					<p><img src="view_img/22.png" border="0"></p>
+				</blockquote>
+				<p>(4) 在主窗口中添加按钮被单击事件，判读组件布局器中的按钮是否被点击，并执行对应的修改操作。</p>
+				<blockquote>
+					<p><img src="view_img/23.png" border="0"></p>
+				</blockquote>
+				<p>(5) 最终可以看到，实现了选择夹组件交互效果。</p>
+				<blockquote>
+					<p><img src="view_img/24.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+		
+		</blockquote>
+	</blockquote>
+	
+	<a name="树形框"></a>
+	<p>&nbsp;</p>
+	<h4>3、树形框(树型框)</h4>
+	<blockquote>
+		<p>树形框组件的差异主要体现在树形框项目上。</p>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在易语言中名叫<b>“树型框”</b>，其项目内容是字节集，通过<b>“项目”</b>属性可以进行读写操作。</p>
+			<blockquote>
+				<p><img src="view_img/25.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote> 
+				<p><img src="view_img/26.gif" border="0"></p>
+			</blockquote>
+
+		</blockquote>
+		<p>火山演示：</p>
+		<blockquote>
+			<p>在火山视窗中名叫<b>“树形框”</b>，其项目内容是文本数据，如下所示：</p>
+			<blockquote>
+				<p><img src="view_img/27.png" border="0"></p>
+			</blockquote>
+			<p>在树形框项目设置窗口中，随便添加几个项目。</p>
+			<blockquote>
+				<p><img src="view_img/28.png" border="0"></p>
+			</blockquote>
+			<p>项目设置完毕后会自动生成文本格式的项目数据，其优点相对易语言更加方便数据存储或传输。</p>
+			<p>必要时可以自行拼接文本数据自行实现项目效果，每列信息为以<b>'\n'</b>字符分隔的字段，各个字段的意义为：</p>
+			<blockquote>
+				<p>1. 文本: 名称;</p>
+				<p>2. 整数: 项目图标索引位置;</p>
+				<p>3. 整数: 为被选择状态时的图标索引位置,为-1表示与项目图标索引位置相同;</p>
+				<p>4. 整数: 用户数据;</p>
+				<p>5. 整数: 是否加粗;</p>
+				<p>6. 整数: 是否展开子项目;</p>
+				<p>7. 整数: 状态图标索引位置;</p>
+				<p>8. 整数: 缩进位置.</p>
+				<p><img src="view_img/29.png" border="0"></p>
+			</blockquote>
+			<p>火山视窗中的<b>项目</b>属性同为可读写项目，可以非常方便实现不同树形框之间的项目赋值。</p>
+			<blockquote> 
+				<p><img src="view_img/30.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote> 
+				<p><img src="view_img/31.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	<a name="分组框"></a>
+	<p>&nbsp;</p>
+	<h4>4、分组框</h4>
+	<blockquote>
+		<p>易语言的分组框和火山视窗的分组框效果一致，并且同样都有一个小问题，嵌套使用时分组框的字体会显示异常。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p><img src="view_img/32.png" border="0"></p>
+		</blockquote>
+		<p>针对这一问题火山视窗额外提供了高级分组框解决此问题，如下所示：</p>
+		<blockquote>
+			<p></p>
+			<p><img src="view_img/33.png" border="0"></p>
+		</blockquote>
+		<p>软件运行后字体也是正常状态：</p>
+		<blockquote>
+			<p></p>
+			<p><img src="view_img/34.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+
+	<a name="通用对话框"></a>
+	<p>&nbsp;</p>
+	<h4>5、通用对话框</h4>
+	<blockquote>
+		<p>本组件比较特殊，在易语言中属于不可视组件，使用时需要在窗口设计器上绘制出来，但运行时此组件不可见，需要通过调用指定方法才能显示出来。</p>
+		<p>易语言演示：</p>
+		<blockquote>
+			<p>在基本组件中可以找到通用对话框，将其画到窗口上就可以使用。</p>
+			<blockquote>
+				<p><img src="view_img/35.png" border="0"></p>
+			</blockquote>
+			<p>利用通用对话框实现浏览文件功能：</p>
+			<blockquote>
+				<p><img src="view_img/36.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="view_img/37.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>在火山视窗中对此组件进行了优化，不需要在窗口上绘制即可操作。</p>
+		<blockquote>
+			<p>相对易语言，火山视窗中的<b>“打开()”</b>方法需要额外提供一个父窗口参数，如果需要在当前窗口类上弹出填写<b>“本对象”</b>即可，如果是其它窗口就提供对应的窗口对象名称。</p>
+			<blockquote>
+				<p><img src="view_img/40.png" border="0"></p>
+			</blockquote> 
+			<p>利用通用对话框实现浏览文件功能：</p>
+			<blockquote>
+				<p><img src="view_img/38.png" border="0"></p>
+			</blockquote>
+			<p>运行效果如下：</p>
+			<blockquote>
+				<p><img src="view_img/39.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	
+	
+	<a name="菜单"></a>
+	<p>&nbsp;</p>
+	<h4>6、菜单</h4>
+	<blockquote>
+		<h5>6.1 窗口菜单显示</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中可以右键窗口设计器，选择<strong>“菜单编辑器”</strong>即可打开进行菜单编辑。</p>
+				<p><img src="view_img/41.png" border="0"></p>
+				<p>其界面效果如下：</p>
+				<p><img src="view_img/42.png" border="0"></p>
+				<p>菜单编辑完毕后可直接在窗口设计器中查看到菜单效果。</p>
+				<p><img src="view_img/43.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote>
+				<p>在火山中需要单独定义基础类为<strong>“菜单类”</strong>的类，右键选择<strong>“打开菜单设计器”</strong>即可进行菜单编辑。</p>
+				<p><img src="view_img/44.png" border="0"></p>
+				<p>其界面效果如下，使用方式与易语言基本一致。</p>
+				<p><img src="view_img/45.png" border="0"></p>
+				<p>火山菜单设计完毕后，会自动生成菜单常量值，后续通过此常量值可操作菜单。</p>
+				<p><img src="view_img/46.png" border="0"></p>
+				<p>在火山中菜单并不会直接显示在窗口中，需要在窗口中定义菜单变量，调用<strong>“置菜单实例()”</strong>方法设置菜单。</p>
+				<p><img src="view_img/47.png" border="0"></p>
+				<p>软件运行后才可以看到菜单效果：</p>
+				<p><img src="view_img/48.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.2 右键菜单与窗口菜单一致</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中直接调用<strong>“弹出菜单”</strong>方法，提供菜单名称就可以弹出指定菜单。</p>
+				<p><img src="view_img/49.png" border="0"></p>
+				<p>最终可以实现右键菜单与窗口菜单一致。</p>
+				<p><img src="view_img/50.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote>
+				<p>在火山中想要实现同样的效果，首选需要将窗口菜单复制一份，并修改类名。</p>
+				<p><img src="view_img/51.png" border="0"></p>
+				<p>打开<strong>“右键菜单”</strong>的菜单设计器。</p>
+				<p><img src="view_img/52.png" border="0"></p>
+				<p>如果需要在右键中弹出<strong>“程序”</strong>菜单，就将其余菜单全部选中并删除。</p>
+				<p><img src="view_img/53.png" border="0"></p>
+				<p>注意：常量值不要随意修改，否则会导致菜单在使用时出现问题。</p>
+				<p><img src="view_img/54.png" border="0"></p>
+				<p>在使用时，需要定义菜单变量，并利用<strong>“弹出实例菜单()”</strong>方法进行弹出。</p>
+				<p><img src="view_img/55.png" border="0"></p>
+				<p>最终效果如下：</p>
+				<p><img src="view_img/56.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.3 禁止菜单</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中直接通过菜单名调用<strong>“禁止”</strong>属性设置为真，就可以实现禁止菜单。</p>
+				<p><img src="view_img/57.png" border="0"></p>
+				<p>效果如下：</p>
+				<p><img src="view_img/58.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote>
+				<p>在火山中需要通过菜单变量调用<strong>“允许菜单项()”</strong>方法来禁止菜单。</p>
+				<p><img src="view_img/59.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/60.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.4 选中菜单</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中直接通过菜单名调用<strong>“选中”</strong>属性设置为真，就可以实现选中菜单。</p>
+				<p><img src="view_img/61.png" border="0"></p>
+				<p>效果如下：</p>
+				<p><img src="view_img/62.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote>
+				<p>在火山中需要通过菜单变量调用<strong>“选中菜单项()”</strong>方法来选中菜单。</p>
+				<p><img src="view_img/63.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/64.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.5 隐藏菜单</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中直接通过菜单名调用<strong>“可视”</strong>属性就可以实现显示或隐藏菜单。</p>
+				<p><img src="view_img/65.png" border="0"></p>
+				<p>效果如下：</p> 
+				<p><img src="view_img/66.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote>
+				<p>在火山中没有提供现成的可视方法，需要通过<strong>“删除菜单项()”</strong>和<strong>“插入菜单项()”</strong>来实现此效果。</p>
+				<p><img src="view_img/67.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/68.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.6 菜单标题修改</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中直接通过菜单名调用<strong>“标题”</strong>属性就可以实现修改菜单标题。</p>
+				<p><img src="view_img/69.png" border="0"></p>
+				<p>效果如下：</p> 
+				<p><img src="view_img/70.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote> 
+				<p>在火山中需要通过菜单变量调用<strong>“置菜单标题()”</strong>方法来修改标题。</p>
+				<p><img src="view_img/71.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/72.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>6.7 菜单事件</h5>
+		<blockquote>
+			<p>易语言演示：</p>
+			<blockquote>
+				<p>在易语言中需要通过窗口设计器，点击菜单项来添加菜单事件。</p>
+				<p><img src="view_img/73.gif" border="0"></p>
+				<p>代码编写如下：</p>
+				<p><img src="view_img/74.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/75.gif" border="0"></p>
+			</blockquote>
+			<p>火山视窗演示：</p>
+			<blockquote> 
+				<p>在火山中所有菜单事件都是通过窗口的<strong>“接收到命令”</strong>事件接收，通过<strong>“命令代码”</strong>参数判断菜单被单击。</p>
+				<p><img src="view_img/76.png" border="0"></p>
+				<p>运行效果如下：</p>
+				<p><img src="view_img/77.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="win.html">上一章</a>]&nbsp;&nbsp;  [<a href="arr.html">下一章</a>]  </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>
