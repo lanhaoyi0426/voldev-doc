@@ -1,0 +1,330 @@
+<html>
+
+	<head>
+		<title>火山安卓X升级指南_火山软件开发平台</title>
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+		<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+		<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+		<link href="scripts/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<p>&nbsp</p>
+		<div style="text-align: center;">
+			<h1>安卓X升级指南</h1>
+		</div>
+		<p>&nbsp</p>
+		<blockquote>
+			<p>安卓X拥有更好的兼容性，推荐全面使用安卓X来开发安卓程序。</p>
+			<p>现有的火山安卓程序升级安卓X也是比较简单的，只有少数的库需要升级到安卓X，而且升级成本也是非常低的，几乎可以无缝对接。</p>
+			<p>比如软件程序中使用了<strong>“视图容器”</strong>只需要在程序中进行批量替换将<strong>“视图容器”</strong>替换为<strong>“视图容器X”</strong>即可。</p>
+			<p><strong>注意：</strong></p>
+			<blockquote>
+				<p>(1) &nbsp;准备升级之前首先将当前项目进行<strong>完整备份</strong>，防止替换出现错误。</p>
+				<p>(2) &nbsp;查找范围提供<strong>“当前项目”</strong></p>
+				<p>(3) &nbsp;务必勾选<strong>“大小写匹配”</strong>和<strong>“全字匹配”</strong>防止替换错误。</p>
+				<p>如下图所示：</p>
+
+				<blockquote>
+					<img src="imgs/1.png" />
+				</blockquote>
+			</blockquote>
+			<p>部分组件可能存在事件，需要单独处理，比如<strong>“视图容器”</strong>中存在<strong>“页面被选择”</strong>事件，初次替换后<strong>“来源对象”</strong>参数正常替换，但是事件名称不正常，这时候需要手动进行修改。
+			</p>
+			<blockquote>
+				<p>
+					<img src="imgs/2.png" />
+				</p>
+			</blockquote>
+
+			<ol>
+				<li>如下图所示手动增加X，即可完成视图容器的升级。</li>
+			</ol>
+			<blockquote>
+				<p>
+					<img src="imgs/3.png" />
+				</p>
+			</blockquote>
+			<p>当然也可以利用查找替换，进行批量替换视图容器的事件，如下图所示。</p>
+			<p>但是这种方法需要你保证没有其它的方法名字起名为<strong>“视图容器_”</strong>，如果你没办法确定，建议在项目中搜索后，手动添加，以防止盲目替换发生错误。</p>
+			<blockquote>
+				<p>
+					<img src="imgs/4.png" />
+				</p>
+			</blockquote>
+			<p>到此基本的升级逻辑演示完毕，下面列出所有需要升级到安卓X的库和方法，未提及的类和方法不需要升级。</p>
+			<p style="color: red;"><strong>注：上图中演示的“视图容器”已经兼容安卓X系统（需升级最新版），无需迁移。</strong></p>
+			<p>&nbsp;</p>
+			<p>
+				<strong>注1：个别库可能有使用差异，注意备注说明。</strong>
+
+			</p>
+			<p>
+				<strong>注2：批量替换时，建议先在整个项目中搜索一下，防止替换出错，因为可能会出现你没有用这个方法，但是自定义了一个同名的方法，盲目替换会导致出错，所以替换前先搜索确定一下。</strong>
+			</p>
+			<p><strong>注3：<span style="color: red;">标红的需要单独处理。</span></strong></p>
+			<table border="1" style="border-collapse: collapse" width="100%">
+				<tr>
+					<td bgcolor="#b3b3b3" align="center">
+						原类名
+					</td>
+					<td bgcolor="#b3b3b3" align="center">
+						<p>新类名</p>
+					</td>
+					<td bgcolor="#b3b3b3" align="center" width="100">
+						<p>原方法名</p>
+					</td>
+					<td bgcolor="#b3b3b3" align="center" width="100">
+						<p>新方法名</p>
+					</td>
+					<td bgcolor="#b3b3b3" align="center">
+						<p>备注</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5" align="center" style="background-color:#b3b3b3;">
+						<p><strong>窗口相关</strong></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>兼容窗口</p>
+					</td>
+					<td>
+						<p>高级兼容窗口</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<p>常用兼容窗口附加清单</p>
+					</td>
+					<td>
+						<p>常用高级兼容窗口附加清单</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<p>兼容工具栏</p>
+					</td>
+					<td>
+						<p>高级兼容工具栏</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td rowspan="2">
+						<p>兼容窗口标题栏</p>
+					</td>
+					<td rowspan="2">
+						<p>高级兼容窗口标题栏</p>
+					</td>
+					<td>
+						<p>兼容工具栏_导航按钮被单击</p>
+					</td>
+					<td>
+						<p>高级兼容工具栏_导航按钮被单击</p>
+					</td>
+					<td rowspan="2">如果还添加了其它事件，请自行搜索替换即可。</td>
+				</tr>
+				<tr>
+					<td>
+						<p>兼容工具栏_菜单项被单击</p>
+					</td>
+					<td>
+						<p>高级兼容工具栏_菜单项被单击</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>兼容窗口标题栏菜单监听类</p>
+					</td>
+					<td>
+						<p>高级兼容窗口标题栏菜单监听类</p>
+					</td>
+					<td>
+						<p>兼容窗口标题栏菜单监听类_菜单可见性改变</p>
+					</td>
+					<td>
+						<p>高级兼容窗口标题栏菜单监听类_菜单可见性改变</p>
+					</td>
+					<td></td>
+				</tr>
+				<!-- 	<tr>
+					<td colspan="5" align="center" style="background-color:#b3b3b3;">
+						<p><strong>其它组件类</strong></p>
+					</td>
+				</tr> -->
+
+
+
+				<tr>
+					<td colspan="5" align="center" style="background-color:#b3b3b3;">
+						<p><strong>需要额外注意的升级</strong></p>
+					</td>
+				</tr>
+
+
+				<tr style="color:red;">
+					<td>
+						<p>全屏侧滑布局器</p>
+					</td>
+					<td>
+						<p>全屏侧滑布局器X</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td>
+						<p>使用方式略有差异，看最新案例演示。</p>
+						<p>配置安卓X窗口组件模块</p>
+					</td>
+				</tr>
+				<tr style="color:red;">
+					<td>
+						<p>运行时权限工具类</p>
+					</td>
+					<td>
+						<p>权限工具类X</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td>
+						<p>使用方式有差异，看“权限工具类X”案例演示。</p>
+					</td>
+				</tr>
+
+
+
+				<tr>
+					<td colspan="5" align="center" style="background-color:#b3b3b3;">
+						<p><strong>QMUI升级</strong></p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>QMUI窗口</p>
+					</td>
+					<td>
+						<p>QMUI窗口X</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>
+						<p>QMUI基础类</p>
+					</td>
+					<td>
+						<p>QMUI基础类X</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td>
+						<p>安卓QMUI窗口</p>
+					</td>
+					<td>
+						<p>安卓QMUI窗口X</p>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+
+			</table>
+			<p>&nbsp;</p>
+			<p><strong>下面的类，可以选择升级或者不升级，不升级也不会有任何影响。</strong></p>
+			<p>&nbsp;</p>
+			<table border="1" style="border-collapse: collapse" width="100%">
+
+				<tr>
+					<td>
+						<p>高级弹窗容器</p>
+					</td>
+					<td>
+						<p>高级弹窗容器X</p>
+					</td>
+					<td>
+						<p><strong>本类已经自动兼容安卓X系统，如果需要升级，注意事件变更。</strong></p>
+						<p style="color:red;">注意“开始动画”和“结束动画”事件变更，注意注释。</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>高级图选择器</p>
+					</td>
+					<td>
+						<p>高级图选择器X</p>
+					</td>
+					<td rowspan="2">
+						<p><strong>注1：“高级图选择器"已经自动兼容安卓X系统，可查看自带案例，申请权限后即可正常使用。</strong></p>
+						<p><strong>“高级图选择器X”</strong>为大版本升级，方法发生变更，如需使用注意看最新案例自行修改，单独替换无法实现升级。</p>
+						<p style="color:red;">
+							注2：如果使用了<strong>“高级图片选择器"</strong>，项目中如果想使用图像压缩必须使用<strong>“图像压缩类"</strong>。</p>
+						<p style="color:red;">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果使用了<strong>“高级图片选择器X"</strong>，项目中如果想使用图像压缩必须使用<strong>“图像压缩类X"</strong>。
+						</p>
+						<p><strong>“图像压缩类X"</strong>使用方式略有变更，注意看自带案例演示。</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>图像压缩类</p>
+					</td>
+					<td>
+						<p>图像压缩类X</p>
+					</td>
+
+				</tr>
+				<tr>
+					<td>
+						<p>Sqlite数据库</p>
+					</td>
+					<td>
+						<p>SQLite数据库X</p>
+					</td>
+					<td rowspan="3" style="color: red;">
+						<p>使用方式略有差别，多了一个初始化方法，支持设置数据库密码，根据自身需要可选择是否升级。</p>
+						<p>需要配置“安卓X_SQLite数据库”模块</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>Sqlite辅助类</p>
+					</td>
+					<td>
+						<p>SQLite辅助类X</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p>已编译语句类</p>
+					</td>
+					<td>
+						<p>已编译语句类X</p>
+					</td>
+				</tr>
+
+			</table>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+	</body>
+</html>

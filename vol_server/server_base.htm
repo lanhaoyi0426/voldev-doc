@@ -1,0 +1,674 @@
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台" />
+<meta name="description" content="递归软件,火山开发平台" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<script language="JavaScript" type="text/javascript" src="script/doc_head.js"></script>
+
+<h3 align="center">服务器程序开发手册</h3>
+
+<blockquote>
+	<blockquote>
+		<h4>&nbsp;</h4>
+	</blockquote>
+	<p>服务器子平台以GO语言作为本地语言,开发此子平台程序与开发其它子平台程序基本没有区别,唯一需要注意和了解的事项如下:</p>
+	<blockquote>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h4><a name="platform"></a>一. 服务器子平台差异:</h4>
+	<p>&nbsp;</p>
+	<blockquote>
+		<h5>1. 数据类型的实现差异</h5>
+		<blockquote>
+			<p>服务器子平台以GO语言作为本地语言,所有火山基本数据类型与各子平台本地数据类型的对应表如下(所对应的本地数据类型初级用户无需了解):</p>
+			<blockquote>
+				<table border="1" width="80%" style="border-collapse: collapse">
+					<tr>
+						<td align="center" bgcolor="#E0F0F0" width="10%">火山数据类型</td>
+						<td align="center" bgcolor="#E0F0F0" width="10%">服务器子平台<p>
+						GO本地数据类型</td>
+						<td align="center" bgcolor="#E0F0F0" width="10%">视窗子平台<p>
+						C++本地数据类型</td>
+						<td align="center" bgcolor="#E0F0F0" width="10%">安卓子平台<p>
+						Java本地数据类型</td>
+						<td align="center" bgcolor="#E0F0F0" width="60%">
+						服务器子平台与其它子平台之间的差异</td>
+					</tr>
+					<tr>
+						<td width="10%">字节</td>
+						<td width="10%">byte, uint8</td>
+						<td width="10%">S_BYTE</td>
+						<td width="10%">byte</td>
+						<td width="60%">在服务器子平台中,本数据类型无符号,有效值范围从0到255;<p>在其它子平台中,本数据类型为有符号基本数据类型,有效值范围从-128到127,占用1个字节空间.</td>
+					</tr>
+					<tr>
+						<td width="10%" height="50">字符</td>
+						<td width="10%" height="50">rune, int32</td>
+						<td width="10%" height="50">TCHAR</td>
+						<td width="10%" height="50">char</td>
+						<td height="50" width="60%">在服务器子平台中,本数据类型等同于32位整数,占用4个字节空间,有效值范围从-2147483648到2147483647;<p>在其它子平台中,本数据类型有效值范围从0到65535,占用2个字节空间.</td>
+					</tr>
+					<tr>
+						<td width="10%">整数</td>
+						<td width="10%">int</td>
+						<td width="10%">INT</td>
+						<td width="10%">int</td>
+						<td width="60%">在编译64位服务器子平台程序时,有效值范围从-9223372036854775808到9223372036854775807,占用8个字节空间,编译32位服务器子平台程序时与其它子平台相同.<p>在服务器子平台中
+						纯粹的32位整数请使用&quot;字符&quot;数据类型等同替代;</p>
+						<p>在其它子平台中,本数据类型有效值范围从-2147483648到2147483647,占用4个字节空间.</td>
+					</tr>
+					<tr>
+						<td width="10%">短整数</td>
+						<td width="10%">int16</td>
+						<td width="10%">SHORT</td>
+						<td width="10%">short</td>
+						<td rowspan="6" width="60%">与其它子平台没有区别</td>
+					</tr>
+					<tr>
+						<td width="10%">变整数</td>
+						<td width="10%">int</td>
+						<td width="10%">INT_P</td>
+						<td width="10%">int</td>
+					</tr>
+					<tr>
+						<td width="10%">长整数</td>
+						<td width="10%">int64</td>
+						<td width="10%">INT64</td>
+						<td width="10%">long</td>
+					</tr>
+					<tr>
+						<td width="10%">单精度小数</td>
+						<td width="10%">float32</td>
+						<td width="10%">FLOAT</td>
+						<td width="10%">float</td>
+					</tr>
+					<tr>
+						<td width="10%">小数</td>
+						<td width="10%">float64</td>
+						<td width="10%">DOUBLE</td>
+						<td width="10%">double</td>
+					</tr>
+					<tr>
+						<td width="10%">逻辑型</td>
+						<td width="10%">bool</td>
+						<td width="10%">BOOL</td>
+						<td width="10%">boolean</td>
+					</tr>
+					<tr>
+						<td width="10%">文本型</td>
+						<td width="10%">string</td>
+						<td width="10%">CVolString</td>
+						<td width="10%">String</td>
+						<td width="60%">在服务器子平台中,文本数据的编码格式为 utf-8 ,其它子平台是 unicode .</td>
+					</tr>
+				</table>
+			</blockquote>
+		</blockquote>
+	</blockquote>
+	<p align="center">&nbsp;</p>
+	<blockquote>
+		<h5>2. 文本编码</h5>
+		<blockquote>
+			<p>服务器程序中的文本数据编码和其它子平台不一样,其它子平台是 <b>unicode</b> 编码,服务器子平台是 <b>UTF-8</b> 
+			编码,而且文本数据类型实际上等于字节数组数据类型. 
+			因此如果程序中通过索引位置来访问文本内容,一定要注意从其中每个字符的首部开始,否则容易取到半截字符值.</p>
+			<p>服务器程序中字符数据类型基于的编码与其它子平台一致,都是 <b>unicode</b> 编码.</p>
+			<div>
+				<blockquote>
+					<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+					<br>变量 文本变量1 &lt;类型 = 文本型 值 = &quot;火山A&quot;&gt;<br>变量 字符变量1 &lt;类型 = 字符&gt;<br>变量 字节集1 &lt;类型 = 字节集类&gt;<br>&nbsp;</font></p>
+					<p><font color="#008000">// 
+					由于文本数据以字节集的方式保存,此处所输出的文本长度为&quot;火山A&quot;所对应的 UTF-8 编码字节数据的尺寸 7 
+					而不是字符的数量 3 .<br></font><font color="#800000">换行输出 (取文本长度 (文本变量1))<br>
+					<br></font><font color="#008000">// 
+					由于文本数据就是字节集数据,因此文本数据可以直接转换到字节集,可以看到本语句输出的是与上语句相同的值: 7<br>
+					</font><font color="#800000">字节集1 = 文本到字节集 (文本变量1)<br>换行输出 (字节集1.取尺寸 ())<br>
+					<br></font><font color="#008000">// 同样的道理,字节集数据也可以直接转换到文本:<br>
+					</font><font color="#800000">换行输出 (字节集到文本 (字节集1))<br><br>
+					</font><font color="#008000">// 字符编码和文本数据编码不一样,为 unicode 
+					编码,可以通过下面的方式枚举文本数据中每一个字符的 unicode 编码,分别为: &#39;火&#39;, &#39;山&#39;, &#39;A&#39;.<br>
+					</font><font color="#800000">字符遍历循环 (文本变量1, 字符变量1)<br>{<br>&nbsp;&nbsp;&nbsp; 换行输出 (取十六进制文本 ((整数)字符变量1))<br>}</font></p>
+					<p>&nbsp;</p>
+				</blockquote>
+				<p>本例程执行后的输出内容:</p>
+				<blockquote>
+					<p>7<br>7<br>火山A<br>706b<br>5c71<br>41</p>
+				</blockquote>
+				<p>&nbsp;</div>
+		</blockquote>
+		<h5 align="left">3. 对象和数组参考</h5>
+		<blockquote>
+			<p align="left">在服务器程序中,对象型或数组型变量/参数与安卓子平台一致,均存放指向对象或数组实例的参考而不是实例自身. 
+		如下程序:</p>
+			<p align="left"><b>A. 对象型数据:</b></p>
+			<div>
+				<blockquote>
+					<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+					<br>
+					类 启动类 &lt;公开 基础类 = 程序类&gt;<br>
+					{<br>
+&nbsp;&nbsp;&nbsp; 方法 启动方法 &lt;公开 类型 = 整数&gt;<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 变量1 &lt;类型 = 测试类&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 变量2 &lt;类型 = 测试类 注释 = 
+					&quot;此处为了说明问题,没有设置\&quot;参考\&quot;标志.&quot;&gt;</font></p>
+					<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量1.成员变量1 = 1&nbsp; </font>
+					<font color="#008000">// 修改&quot;变量1&quot;所参考到对象实例的成员变量<br>
+					</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					变量2 = 变量1&nbsp; </font><font color="#008000">// 
+					将&quot;变量1&quot;所指向对象实例的参考赋值到&quot;变量2&quot;,此时&quot;变量1&quot;和&quot;变量2&quot;均参考到同一个对象实例.<br>
+					</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					变量2.成员变量1 = 2&nbsp; </font><font color="#008000">// 
+					修改&quot;变量2&quot;所参考到对象实例的成员变量</font></p>
+					<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#008000">// 
+					由于&quot;变量1&quot;和&quot;变量2&quot;此时参考到同一个对象实例,因此上一语句基于&quot;变量2&quot;的修改也同时影响到&quot;变量1&quot;,此语句将输出相同的修改后的值: 
+					2 2<br>
+					</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					换行输出 (变量1.成员变量1, 变量2.成员变量1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 返回 (1)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+					}<br>
+					<br>
+					类 测试类<br>
+					{<br>
+&nbsp;&nbsp;&nbsp; 变量 成员变量1 &lt;公开 类型 = 整数&gt;<br>
+					}<br>
+&nbsp;</font></p>
+				</blockquote>
+				<div>如欲将非参考值赋值过去,需要使用&quot;<b>复制对象</b>&quot;全局方法:<blockquote>
+					<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+					<br>
+					类 启动类 &lt;公开 基础类 = 程序类&gt;<br>
+					{<br>
+&nbsp;&nbsp;&nbsp; 方法 启动方法 &lt;公开 类型 = 整数&gt;<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 变量1 &lt;类型 = 测试类&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 变量2 &lt;类型 = 测试类 注释 = 
+					&quot;此处为了说明问题,没有设置\&quot;参考\&quot;标志.&quot;&gt;</font></p>
+					<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量1.成员变量1 = 1&nbsp; </font>
+					<font color="#008000">// 修改&quot;变量1&quot;所参考到对象实例的成员变量</font><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量2 = 复制对象 (变量1)&nbsp; </font>
+					<font color="#008000">// 
+					将&quot;变量1&quot;所指向对象实例数据复制后赋值到&quot;变量2&quot;,此时&quot;变量1&quot;和&quot;变量2&quot;参考到不同的对象实例.<br>
+					</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					变量2.成员变量1 = 2&nbsp; </font><font color="#008000">// 
+					修改&quot;变量2&quot;所参考到对象实例的成员变量</font></p>
+					<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#008000">// 
+					由于&quot;变量1&quot;和&quot;变量2&quot;此时参考到不同的对象实例,因此上一语句基于&quot;变量2&quot;的修改不会影响到&quot;变量1&quot;,此语句将输出: 
+					1 2<br>
+					</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					换行输出 (变量1.成员变量1, 变量2.成员变量1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 返回 (1)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+					}<br>
+					<br>
+					类 测试类<br>
+					{<br>
+&nbsp;&nbsp;&nbsp; 变量 成员变量1 &lt;公开 类型 = 整数&gt;<br>
+					}</font><br>
+&nbsp;</p>
+					</blockquote></div>
+				<p><b>B. 数组型数据:</b></p>
+				<blockquote>
+					<p>数组型数据推荐使用所提供的各种数组类,如&quot;整数数组类&quot;,&quot;文本数组类&quot;等等. 
+				如果使用基本数组数据,则需要和对象型数据一样操作:</p>
+					<blockquote>
+						<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+						<br>
+						变量 数组变量1 &lt;类型 = &quot;整数 []&quot; 值 = { 1, 2 }&gt;<br>
+						变量 数组变量2 &lt;类型 = &quot;整数 []&quot;&gt;</font></p>
+						<p><font color="#800000"><br>
+						数组变量2 = 数组变量1&nbsp; </font><font color="#008000">// 
+						此处将&quot;数组变量1&quot;所对应数组数据的参考赋值到&quot;数组变量2&quot;<br>
+						</font><font color="#800000">数组变量2 [1] = 3&nbsp; </font>
+						<font color="#008000">// 
+						由于&quot;数组变量1&quot;和&quot;数组变量2&quot;此时所参考到的是同一份数组数据,因此修改&quot;数组变量2&quot;也会同时影响到&quot;数组变量1&quot;.</font></p>
+						<p><font color="#800000"><br>
+						换行输出 (数组变量1 [1], 数组变量2 [1])&nbsp; </font>
+						<font color="#008000">// 由于两者参考到的是同一份数组数据,此时的输出结果为: 3 3</font><font color="#800000"><br>
+&nbsp;</font></p>
+					</blockquote>
+					<p>如欲将非参考值赋值过去,需要使用&quot;<b>复制数组</b>&quot;全局方法:</p>
+					<blockquote>
+						<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+						<br>
+						变量 数组变量1 &lt;类型 = &quot;整数 []&quot; 值 = { 1, 2 }&gt;<br>
+						变量 数组变量2 &lt;类型 = &quot;整数 []&quot;&gt;</font></p>
+						<p><font color="#800000"><br>
+						数组变量2 = 复制数组 (数组变量1)&nbsp; </font><font color="#008000">
+						// 此处将&quot;数组变量1&quot;所对应数组数据复制后赋值到&quot;数组变量2&quot;,之后两者将参考到不同的数组数据.<br>
+						</font><font color="#800000">数组变量2 [1] = 3&nbsp; </font>
+						<font color="#008000">// 
+						由于&quot;数组变量1&quot;和&quot;数组变量2&quot;所参考到的不是同一份数组数据,因此修改&quot;数组变量2&quot;不会影响到&quot;数组变量1&quot;.</font></p>
+						<p><font color="#800000"><br>
+						换行输出 (数组变量1 [1], 数组变量2 [1])&nbsp; </font>
+						<font color="#008000">// 由于两者参考到的不是同一份数组数据,此时的输出结果为: 2 3<br>
+&nbsp;</font></p>
+					</blockquote>
+				</blockquote></div>
+		</blockquote>
+	</blockquote>
+	<hr>
+	<h4>&nbsp;</h4>
+	<h4><a name="app"></a>二. 服务器程序特性:</h4>
+<p>&nbsp;</p>
+<blockquote>
+	<h5>1. 协程</h5>
+	<blockquote>
+		<div>
+			<p>在服务器程序中,多线程采用go的协程实现.</p>
+			<p>协程为超轻量级线程,在服务器程序中处理来自客户端的请求时,完全可以为每一个客户启动一个专用处理协程,以简化程序处理逻辑.</p>
+			<p>协程通过&quot;<b>启动协程</b>&quot;全局方法启动,样例如下:</p>
+			<blockquote>
+				<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+				<br>
+				变量 等待管道 &lt;参考 类型 = 整数管道类&gt;<br>
+				等待管道 = 整数管道类.创建 ()&nbsp; </font><font color="#008000">// 
+				创建一个管道,用作在协程之间同步使用. 关于管道见下节.<br>
+				</font><font color="#800000">启动协程 ()&nbsp; </font>
+				<font color="#008000">// 注意: 
+				&quot;启动协程&quot;语句的子语句体中所有代码将在另一个协程而不是当前主协程中执行:<br>
+				</font><font color="#800000">{<br>
+&nbsp;&nbsp;&nbsp; 换行输出 (&quot;本语句在另一个协程中被执行&quot;)<br>
+				</font><font color="#008000">&nbsp;&nbsp;&nbsp; // 提示: 
+				在所启动协程的子语句体中可以随意访问其外部变量.<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp; 等待管道.写 (1)&nbsp;
+				</font><font color="#008000">// 
+				向&quot;等待管道&quot;中写出一个值,以放行下面主协程中的&quot;等待管道.读&quot;语句.</font></p>
+				<p><font color="#008000">&nbsp;&nbsp;&nbsp; // 
+				注意当协程中的代码执行到此处时,并不会去顺序执行下面的代码,而是结束此协程的执行.<br></font>
+				<font color="#800000">}<br><br></font><font color="#008000">// 下面代码依旧在当前主协程中执行:<br>
+				</font><font color="#800000">等待管道.读 ()&nbsp; </font>
+				<font color="#008000">// 等待前面所启动的协程执行完毕后通过向&quot;等待管道&quot;中写出一个值发出的放行通知<br>
+				</font><font color="#800000">换行输出 (&quot;协程中的代码执行完毕&quot;)</font></p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p>本例程执行后的输出内容:</p>
+			<blockquote>
+				<p>本语句在另一个协程中被执行<br>
+				协程中的代码执行完毕<br>&nbsp;</p>
+			</blockquote>
+		</div>
+	</blockquote>
+	<h5>2. 管道通讯</h5>
+	<blockquote>
+		<div>
+			<p>管道是GO语言中实现协程间通信的重要方式,它是一种线程安全的数据结构,用于在程序协程之间中通过读和写数据的方式来传递信息.</p>
+			<p>可以形象地想象一下: 管道和我们日常生活时所使用的物理管道类似,只不过其中传递的是数据而已.</p>
+			<p>管道根据其读写能力分为<b>只读/只写/读写</b>三种,一般情况下创建管道时均创建可读写管道,然后对外提供此管道对象时根据需要转换为只读/只写管道,以限制该管道在外部操作的权限.</p>
+			<p>使用管道时需要注意以下几点:</p>
+			<blockquote>
+				<p><b>A.</b> 管道是阻塞式的:</p>
+				<blockquote>
+					<p>管道的读和写操作都是阻塞式的,即如果没有对应的读和写操作匹配,那么协程会一直阻塞在这个操作上. 
+					假设我们创建了一个整数类型的管道,分别进行了写出和读入操作.在数据发送操作协程中,我们向管道中写入了一个值,在另一个数据接收操作协程中,我们从管道中读出了该值并赋值给了变量a. 
+					由于写出和读入操作都是阻塞式的,所以这个程序会一直等待直到这两个协程的读入和写出操作匹配,才能正常结束.</p>
+					<p>可以参考前面&quot;协程&quot;章节中的例子,主协程中在执行&quot;<font color="#800000">等待管道.读 ()</font>&quot;语句时,会一直阻塞在那里,直到前方所启动协程中的&quot;<font color="#800000">等待管道.写 
+					(1)</font>&quot;语句被执行在&quot;等待管道&quot;中写入了数值1才会将该数值读入后返回.</p>
+				</blockquote>
+				<p><b>B. </b>关闭后的管道无法再发送数据,读取数据时会不阻塞立即返回一个对应数据类型的零值;</p>
+				<p><b>C. </b>
+				如果创建管道时所提供的&quot;容量&quot;大于0,表明该管道为一个缓冲管道,向该管道内写出数据时,如果尚未找到对应匹配的管道读入操作,可以最多缓存所指定数目的被写出数据项而不会导致写出阻塞.读入该管道中的数据时,如果缓冲区中存在先前所写入数据将直接读入该数据而不会阻塞.</p>
+			</blockquote>
+			<blockquote>
+				<p><b>D. </b>支持同时操作多个管道.</p>
+			</blockquote>
+			<p>具体请参阅服务器样例解决方案中的&quot;<font color="#800000">基本-&gt;多线程-&gt;协程及管道通讯</font>&quot;例程.</p>
+			<p>&nbsp;</p>
+			<p><b>例程</b>(使用管道向协程发送数据和通知):</p>
+			<blockquote>
+				<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+				<br>
+				类 启动类 &lt;公开 基础类 = 程序类&gt;<br>
+				{<br>
+&nbsp;&nbsp;&nbsp; 方法 启动方法 &lt;公开 类型 = 整数&gt;<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 管道演示方法 ()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 返回 (1)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+				<br>
+&nbsp;&nbsp;&nbsp; 方法 管道演示方法<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 退出通知管道 &lt;类型 = 整数管道类 注释 = &quot;</font><font color="#008000">用作通知所启动协程退出</font><font color="#800000">&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 数据管道 &lt;类型 = 任意值管道类&gt;<br>
+				</font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				// 创建相应管道对象实例</font><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 退出通知管道 = 整数管道类.创建 ()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 数据管道 = 任意值管道类.创建 ()<br>
+				<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 启动协程 () </font><font color="#008000">&nbsp;// 
+				启动演示协程<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 变量1 &lt;类型 = 
+				任意值 值 = 空对象&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 判断循环 (真)&nbsp;
+				</font><font color="#008000">// 无限循环等待来自主协程的退出通知和数据<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				管道分支操作 ()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				管道读通知分支 (退出通知管道)&nbsp; </font><font color="#008000">// 读入到了退出通知?<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				换行输出 (&quot;协程准备退出&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</font><font color="#008000">// 进行各种清理工作 ...<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				换行输出 (&quot;协程退出完毕&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				退出通知管道.写 (1)&nbsp; </font><font color="#008000">// 
+				通知主协程,本协程已经退出完毕. 此语句将一直阻塞直到主协程将此处写入的值读出.<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				返回&nbsp; </font><font color="#008000">// 退出本协程代码<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				管道读分支 (数据管道, 变量1)&nbsp; </font><font color="#008000">// 
+				读入到了主协程中所传递过来的数据?<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				换行输出 (&quot;接收到了数据:&quot;, 变量1.取 (测试类1).成员1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</font><font color="#008000">// 进行相关处理<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+				<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 协程数据变量1 &lt;类型 = 测试类1 成员1 = 
+				&quot;传递到协程的数据1&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 协程数据变量2 &lt;类型 = 测试类1 成员1 = 
+				&quot;传递到协程的数据2&quot;&gt;</font></p>
+				<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 数据管道.写 (取对象任意值 (协程数据变量1))&nbsp;
+				</font><font color="#008000">// 发送数据1到所启动协程<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				数据管道.写 (取对象任意值 (协程数据变量2))&nbsp; </font><font color="#008000">// 
+				发送数据2到所启动协程<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				换行输出 (&quot;通知所启动协程退出&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 退出通知管道.写 (1)&nbsp; </font>
+				<font color="#008000">// 通知所启动协程退出,此语句将一直阻塞直到所启动协程将此处写入的值读出.<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				退出通知管道.读 ()&nbsp; </font><font color="#008000">// 
+				等待所启动协程退出完毕(等待所启动协程向此管道写入值)<br>
+				</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				换行输出 (&quot;所启动协程已经退出&quot;)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+				}<br>
+				<br>
+				类 测试类1<br>
+				{<br>
+&nbsp;&nbsp;&nbsp; 变量 成员1 &lt;公开 类型 = 文本型 @属性变量 = 真&gt;<br>
+				}</font></p>
+				<p>&nbsp;</p>
+			</blockquote>
+			<p>本例程执行后的输出内容:</p>
+			<blockquote>
+				<p>接收到了数据: 传递到协程的数据1<br>
+				接收到了数据: 传递到协程的数据2<br>
+				通知所启动协程退出<br>
+				协程准备退出<br>
+				协程退出完毕<br>
+				所启动协程已经退出</p>
+			</blockquote>
+			<p>&nbsp;</p></div>
+	</blockquote>
+	<h5>3. 延迟执行</h5>
+	<blockquote>
+		<p>
+		服务器子平台基于GO语言提供了代码的&quot;延迟执行&quot;机制,用来登记在调用语句所处方法返回时将被自动执行的代码,常用于释放资源和连接、关闭文件、释放锁、捕获异常等.</p>
+		<p>所登记的代码(&quot;延迟执行&quot;方法调用语句的子语句体)不会被立即执行,将延迟到如下时刻被自动执行: 
+		该延迟执行语句所处方法返回到其调用方时(无论是正常返回还是因为后续代码触发异常后中断返回).</p>
+		<p>如果多次调用&quot;延迟执行&quot;方法登记了多段被延迟执行的代码,将按照先进后出(最先调用的最后执行)的顺序自动执行.</p>
+		<p>详细机制演示请参阅服务器样例解决方案中的&quot;<font color="#800000">基本-&gt;延迟执行及异常处理</font>&quot;例程.</p>
+		<p>&nbsp;</p>
+		<p><b>例程片段</b>(使用延迟执行自动关闭所打开的文件):</p>
+		<blockquote>
+			<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+			<br>
+			变量 文件1 &lt;参考 类型 = 文件类&gt;<br>
+			变量 错误1 &lt;类型 = 错误接口&gt;</font></p>
+			<p><font color="#800000"><br>
+			文件1 = 文件类.只读打开 (&quot;./test&quot;, 错误1.取地址 ())&nbsp; </font>
+			<font color="#008000">// 打开所指定的文件</font><font color="#800000"><br>
+			如果 (错误1 == 空对象)&nbsp; </font><font color="#008000">// 文件打开成功?<br>
+			</font><font color="#800000">{<br>
+&nbsp;&nbsp;&nbsp; 延迟执行 ()&nbsp; </font><font color="#008000">// 
+			&quot;延迟执行&quot;语句的子语句体中的所有代码不会被立即执行,而会等到该语句所处方法返回时自动执行.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文件1.关闭接口.关闭 ()&nbsp; </font>
+			<font color="#008000">// 在退出本方法时自动关闭所打开的文件.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; }</font></p>
+			<p><font color="#008000">&nbsp;&nbsp;&nbsp; // 对所打开文件进行操作 ......</font></p>
+			<p><font color="#008000">&nbsp;&nbsp;&nbsp; // 
+			注意延迟执行代码块中执行到此处时,并不会去顺序执行下面的代码,而是结束此延迟执行代码块的执行.</font><font color="#800000"><br>
+			}</font></p>
+			<p>&nbsp;</p>
+		</blockquote>
+		<p><b>例程片段</b><font color="#800000">(</font>使用延迟执行自动关闭相关资源):</p>
+		<blockquote>
+			<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+			<br>
+			变量 滴答器1 &lt;参考 类型 = 滴答器类&gt;<br>
+			滴答器1 = 滴答器类.创建 (时间段.秒)&nbsp; </font><font color="#008000">// 创建一个触发时间为1秒的滴答器</font></p>
+			<p><font color="#800000"><br>
+			延迟执行 ()&nbsp; </font><font color="#008000">// 
+			&quot;延迟执行&quot;语句的子语句体中的所有代码不会被立即执行,而会等到该语句所处方法返回时自动执行.<br>
+			</font><font color="#800000">{<br>
+&nbsp;&nbsp;&nbsp; 滴答器1.停止 ()&nbsp; </font><font color="#008000">// 
+			在退出本方法时自动停止滴答器<br>
+			</font><font color="#800000">}</font></p>
+			<p><font color="#008000">// 对所创建滴答器进行操作 ......</font><font color="#800000"><br>
+&nbsp;</font></p>
+		</blockquote>
+		<p><b>例程片段</b><font color="#800000">(</font>使用延迟执行自动关闭所打开的数据库):</p>
+		<blockquote>
+			<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+			<br>
+			变量 错误 &lt;类型 = 错误接口 值 = 空对象&gt;<br>
+			变量 数据库 &lt;参考 类型 = SQL数据库类 值 = 空对象&gt;<br>
+&nbsp;</font></p>
+			<p><font color="#800000">数据库 = SQL数据库类.打开 (&quot;mysql&quot;, 
+			&quot;username:password123456@/testdb&quot;, 错误.取地址 ())&nbsp; </font>
+			<font color="#008000">// 打开数据库<br>
+			</font><font color="#800000">如果真 (错误 == 空对象)&nbsp; </font>
+			<font color="#008000">// 数据库打开成功?</font><font color="#800000"><br>
+			{<br>
+&nbsp;&nbsp;&nbsp;
+			延迟执行 ()&nbsp; </font><font color="#008000">// 
+			&quot;延迟执行&quot;语句的子语句体中的所有代码不会被立即执行,而会等到该语句所处方法返回时自动执行.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 数据库.关闭 ()&nbsp; </font><font color="#008000">// 
+			在退出本方法时自动关闭所打开数据库</font><font color="#800000"><br>
+			&nbsp;&nbsp;&nbsp;
+			}</font></p>
+			<p><font color="#008000">&nbsp;&nbsp;&nbsp; // 对所打开数据库进行操作 ......</font></p>
+			<p><font color="#800000">}<br>
+&nbsp;</font></p>
+		</blockquote>
+	</blockquote>
+	<h5>4. 异常处理</h5>
+	<blockquote>
+		<p>服务器程序的异常传递机制如下:</p>
+		<p>假设正在执行&quot;方法1&quot;,当其代码中通过调用&quot;<b>抛出异常</b>&quot;全局方法抛出了一个异常,或者产生了一个运行时异常(如除零/数组索引超出有效范围等)时,&quot;方法1&quot;中在该异常产生前通过调用&quot;<b>延迟执行</b>&quot;全局方法登记的所有代码将被自动执行,然后跳转去执行&quot;方法1&quot;的上一层调用方法中已经登记的所有延迟执行代码,以此顺序一直处理到最顶层调用方法,然后终止整个程序的执行.</p>
+		<p>在异常的向上传递过程中,可以通过在任何一层被调用方法的已登记延迟执行代码中调用&quot;<b>俘获异常</b>&quot;全局方法来俘获该异常,并中止该异常的后续自动处理. 
+		&quot;俘获异常&quot;方法如果俘获到了异常,将必定返回非空对象的对应异常数据,否则将返回空对象. <b>注意:</b> 该方法只能在延迟执行代码中被执行.</p>
+		<p>以上就是服务器程序的异常产生/传递/俘获机制. 详细机制演示请参阅服务器样例解决方案中的&quot;<font color="#800000">基本-&gt;延迟执行及异常处理</font>&quot;例程.</p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<blockquote>
+		<p><b>例程片段</b>(俘获后续代码中所产生的任何异常):</p>
+		<blockquote>
+			<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+			<br>
+			方法 异常演示方法 &lt;静态&gt;<br>
+			{<br>
+&nbsp;&nbsp;&nbsp; 延迟执行 ()&nbsp; </font><font color="#008000">// 
+			&quot;延迟执行&quot;语句的子语句体中的所有代码不会被立即执行,而会等到该语句所处方法返回时自动执行.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; {<br>
+			</font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			// 演示俘获后面代码中所抛出的异常:<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			变量 所俘获异常 &lt;类型 = 任意值&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 所俘获异常 = 俘获异常 ()&nbsp; </font>
+			<font color="#008000">// 
+			尝试俘获异常,如果本延迟执行代码为所处方法正常返回时被执行,此&quot;俘获异常&quot;方法调用将返回空对象.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			如果 (所俘获异常 == 空对象)&nbsp; </font><font color="#008000">// 
+			本延迟执行代码不为因为产生异常而被执行?<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 换行输出 
+			(&quot;未俘获到异常&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 否则<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 换行输出 
+			(&quot;所俘获到的异常:&quot;, 所俘获异常)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp; }<br>
+			<br>
+&nbsp;&nbsp;&nbsp; 异常抛出方法 ()&nbsp; </font><font color="#008000">// 
+			演示在下层被调用方法中抛出异常后在本方法的延迟执行代码中俘获处理<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; 换行输出 (&quot;此处的代码不会被执行1&quot;)&nbsp;
+			</font><font color="#008000">// 
+			由于在前面抛出了异常,将导致程序执行流程转向本方法中在前面登记的延迟执行代码,所以本语句不会被执行.<br>
+			</font><font color="#800000">}<br>
+			<br>
+			方法 异常抛出方法 &lt;静态&gt;<br>
+			{<br>
+&nbsp;&nbsp;&nbsp; 抛出异常 (&quot;异常抛出方法所抛出的异常&quot;) </font><font color="#008000">&nbsp;// 
+			本语句执行后,将自动转去执行先前程序执行流程中加入的所有延迟执行代码. 
+			在本示例中,此处所抛出的异常将在上一层&quot;异常演示方法&quot;方法内被其中的延迟执行代码所俘获处理.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp; 换行输出 (&quot;此处的代码不会被执行2&quot;)
+			</font><font color="#008000">&nbsp;// 在前面抛出异常将导致程序执行流程转向最近登记的延迟执行语句块,所以此处的语句不会被执行.<br>
+			</font><font color="#800000">}</font><br>
+&nbsp;</p>
+		</blockquote>
+		<p>本例程执行后的输出内容:</p>
+		<blockquote>
+			<p>所俘获到的异常: 异常抛出方法所抛出的异常</p>
+			<p>&nbsp;</p>
+		</blockquote>
+	</blockquote>
+	<h5>5. 接口</h5>
+	<blockquote>
+		<p>服务器程序的接口和安卓子平台中的一致,都用作代表某个类需要实现的一个方法集合.</p>
+		<p>接口在服务器程序中使用得很广泛,有很多本地类都实现了一个或多个接口. 最常见的接口是基本类库中提供的输入输出类接口,如: &quot;读接口&quot;, 
+		&quot;写接口&quot;, &quot;关闭接口&quot;等等.</p>
+		<p>用户程序的类也可以实现指定的本地接口,具体请参阅&quot;<font color="#800000">基本-&gt;接口转发</font>&quot;例程. 
+		另外一种方法是通过 &quot;编辑-&gt;插入-&gt;插入特定内容-&gt;代码片段&quot;菜单项功能(Ctrl+I) 
+		在程序类中直接插入对应的接口实现代码片段来在你的类中实现指定接口,参见&quot;<font color="#800000">数据处理-&gt;JSON</font>&quot;中的&quot;<font color="#800000">动物</font>&quot;类.</p>
+		<p>&nbsp;</p>
+		<p><b>例程片段</b>(通过接口访问文件类对象):</p>
+		<blockquote>
+			<p><font color="#800000">&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+			<br>
+			类 启动类 &lt;公开 基础类 = 程序类&gt;<br>
+			{<br>
+&nbsp;&nbsp;&nbsp; 方法 启动方法 &lt;公开 类型 = 整数&gt;<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 文件1 &lt;参考 类型 = 文件类&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 错误1 &lt;类型 = 错误接口 值 = 空对象&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 文件1 = 文件类.打开 (&quot;_vol_test.txt&quot;, , , 
+			错误1.取地址 ()) </font><font color="#008000">&nbsp;// 打开一个所指定名称的文件<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			如果 (错误1 == 空对象)&nbsp; </font><font color="#008000">// 打开成功?<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 延迟执行 ()&nbsp;
+			</font><font color="#008000">// 登记延迟执行代码<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			文件1.关闭接口.关闭 ()&nbsp; </font><font color="#008000">// 
+			调用&quot;文件类&quot;所实现&quot;关闭接口&quot;的&quot;关闭&quot;方法,以在本方法退出时自动关闭所打开文件.<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如果 (添加新内容 
+			(文件1.读接口, 文件1.定位写接口)) </font><font color="#008000">&nbsp;// 
+			以&quot;文件类&quot;所实现的&quot;读接口&quot;和&quot;定位写接口&quot;对象作为参数调用&quot;添加新内容&quot;方法<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			换行输出 (&quot;添加新内容成功&quot;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 返回 (1)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+			<br>
+&nbsp;&nbsp;&nbsp; 方法 添加新内容 &lt;类型 = 逻辑型 注释 = &quot;</font><font color="#008000">本方法从指定的读接口对象中读入所有内容,然后添加一段新的内容后写出到指定的定位写接口对象中,用作演示如何使用接口对象作为参数.</font><font color="#800000">&quot;<br>
+&nbsp;&nbsp;&nbsp; 返回值注释 = &quot;</font><font color="#008000">返回是否成功</font><font color="#800000">&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp; 参数 读接口对象 &lt;类型 = 读接口 注释 = &quot;</font><font color="#008000">本接口对象可以来自任何实现了\&quot;读接口\&quot;的对象,不仅仅是\&quot;文件类\&quot;对象,譬如各种数据流类对象等等.</font><font color="#800000">&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp; 参数 写接口对象 &lt;类型 = 定位写接口 注释 = &quot;</font><font color="#008000">本接口对象可以来自任何实现了\&quot;定位写接口\&quot;的对象</font><font color="#800000">&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 错误1 &lt;类型 = 错误接口 值 = 空对象&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 变量 字节集1 &lt;参考 类型 = 字节集类&gt;</font></p>
+			<p><font color="#800000"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 字节集1 = 读接口对象.读全部数据 (错误1.取地址 ())&nbsp;
+			</font><font color="#008000">// 调用所提供的&quot;读接口&quot;参数对象的&quot;读全部数据&quot;方法读入其中的所有数据<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			如果 (错误1 == 空对象) </font><font color="#008000">&nbsp;// 读入成功?<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 字节集1.加入文本 
+			(&quot;\r\n加入的新文本 - my new text&quot;)&nbsp; </font><font color="#008000">// 
+			在原有内容后加入一段新文本<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			写接口对象.写字节集 (0, 字节集1, 错误1.取地址 ())&nbsp; </font><font color="#008000">
+			// 调用所提供的&quot;定位写接口&quot;参数对象的&quot;写字节集&quot;方法将更新后的内容写入到该对象首部<br>
+			</font><font color="#800000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 返回 (错误1 == 空对象)<br>
+&nbsp;&nbsp;&nbsp; }<br>
+			}</font></p>
+		</blockquote>
+	</blockquote>
+	<h5><font color="#800000"><br></font>6. 本地类</h5>
+	<blockquote>
+		<p>GO程序类库中,有一些情况(譬如类数据的格式化流存储等)下需要提供完全本地化的类数据,可以在定义类时使用&quot;<a href="../p_grammar.htm#vol_native_class">@本地类</a>&quot;属性去除类中所有火山相关的内容,可以使用&quot;<a href="../p_grammar.htm#server_label">@服务器.标签</a>&quot;属性在成员变量上提供相关的GO标签
+		文本.</p>
+		<p>具体请参见&quot;服务器样例解决方案&quot;中的&quot;yaml数据访问&quot;,&quot;数据编解码&quot;,&quot;JSON&quot;等例程.</p>
+		<p>&nbsp;</p>
+	</blockquote>
+	<h5>7. WIN7支持</h5>
+	<blockquote>
+		<p>GO的最新版本已经不支持 WIN7 ,如果欲在 WIN7 
+		下使用服务器子平台,请删除系统安装目录&quot;plugins\vprj_server\sdk\GoLang&quot;中的原有内容(注意一定要先删除),然后到<a href="https://golang.google.cn/dl/go1.21.0.windows-amd64.zip">此 
+		GO官网地址</a>下载旧版 GO 1.21.0 版覆盖到此目录即可.</p>
+	</blockquote>
+	<p>&nbsp;</p>
+</blockquote>
+</blockquote>
+<p align="center">--- 完 ---</p>
+</body>
+
+
+</html>
