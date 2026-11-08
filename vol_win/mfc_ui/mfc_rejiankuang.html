@@ -1,0 +1,77 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗热键框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗热键框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="rjk_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_IP_bianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_img.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+<p align="left">
+<h2>热键框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件的主要作用就是用来显示热键信息，比如：你按下键盘上的ctrl键，在本组件上就会显示出ctrl的文本。</p>
+<p align="left">如果不按任何键，这个组件上则会默认显示<b>“无”</b>。</p>
+<p align="left">下面利用热键框的<b>“当前键”</b>属性，来实现一个简单的组件热键设置。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 实现简单的热键操作</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">打开界面设计器，放一个热键框组件和编辑框组件。</p>
+	<p align="left">最终想要达到的效果就是，热键框中的热键信息和编辑框的热键一致。</p>
+	<p align="left"><img border="0" src="rjk_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先添加编辑框组件的<b>“放开某键”</b>事件。</p>
+	<p align="left"><img border="0" src="rjk_img/2.png" ></p>
+	<p align="left">2、添加后判断来源对象是不是要监听热键的编辑框。</p>
+	<p align="left">3、最后取出热键框组件的<b>“当前键”</b>，判断这个键值是不是等于<b>“键代码+辅助键状态”</b>。</p>
+	<p align="left">4、如果相等就表示编辑框的按键事件与热键框显示的热键一致，然后就可以进行其它操作。</p>
+	<p align="left"><img border="0" src="rjk_img/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">1、首先鼠标点击热键框组件，然后按键盘上的<b>“ctrl”</b>键和<b>“N”</b>键。</p>
+	<p align="left">2、然后鼠标点击编辑框组件，按下同样的按键，就会提示信息，证明编辑框的放开某键事件已经和热键框同步。</p>
+	<p align="left">注意：需要注意的是，这个热键只是针对编辑框组件的热键，并不是全局热键。</p>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="rjk_img/4.gif" ></p>
+</blockquote>
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_IP_bianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_img.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

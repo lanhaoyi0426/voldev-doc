@@ -1,0 +1,144 @@
+
+<html>
+<head>
+<title>火山PC视窗分隔条组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗分隔条组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.分隔条 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#方向">1.方向(写)</a></blockquote></li>  
+          <li><blockquote><a href="#背景颜色">2.背景颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#被拖动">3.被拖动(事件)</a></blockquote></li>      
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ShiZhong.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_YanSe.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="方向"></a>
+<p align="left">
+<h2>分隔条组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件主要用于将两个组件分隔开，并且通过分隔条还可以实现动态调整这两个组件的尺寸。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 方向(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置组件的拖动方向。</p>
+	<p align="left">共有两个方向<b>“横向”</b>和<b>“纵向”</b>。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在组件属性栏填写本属性并选择想要的拖动的方向即可。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">分隔条横向拖动效果。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/3.gif" ></p>
+	<p align="left">分隔条纵向拖动效果。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/4.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="背景颜色"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置分隔条的背景色。</p>
+	<p align="left">通属性值可提供<b>“颜色类”</b>中的常量值，或者使用<b>“0x0000FF”</b>十六进制颜色值。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接在当前组件的属性栏设置本属性即可，例如这里设置了<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/6.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终分隔条的颜色会变成红色。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/7.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="被拖动"></a>
+<font style="font-size: 12pt; font-weight:700">● 被拖动(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当分隔条组件被拖动的时候会产生本事件并返回两个参数。</p>
+	<p align="left">参数1：用于返回原位置的坐标位置，如果分隔条为横向则提供<b>“顶边”</b>的纵坐标值，否则提供<b>“左边”</b>的横坐标值。</p>
+	<p align="left">参数2：用于返回当前拖动到的目标位置坐标，如果分隔条为横向则提供<b>“顶边”</b>的纵坐标，否则提供<b>“左边”</b>的横坐标。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先添加<b>“被拖动”</b>事件。</p>
+	<p align="left">2、其次调整<b>“分隔条”</b>的顶边位置，直接让其等于目标位置即可，因为返回的目标位置就是当前组件的顶边纵坐标。</p>
+	<p align="left">3、调整上编辑框的高度直接等于目标位置即可。</p>
+	<p align="left">4、最后调整下编辑框的顶边和高度。</p>
+	<p align="left">注意：这里使用<b>“取用户区高度()”</b>是因为当前组件的父组件是窗口，如果在实际开发过程中父组件是组件布局器或者其它的容器组件，需要使用这个容器组件的高度尺寸来进行动态调整。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/9.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到当分隔条被拖动的时候，上下编辑框的尺寸也在随之改变，并且分隔条的位置也发生了移动。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/10.gif" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">纵向分隔条代码编写： </p>
+<blockquote>
+	<p align="left">如果当方向为纵向的时候，只需要将代码中的<b>“顶边”</b>全部改成<b>“左边”</b>，所有的<b>“高度”</b>改成<b>“宽度”</b>即可。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/11.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终依然可以完美的拖拽。</p>
+	<p align="left"><img border="0" src="FenGeTiao_img/12.gif" ></p>
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ShiZhong.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_YanSe.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

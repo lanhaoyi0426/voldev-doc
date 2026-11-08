@@ -1,0 +1,215 @@
+
+
+<html>
+
+<head>
+<title>火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发" />
+<link rel="shortcut icon" type="image/x-icon" href="cef_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.网页交互讲解 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#caozuo">1.网页操作组件</a></blockquote></li>  
+		  <li><blockquote><a href="#zujian">2.组件操作网页</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+
+<p align="left">
+<h2>CEF浏览器网页交互实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 帮助说明</font><br/>
+<br/>
+<blockquote>
+<p align="left">CEF浏览器位于<b>“WEB浏览器”</b>模块中，添加此模块才能使用CEF浏览器。</p>
+<p align="left">学习本教程需要您稍微了解一些JavaScript和HTML网页相关知识。</p>
+<p align="left">不了解网页知识也没关系，通过本教程的学习依然可以实现一些简单的网页交互效果。</p>
+</blockquote>
+<p align="left">&nbsp;</p><a name="caozuo"></a>
+<p align="left">&nbsp;</p>
+<h2>一、网页操作窗口组件</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通过学习本篇教程可实现通过操作网页元素来操作视窗的窗口组件。</p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 准备如下界面</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">打开界面设计器后，在窗口中放入<b>“编辑框”</b>和<b>“CEF浏览器”</b>两个组件</p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/1.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">准备如下所示的HTML代码：</p>
+<blockquote>
+	<p align="left">&lt;html&gt;<br>
+	  &lt;head&gt;<br>
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;<br>
+&lt;title&gt;测试&lt;/title&gt;<br>
+&lt;/head&gt;<br>
+&lt;body&gt;<br>
+&lt;a <font color="#E54648">onclick=&quot;action('BianJi')&quot;&gt;</font>操作编辑框&lt;/a&gt;<br>
+&lt;a <font color="#E54648">onclick=&quot;action('XiXinKuang')&quot;&gt;</font>弹出火山信息框&lt;/a&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+
+	</p>
+	<p align="left">&nbsp;</p>
+	<p align="left">将准备好的HTML代码保存成后缀名为html的文件，在视窗代码使用<b>“@视窗.附属文件”</b>引入此文件。</p>
+
+	<p align="left"><img border="0" src="cef_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/3.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，当网页被点击后将会操作火山组件。</p>
+	<p align="left"><img border="0" src="cef_img/4.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<a name="zujian"></a>
+<p align="left">&nbsp;</p>
+<h2>二、窗口组件操作网页</h2>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 说明</font><br/>
+
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通过学习本篇教程可实现通过操作窗口组件来控制网页元素。</p>
+	<p align="left">本篇将主要学习：隐藏/显示元素，点击网页元素，网页编辑框元素写文本。</p>
+
+</blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 网页元素ID查找方法</font>
+<p align="left">&nbsp;</p>
+<p align="left">1、在浏览器中寻找百度输入框元素ID。 </p>
+<blockquote>
+	<p align="left">以微软edge浏览器为例，右键点击<b>“检查”</b>可以进入开发者模式，如果非edge浏览器可使用快捷键f12进入。</p>
+	<p align="left"><img border="0" src="cef_img/7.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">点击<b>“鼠标”</b>图标，可以快速定位百度输入框所处html代码。 </p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/8.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">定位输入框后找到id属性，ID属性所对应的值就是网页元素ID，百度输入框的元素ID是<b>“form”</b>。</p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 隐藏/显示网页元素</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">打开界面设计器后，在窗口中放入<b>“按钮”</b>和<b>“CEF浏览器”</b>两个组件</p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/5.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">准备如下所示的javascript代码：</p>
+<blockquote>
+	<p align="left"><font color="#E94043">javascript:document.getElementById(&quot;元素ID&quot;).style.display=&quot;none&quot;;</font> </p>
+	<p align="left">上述代码的作用是用于隐藏指定ID的网页元素，将代码中的<b>“none”</b>修改成<b>“block”</b>就可以实现将隐藏后的元素显示出来。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">根据提供的javascript代码进行简单封装： </p>
+<blockquote>
+	<p align="left">调用<b>“CEF浏览器1.取主框架 ().执行JS脚本()”</b>就可以在网页中执行javascript脚本，在使用时需要注意引号转义的问题。</p>
+	<p align="left"><img border="0" src="cef_img/6.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、调用<b>“链接地址”</b>属性跳转百度首页。</p>
+	<p align="left">2、按钮被点击后，判断按钮标题来执行显示或者隐藏百度输入框。</p>
+	<p align="left"><img border="0" src="cef_img/9.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，百度输入框可以随意的隐藏和显示。</p>
+	<p align="left"><img border="0" src="cef_img/10.gif" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 网页编辑框写内容</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">打开界面设计器后，在窗口中放入<b>“按钮”</b>，<b>“编辑框”</b>和<b>“CEF浏览器”</b>三个组件 </p>
+<blockquote>
+	<p align="left"><img border="0" src="cef_img/11.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">准备如下所示的javascript代码：</p>
+<blockquote>
+	<p align="left"><font color="#E94043">javascript:document.getElementById("元素ID").value="要写入的内容";</font> </p>
+	<p align="left">上述代码的作用可以在指定元素ID的网页编辑框内写入指定文本。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、根据提供的javascript代码进行简单封装。</p>
+	<p align="left">2、调用<b>“CEF浏览器1.取主框架 ().执行JS脚本()”</b>就可以在网页中执行javascript脚本，在使用时需要注意引号转义的问题。 </p>
+	<p align="left"><img border="0" src="cef_img/12.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后编辑框的内容将会出现在网页编辑框中。</p>
+	<p align="left"><img border="0" src="cef_img/13.gif" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<font style="font-size: 12pt; font-weight:700">● 点击网页内容</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">准备如下所示的javascript代码：</p>
+<blockquote>
+	<p align="left"><font color="#E94043">javascript:document.getElementById("元素ID").click();</font> </p>
+	<p align="left">上述代码的作用可以点击指定网页元素。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、根据提供的javascript代码进行简单封装。</p>
+	<p align="left">2、集合<b>“网页_写文本”</b>方法实现百度一键搜索。 </p>
+	<p align="left"><img border="0" src="cef_img/14.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后编辑框的内容将会出现在网页编辑框中。</p>
+	<p align="left"><img border="0" src="cef_img/15.gif" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

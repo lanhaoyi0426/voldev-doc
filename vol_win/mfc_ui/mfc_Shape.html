@@ -1,0 +1,196 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗外形框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗外形框组件讲解" />
+<meta name="description" content="火山软件开发平台,火山视窗外形框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="shape_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.外形框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#外形">1.外形(写)</a></blockquote></li>  
+		 <li><blockquote><a href="#填充颜色">2.填充颜色(写)</a></blockquote></li>
+		  <li><blockquote><a href="#线型">3.线型(写)</a></blockquote></li>
+		  <li><blockquote><a href="#线宽">4.线宽(写)</a></blockquote></li>
+		  <li><blockquote><a href="#线条颜色">5.线条颜色(写)</a></blockquote></li>
+		   <li><blockquote><a href="#背景颜色">6.背景颜色(写)</a></blockquote></li>
+		</ol>
+	</ol>
+</ul>
+</div>
+<blockquote><p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_group.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_AnNiuJiChu.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>外形框组件讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">外形框是一个具有边框效果的容器组件，通过相关属性可以设置不同效果的边框。</p>
+<p align="left">注：边框的形状只是一个样式，并不能影响容器组件的形状。</p>
+<blockquote>
+	<p><img border="0" src="shape_img/1.png" ></p>
+</blockquote>
+
+</blockquote>
+<p align="left">&nbsp;</p><a name="外形"></a>
+<font style="font-size: 12pt; font-weight:700">● 外形(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置边框效果，支持动态调用。</p>
+	<p align="left"><img border="0" src="shape_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p> 
+<blockquote>
+	<p align="left">在属性栏调用时，直接通过下拉菜单中选择需要的边框样式即可。</p>
+	<p align="left"><img border="0" src="shape_img/3.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终边框样式将被修改。</p>
+  <p align="left"><img border="0" src="shape_img/4.png" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="填充颜色"></a>
+	<font style="font-size: 12pt; font-weight:700">● 填充颜色(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本属性用于设置外形框内部的填充颜色，如果不需要颜色可以设置为透明色。</p>
+		<p align="left">注：本属性支持动态调用。</p>
+		<p align="left"><img border="0" src="shape_img/5.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">直接在属性栏设置本属性即可，如果需要其它颜色可以点击按钮选择。</p>
+		<p align="left"><img border="0" src="shape_img/6.png" ></p>
+	</blockquote>	
+			<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终外形框内部将填充为浅灰色。</p>
+	  <p align="left"><img border="0" src="shape_img/7.png" ></p>
+	</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="线型"></a>
+	<font style="font-size: 12pt; font-weight:700">● 线型(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本属性用于设置边框线的类型，支持动态调用。</p>
+		<p align="left"><img border="0" src="shape_img/8.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">共有六种类型可选，直接在属性表中点击选择即可。</p>
+		<p align="left"><img border="0" src="shape_img/9.png" ></p>
+	</blockquote>	
+			<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终边框线将显示为点划线效果。</p>
+	  <p align="left"><img border="0" src="shape_img/10.png" ></p>
+	</blockquote>	
+
+<p align="left">&nbsp;</p><a name="线宽"></a>
+	<font style="font-size: 12pt; font-weight:700">● 线宽(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">通过本属性可设置线条宽度，支持动态调用。</p>
+		<p align="left">注：本属性生效需要满足两个条件，其<b>“线条效果”</b>属性必须为<b>“通常”</b>且<b>“线型”</b>属性为<b>“直线”</b>时才有效。。</p>
+		<p align="left"><img border="0" src="shape_img/11.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">因<b>“线条效果”</b>和<b>“线型”</b>属性的默认值分别为<b>“通常”</b>和<b>“直线”</b>，因此在使用时本属性时，如果以上两个属性未做任何修改则无需设置，直接设置本属性的值即可。</p>
+		<p align="left"><img border="0" src="shape_img/12.png" ></p>
+	</blockquote>	
+			<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终外形框的线条将变宽。</p>
+	  <p align="left"><img border="0" src="shape_img/13.png" ></p>
+	</blockquote>	
+ 
+	<p align="left">&nbsp;</p><a name="线条颜色"></a>
+	<font style="font-size: 12pt; font-weight:700">● 线条颜色(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">顾名思义，用于设置线条的颜色，本属性支持动态调用。</p>
+		<p align="left">注：使用本属性务必保证其线条效果属性为<b>“通常”</b>。</p>
+		<p align="left"><img border="0" src="shape_img/14.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">直接在属性栏设置本属性即可，如果需要其它颜色可以点击按钮选择。</p>
+		<p align="left"><img border="0" src="shape_img/15.png" ></p>
+	</blockquote>	
+			<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终线条颜色将被修改。</p>
+	  <p align="left"><img border="0" src="shape_img/16.png" ></p>
+	</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="背景颜色"></a>
+	<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">用于设置组件背景颜色，本属性支持动态调用。</p>
+		<p align="left"><img border="0" src="shape_img/17.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">如果想要使背景颜色属性具有明显的效果，需要将<b>“外形”</b>属性设置为非矩形效果，同时设置一个<b>“填充颜色”</b>属性。</p>
+		<p align="left"><img border="0" src="shape_img/18.png" ></p>
+	</blockquote>	
+			<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终可以看到背景颜色效果。</p>
+	  <p align="left"><img border="0" src="shape_img/19.png" ></p>
+	</blockquote>	
+	
+		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_group.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_AnNiuJiChu.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

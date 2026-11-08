@@ -1,0 +1,226 @@
+
+<html>
+<head>
+<title>火山PC视窗文件框组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗文件框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.文件框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#目录">1.目录(写)</a></blockquote></li>        
+          <li><blockquote><a href="#文本颜色">2.文本颜色(写)</a></blockquote></li>
+          <li><blockquote><a href="#文本颜色">3.背景颜色(写)</a></blockquote></li>
+          <li><blockquote><a href="#通配符">4.通配符(写)</a></blockquote></li>
+          <li><blockquote><a href="#允许选择多项">5.允许选择多项(写)</a></blockquote></li>
+          <li><blockquote><a href="#被选择文件">6.被选择文件(读)</a></blockquote></li>
+          <li><blockquote><a href="#双击选择">7.双击选择(事件)</a></blockquote></li>
+          <li><blockquote><a href="#选择文件被改变">8.选择文件被改变(事件)</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_TreeBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_QuDongQi.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+
+<a name="目录"></a>
+<p align="left">
+<h2>文件框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件主要用于显示指定目录下的所有文件。 </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 目录(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前要显示的目录，默认为空。</p>
+	<p align="left">注意：调试版状态下会显示当前火山项目文件夹目录。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置当前<b>“文件框1”</b>的目录为<b>“编辑框1”</b>的内容。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终按钮点击后目录被切换。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="文本颜色"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本颜色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通以上两个属性分别用于修改文件框的文本颜色和背景颜色，可使用十六进制颜色值或者<b>“颜色类”</b>中的常量值。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后分别设置这两个属性值。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/4.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到文件框的颜色被修改。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/5.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="通配符"></a>
+<font style="font-size: 12pt; font-weight:700">● 通配符(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以进行文件类型筛选。</p>
+	<p align="left">例如：提供<b>“*.txt”</b>后将只会显示txt后缀的文件，非txt后缀文件不会显示。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性置为<b>“*.exe”</b>，用来筛选只显示exe后缀文件。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/7.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到文件框内只剩下exe后缀文件。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/8.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="允许选择多项"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许选择多项(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以让文件框组件支持多项选择，默认为假不支持多选。</p>
+	<p align="left">注意：本属性仅支持在属性表格中设置。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先设置一个目录。</p>
+	<p align="left">2、然后设置本属性值为真。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/10.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最后可以看到文件框可以进行多选操作。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/11.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="被选择文件"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选择文件(读)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以读取当前文件框被选择的文件，如果选择了多个文件则会用分号进行分隔开。</p>
+	<p align="left">需要注意的是，本属性取出的文件名是不带路径的。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、按钮点击后首先利用<b>“分割文本()”</b>方法分割被选择的文件。</p>
+	<p align="left">2、分割后利用<b>“计次循环”</b>取出所有被选中文件名并带上当前目录添加到编辑框中。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/13.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终被选中的文件会附带路径出现在编辑框中。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/14.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="双击选择"></a>
+<font style="font-size: 12pt; font-weight:700">● 双击选择(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当文件框文件被双击后触发本事件，如果想要获取被双击的文件名称可通过<b>“被选择文件”</b>属性获取。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加本事件后取出被双击的文件。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/16.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到被双击的文件显示在了信息框中。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/17.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="选择文件被改变"></a>
+<font style="font-size: 12pt; font-weight:700">●   选择文件被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当文件框的文件被选择的时候会触发本事件。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先添加当前事件。</p>
+	<p align="left">2、判断来源对象后清空编辑框内容。</p>
+	<p align="left">3、最后分割文本取出所有被选择的文件。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/19.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当文件被选择时，被选择的文件会实时出现在编辑框中。</p>
+	<p align="left"><img border="0" src="WenJianKuang_img/20.gif" ></p>
+</blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_TreeBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_QuDongQi.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+		
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

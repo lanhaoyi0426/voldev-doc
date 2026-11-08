@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>火山PC视窗画板组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗画板组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_gifimg.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_BiaoQian.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="自绘进度条"></a>
+<p align="left">
+<h2>画板组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 概述</font>
+
+<blockquote>
+	<p align="left">画板组件提供了一些简单的绘图功能，可以用于绘制组件或开发一些简单的小游戏。</p>
+	<p align="left">关于游戏制作可以观看<a href="../../vol/index.html" target="_blank">《新手入门教程》</a>第四章第二节中的知识或观看<a href="../../e_To_vol/index.html" target="_blank">《从易语言到火山视窗》</a>教程中第五章第三节中的知识，可以学习如何用画板开发小游戏。</p>
+</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 自绘进度条</font><br/>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下：</p>
+<blockquote> 
+	<p align="left">进度条属于高频操作组件，因此为了防止画板在绘制进度条时发生闪烁，通常需要两个画板，这里起名<strong>“绘制画板”</strong>和<strong>“显示画板”</strong>。</p>
+	<p align="left">实际操作时在被隐藏的<strong>绘制画板</strong>上绘制进度，然后将进度整体复制到<strong>显示画板</strong>中，可以防止高频绘制发生的闪烁现象。</p>
+	<p align="left"><img border="0" src="Painter_img/1.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下：</p>
+<blockquote> 
+	<p align="left">1、首先给显示画板设置一个边框线，如果不设置边框线将无法从界面上准确的得知进度结束位置。</p>
+	<p align="left">2、给绘制画板设置相关颜色，主要用于进度背景颜色和进度文本颜色显示，因文本颜色和背景色一致，通过<strong>“画出方式”</strong>属性<strong>“或笔非”</strong>可以及时的将颜色翻转，防止文本颜色和进度颜色冲突。</p>
+	<p align="left">3、注意设置自动重画属性，否则将绘制异常。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/2.png" ></p>
+	</blockquote>
+	<p align="left">4、首先需要清除画板，否则更新进度时两次绘制重叠，进度条会显示异常。</p>
+	<p align="left">5、在画板中间位置写出进度文本。</p>
+	<p align="left">6、利用<strong>“画矩形()”</strong>方法绘制进度背景色。</p>
+	<p align="left">7、最后将<strong>绘制画板</strong>的内容复制到<strong>显示画板</strong>上显示出来即可。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/3.png" ></p>
+	</blockquote>
+	<p align="left">8、按钮点击后启动时钟，模拟进度加载。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/4.png" ></p>
+	</blockquote>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终实现了自绘进度条。</p>
+	<p align="left"><img border="0" src="Painter_img/5.gif" ></p>
+</blockquote>	
+	
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="自绘组件封装"></a>
+<font style="font-size: 12pt; font-weight:700">● 自绘组件封装</font>
+<p align="left">&nbsp;</p>
+	<p align="left">概述： </p>
+<blockquote>
+	<p align="left">将自绘自绘进度条进行二次封装，以便于重复使用，可使用组件布局器实现。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">操作流程如下： </p>
+<blockquote>
+	<p align="left">1、定义组件布局器类，右键打开布局设计器。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/6.png" ></p>
+	</blockquote>
+	<p align="left">2、绘制两个画板组件，注意调整<strong>“绘制画板”</strong>为不可见状态。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/7.png" ></p>
+	</blockquote>
+	<p align="left">3、设置组件相关属性，同时添加<strong>“尺寸被改变”</strong>事件，让进度条支持自定义尺寸显示。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/8.png" ></p>
+	</blockquote>
+	<p align="left">4、进度条颜色设置可单独封装一个写属性方法来实现。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/9.png" ></p>
+	</blockquote>
+	<p align="left">5、进度设置单独封装一个写属性方法实现。</p>
+	<p align="left">注：因动态调整了<strong>显示画板</strong>尺寸，为了保证<strong>进度文本</strong>能够准确显示在进度条中间，需要进行精确计算其绘制位置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/10.png" ></p>
+	</blockquote>
+	<p align="left">6、将自定义的进度条布局定义在窗口变量中，并设置进度颜色属性。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/11.png" ></p>
+	</blockquote>
+	<p align="left">7、打开界面设计器将进度条显示出来。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/12.gif" ></p>
+	</blockquote>
+	<p align="left">8、重复操作将两个进度条都显示在合适的位置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/13.png" ></p>
+	</blockquote>
+	<p align="left">9、按钮点击后设置进度条进度位置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="Painter_img/14.png" ></p>
+	</blockquote>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终被封装过的进度条可以正常被使用，如果其它窗口需要此进度条，直接将组件变量复制过去调整位置即可。</p>
+	<p align="left"><img border="0" src="Painter_img/15.gif" ></p>
+</blockquote>		
+
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_gifimg.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_BiaoQian.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

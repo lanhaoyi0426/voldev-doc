@@ -1,0 +1,632 @@
+<html>
+<head>
+<title>火山PC视窗工具条组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗工具条组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.工具条 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#工具条按钮">1.工具条按钮(写)</a></blockquote></li>  
+          <li><blockquote><a href="#位置">2.位置(写)</a></blockquote></li>  
+          <li><blockquote><a href="#上边线">3.上边线(写)</a></blockquote></li>      
+          <li><blockquote><a href="#允许多行">4.允许多行(写)</a></blockquote></li>      
+          <li><blockquote><a href="#图片组">5.图片组(写)</a></blockquote></li>      
+          <li><blockquote><a href="#热点图片组">6.热点图片组(写)</a></blockquote></li>     
+          <li><blockquote><a href="#禁止图片组">7.禁止图片组(写)</a></blockquote></li>   
+          <li><blockquote><a href="#列表方式">8.列表方式(写)</a></blockquote></li>    
+          <li><blockquote><a href="#背景颜色">9.背景颜色(写)</a></blockquote></li>    
+          <li><blockquote><a href="#起始空白">10.起始空白(写)</a></blockquote></li>  
+          <li><blockquote><a href="#插入按钮">11.插入按钮</a></blockquote></li>     
+          <li><blockquote><a href="#删除按钮">12.删除按钮</a></blockquote></li>     
+          <li><blockquote><a href="#加入状态">13.加入状态</a></blockquote></li>     
+          <li><blockquote><a href="#去除状态">14.去除状态</a></blockquote></li>     
+          <li><blockquote><a href="#去除状态">15.取状态</a></blockquote></li>     
+          <li><blockquote><a href="#取按钮数">16.取按钮数</a></blockquote></li>     
+          <li><blockquote><a href="#取提示文本">17.取提示文本</a></blockquote></li>     
+          <li><blockquote><a href="#置提示文本">18.置提示文本</a></blockquote></li> 
+          <!-- <li><blockquote><a href="#取类型">19.取类型</a></blockquote></li>     -->
+          <li><blockquote><a href="#更新位置">19.更新位置</a></blockquote></li>     
+          <li><blockquote><a href="#置标题">20.置标题</a></blockquote></li>     
+		  <li><blockquote><a href="#取标题">21.取标题</a></blockquote></li>    
+		  
+		  <li><blockquote><a href="#被单击">22.被单击(事)</a></blockquote></li>   
+		     <li><blockquote><a href="#被下拉">23.被下拉(事)</a></blockquote></li>  
+		</ol>
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_HuaKuai.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_bianjikuang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="工具条按钮"></a>
+<p align="left">
+<h2>工具条组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font>
+<br/>
+<blockquote>
+<p align="left">工具条是一种N个按钮集合在一起的组件，支持设置图片和排列方式，其组件默认位于窗口顶部位置，可通过<b>“位置”</b>属性调整其显示位置。</p>
+<p align="left">其效果如下：</p>
+<blockquote>
+	<p><img src="Toolbar_img/1.png" border="0"></p>
+</blockquote>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 工具条按钮(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置工具条上显示的按钮，属性值为文本型，只能在属性表中调用。</p>
+	<p align="left">每列信息为以'\n'字符分隔的字段,各个字段的意义为:</p>
+	<blockquote>
+		<p align="left">
+	1. 整数: 图片索引,-1 表示本按钮无图片.</p>
+		<p align="left">2. 整数: 按钮状态</p>
+		<p align="left">3. 整数: 按钮风格</p>
+		<p align="left">4. 文本: 标题</p>
+		<p align="left">5. 文本: 提示</p>
+	</blockquote>
+	
+	<p align="left"><img border="0" src="Toolbar_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">操作流程如下：</p>
+<blockquote>
+	<p align="left">实际开发中不需要手动输入工具条按钮的文本数据，火山内置了工具条按钮设计器，可以很方便的设计按钮信息。</p>
+	<p align="left"><img border="0" src="Toolbar_img/3.png" ></p>
+	<p align="left">打开设计器后点击<b>“向后插入”</b>就可以插入按钮，然后根据自己的需求设置合适的属性信息，最后点击<b>“确定”</b>保存即可。</p>
+	<p align="left"><img border="0" src="Toolbar_img/4.png" ></p>
+	<p align="left">保存后会自动生成相关的文本数据。</p>
+	<p align="left"><img border="0" src="Toolbar_img/5.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="Toolbar_img/6.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="位置"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置工具条按钮的位置，默认在窗口顶部位置显示。</p>
+	<p align="left">注：本属性不支持动态调用，且在界面设计器中始终是“自由”位置。</p>
+	<p align="left"><img border="0" src="Toolbar_img/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">本属性共有三个选项，根据自己的需求选择一个即可。</p> 
+	<p align="left"><img border="0" src="Toolbar_img/8.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当属性设置为<b>“自由”</b>时，软件运行后工具条就可以显示在其它位置。</p>
+	<p align="left"><img border="0" src="Toolbar_img/9.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="上边线"></a>
+<font style="font-size: 12pt; font-weight:700">● 上边线(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于设置工具条是否存在上边线，默认本属性为真。</p>
+	<p align="left">注：本属性不支持动态调用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计器预览如下： </p>
+<blockquote>
+	<p align="left">虽然本属性不支持动态调用，但是在界面设计器中可以预览其修改后的效果，当本属性设置为假后上边线消失。</p>
+	<p align="left"><img border="0" src="Toolbar_img/11.gif" ></p>
+</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="允许多行"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许多行(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于设置工具条按钮是否支持多行显示。</p>
+	<p align="left">注：本属性默认为真，且不支持动态调用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计器预览如下： </p>
+<blockquote>
+	<p align="left">当本属性设置为假后，工具条按钮将取消自动换行效果。</p>
+	<p align="left">注：当本属性为真且组件高度不够时，软件运行后工具条会自动调整组件高度使其能够完整的显示所有按钮。</p>
+	<p align="left"><img border="0" src="Toolbar_img/13.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="图片组"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片组(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于设置工具条正常状态下的图片组。</p>
+	<p align="left">注：本属性不支持动态调用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">准备一个正常状态下显示的图片组，如下所示：</p>
+	<p align="left"><img border="0" src="Toolbar_img/18.png" ></p>
+	<p align="left">将其设置给<b>“图片组”</b>属性。</p>
+	<p align="left"><img border="0" src="Toolbar_img/15.png" ></p>
+	<p align="left">打开工具条按钮设计器，就可以设置图片索引，索引从0开始。</p>
+	<p align="left">注：图片索引不区分图片组、热点图片组和禁止图片组，索引都是统一的。</p>
+	<p align="left"><img border="0" src="Toolbar_img/16.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终图片组将显示在工具条上。</p>
+	<p align="left"><img border="0" src="Toolbar_img/17.png" ></p>
+</blockquote>	
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<a name="热点图片组"></a>
+	<font style="font-size: 12pt; font-weight:700">● 热点图片组(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本属性用于设置当鼠标经过工具条按钮时显示的图片组。</p>
+		<p align="left">注：本属性仅当平面属性为真时有效，且不支持动态调用。</p>
+		<p align="left"><img border="0" src="Toolbar_img/19.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">准备一个热点图片组，如下所示：</p>
+		<p align="left"><img border="0" src="Toolbar_img/20.png" ></p>
+		<p align="left">将其设置给<b>“热点图片组”</b>属性即可。</p>
+		<p align="left"><img border="0" src="Toolbar_img/21.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终当鼠标经过时会显示热点图片组。</p>
+		<p align="left"><img border="0" src="Toolbar_img/22.gif" ></p>
+	</blockquote>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+	<a name="禁止图片组"></a>
+	<font style="font-size: 12pt; font-weight:700">● 禁止图片组(写)</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本属性用于设置工具条或工具条按钮被禁止时，显示的图片组。</p>
+		<p align="left">注：本属性不支持动态调用。</p>
+		<p align="left"><img border="0" src="Toolbar_img/23.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote> 
+		<p align="left">1、准备一个禁止状态下显示的图片组。</p>
+		<p align="left"><img border="0" src="Toolbar_img/24.png" ></p>
+		<p align="left">2、在属性栏设置引用禁止图片组。</p>
+		<p align="left">3、按钮1点击后禁止第一个按钮，按钮2点击后禁止整个组件。</p>
+		<p align="left"><img border="0" src="Toolbar_img/25.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终当按钮或组件被禁止时，都可以正常显示禁止图片组。</p>
+		<p align="left"><img border="0" src="Toolbar_img/26.gif" ></p>
+	</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="列表方式"></a>
+<font style="font-size: 12pt; font-weight:700">● 列表方式(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置文字和图标的排列方式，当本属性为真时，文字将显示在图标的右侧。</p>
+	<p align="left"><img border="0" src="Toolbar_img/27.png" ></p> 
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">因本属性不支持动态调用，只能在属性栏设置本属性。</p>
+	<p align="left"><img border="0" src="Toolbar_img/28.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终文字将显示在图标的右侧。</p>
+	<p align="left"><img border="0" src="Toolbar_img/29.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="背景颜色"></a>
+<font style="font-size: 12pt; font-weight:700">●  背景颜色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可修改组件背景颜色。</p>
+	<p align="left">注：本属性的设置时机为“组件创建前后”，因此支持动态调用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后修改背景颜色为白色。</p>
+	<p align="left"><img border="0" src="Toolbar_img/31.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终背景颜色将修改为白色</p>
+	<p align="left"><img border="0" src="Toolbar_img/32.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="起始空白"></a>
+<font style="font-size: 12pt; font-weight:700">●  起始空白(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置工具条首部的空白距离，单位像素。</p>
+	<p align="left">注：本属性不支持动态调用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接在属性栏设置本属性即可。</p>
+	<p align="left"><img border="0" src="Toolbar_img/34.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终工具条首部将会有20像素的空白。</p>
+	<p align="left"><img border="0" src="Toolbar_img/35.png" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="插入按钮"></a>
+<font style="font-size: 12pt; font-weight:700">●  插入按钮</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可在工具条中插入一个按钮，本方法共有六个参数。</p>
+	<p align="left">参数1：设置插入位置，从0开始，提供-1插入到最后。</p>
+	<p align="left">参数2：设置工具条类型，调用方式为<b>“工具条按钮类型.XXX”</b>，默认为普通按钮。</p>
+	<p align="left">参数3：设置图片索引，没有设置图片组可忽略。</p>
+	<p align="left">参数4：设置按钮标题，默认为空文本。</p>
+	<p align="left">参数5：设置提示文本，默认为空文本。</p>
+	<p align="left">参数6：设置按钮状态，调用方式为<b>“工具条按钮状态.XXX”</b>，注意其中<b>“选中”</b>状态仅在按钮类型为多选按钮或单选按钮时有效。</p>
+	<p align="left"><img border="0" src="Toolbar_img/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按照自己的需求，插入需要的按钮类型即可。</p>
+	<p align="left"><img border="0" src="Toolbar_img/37.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终新按钮会插入到工具条尾部。</p>
+	<p align="left">注：如果新插入的按钮标题长度大于其它任何按钮标题长度，则工具条会自动调整按钮间距。</p>
+	<p align="left"><img border="0" src="Toolbar_img/38.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="删除按钮"></a>
+<font style="font-size: 12pt; font-weight:700">●  删除按钮</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可删除指定按钮，按钮索引从0开始。</p>
+	<p align="left"><img border="0" src="Toolbar_img/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后删除工具条的第一个按钮。</p>
+	<p align="left"><img border="0" src="Toolbar_img/40.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终第一个按钮将被删除。</p>
+	<p align="left"><img border="0" src="Toolbar_img/40.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="加入状态"></a>
+<font style="font-size: 12pt; font-weight:700">●  加入状态</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法共有两个参数。</p>
+	<p align="left">参数1：提供按钮索引，从0开始。</p>
+	<p align="left">参数2：提供<b>“工具条按钮状态”</b>类中的常量值。</p>
+	<p align="left"><img border="0" src="Toolbar_img/41.png" ></p>
+	<p align="left">本方法是一个多功能方法，通过<b>“工具条按钮状态”</b>中的5个常量值，可以实现不同的显示效果。</p>
+	<p align="left">注：其中<b>“选中”</b>只有在工具条按钮类型为多选或单选时有效，<b>“按下”</b>状态在类型为<b>“普通按钮”</b>时有效。</p>
+	 
+	<p align="left"><img border="0" src="Toolbar_img/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">例如想要设置<b>“选中”</b>状态，首先将按钮调整为<b>“多选按钮”</b>。</p> 
+	<p align="left"><img border="0" src="Toolbar_img/43.png" ></p>
+	<p align="left">然后就可以调用本方法动态的设置为选中状态。</p>
+	<p align="left"><img border="0" src="Toolbar_img/44.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终点击按钮后，工具条的最后一个按钮会出现选中状态。</p>
+	<p align="left">注：当按钮为多选按钮时，也可以通过鼠标点击实现切换选中状态。</p>
+	<p align="left"><img border="0" src="Toolbar_img/45.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="去除状态"></a>
+<font style="font-size: 12pt; font-weight:700">● 去除状态</font>
+<font style="font-size: 12pt; font-weight:700">●  取状态</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取状态”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过指定按钮索引，可以取出按钮状态，通常用于判断按钮是否选中或是否被禁止。</p>
+	<p align="left"><img border="0" src="Toolbar_img/46.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“去除状态”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">去掉指定按钮状态，通常可配合<b>“取状态()”</b>方法一起使用。</p>
+	<p align="left"><img border="0" src="Toolbar_img/47.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p> 
+<blockquote>
+	<p align="left">打开工具条按钮设计器，将一个按钮设置为多选，并选中该按钮。</p>
+	<p align="left"><img border="0" src="Toolbar_img/48.png" ></p>
+	<p align="left">按钮点击后调用<b>“取状态()”</b>方法判断按钮是否被选中，如果被选中就调用<b>“去除状态()”</b>方法去除选中。</p>
+	<p align="left"><img border="0" src="Toolbar_img/49.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终点击按钮后可去除选中状态。</p>
+	<p align="left"><img border="0" src="Toolbar_img/50.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取按钮数"></a>
+<font style="font-size: 12pt; font-weight:700">●  取按钮数</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可取出所有按钮数量，通常用于对按钮进行批量操作。</p>
+	<p align="left"><img border="0" src="Toolbar_img/51.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后利用计次循环取消所有按钮的选中状态。</p>
+	<p align="left"><img border="0" src="Toolbar_img/52.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终所有按钮的选中状态被取消。</p>
+	<p align="left"><img border="0" src="Toolbar_img/53.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取提示文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取提示文本</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">可用于取出指定按钮的提示文本，按钮索引从0开始。</p>
+	<p align="left"><img border="0" src="Toolbar_img/54.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">打开工具条按钮设计器，就可以预设提示文本，设置提示文本后当鼠标在按钮上停留时就可以弹出提示文本。</p>
+	<p align="left"><img border="0" src="Toolbar_img/56.png" ></p>
+	<p align="left">按钮点击后取出第一个按钮的提示文本。</p>
+	<p align="left"><img border="0" src="Toolbar_img/55.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终鼠标停留可以显示提示文本，按钮点击也可以取出提示文本。</p>
+	<p align="left"><img border="0" src="Toolbar_img/57.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置提示文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  置提示文本</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于更新提示文本，本方法共有两个参数。</p>
+	<p align="left">参数1：提供按钮索引从0开始。</p>
+	<p align="left">参数2：提供新的提示文本，留空表示无提示。</p>
+	<p align="left"><img border="0" src="Toolbar_img/58.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后修改第一个按钮的提示文本。</p>
+	<p align="left"><img border="0" src="Toolbar_img/59.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终提示文本被修改。</p>
+	<p align="left"><img border="0" src="Toolbar_img/60.gif" ></p>
+</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="更新位置"></a>
+<font style="font-size: 12pt; font-weight:700">●  更新位置</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于父窗口尺寸被改变时及时更新工具条位置。</p>
+	<p align="left"><img border="0" src="Toolbar_img/61.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">演示操作如下： </p>
+<blockquote>
+	<p align="left">正常情况下虽然工具条会默认位于窗口顶部位置，但是当窗口尺寸被改变时，工具条宽度并不会跟着窗口尺寸改变而改变，如下所示：</p>
+	<p align="left"><img border="0" src="Toolbar_img/62.gif" ></p>
+	<p align="left">添加窗口的<b>“尺寸被改变”</b>事件，并在事件下调用工具条的<b>“更新位置()”</b>方法即可。</p>
+	<p align="left"><img border="0" src="Toolbar_img/63.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终工具条将跟随窗口的尺寸改变而改变。</p>
+	<p align="left"><img border="0" src="Toolbar_img/64.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置标题"></a>
+<font style="font-size: 12pt; font-weight:700">●  置标题</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可设置某个按钮的标题，共有两个参数。</p>
+	<p align="left">参数1：提供按钮索引，从0开始。</p>
+	<p align="left">参数2：提供新标题，默认为空文本。</p>
+	<p align="left"><img border="0" src="Toolbar_img/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p> 
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后修改第一个按钮的标题。</p>
+	<p align="left"><img border="0" src="Toolbar_img/66.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终标题被修改。</p>
+	<p align="left"><img border="0" src="Toolbar_img/67.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取标题"></a>
+<font style="font-size: 12pt; font-weight:700">●  取标题</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">用于取出指定按钮的标题，按钮索引从0开始。</p>
+	<p align="left"><img border="0" src="Toolbar_img/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出第一个按钮的标题。</p>
+	<p align="left"><img border="0" src="Toolbar_img/68.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终工具条第一个按钮标题被取出。</p>
+	<p align="left"><img border="0" src="Toolbar_img/69.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="被单击"></a>
+<font style="font-size: 12pt; font-weight:700">●  被单击(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当按钮被点击时触发本事件，参数返回按钮索引。</p>
+	<p align="left"><img border="0" src="Toolbar_img/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加本事件后，通过判断按钮索引执行不同的操作。</p>
+	<p align="left"><img border="0" src="Toolbar_img/74.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮点击被成功执行。</p> 
+	<p align="left"><img border="0" src="Toolbar_img/75.gif" ></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="被下拉"></a>
+<font style="font-size: 12pt; font-weight:700">●  被下拉(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当工具条按钮类型为<b>“下拉按钮”</b>时，点击下拉按钮可以触发本事件。</p>
+	<p align="left">本事件共有三个参数，参数1返回按钮索引，参数2、3返回按钮坐标，通常用于弹出菜单。</p>
+	<p align="left"><img border="0" src="Toolbar_img/76.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先将按钮类型调整为<b>“下拉按钮”</b>。</p>
+	<p align="left"><img border="0" src="Toolbar_img/77.png" ></p>
+	<p align="left">2、定义一个工具条菜单，并插入两个菜单项。</p>
+	<p align="left"><img border="0" src="Toolbar_img/78.png" ></p>
+	<p align="left">3、添加<b>“被下拉”</b>事件，并调用<b>“弹出菜单()”</b>方法弹出工具条菜单。</p>
+	<p align="left"><img border="0" src="Toolbar_img/79.png" ></p>
+	<p align="left">4、添加窗口<b>“接收到命令”</b>事件，处理菜单点击。</p>
+	<p align="left"><img border="0" src="Toolbar_img/80.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可实现点击下拉按钮后可弹出菜单，并执行菜单操作。</p>
+	<p align="left"><img border="0" src="Toolbar_img/81.gif" ></p>
+</blockquote>
+
+
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_HuaKuai.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_bianjikuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

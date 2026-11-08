@@ -1,0 +1,299 @@
+
+<html>
+<head>
+<title>火山PC视窗月历组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗月历组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.月历 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#不圈注今天">1.不圈注今天(写)</a></blockquote></li>        
+          <li><blockquote><a href="#不显示今天">2.不显示今天(写)</a></blockquote></li>        
+          <li><blockquote><a href="#今天">3.今天(写)</a></blockquote></li>        
+          <li><blockquote><a href="#开始星期首日">4.开始星期首日(写)</a></blockquote></li>              
+          <li><blockquote><a href="#显示星期序号">5.显示星期序号(写)</a></blockquote></li>              
+          <li><blockquote><a href="#最大日期">6.最大日期(写)</a></blockquote></li>              
+          <li><blockquote><a href="#最小日期">7.最小日期(写)</a></blockquote></li>              
+          <li><blockquote><a href="#滚动月数">8.滚动月数(写)</a></blockquote></li>              
+          <li><blockquote><a href="#置日期范围">9.置日期范围</a></blockquote></li>              
+          <li><blockquote><a href="#选择日期被改变">10.选择日期被改变(事件)</a></blockquote></li>              
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_RiQi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ComboBox.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>
+<a name="不圈注今天"></a>
+<p align="left">
+<h2>月历组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件主要提供月历显示功能。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 不圈注今天(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性设置为真，可以设置当前组件不进行圈注今天。</p>
+	<p align="left">注：本属性只能在属性栏设置。</p>
+	<p align="left"><img border="0" src="YueLi_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在当前组件属性栏设置本属性为真。</p>
+	<p align="left"><img border="0" src="YueLi_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+   <p align="left">当前属性设置为真后，可以看到月历组件中不会圈注今天日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/3.gif" ></p><br>
+	<p align="left">当属性值设置为假后，今天日期始终会被圈注。</p>
+		<p align="left"><img border="0" src="YueLi_img/4.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="不显示今天"></a>
+<font style="font-size: 12pt; font-weight:700">● 不显示今天(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当本属性设置为真，可以隐藏今天日期的显示。</p>
+	<p align="left">注：本属性只能在属性栏设置。</p>
+	<p align="left"><img border="0" src="YueLi_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面操作预览： </p>
+<blockquote>
+	<p align="left">打开界面设计器，设置本属性值为真，可以看到月历组件的今天日期被隐藏。</p>
+	<p align="left"><img border="0" src="YueLi_img/6.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终软件运行后，自然也不会显示今天日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/7.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="今天"></a>
+<font style="font-size: 12pt; font-weight:700">● 今天(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置月历组件当前选中日期，单位是小数日期，并非时间戳。</p>
+	<p align="left">注意：本属性不是修改月历日期，而是选中指定日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、利用<b>“增减时间()”</b>方法，计算3天后的日期。</p>
+	<p align="left">2、将计算后的日期赋值给当前属性。</p>
+	<p align="left"><img border="0" src="YueLi_img/9.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终按钮点击后，月历组件会选中3天后的日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/10.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="开始星期首日"></a>
+<font style="font-size: 12pt; font-weight:700">● 开始星期首日(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前组件的首日为星期几。</p>
+	<p align="left">属性值调用方式为<b>“星期类.XXX”</b>。</p>
+	<p align="left"><img border="0" src="YueLi_img/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性值为<b>“星期类.星期日”</b>。</p>
+	<p align="left"><img border="0" src="YueLi_img/12.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到首日由周一变成了周日。</p>
+	<p align="left"><img border="0" src="YueLi_img/13.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="显示星期序号"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示星期序号(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性设置为真，可以在每周的开始位置显示当前周是在当前年中是第多少周。</p>
+	<p align="left">注意：本属性必须在属性表中调用，不支持动态设置。</p>
+	<p align="left"><img border="0" src="YueLi_img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在属性表中调用本属性设置为真。</p>
+	<p align="left"><img border="0" src="YueLi_img/15.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终星期序号会显示出来。</p>
+	<p align="left"><img border="0" src="YueLi_img/16.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最大日期"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大日期(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前可显示的最大日期，属性值为0则无限制。</p>
+	<p align="left">注意：需要提供小数时间，并非时间戳。</p>
+	<p align="left"><img border="0" src="YueLi_img/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先利用<b>“增减时间()”</b>计算一个最大日期。</p>
+	<p align="left">2、然后将计算出来的日期赋值给本属性即可。</p>
+	<p align="left"><img border="0" src="YueLi_img/18.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到当前月历组件的最大日期停留在了三天后。</p>
+	<p align="left"><img border="0" src="YueLi_img/19.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最小日期"></a>
+<font style="font-size: 12pt; font-weight:700">●  最小日期(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性值可以设置当前月历可显示的最小日期，属性值为0则无限制。</p>
+	<p align="left">注意：需要提供小数时间，并非时间戳。</p>
+	<p align="left"><img border="0" src="YueLi_img/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先利用<b>“增减时间()”</b>计算一个最小日期。</p>
+	<p align="left">2、然后将计算出来的日期赋值给本属性即可。</p>
+	<p align="left"><img border="0" src="YueLi_img/21.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当前月历组件的最大日期停留在了三天前。</p>
+	<p align="left"><img border="0" src="YueLi_img/22.gif" ></p>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="滚动月数"></a>
+<font style="font-size: 12pt; font-weight:700">●  滚动月数(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当进行切换月份操作时，一次性跳过的月的数量。</p>
+	<p align="left"><img border="0" src="YueLi_img/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性值为3.</p>
+	<p align="left"><img border="0" src="YueLi_img/24.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮点击后，切换月份时会一次性跳过三个月。</p>
+	<p align="left"><img border="0" src="YueLi_img/25.gif" ></p>
+</blockquote>
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置日期范围"></a>
+<font style="font-size: 12pt; font-weight:700">● 置日期范围</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以同时设置最大和最小显示日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、利用<b>“增减时间()”</b>方法，计算一个最大日期和最小日期出来。</p>
+	<p align="left">2、将计算出来的日期填入本方法的参数中即可。</p>
+	<p align="left"><img border="0" src="YueLi_img/27.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到月历组件的最大和最小显示日期被限制在了5天。</p>
+	<p align="left"><img border="0" src="YueLi_img/28.gif" ></p>
+</blockquote>		
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="选择日期被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择日期被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当日期被选择时会触发本事件，可通过<b>“首选择日”</b>或<b>“尾选择日”</b>属性获取当前选择日期。</p>
+	<p align="left"><img border="0" src="YueLi_img/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加本事件后，利用<b>“时间到文本()”</b>转换后显示在标签上。</p>
+	<p align="left"><img border="0" src="YueLi_img/30.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当日期选择时，标签会实时显示当前选择的时间。</p>
+	<p align="left"><img border="0" src="YueLi_img/31.gif" ></p>
+</blockquote>	
+	<blockquote>
+				<p>&nbsp;</p>
+				<p align="left">  [<a href="mfc_RiQi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ComboBox.html">下一章</a>] </p>
+				<p>&nbsp;</p>
+		</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

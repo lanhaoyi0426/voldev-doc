@@ -1,0 +1,368 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗菜单操作教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台火山PC视窗菜单操作教程" />
+<link rel="shortcut icon" type="image/x-icon" href="cd_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.菜单操作 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#cdsh">1.菜单设计</a></blockquote></li>  
+		 <li><blockquote><a href="#ckcdsz">2.菜单添加到窗口</a></blockquote></li>
+		 <li><blockquote><a href="#cddianji">3.菜单点击</a></blockquote></li>
+		  <li><blockquote><a href="#sxyjcd">4.实现右键菜单</a></blockquote></li>
+		  <li><blockquote><a href="#yjcd">5.右键和窗口菜单一致</a></blockquote></li>
+		  <li><blockquote><a href="#tpcd">6.托盘图标菜单</a></blockquote></li>
+		  <li><blockquote><a href="#yxcdx">7.允许菜单项</a></blockquote></li>
+		  <li><blockquote><a href="#yxcdx">8.是否被允许</a></blockquote></li>
+		   <li><blockquote><a href="#scddx">9.删除菜单项</a></blockquote></li>
+		  <li><blockquote><a href="#qcdxts">10. 取菜单项提示</a></blockquote></li>
+		   <li><blockquote><a href="#qcdxts">11.置菜单项提示</a></blockquote></li>
+		  <li><blockquote><a href="#zcdxbt">12.取菜单项标题</a></blockquote></li>
+		  <li><blockquote><a href="#zcdxbt">13.置菜单项标题</a></blockquote></li>
+		  <li><blockquote><a href="#crcdx">14.插入菜单项</a></blockquote></li>
+		  <li><blockquote><a href="#sfbxz">15.是否被选中</a></blockquote></li>
+		  <li><blockquote><a href="#sfbxz">16.选中菜单项</a></blockquote></li>
+		  <li><blockquote><a href="#fzcdxxzzt">17.翻转菜单项选中状态</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_MuLuKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_JinDuTiao.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">
+<h2>菜单操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p><a name="cdsh"></a>
+<font style="font-size: 12pt; font-weight:700">● 菜单设计</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">设计流程如下图： </p>
+<blockquote>
+	<p align="left">1、首先定义一个新的类，基础类务必填写<b>“菜单类”</b>，随后右键可以打开菜单设计器。</p>
+	<p align="left"><img border="0" src="cd_img/1.png" ></p>
+	<p align="left">2、左侧是具体菜单项目设计效果，右侧是常用的菜单项目设置。</p>
+	<p align="left">3、无虚线的菜单属于<b>“根菜单”</b>，根菜单不能单独存在，必须<b>“向后插入”</b>新菜单后使用<b>“右移”</b>设置成子菜单。</p>
+	<p align="left">4、如果想要让子菜单也拥有子菜单，继续点击<b>“右移”</b>增加虚线即可。</p>
+	<p align="left"><img border="0" src="cd_img/2.png" ></p>
+	<p align="left">5、设计完毕后效果如下图。</p>
+	
+	<p align="left"><img border="0" src="cd_img/3.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p><a name="ckcdsz"></a>
+<font style="font-size: 12pt; font-weight:700">● 菜单添加到窗口</font><br/>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">窗口上设置菜单，需要使用<a href="mfc_ck.html#zcd"><b>“置菜单()”</b></a>方法，请点击<a href="mfc_ck.html#zcd">这里</a>观看窗口操作图文教程。</p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="cddianji"></a>
+<font style="font-size: 12pt; font-weight:700">● 菜单点击事件</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">菜单点击需要使用<a href="mfc_ck.html#jsdml"><b>“接收到命令”</b></a>事件请点击<a href="mfc_ck.html#jsdml">这里</a>观看窗口图文教程。</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<a name="sxyjcd"></a>
+<font style="font-size: 12pt; font-weight:700">●实现窗口右键菜单</font>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先设计一个菜单。</p>
+	<p align="left">2、主窗口添加<b>“鼠标右键被放开”</b>事件，调用<b>“弹出菜单()”</b>方法就可以弹出菜单。</p>
+	<p align="left"><img border="0" src="cd_img/4.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终主窗口按下右键时会出现菜单。</p>
+	<p align="left"><img border="0" src="cd_img/5.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="yjcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 右键和窗口菜单一致</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">通过上篇图文教程学会了右键菜单，但是会发现一个问题。</p>
+	<p align="left">如果设计的菜单包含多个根菜单的时候，只会弹出第一个菜单。 </p>
+	<p align="left"><img border="0" src="cd_img/6.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">下面实现<strong>弹出编辑</strong>菜单：</p>
+<blockquote>
+	<p align="left">1、首先对已经设计好的窗口菜单进行复制一份，并修改类名后打开设计器。</p>
+	<p align="left"><img border="0" src="cd_img/7.png" > </p>
+  <p align="left">2、打开设计器后，如果想要弹出编辑菜单，就将其它菜单删除。</p>
+	<p align="left"><img border="0" src="cd_img/8.png" > </p>
+  <p align="left">3、删除效果如下图。</p>
+  <p align="left"><img border="0" src="cd_img/9.png" > </p>
+	<p align="left">4、删除后代码如下图，注意看编辑菜单的初始值，两个菜单中都是一致的。</p>
+	<p align="left">如果常量值一致，证明操作无误，方便接下来的菜单点击事件。</p>
+	<p align="left"><img border="0" src="cd_img/10.png" > </p>
+  <p align="left">5、添加窗口的<b>“鼠标右键被放开”</b>事件，并弹出右键菜单。</p>
+  <p align="left">6、添加窗口的<b>“创建完毕”</b>事件，设置窗口菜单。</p>
+	<p align="left">7、添加接收到命令事件，判断菜单被点击。此</p>
+	<p align="left">处的命令代码实际上就是菜单的常量值，直接判断<b>“2005”</b>也可以判断复制被点击。</p>
+	<p align="left"><img border="0" src="cd_img/11.png" > </p>
+
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到窗口菜单和右键菜单都可以弹出信息框，证明两个菜单的命令是通用的，不用重复编写两套命令。</p>
+	<p align="left"><img border="0" src="cd_img/12.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="tpcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 托盘图标菜单</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先设计一个菜单。</p>
+	<p align="left">2、主窗口创建完毕后设置托盘图标。</p>
+	<p align="left">3、添加托盘事件并调用<b>“弹出托盘菜单”</b>方法。</p>
+	<p align="left"><img border="0" src="cd_img/13.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终右键托盘图标可以弹出被设计的菜单。</p>
+	<p align="left"><img border="0" src="cd_img/14.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="yxcdx"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许菜单项</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 是否被允许</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“允许菜单项”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以设置菜单是否允许操作。</p>
+	<p align="left">参数1：提供要设置的菜单ID。 </p>
+	<p align="left">参数2：提供是否禁止，为真则禁止操作。 </p>
+	<p align="left"><img border="0" src="cd_img/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“是否被允许”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可判断指定菜单是否允许操作，返回真表示允许操作。</p>
+	<p align="left">参数1：提供要判断的菜单ID即可。</p>
+	<p align="left"><img border="0" src="cd_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置实例菜单，方便后续操作菜单。</p>
+	<p align="left">2、按钮点击后通过菜单变量调用<b>“允许菜单项”</b>和<b>“是否被允许”</b>两个方法。</p>
+	<p align="left"><img border="0" src="cd_img/17.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终按钮点击后<b>“复制”</b>菜单会在禁止操作和允许操作之间进行切换。</p>
+	<p align="left"><img border="0" src="cd_img/18.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="scddx"></a>
+<font style="font-size: 12pt; font-weight:700">●删除菜单项</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">调用本方法课实现删除指定菜单。</p>
+  <p align="left">参数1：提供要删除的菜单ID即可。</p>
+	<p align="left"><img border="0" src="cd_img/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置菜单。</p>
+	<p align="left">2、按钮点击后删除<b>“复制”</b>菜单。</p>
+	<p align="left"><img border="0" src="cd_img/20.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到复制菜单被删除。</p>
+	<p align="left"><img border="0" src="cd_img/21.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="qcdxts"></a>
+<font style="font-size: 12pt; font-weight:700">● 取菜单项提示</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置菜单项提示</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取菜单项提示”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定菜单的提示内容，无提示返回空文本。</p>
+	<p align="left"><img border="0" src="cd_img/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“置菜单项提示”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可设置指定菜单的提示内容。</p>
+	<p align="left"><img border="0" src="cd_img/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置菜单。</p>
+	<p align="left">2、按钮1点击后设置<b>“复制”</b>的菜单提示。</p>
+	<p align="left">3、按钮2点击后取出<b>“复制”</b>的菜单提示。</p>
+	<p align="left"><img border="0" src="cd_img/24.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到提示被成功设置和取出。</p>
+	<p align="left"><img border="0" src="cd_img/26.gif" > </p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p><a name="zcdxbt"></a>
+<font style="font-size: 12pt; font-weight:700">● 取菜单项标题</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置菜单项标题</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“置菜单项标题”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法课设置指定菜单的标题。</p>
+	<p align="left"><img border="0" src="cd_img/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“取菜单项标题”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可取出指定菜单的标题。</p>
+	<p align="left"><img border="0" src="cd_img/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置菜单。</p>
+	<p align="left">2、按钮1点击后修改<b>“复制”</b>菜单的标题。</p>
+	<p align="left">3、按钮2点击后取出<b>“复制”</b>菜单标题。</p>
+	<p align="left"><img border="0" src="cd_img/29.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到按钮点击前后，菜单标题被修改，并且也可以成功取出被修改的标题。</p>
+	<p align="left"><img border="0" src="cd_img/30.gif" > </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="crcdx"></a>
+<font style="font-size: 12pt; font-weight:700">●插入菜单项</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可在指定菜单位置插入一个菜单，成功返回菜单ID。</p>
+	<p align="left">参数1：提供新菜单的id值，默认为0.</p>
+	<p align="left">参数2：提供新菜单标题、</p>
+	<p align="left">参数3：提供在哪个菜单ID之前插入。</p>
+	<p align="left">参数4：如果指定本参数，将插入到指定菜单的子菜单尾部。</p>
+	<p align="left">参数5：提供新菜单的提示文本。</p>
+	<p align="left">参数6：提供是否选中此菜单。</p>
+	<p align="left">参数7：提供是否禁止操作此菜单。</p>
+	<p align="left"><img border="0" src="cd_img/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置窗口菜单。</p>
+	<p align="left">2、按钮点击后在<b>“粘贴”</b>前插入<b>“火山菜单”</b>，同时选中此菜单。</p>
+	<p align="left"><img border="0" src="cd_img/32.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终<b>“火山菜单”</b>被成功插入，并且也处于选中状态。</p>
+	<p align="left"><img border="0" src="cd_img/33.gif" ></p>
+</blockquote>	
+	
+	
+		<p align="left">&nbsp;</p><a name="sfbxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否被选中</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 选中菜单项</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“是否被选中”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可判断指定菜单是否被选中，如果菜单不存在将返回假。</p>
+	<p align="left">设置成功返回真，失败返回假。</p>
+	<p align="left"><img border="0" src="cd_img/34.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“选中菜单项”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可设置指定菜单是否被选中。</p>
+	<p align="left">参数1：提供要设置的菜单ID。</p>
+	<p align="left">参数2：提供真将设置为选中状态，否则不选中。</p>
+	<p align="left"><img border="0" src="cd_img/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置菜单。</p>
+	<p align="left">2、按钮1点击判断<b>“复制”</b>菜单是否被选中。</p>
+	<p align="left">3、按钮2点击设置<b>“复制”</b>菜单选中。 </p>
+	<p align="left"><img border="0" src="cd_img/36.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到<b>“复制”</b>菜单被成功操作。</p>
+	<p align="left"><img border="0" src="cd_img/37.gif" > </p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="fzcdxxzzt"></a>
+<font style="font-size: 12pt; font-weight:700">● 翻转菜单项选中状态</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可翻转菜单的选中状态，返回是否翻转成功。</p>
+	<p align="left"><img border="0" src="cd_img/38.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后载入菜单。</p>
+	<p align="left">2、按钮点击后翻转复制菜单的选中状态。</p>
+	<p align="left"><img border="0" src="cd_img/39.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到<b>“复制菜单”</b>在选中和未选中之间翻转操作。</p>
+	<p align="left"><img border="0" src="cd_img/40.gif" ></p>
+</blockquote>	
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_MuLuKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_JinDuTiao.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

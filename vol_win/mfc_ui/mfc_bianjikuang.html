@@ -1,0 +1,1093 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗编辑框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗编辑框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="bjk_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.编辑框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#nr">1.内容(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#zbk">2.左边空(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#ybk">3.右边空(读写)</a></blockquote></li>   
+          <li><blockquote><a href="#mmygzf">4.密码遮盖字符(写)</a></blockquote></li>  
+          <li><blockquote><a href="#mmygzf">5.输入方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#dqfs">6.对齐方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#wbys">7.文本颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#sfyxdh">8.是否允许多行(写)</a></blockquote></li>  
+          <li><blockquote><a href="#sfygg">9.是否已更改(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#zdyxcd">10.最大允许长度(写)</a></blockquote></li>  
+          <li><blockquote><a href="#gdt">11.滚动条(写)</a></blockquote></li>  
+          <li><blockquote><a href="#bjys">12.背景颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#bxzwb">13.被选择文本(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#tjqfs">14.调节器方式(写)</a></blockquote></li>  
+		  <li><blockquote><a href="#tjqsxz">15.调节器上限值(写)</a></blockquote></li> 
+          <li><blockquote><a href="#tjqsxz">16.调节器底限制(写)</a></blockquote></li>  
+          <li><blockquote><a href="#qsxzwz">17.起始选择位置(写)</a></blockquote></li> 
+		  <li><blockquote><a href="#bxzzfs">18.被选择字符数(写)</a></blockquote></li>  
+          <li><blockquote><a href="#zhfs">19.转换方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#ycxz">20.隐藏选择(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tshf">21.提示横幅(写)</a></blockquote></li>  
+          <li><blockquote><a href="#shanchu">22.删除</a></blockquote></li>  
+          <li><blockquote><a href="#jiantie">23.剪切</a></blockquote></li>  
+          <li><blockquote><a href="#zhantie">24.粘贴</a></blockquote></li>  
+          <li><blockquote><a href="#jrwb">25.加入文本</a></blockquote></li>  
+          <li><blockquote><a href="#jrwbh">26.加入文本行</a></blockquote></li>  
+          <li><blockquote><a href="#qzfszh">27.取字符所在行</a></blockquote></li>  
+          <li><blockquote><a href="#qhs">28.取行数</a></blockquote></li>  
+          <li><blockquote><a href="#qhwb">29.取行文本</a></blockquote></li>  
+          <li><blockquote><a href="#qhswz">30.取行首位置</a></blockquote></li>  
+          <li><blockquote><a href="#qsksh">31.取首可视行</a></blockquote></li>  
+          <li><blockquote><a href="#kfcx">32.可否撤销</a></blockquote></li>  
+          <li><blockquote><a href="#fuzhi">33.复制</a></blockquote></li>  
+          <li><blockquote><a href="#chexiao">34.撤销</a></blockquote></li>  
+          <li><blockquote><a href="#xsqpts">35.显示气泡提示</a></blockquote></li>  
+          <li><blockquote><a href="#gund">36.滚动</a></blockquote></li>  
+          <li><blockquote><a href="#zzybk">37.置左右边空</a></blockquote></li>  
+          <li><blockquote><a href="#ztshf">38.置提示横幅</a></blockquote></li>  
+          <li><blockquote><a href="#xzwb">39.选择文本</a></blockquote></li>  
+          <li><blockquote><a href="#xsqpts">40.隐藏气泡提示</a></blockquote></li>  
+          <li><blockquote><a href="#zjmnr">41.静默置内容</a></blockquote></li>  
+          <li><blockquote><a href="#zjmnr">42.内容被改变(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#tjnbanx">43.调节钮被按下(事件)</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_Toolbar.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_cjbianjikuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">
+<h2>编辑框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+	<a name="nr"></a>
+
+<p align="left">&nbsp;</p><a name="cdsh"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可用于设置编辑框显示的内容和窗口组件的<b>“标题”</b>属性作用相同。</p>
+	<p align="left">同名的读属性可以读取编辑框的内容。</p>
+	<p align="left"><img border="0" src="bjk_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+  <p align="left">在窗口上放两个按钮和一个编辑框组件。</p>
+	<p align="left">选中编辑框组件就可以在右侧属性栏设置内容，设置后会立刻显示在设计器上。</p>
+	<p align="left">本操作相当于给编辑框设置了初始值，软件运行后就会显示此内容。</p>
+	<p align="left"><img border="0" src="bjk_img/2.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">1、添加按钮被单击事件，并分别判断来源对象。</p>
+	<p align="left">2、按钮1点击后设置编辑框的新内容。</p>
+	<p align="left">3、按钮2点击后取出编辑框的内容显示在信息框中。</p>
+	<p align="left"><img border="0" src="bjk_img/3.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">当软件运行后，点击设置内容可以更新编辑框的内容。</p>
+	<p align="left">点击获取内容就可以取出编辑框内容。</p>
+	<p align="left"><img border="0" src="bjk_img/4.gif" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p><a name="zbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 左边空(读写)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框左边拥有一段空白，单位像素。</p>
+	<p align="left">同名的读属性可以读取编辑框的内容。</p>
+	<p align="left"><img border="0" src="bjk_img/5.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">1、按钮1被点击后设置左边空白为20像素。</p>
+	<p align="left">2、按钮2点击后取出左边的空白距离。</p>
+	<p align="left"><img border="0" src="bjk_img/6.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">可以看大当按钮点击后，编辑框左边会出现明显的空白。</p>
+	<p align="left"><img border="0" src="bjk_img/7.gif" > </p>
+</blockquote>
+		
+	
+<p align="left">&nbsp;</p><a name="ybk"></a>
+<font style="font-size: 12pt; font-weight:700">● 右边空(读写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框内容右边出现空白。</p>
+	<p align="left">同名的读属性可以读取空白尺寸。</p>
+	<p align="left"><img border="0" src="bjk_img/8.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、按钮1点击后设置本属性值为20像素。</p>
+	<p align="left">2、按钮2点击后取出右边空白。</p>
+	<p align="left"><img border="0" src="bjk_img/9.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到当按钮点击后，拖动编辑框内容时可以看到右边出现空白区域。</p>
+  <p align="left">提示：效果没有立刻显示出来是因为当前编辑框是单行模式。</p>
+	<p align="left"><img border="0" src="bjk_img/10.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="mmygzf"></a>
+<font style="font-size: 12pt; font-weight:700">● 密码遮盖字符(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 输入方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“输入方式”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用于设置编辑框的常用输入方式。</p>
+	<p align="left">调用方式：<b>“编辑框输入方式.XX”</b>,如果在表格的属性栏使用，直接下拉选择即可。</p>
+	<p align="left"><img border="0" src="bjk_img/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“密码遮盖字符”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当设置<b>“输入方式”</b>为<b>“密码输入”</b>的时候，通过本属性可以设置密码显示字符。</p>
+	<p align="left"><img border="0" src="bjk_img/12.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮1被单击后，设置输入方式为密码输入。</p>
+	<p align="left"><img border="0" src="bjk_img/13.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">可以看到编辑框中的文本立刻变成了星号，这也是默认显示字符。</p>
+	<p align="left"><img border="0" src="bjk_img/14.gif" >
+
+  <p align="left">如果在表格属性栏中设置<b>“密码遮盖字符”</b>属性，设置为<strong>'&'</strong>。</p>	
+	<p align="left"><img border="0" src="bjk_img/15.png" ></p>
+		 <p align="left">再次运行软件点击按钮后，编辑框的内容都会统一的变成<b>“&”</b>。</p>
+  <p align="left"><img border="0" src="bjk_img/16.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="dqfs"></a>
+<font style="font-size: 12pt; font-weight:700">●对齐方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可以设置编辑框内容的横向对齐方式。</p>
+  <p align="left">需要注意的是，本属性只能在设计器的属性栏或者组件变量的属性栏中设置。</p>
+	<p align="left"><img border="0" src="bjk_img/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">本属性值共有三个属性，选中后就可以直接在设计器中看到预览效果。</p>
+	<p align="left"><img border="0" src="bjk_img/18.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">保存布局后会自动生成<b>“对齐方式”</b>属性。</p>
+	<p align="left">当然也可以不打开设计器，直接在代码区域增加本属性效果也是一样的。</p>
+	<p align="left"><img border="0" src="bjk_img/19.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">运行后可以看到，编辑框的内容也是居中状态。</p>
+	<p align="left"><img border="0" src="bjk_img/20.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p><a name="wbys"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本颜色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框的文本颜色。</p>
+	<p align="left">可以使用<b>“颜色类.XX”</b>中的常量值，也可以使用<b>“0x0000FF”</b>十六进制文本颜色。</p>
+	<p align="left"><img border="0" src="bjk_img/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1点击后，设置文本颜色属性为<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="bjk_img/22.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后，编辑框的内容将修改为红色。 </p>
+	<p align="left"><img border="0" src="bjk_img/23.gif" > </p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p><a name="sfyxdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否允许多行(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框为多行模式。</p>
+	<p align="left">注意：本属性只能在属性栏设置，不支持按钮被单击后等形式的动态调用。</p>
+	<p align="left"><img border="0" src="bjk_img/24.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在界面设计器中调整属性可以动态预览设计效果。</p>
+	<p align="left"><img border="0" src="bjk_img/25.gif" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">如果属性设置为真，运行后也会和设计预览效果一致，为多行显示。</p>
+	<p align="left"><img border="0" src="bjk_img/26.png" > </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="sfygg"></a>
+<font style="font-size: 12pt; font-weight:700">●是否已更改(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本写属性可以动态设置当前编辑框是否被更改的标记。</p>
+	<p align="left">同名的读属性可以读取当前编辑框是否被更改的标记。</p>
+	<p align="left">通过任何形式修改编辑框的内容，读属性都会返回真，只有手动设置为本写属性为假后，读属性才会返回假。</p>
+	<p align="left"><img border="0" src="bjk_img/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1被点击后，判断是否已经更改并弹出对应的信息框，如果被更改就手动重置一下更改标记。</p>
+	<p align="left"><img border="0" src="bjk_img/28.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到当手动修改编辑框内容后才会提示<b>“已经被更改”</b>。</p>
+	<p align="left">但是随后立刻点击按钮依然会提示<b>“没有”</b>。</p>
+	<p align="left">这是因为已经在代码中设置了本属性为假。</p>
+	<p align="left"><img border="0" src="bjk_img/29.gif" ></p>
+</blockquote>	
+	
+	
+		<p align="left">&nbsp;</p><a name="zdyxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大允许长度(写)</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框的最大输入长度。</p>
+	<p align="left">比如设置3，那么在编辑框中最大只能输入3个字符。</p>
+	<p align="left"><img border="0" src="bjk_img/30.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性为3。</p>
+	<p align="left"><img border="0" src="bjk_img/31.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到按钮点击前编辑框内容可以正常输入，点击后最大只能输入三位。</p>
+	<p align="left"><img border="0" src="bjk_img/32.gif" > </p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="gdt"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动条(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置编辑框的显示的滚动条类型，在火山中默认为不显示任何滚动条。</p>
+	<p align="left">注意：本属性只能在组件变量的属性表中调用，并且调用后无法动态修改。</p>
+	<p align="left">注意2：本属性需要配合<b>“是否允许多行”</b>属性一起使用。</p>
+	<p align="left"><img border="0" src="bjk_img/33.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在编辑框组件的属性栏调用本属性设置为纵向滚动条。</p>
+	<p align="left">并且同时需要设置<b>“是否允许多行”</b>属性为真。</p>
+	<p align="left"><img border="0" src="bjk_img/34.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到在编辑框右侧出现了换一个滚动条。</p>
+	<p align="left">同时在编辑框内容增加的时候，编辑框的内容可以进行滚动显示操作。</p>
+	<p align="left"><img border="0" src="bjk_img/35.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="bjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以修改编辑框组件的背景色，默认为白色。</p>
+	<p align="left">颜色可以使用颜色类中定义的常量值，里面记录了一些常用的颜色。</p>
+		
+	<p align="left">也可可以使用0x0000FF，这种十六进制颜色值来表示。</p>
+	<p align="left"><img border="0" src="bjk_img/36.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改本属性为蓝色。</p>
+	<p align="left"><img border="0" src="bjk_img/37.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最后可以看到编辑框被修改为蓝色。</p>
+	<p align="left"><img border="0" src="bjk_img/38.gif" ></p>
+</blockquote>	
+	
+	
+	
+	<p align="left">&nbsp;</p><a name="bxzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选择文本 (写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以替换编辑框中被选择区域的指定文本。</p>
+	<p align="left">注意：如果没有选择区，将会直接在光标位置插入文本。</p>
+	<p align="left"><img border="0" src="bjk_img/39.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1被点击后执行被属性，设置一个<b>“火山”</b>。</p>
+	<p align="left"><img border="0" src="bjk_img/40.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当没有选择区的时候会执行插入文本操作，如果有选择区的话，会执行替换操作。</p>
+	<p align="left"><img border="0" src="bjk_img/41.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="bxzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选择文本(读)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可读取当前被编辑框中被选择区域的文本。</p>
+	<p align="left">如果没有选择区将会返回空文本。</p>
+	<p align="left"><img border="0" src="bjk_img/42.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后在信息框中读取本属性内容。</p>
+	<p align="left"><img border="0" src="bjk_img/43.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到选择区的文本会被弹出。</p>
+	<p align="left"><img border="0" src="bjk_img/44.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="tjqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 调节器方式 (写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框组件变成数字调节器方式。</p>
+	<p align="left">注意：本属性只能在设计器中，或者组件的属性表中使用，不能通过按钮点击等形式进行动态修改。</p>
+	<p align="left"><img border="0" src="bjk_img/45.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">选中编辑框组件，在右侧属性栏就可以调整本属性，调整后设计器会实时预览。</p>
+	<p align="left"><img border="0" src="bjk_img/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码如下图：</p>
+<blockquote>
+  <p align="left">保存界面后，会自动生成本属性代码。</p>
+	<p align="left"><img border="0" src="bjk_img/47.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到虽然编辑框可以正常显示文本。</p>
+	<p align="left">但是只要点击调节器按钮就会变成数字调节模式。</p>
+	<p align="left">默认范围值0-100.</p>
+	<p align="left"><img border="0" src="bjk_img/47.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="tjqsxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 调节器上限值(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 调节器底限制(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“调节器上限值”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置调节的最大值，如果在调节的时候超过这个值，会自动调整为当前最小值。</p>
+	<p align="left"><img border="0" src="bjk_img/48.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“调节器底限制”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置调节器的最小值，如果低于这个值后会自动显示调节器的最大值。</p>
+	<p align="left"><img border="0" src="bjk_img/49.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在组件的属性栏分别设置这两个属性即可。</p>
+	<p align="left"><img border="0" src="bjk_img/50.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到数字调节器的范围被限制在了40-50之间。</p>
+	<p align="left"><img border="0" src="bjk_img/51.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="bxzzfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 起始选择位置 (写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 被选择字符数 (写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“起始选择位置”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置起始选择位置，可用于选择文本操作。</p>
+	<p align="left">位置从0开始，如果提供-1将光标移动到编辑框尾部。</p>
+	<p align="left"><img border="0" src="bjk_img/52.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“被选择字符数”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置选择的字符数，需要配合<b>“起始选择位置”</b>属性使用。</p>
+	<p align="left">如果提供-1则选择到编辑框尾部。</p>
+	<p align="left"><img border="0" src="bjk_img/53.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">如果想要通过按钮点击等形式执行选择文本，需要使用一下<b>“获取焦点()”</b>方法，否则将无法选中文本。</p>
+	<p align="left"><img border="0" src="bjk_img/54.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到编辑框的文本被选中，位置是1到3。</p>
+	<p align="left"><img border="0" src="bjk_img/55.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="zhfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 转换方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性可用于大小写自动转换，可以省去用代码转换的繁琐步骤。</p>
+	<p align="left">注意:本属性只能在设计器中使用，或者在组件的属性表格中使用。</p>
+	<p align="left"><img border="0" src="bjk_img/56.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">1、编辑框输入abc小写。</p>
+	<p align="left">2、设置本属性选择为<b>“小写到大写”</b>，编辑框的内容会自动大写。</p>
+	<p align="left"><img border="0" src="bjk_img/57.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">除了内置字母会自动大写，并且在运行后输入的小写字母也会自动大写。</p>
+	<p align="left"><img border="0" src="bjk_img/58.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="ycxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏选择(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">1、本属性用于设置当编辑框失去焦点后是否继续选中编辑框文本。</p>
+	<p align="left">2、属性值提供真，失去焦点后将不再选择编辑框内的文本，否则继续保持选中状态。</p>
+	<p align="left">注意：本属性只能在组件的属性栏设置。</p>
+	<p align="left"><img border="0" src="bjk_img/59.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">窗口上放两个编辑框并给其中一个编辑框设置本属性。</p>
+	<p align="left"><img border="0" src="bjk_img/60.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：属性值为真的效果，可以看到切换焦点后，编辑框的选区被取消。</p>
+	<p align="left">右图：属性值为假的效果，可以看到切换焦点后，编辑框选区依然存在。</p>
+  <p align="left"><img border="0" src="bjk_img/61.gif" >&nbsp;&nbsp;
+	<img border="0" src="bjk_img/62.gif" >
+  </p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="tshf"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示横幅(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置编辑框为空文本时显示的提示信息。</p>
+	<p align="left">注意：编辑框失去焦点后才能看到。</p>
+	<p align="left"><img border="0" src="bjk_img/63.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放两个编辑框，其中一个编辑框不设置内容并设置<b>“提示横幅”</b>属性。</p>
+	<p align="left"><img border="0" src="bjk_img/64.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，当编辑框切换焦点后，没有内容的编辑框会显示一个提示信息。</p>
+	<p align="left"><img border="0" src="bjk_img/65.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="shanchu"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可用户删除编辑框中被选中的文本。</p>
+	<p align="left"><img border="0" src="bjk_img/66.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法即可。</p>
+	<p align="left"><img border="0" src="bjk_img/67.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当编辑框的选中文本会被删除，等同于按下了退格键。</p>
+	<p align="left"><img border="0" src="bjk_img/68.gif" ></p>
+</blockquote>
+		
+	<p align="left">&nbsp;</p><a name="jiantie"></a>
+<font style="font-size: 12pt; font-weight:700">● 剪切</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将选中的文本剪切到系统剪贴板中。</p>
+	<p align="left"><img border="0" src="bjk_img/69.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法即可。</p>
+	<p align="left"><img border="0" src="bjk_img/70.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看在其它编辑框中可以粘贴，证明剪切成功。</p>
+	<p align="left"><img border="0" src="bjk_img/71.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="zhantie"></a>
+<font style="font-size: 12pt; font-weight:700">● 粘贴</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将剪贴板中的文本粘贴到编辑框光标所处位置。</p>
+	<p align="left"><img border="0" src="bjk_img/72.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，在剪贴板中置入一个文本数据，并指定粘贴方法。</p>
+	<p align="left"><img border="0" src="bjk_img/73.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到置入到系统剪贴板的数据，被粘贴到了编辑框的光标所处位置。</p>
+	<p align="left"><img border="0" src="bjk_img/74.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="jrwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以在编辑框尾部添加文本数据。</p>
+	<p align="left"><img border="0" src="bjk_img/75.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法就可以在编辑框尾部添加想要添加的文本。</p>
+	<p align="left"><img border="0" src="bjk_img/76.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当按钮点击后编辑框尾部会增加文本。</p>
+	<p align="left"><img border="0" src="bjk_img/77.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="jrwbh"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入文本行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以在编辑框的尾部添加一行文本，文本的结尾会自动增加换行符。</p>
+	<p align="left"><img border="0" src="bjk_img/78.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">想要实现多行文本添加，首先需要将编辑框的<b>“是否允许多行”</b>属性设置为真。</p>
+	<p align="left"><img border="0" src="bjk_img/79.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮点击后调用本方法加入文本即可。</p>
+	<p align="left"><img border="0" src="bjk_img/80.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到文本是一行一行的添加的。</p>
+	<p align="left"><img border="0" src="bjk_img/81.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="qzfszh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取字符所在行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定字符位置的所处行号。</p>
+	<p align="left">注意：字符位置从0开始，0代表第一个字符。返回的行号也是从0开始。</p>
+	<p align="left"><img border="0" src="bjk_img/82.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出编辑框中提供的字符位置所处的行号。</p>
+	<p align="left"><img border="0" src="bjk_img/83.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，提供字符位置5的时候，会返回0行，只有提供6才会返回1行。</p>
+	<p align="left">这是因为第一行虽然看上去只有四个字符，但是换行符是占两个字符的<b>“\r\n”</b>。</p>
+  <p align="left">因此在示例文本中想要返回1行，只有提供字符位置6，才会返回1行。</p>
+
+	<p align="left"><img border="0" src="bjk_img/84.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="qhs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取行数</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前编辑框的行数。</p>
+	<p align="left"><img border="0" src="bjk_img/85.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法取出行数显示在信息框中。</p>
+	<p align="left"><img border="0" src="bjk_img/86.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终行数被取出。</p>
+	<p align="left"><img border="0" src="bjk_img/87.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="qhwb"></a>
+<font style="font-size: 12pt; font-weight:700">●取行文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定行号的行文本。</p>
+	<p align="left">注意：行号从0开始。</p>
+	<p align="left"><img border="0" src="bjk_img/88.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出第一行的内容显示在信息框中。</p>
+	<p align="left"><img border="0" src="bjk_img/89.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到第一行的内容被取出。</p>
+	<p align="left"><img border="0" src="bjk_img/90.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="qhswz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取行首位置</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定行首个字符在整个编辑框中的字符索引位置。</p>
+	<p align="left"><img border="0" src="bjk_img/91.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出第三行首个字符的索引位置。</p>
+	<p align="left"><img border="0" src="bjk_img/92.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终字符位置被成功取出。</p>
+	<p align="left"><img border="0" src="bjk_img/93.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="qsksh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取首可视行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出编辑框中顶部第一行的可见行号。</p>
+	<p align="left">注意：行号从0开始。</p>
+	<p align="left"><img border="0" src="bjk_img/94.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出首个可视行的行号。</p>
+	<p align="left"><img border="0" src="bjk_img/95.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终首个可视行被成功取出，滚动编辑框后首个可视行号也会随之改变。</p>
+	<p align="left"><img border="0" src="bjk_img/96.gif" ></p>
+</blockquote>
+	
+			
+	<p align="left">&nbsp;</p><a name="kfcx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否撤销</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以判断编辑框的内容是否可以进行撤销上一步的操作。</p>
+	<p align="left">返回真表示可以撤销，返回假表示不能。</p>
+	<p align="left"><img border="0" src="bjk_img/97.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后判断本方法的返回值即可。</p>
+	<p align="left"><img border="0" src="bjk_img/98.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当编辑框的内容进行删除操作后，就会提示可以撤销。</p>
+	<p align="left"><img border="0" src="bjk_img/99.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="fuzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以复制编辑框中被选择的内容。</p>
+	<p align="left"><img border="0" src="bjk_img/100.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法复制即可。</p>
+	<p align="left"><img border="0" src="bjk_img/101.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到当按钮点击后，就可以在其它编辑框中粘贴，证明复制成功。</p>
+	<p align="left"><img border="0" src="bjk_img/102.gif" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p><a name="chexiao"></a>
+<font style="font-size: 12pt; font-weight:700">● 撤销</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">调用本方法可失效撤销编辑框的上一次操作。</p>
+	<p align="left">比如增加内容后进行撤销可以将增加的内容重新删掉，删除内容后进行撤销可以将删除的内容恢复。</p>
+	<p align="left">注意：本方法只能撤销最近一次的操作，无法进行多次撤销。</p>
+	<p align="left"><img border="0" src="bjk_img/103.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮点击后执行本方法撤销。</p>
+	<p align="left"><img border="0" src="bjk_img/104.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到按钮点击后内容会被撤销。</p>
+	<p align="left"><img border="0" src="bjk_img/105.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="xsqpts"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示气泡提示</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 隐藏气泡提示</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“显示气泡提示”</b>帮助文档如下图： </p>
+<blockquote>
+  <p align="left">调用本方法可以在编辑上面显示一个提示气泡。</p>
+	<p align="left">参数1：提供气泡标题。</p>
+	<p align="left">参数2：提供要显示的气泡内容。</p>
+	<p align="left">参数3：设置气泡图标，调用方式<b>“编辑框气泡图标.XXX”</b>。</p>
+	<p align="left"><img border="0" src="bjk_img/106.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“隐藏气泡提示”</b>帮助文档如下图： </p>
+<blockquote>
+  <p align="left">调用本方法可以将已经显示的气泡隐藏。</p>
+	<p align="left"><img border="0" src="bjk_img/107.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮1点击后显示气泡。</p>
+	<p align="left">按钮2点击后对气泡进行隐藏。</p>
+	<p align="left"><img border="0" src="bjk_img/108.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到气泡可以在隐藏和显示之间任意切换。</p>
+	<p align="left"><img border="0" src="bjk_img/109.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="gund"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">调用本方法可对编辑框的内容进行滚动操作。</p>
+	<p align="left">提供正数向下滚动，提供负数向上滚动。</p>
+	<p align="left"><img border="0" src="bjk_img/110.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮点击后向下滚动两行。</p>
+	<p align="left"><img border="0" src="bjk_img/111.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到编辑框内容被滚动。</p>
+	<p align="left"><img border="0" src="bjk_img/112.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="zzybk"></a>
+<font style="font-size: 12pt; font-weight:700">● 置左右边空</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">通过本方法可以给编辑框的左右两边同时设置空白区域。</p>
+	<p align="left"><img border="0" src="bjk_img/113.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮点击后调用本方法分别给两边都设置10像素的空白。</p>
+	<p align="left"><img border="0" src="bjk_img/114.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到编辑框左右两边产生了空白，证明设置成功。</p>
+	<p align="left"><img border="0" src="bjk_img/115.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="ztshf"></a>
+<font style="font-size: 12pt; font-weight:700">● 置提示横幅</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以设置编辑框内容为空的提示文本。</p>
+	<p align="left">本方法与<b>“提示横幅”</b>属性不同的是，本方法还可以设置获得焦点的时候也显示提示横幅。</p>
+	<p align="left"><img border="0" src="bjk_img/116.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">按钮点击后调用本方法设置提示横幅，参数2提供真，让其在获得焦点的时候也显示提示横幅。</p>
+	<p align="left"><img border="0" src="bjk_img/117.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到编辑框内容有焦点的情况下也可以显示提示横幅。</p>
+	<p align="left"><img border="0" src="bjk_img/118.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="xzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+  <p align="left">通过本方法可以对编辑框的文本进行选择。</p>
+	<p align="left">参数1：提供起始位置，从0开始。</p>
+	<p align="left">参数2：提供被选择的字符数。</p>
+	<p align="left"><img border="0" src="bjk_img/119.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+  <p align="left">1、首先让编辑框获得焦点，起目的是为了让组件的焦点从按钮上转移到编辑框上。</p>
+	<p align="left">2、焦点到编辑框后就可以执行选择文本操作，选择两个字符。</p>
+	<p align="left"><img border="0" src="bjk_img/120.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到编辑框中的前两个字符被选中。</p>
+	<p align="left"><img border="0" src="bjk_img/121.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="zjmnr"></a>
+<font style="font-size: 12pt; font-weight:700">● 静默置内容</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 内容被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“静默置内容”</b>帮助文档如下图： </p>
+<blockquote>
+  <p align="left">通过本方法设置内容可以不触发编辑框的<b>“内容被改变”</b>事件。</p>
+	<p align="left"><img border="0" src="bjk_img/122.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“内容被改变(事件)”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当编辑框内容被改变的时候就会触发本事件。</p>
+	<p align="left">但是如果通过<b>“静默置内容()”</b>方法设置就不会触发。</p>
+	<p align="left"><img border="0" src="bjk_img/123.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上方一个按钮和两个编辑框。</p>
+	<p align="left">并给其中一个编辑框设置滚动条和多行模式，方便接下来的效果演示。</p>
+	<p align="left"><img border="0" src="bjk_img/124.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、添加按钮被单击事件，调用<b>“静默置内容”</b>设置内容。</p>
+	<p align="left">2、添加编辑框<b>“内容被改变”</b>事件，给编辑框2加入文本。</p>
+	<p align="left"><img border="0" src="bjk_img/125.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当按钮点击改变编辑框1内容的时候，编辑框2不会增加内容，证明事件没有被触发。</p>
+	<p align="left"><img border="0" src="bjk_img/126.gif" ></p>
+</blockquote>
+		
+		<p align="left">&nbsp;</p><a name="tjnbanx"></a>
+<font style="font-size: 12pt; font-weight:700">● 调节钮被按下(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当编辑框的调节钮被按下的时候会触发本事件。</p>
+	<p align="left">参数返回1代表是上箭头按钮按下，否则为下箭头。</p>
+	<p align="left"><img border="0" src="bjk_img/127.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先设置编辑框的调节器为手动调节器。</p>
+	<p align="left">2、然后添加<b>“调节钮被按下”</b>事件，并判断参数值来改变编辑框的内容。</p>
+	<p align="left"><img border="0" src="bjk_img/128.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当调节钮被按下的时候，编辑框的内容也会发生改变，证明事件被触发。</p>
+	<p align="left"><img border="0" src="bjk_img/129.gif" ></p>
+</blockquote>
+	<blockquote>
+		<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_Toolbar.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_cjbianjikuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

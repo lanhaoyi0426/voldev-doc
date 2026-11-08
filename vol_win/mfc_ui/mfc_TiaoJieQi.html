@@ -1,0 +1,109 @@
+
+<html>
+<head>
+<title>火山PC视窗调节器组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗调节器组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.调节器 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#方向">1.方向(写)</a></blockquote></li>        
+          <li><blockquote><a href="#调节钮被按下">2.调节钮被按下(事件)</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_Tuxing.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_HengXiang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="方向"></a>
+<p align="left">
+<h2>调节器组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+
+	<p align="left">本组件主要用于调节数据，通常需要配合<a href="mfc_bianjikuang.html"><b>“编辑框”</b></a>或者<a href="mfc_BiaoQian.html"><b>“标签”</b></a>组件使用。</p>
+	<p align="left">注意：本组件虽然属于按钮类型组件，但是并未继承<b>“按钮基础类”</b>。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 方向(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置调节器的显示方向。</p>
+	<p align="left">共有两个方向<b>“横向”</b>和<b>“纵向”</b>。</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在组件变量的属性栏填写本属性并选择想要设置的属性值即可。</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">调节器横向效果</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/3.png" ></p>
+</blockquote><p>&nbsp;</p>	
+<blockquote>
+	  <p align="left">调节器纵向效果</p>
+		<p align="left"><img border="0" src="TiaoJieQi_img/4.png" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="调节钮被按下"></a>
+<font style="font-size: 12pt; font-weight:700">● 调节钮被按下(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当调节器的按钮被按下时会触发本事件。</p>
+	<p align="left">注意：当调节器方向为<b>“纵向”</b>时，<b>“按钮值”</b>参数返回1表示是上箭头按钮按下，否则表示下箭头。</p>
+	<p align="left">当方向是<b>“横向”</b>时，则<b>“按钮值”</b>参数返回1表示是左箭头按下、否则是右箭头按下。</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加<b>“调节钮被按下”</b>事件，并判断按钮值然后做出对应的数字加减操作，实现一个简单的数字选择器。</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/6.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到数字选择器可以正常使用。</p>
+	<p align="left"><img border="0" src="TiaoJieQi_img/7.gif" ></p>
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_Tuxing.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_HengXiang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

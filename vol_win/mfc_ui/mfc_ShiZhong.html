@@ -1,0 +1,81 @@
+
+<html>
+<head>
+<title>火山PC视窗时钟教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗时钟教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ZongXiang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_FenGeTiao.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>时钟组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p align="left">本组件是一个不可视的功能类组件，主要用于定时操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 时钟周期(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 周期事件(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“时钟周期”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置当前时钟周期时间，单位为毫秒。</p>
+	<p align="left">本属性只要不为0，只要经过了设置的时间就会触发<b>“周期事件”</b>。</p>
+	<p align="left"><img border="0" src="ShiZhong_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“周期事件”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当<b>“时钟周期”</b>属性不为0时，只要经过了设置的时间就会触发本事件。</p>
+	<p align="left"><img border="0" src="ShiZhong_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">因为时钟组件是不可视组件所以在拖动组件时不用考虑组件尺寸的问题，任意大小都可以，软件运行后并不会显示此组件。</p>
+	<p align="left"><img border="0" src="ShiZhong_img/3.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮1点击后设置时钟周期为200毫秒执行一次。</p>
+	<p align="left">2、按钮2点击设置时钟周期为0来停止时钟。</p>
+	<p align="left">3、添加<b>“时钟周期”</b>事件，判断来源后对标签文本进行计数操作。</p>
+	<p align="left"><img border="0" src="ShiZhong_img/4.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终在不同按钮的点击下，标签文本呈现不同的状态，证明时钟正常执行。</p>
+	<p align="left"><img border="0" src="ShiZhong_img/5.gif" ></p>
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ZongXiang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_FenGeTiao.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

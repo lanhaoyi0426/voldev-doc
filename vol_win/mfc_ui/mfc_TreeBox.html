@@ -1,0 +1,431 @@
+<html>
+<head>
+<title>火山PC视窗树形框(树型框)组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗树形框(树型框)组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.树形框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+         <li><blockquote><a href="#预设数据">1.预设数据</a></blockquote></li>  
+         <li><blockquote><a href="#添加项目">2.添加项目</a></blockquote></li>      
+         <li><blockquote><a href="#修改项目">3.修改项目</a></blockquote></li>      
+         <li><blockquote><a href="#删除项目">4.删除项目</a></blockquote></li>         
+         <li><blockquote><a href="#编辑项目">5.编辑项目</a></blockquote></li>     
+		 <li><blockquote><a href="#取项目文本">6.取项目文本</a></blockquote></li>
+		 <li><blockquote><a href="#取父项目文本">7.取父项目文本</a></blockquote></li>   
+		 <li><blockquote><a href="#取子项目文本">8.取子项目文本</a></blockquote></li> 
+		 <li><blockquote><a href="#取根项目文本">9.取根项目文本</a></blockquote></li> 
+		 <li><blockquote><a href="#取项目路径">10.取项目路径</a></blockquote></li> 
+         <li><blockquote><a href="#展开项目">11.展开项目</a></blockquote></li>     
+         <li><blockquote><a href="#展开项目">12.收缩项目</a></blockquote></li>     
+           
+         <li><blockquote><a href="#显示选择框">13.显示选择框</a></blockquote></li>           
+         <li><blockquote><a href="#选择所有子项目并取出">14.选择所有子项目并取出</a></blockquote></li>           
+         <li><blockquote><a href="#保存项目并读取">15.保存项目并读取</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ListView.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_WenJianKuang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="预设数据"></a>
+<p align="left">
+<h2>树形框组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p align="left">其效果如下：</p>
+	<blockquote>
+		<p align="left">1、树形框可以创建多级子项目，点击减号图标或双击项目可以进行收缩，如果将<b>“显示加减框”</b>属性设置为假，可以取消收缩图标的显示。</p>
+		<p align="left">2、项目图标由<b>“图片组”</b>属性设置，设置后就可以在添加项目时，指定项目所显示的图标索引。</p>
+		<p align="left"><img border="0" src="TreeBox_img/1.gif" ></p>
+	</blockquote>
+
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 预设数据</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">1、 通过项目属性即可预设数据。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/2.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">2、首先要点击<b>“添加项目”</b>按钮后，才能设置首个项目的标题。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/3.gif" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">3、 如果需要添加子项目，选中一个项目后点击<b>“添加子项目”</b>即可。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/4.gif" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">4、 如果需要给子项目添加同级的项目，选中后点击<b>“添加项目”</b>即可。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/5.gif" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">5、 子项目也可以继续添加子项目。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/6.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">6、 最后点击<b>“确认”</b>按钮就可以保存数据，会自动生成项目所需文本。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/7.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">7、 打开<b>“项目”</b>属性的帮助页，即可看到文本格式描述，也可以手动拼接文本实现项目添加。</p>
+	<p align="left">注：本属性支持动态调用。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/8.png" ></p>
+	</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="添加项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加项目</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">通过<b>“加入项目”</b>方法即可实现添加项目功能，本方法共有7个参数。</p>
+		<p align="left">除了参数1和2比较重要外，其余参数可省略。</p>
+		<p align="left"><img border="0" src="TreeBox_img/9.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">利用当前方法实现<b>“项目”</b>设计器中<b>添加项目</b>和<b>添加子项目</b>的效果。</p>
+		<p align="left">按钮1点击后进行添加项目：</p>
+		<blockquote>
+			<p>1、如果想要实现添加当前选中项目的同级项目，首先需要利用<b>“取父项目()”</b>方法取出现行选中项的父项目索引。</p>
+			<p>2、拿到父项目索引后，将其放到<b>“加入项目()”</b>的参数1中，即可实现添加同级项目。</p>
+			<p>3、加入项目后会返回项目索引，利用<b>“现行选中项”</b>写属性即可选中当前项目。</p>
+		</blockquote>
+		<p align="left">按钮2点击后进行添加子项目：</p>
+		<blockquote>
+			<p>直接给“加入项目()”方法的参数1提供现行选中项即可实现添加子项目。</p>
+		</blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/10.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终实现了和项目设计器中类似的效果。</p>
+		<p align="left"><img border="0" src="TreeBox_img/11.gif" ></p>
+	</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="修改项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 修改项目</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">通过<b>“置项目文本()”</b>方法即可实现修改项目，本方法共有两个参数。</p>
+		<p align="left">参数1：提供要修改的项目索引。</p>
+		<p align="left">参数2：提供新的项目标题。</p>
+		<p align="left"><img border="0" src="TreeBox_img/12.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">按钮点击后修改选中项的标题。</p>
+		<p align="left"><img border="0" src="TreeBox_img/13.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+	  <p align="left">最终可实现修改选中项的标题。</p>
+		<p align="left"><img border="0" src="TreeBox_img/14.gif" ></p>
+	</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="删除项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除项目</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本方法共有1个参数，提供要删除的项目索引即可删除项目。</p>
+		<p align="left"><img border="0" src="TreeBox_img/15.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">删除选中项的项目索引。</p>
+		<p align="left"><img border="0" src="TreeBox_img/16.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+	  <p align="left">最终选中一个项目后即可将其删除，如果当前项目拥有子项目会一同删除。</p>
+	  <p align="left">注：如果需要删除全部项目，调用<b>“清空()”</b>方法即可。</p>
+		<p align="left"><img border="0" src="TreeBox_img/17.gif" ></p>
+	</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="编辑项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 编辑项目</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">1、首先需要将<b>“允许编辑”</b>属性设置为真。</p>
+		<p align="left">2、添加<b>“开始编辑”</b>事件，可以获取编辑前的文本。</p>
+		<p align="left">3、添加<b>“结束编辑”</b>事件，可以获取编辑后的文本。</p>
+		<p align="left"><img border="0" src="TreeBox_img/18.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终编辑前后的文本都可以显示在编辑框中。</p>
+		<p align="left">注：进入编辑状态并非双击，而是首先单击选中项目，在此单击时即可进入编辑状态。</p>
+		<p align="left"><img border="0" src="TreeBox_img/19.gif" ></p>
+	</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">● 取项目文本</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可取出某个项目的文本。</p>
+	<p align="left"><img border="0" src="TreeBox_img/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、如果想要实现实时取出选中项的文本，可以添加<b>“项目被选择”</b>事件，在本事件下即可实现。</p>
+	<p align="left">2、 此事件的<b>“选择方式”</b>共有三个可选值，用于判断当前是通过哪种方式选择的。</p>
+	<blockquote>
+		<p>返回0：表示键盘选择。</p>
+		<p>返回1：表示鼠标选择。</p>
+		<p>返回2：表示其它方式。</p>
+	</blockquote>
+	<p align="left">3、 在事件下判断<b>“选择方式”</b>参数就可以控制在哪种选择情况下取出项目文本。</p>
+	<p align="left"><img border="0" src="TreeBox_img/21.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以实时取出项目文本显示在编辑框中。</p>
+	<p align="left"><img border="0" src="TreeBox_img/22.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取父项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取父项目文本</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote> 
+		<p align="left">调用<b>“取父项目()”</b>即可取出父项目索引，利用父项目索引结合<b>“取项目文本()”</b>方法即可取出父项目文本。</p>
+		<p align="left"><img border="0" src="TreeBox_img/23.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">为保证父项目存在，取出的父项目索引首先判断一下是否等于-1，如果不等于-1再进行取项目文本操作。</p>
+		<p align="left"><img border="0" src="TreeBox_img/24.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终父项目文本可以被成功取出，当无父项目时也可以弹出提示。</p>
+		<p align="left"><img border="0" src="TreeBox_img/25.gif" ></p>
+	</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取子项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取子项目文本</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">概述： </p>
+	<blockquote>
+		<p align="left">如下图所示，取出<b>“父项目1”</b>的所有下级项目<b>“子项目1、2、3”</b>。</p>
+		<p align="left"><img border="0" src="TreeBox_img/26.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">取出下级项目并不复杂，利用<b>“是否有子项目()”</b>、<b>“取项目数()”</b>、<b>“取父项目()”</b>和<b>“取项目文本()”</b>方法，外加一个<b>“现行选中项”</b>读属性，最后配合计次循环即可实现。</p>
+		<p align="left">1、添加<b>“项目被选择”</b>事件，用于项目被选择时就取出子项目文本。</p>
+		<p align="left">2、清空编辑框内容。</p>
+		<p align="left">3、判断是否有子项目，如果存在子项目则进入循环。</p>
+		<p align="left">4、在循环中通过判断父项目索引是否等于选中项索引，从而判断选中项的下级索引是否属于选中项的子项目。</p>
+		<p align="left">5、如果属于子项目则加入项目文本到编辑框，否则跳出循环。</p>
+		<p align="left"><img border="0" src="TreeBox_img/27.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终当项目选择时可以取出所有的同级子项目。</p>
+		<p align="left"><img border="0" src="TreeBox_img/28.gif" ></p>
+	</blockquote>
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取根项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取根项目文本</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">概述： </p>
+	<blockquote>
+		<p align="left">如下图所示，取出<b>“父项目1”</b>和<b>“父项目2”</b>等所有根项目文本。</p>
+		<p align="left"><img border="0" src="TreeBox_img/26.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">利用<b>“取项目数()”</b>，<b>“取缩进层次()”</b>和<b>“取项目文本()”</b>三个方法即可实现取所有根项目。</p> 
+		<p align="left">其中主要依赖<b>“取缩进层次()”</b>方法，当缩进层次返回1表示根项目，缩进层次返回2表示第二层的树项目，以此类推。</p> 
+		<p align="left">所以只需要循环所有项目数，判断<b>“取缩进层次()”</b>方法的返回值是否为1，就可以取出所有根项目文本。</p> 
+		<p align="left"><img border="0" src="TreeBox_img/29.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终所有根项目文本被取出。</p>
+		<p align="left"><img border="0" src="TreeBox_img/30.gif" ></p>
+	</blockquote>
+			
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取项目路径"></a>
+<font style="font-size: 12pt; font-weight:700">●  取项目路径</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">概述： </p>
+	<blockquote>
+		<p align="left">实现当选中一个项目后，将所有父项目取出以路径形式展示。</p>
+		<p align="left"><img border="0" src="TreeBox_img/31.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>  
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">利用<b>“判断循环()”</b>结合<b>“取项目文本()”</b>和<b>“取父项目()”</b>即可实现取项目路径的效果。</p>
+		<p align="left">其中最主要的是利用<b>“取父项目()”</b>的返回值，来判断是否已经到根项目，从而决定是否进入循环。</p>
+		<p align="left"><img border="0" src="TreeBox_img/32.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终项目被选择时可以取出项目路径。</p>
+		<p align="left"><img border="0" src="TreeBox_img/33.gif" ></p>
+	</blockquote>
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="展开项目"></a>
+<font style="font-size: 12pt; font-weight:700">●  展开/收缩项目</font>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">循环所有项目数，调用<b>“扩展()”</b>方法即可进行全部扩展操作，也可以单独调用本方法执行单独展开某个项目。</p>
+		<p align="left">如果需要收缩项目，将代码中的<b>“扩展”</b>改为<b>“收缩”</b>即可。</p>
+		<p align="left"><img border="0" src="TreeBox_img/34.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">按钮点击后即可全部展开项目。</p>
+		<p align="left"><img border="0" src="TreeBox_img/35.gif" ></p>
+	</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="显示选择框"></a>
+<font style="font-size: 12pt; font-weight:700">●  显示选择框</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">通过<b>“是否有检查框”</b>写属性即可让树形框显示选择框。</p>
+		<p align="left">注：本属性不支持动态调用。</p>
+		<p align="left"><img border="0" src="TreeBox_img/36.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">将本属性设置为真即可显示选择框。</p>
+		<p align="left"><img border="0" src="TreeBox_img/37.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left"><img border="0" src="TreeBox_img/38.gif" ></p>
+	</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="选择所有子项目并取出"></a>
+<font style="font-size: 12pt; font-weight:700">●  选择所有子项目并取出</font>
+	<p align="left">&nbsp;</p>
+		<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">选择子项需要使用<b>“置检查框状态()”</b>方法，本方法共有三个参数。</p>
+		<p align="left">参数1：提供项目索引，从0开始。</p>
+		<p align="left">参数2：提供选中状态，共有三个状态：<b>0：未选中；1：选中；2：半选中</b>。</p>
+		<p align="left">参数3：将本参数设置为真，即可将所有子项目全部选中。</p>
+		<p align="left"><img border="0" src="TreeBox_img/39.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote> 
+		<p align="left">首先添加<b>“检查框状态被改变”</b>事件，通过判断<b>“检查框状态”</b>的返回值，从而调用<b>“置检查框状态()”</b>方法进行全选或者取消全选的操作。</p>
+		<p align="left">想要在选中后取出被选择的项目文本，可以在循环项目时利用<b>“取缩进层次()”</b>实现，因为当前选中项目的缩进层次必然小于被选中子项目的缩进层次。</p>
+		<p align="left">根据这一原理，就可以在循环项目的过程中，判断缩进层次就可以取出所有子项目的文本，当不符合条件时就跳出循环。</p>
+		<p align="left"><img border="0" src="TreeBox_img/40.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终当某个项目被选择时，其所有子项目可以被选中并取出。</p>
+		<p align="left"><img border="0" src="TreeBox_img/41.gif" ></p>
+	</blockquote>			
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="保存项目并读取"></a>
+<font style="font-size: 12pt; font-weight:700">●  保存项目并读取</font>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">在树形框中保存项目非常简单，只需要利用<b>“项目”</b>读属性即可将所有项目全部读取出来，返回的数据为文本型，如果需要保存成文件直接调用<b>“写出文本文件()”</b>方法进行存储即可。</p>
+		<p align="left">如果需要读取项目，读入文本文件后赋值给<b>“项目”</b>写属性即可。</p>
+		<p align="left"><img border="0" src="TreeBox_img/42.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终可以看到树形框2读取的项目和树形框1一致，证明树形框项目保存成功。</p>
+		<p align="left"><img border="0" src="TreeBox_img/43.gif" ></p>
+	</blockquote>
+	
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_ListView.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_WenJianKuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

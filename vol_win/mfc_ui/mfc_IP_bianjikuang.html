@@ -1,0 +1,100 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗IP编辑框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗IP编辑框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="ipbjk_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_cjbianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_rejiankuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">
+<h2>IP编辑框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="dizhi"></a>
+
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">●地址(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置IP编辑框中的地址，但是必须要保证格式正确，否则将无法设置。</p>
+	<p align="left">同名的读属性可以读取IP编辑框中的IP地址。</p>
+	<p align="left"><img border="0" src="ipbjk_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">配置模块后在基本组件中就可以看到IP编辑框。</p>
+	<p align="left">将这个组件放到窗口上，并添加两个按钮，用于设置和取出IP。</p>
+	<p align="left"><img border="0" src="ipbjk_img/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮1点击后，设置一个IP地址。</p>
+	<p align="left">按钮2点击后取出IP地址到信息框中。</p>
+	<p align="left"><img border="0" src="ipbjk_img/3.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到IP地址可以成功设置和取出。</p>
+	<p align="left"><img border="0" src="ipbjk_img/4.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="dzgaibian"></a>
+<font style="font-size: 12pt; font-weight:700">● 地址被改变(事件)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当IP编辑框的IP被改变的时候将会触发本事件。</p>
+	<p align="left">本事件不会返回IP地址，需要自己通过<b>“地址”</b>属性获得。</p>
+	<p align="left"><img border="0" src="ipbjk_img/6.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放一个IP编辑框和一个编辑框组件。</p>
+	<p align="left"><img border="0" src="ipbjk_img/5.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件后，利用<b>“地址”</b>读属性，将读取出来的IP地址赋值给编辑框。</p>
+	<p align="left">这样就可以实现实时获取最新的IP地址。</p>
+	<p align="left"><img border="0" src="ipbjk_img/7.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到IP地址被实时取出。</p>
+	<p align="left"><img border="0" src="ipbjk_img/8.gif" ></p>
+</blockquote>
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_cjbianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_rejiankuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

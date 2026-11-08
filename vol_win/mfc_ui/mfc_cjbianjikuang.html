@@ -1,0 +1,1025 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗超级编辑框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗超级编辑框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="cjbjk_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.超级编辑框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#neirong">1.内容(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#nrgs">2.内容格式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#zhidu">3.只读(写)</a></blockquote></li>  
+          <li><blockquote><a href="#sfyxdh">4.是否允许多行(写)</a></blockquote></li>  
+          <li><blockquote><a href="#sfugg">5.是否已更改(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#zduxcd">6.最大允许长度(写)</a></blockquote></li>  
+          <li><blockquote><a href="#bjys">7.背景颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#zdhh">8.自动换行(写)</a></blockquote></li>  
+          <li><blockquote><a href="#qsxzwz">9.起始选择位置(写)</a></blockquote></li>  
+          <li><blockquote><a href="#qsxzwz">10.被选择字符数(写)</a></blockquote></li>  
+          <li><blockquote><a href="#bxzwb">11.被选择文本(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#ycxz">12.隐藏选择(写)</a></blockquote></li>  
+          <li><blockquote><a href="#shanchu">13.删除</a></blockquote></li>  
+          <li><blockquote><a href="#jianqie">14.剪切</a></blockquote></li>  
+          <li><blockquote><a href="#fuzhu">15.复制</a></blockquote></li>  
+          <li><blockquote><a href="#chexiao">16.撤销</a></blockquote></li>  
+          <li><blockquote><a href="#zhantei">17.粘贴</a></blockquote></li>  
+          <li><blockquote><a href="#qkcxsj">18.清空撤销数据</a></blockquote></li>  
+          <li><blockquote><a href="#xunzhao">19.寻找</a></blockquote></li>  
+          <li><blockquote><a href="#jiaru">20.加入文本</a></blockquote></li>  
+          <li><blockquote><a href="#jiaruhang">21.加入文本行</a></blockquote></li>  
+          <li><blockquote><a href="#qzfszh">22.取字符所在行</a></blockquote></li>  
+          <li><blockquote><a href="#qwbcd">23.取文本长度</a></blockquote></li>  
+          <li><blockquote><a href="#qhs">24.取行数</a></blockquote></li>  
+          <li><blockquote><a href="#qhwb">25.取行文本</a></blockquote></li>  
+          <li><blockquote><a href="#qhswz">26.取行首位置</a></blockquote></li>  
+          <li><blockquote><a href="#qxzqzfgs">27.取选择区字符格式</a></blockquote></li>  
+          <li><blockquote><a href="#qxzqdlgs">28.取选择区段落格式</a></blockquote></li>  
+          <li><blockquote><a href="#zxzqzfgs">29.置选择区字符格式</a></blockquote></li>  
+          <li><blockquote><a href="#zxzqdlgs">30.置选择区段落格式</a></blockquote></li>  
+          <li><blockquote><a href="#qxzwb">31.取选择文本</a></blockquote></li>  
+          <li><blockquote><a href="#qshks">32.取首可视行</a></blockquote></li>  
+          <li><blockquote><a href="#qmrzfgs">33.取默认字符格式</a></blockquote></li>  
+          <li><blockquote><a href="#zmrzfgs">34.置默认字符格式</a></blockquote></li>  
+          <li><blockquote><a href="#kefoucx">35.可否撤销</a></blockquote></li>  
+          <li><blockquote><a href="#kezt">36.可否粘贴</a></blockquote></li>  
+          <li><blockquote><a href="#gundong">37.滚动</a></blockquote></li>  
+          <li><blockquote><a href="#xzwb">38.选择文本</a></blockquote></li>  
+          <li><blockquote><a href="#nrbgb">39.内容被改变(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#xzqbgb">40.选择区被改变(事件)</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+	<blockquote>
+		<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_bianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_IP_bianjikuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">
+<h2>超级编辑框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="neirong"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">●内容(读写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置超级编辑框的内容。</p>
+	<p align="left">同名的读属性可以用于取出超级编辑框的内容。</p>
+	<p align="left"><font color="#CA090C">注意：如果<b>“内容格式”</b>属性为<b>“RTF丰富文本”</b>，则本属性将无法设置普通文本到编辑框中显示，必须提供RTF丰富文本格式才能进行设置。</font></p>
+	<p align="left"><img border="0" src="cjbjk_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">配置<b>“MFC扩展界面支持类库1”</b>模块后，就可以在基本组件中找到超级编辑框组件。</p>
+	<p align="left">同时再放两个按钮到窗口上。</p>
+	<p align="left"><img border="0" src="cjbjk_img/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、按钮1点击后设置超级编辑框的内容。</p>
+	<p align="left">2、按钮2点击后取出超级编辑框的内容到信息框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/3.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到超级编辑框的内容可以被正常的设置和读取。</p>
+	<p align="left"><img border="0" src="cjbjk_img/4.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="nrgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容格式(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置超级编辑框所显示的内容格式。</p>
+	<p align="left">本属性共有两个选项，分别为<b>“纯文本”</b>和<b>“RTF丰富文本”</b>。</p>
+	<p align="left">纯文本：就是不带任何效果的普通文本格式。</p>
+	<p align="left">RTF丰富文本：是由微软公司开发的跨平台文档格式，支持不同文字设置不同颜色、字号等多样效果，系统自带的写字板就可以保存为此格式。</p>
+	<p align="left">注意：一旦设置为RFT丰富文本格式后，将无法通过<b>“内容”</b>属性设置普通文本进去，必须是RTF格式的文本才能进行设置内容。</p>
+	<p align="left"><img border="0" src="cjbjk_img/5.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">选中超级编辑框组件，右侧属性栏设置为<b>“RTF丰富文本”</b>。</p>
+	<p align="left"><img border="0" src="cjbjk_img/6.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">准备工作： </p>
+<blockquote>
+  <p align="left">1、打开系统自带的写字板软件，随便的输入几个文字，并设置一些字体样式。</p>
+	<p align="left"><img border="0" src="cjbjk_img/7.png" ></p>
+	<p align="left">2、将文件保存为<b>“RTF文本文档”</b>。</p>
+	<p align="left"><img border="0" src="cjbjk_img/8.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮1点击后，利用<b>“读入文本文件()”</b>方法读取刚刚保存的rtf文档，读取到超级编辑框中。</p>
+	<p align="left">2、按钮2点击后取出超级编辑框的内容。</p>
+	<p align="left"><img border="0" src="cjbjk_img/9.png" > </p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可以看到当文档被读取后，依然保持原有的格式效果。</p>
+	<p align="left">但是如果想要获取内容，会发现获取的全是一堆乱七八糟的符号信息。</p>
+	<p align="left">这些符号信息就是rtf格式内容。</p>
+	<p align="left"><img border="0" src="cjbjk_img/10.gif" > </p>
+
+	<p align="left">如果想要获取出正常的文本也非常简单。</p>
+	<p align="left">在获取之前重新将<b>“内容格式”</b>属性设置为<b>“纯文本”</b>格式即可。</p>
+	<p align="left"><img border="0" src="cjbjk_img/11.png" > </p>
+	<p align="left">最终可看到，超级编辑框的内容被正常获取。</p>
+	<p align="left"><img border="0" src="cjbjk_img/12.gif" > </p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="zhidu"></a>
+<font style="font-size: 12pt; font-weight:700">● 只读(写)</font><br/>
+		<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前超级编辑框是否只读。</p>
+	<p align="left">属性值提供真，则只能通过<b>“内容”</b>属性设置内容，将无法通过键盘录入内容。</p>
+	<p align="left">注意：本属性只能在设计器中设置或者组件表格属性中设置，无法动态设置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">选中超级编辑框组件，设置<b>“只读”</b>属性为真。</p>
+	<p align="left"><img border="0" src="cjbjk_img/14.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">按钮点击后动态修改超级编辑框的内容。</p>
+	<p align="left"><img border="0" src="cjbjk_img/15.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到设置只读属性后，虽然无法通过键盘录入内容，但是不影响通过<b>“内容”</b>属性设置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/15.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="sfyxdh"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否允许多行(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前超级编辑框是否支持多行文本输入。</p>
+	<p align="left">属性值提供真，则表示允许多行，否则不允许。</p>
+	<p align="left">注意：本属性只能在设计器中设置，或在组件的属性表中设置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在超级编辑框的属性表中设置本属性为假。</p>
+	<p align="left">2、按钮点击后输入一段多行文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/17.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+    <p align="left">最终可以看到设置内容时，换行符后的内容都被省略，并不会显示在超级编辑框上。</p>
+	<p align="left"><img border="0" src="cjbjk_img/18.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="sfugg"></a>
+<font style="font-size: 12pt; font-weight:700">●是否已更改(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">1、通过本属性可以设置当前超级编辑框组件是否被更改标志。</p>
+  <p align="left">2、如果本属性值设置为假，并且对编辑框进行修改内容操作后，本属性值会自动更改为真。</p>
+  <p align="left">3、同名的读属性，可以读取当前被更改的状态。</p>
+	<p align="left"><img border="0" src="cjbjk_img/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后读取被更改状态，如果被更改了并弹出信息框提示<b>“被更改”</b>，同时重置状态。</p>
+	<p align="left">如果没有被更改就弹出<b>“没有更改”</b>的信息框。</p>
+	<p align="left"><img border="0" src="cjbjk_img/20.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当超级编辑框内容被修改后会提示<b>“被更改”</b>，但是再次点击时会提示<b>“没有更改”</b>，因为状态已经被重置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/21.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="zduxcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大允许长度(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以限制超级编辑框的最大输入长度，单位是字符。</p>
+	<p align="left"><img border="0" src="cjbjk_img/22.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在超级编辑框组件的属性栏设置本属性值为3.</p>
+	<p align="left"><img border="0" src="cjbjk_img/23.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终软件运行后，编辑框内只能输入3个字符。</p>
+	<p align="left"><img border="0" src="cjbjk_img/24.gif" > </p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p><a name="bjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置本组件的背景颜色，可以使用<b>“颜色类”</b>中提供的常量值，也可以自定义颜色。</p>
+	<p align="left"><img border="0" src="cjbjk_img/25.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放一个按钮，一个颜色选择器组件以及超级编辑框组件。</p>
+	<p align="left"><img border="0" src="cjbjk_img/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置本组件的背景颜色为颜色选择器的颜色。</p>
+	<p align="left"><img border="0" src="cjbjk_img/27.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到超级编辑框组件的背景颜色始终和颜色选择器的颜色保持一致。</p>
+	<p align="left"><img border="0" src="cjbjk_img/28.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="zdhh"></a>
+<font style="font-size: 12pt; font-weight:700">●自动换行(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前编辑框组件是否支持自动换行，默认为真。</p>
+	<p align="left">注意：本属性只能在组件属性栏设置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">选中组件后，设置<b>“自动换行”</b>属性值为假。</p>
+	<p align="left"><img border="0" src="cjbjk_img/30.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当超级编辑框内容不断增加时，会显示横向滚动条，并不会自动换行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/31.gif" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p><a name="qsxzwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 起始选择位置(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 被选择字符数(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“起始选择位置”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以指定超级编辑框的起始选择位置，索引从0开始，主要用于选择文本操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“被选择字符数”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性可设置选择的字符数，提供-1将选择到文本结尾。</p>
+	<p align="left"><img border="0" src="cjbjk_img/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先进行获取焦点，因为按钮点击超级编辑框会失去焦点，无法进行选择文本操作。</p>
+	<p align="left"> 2、分别设置这两个属性，从0开始选择3个字符。</p>
+	<p align="left"><img border="0" src="cjbjk_img/34.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到编辑框有3个字符被选中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/35.gif" > </p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="bxzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 被选择文本(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本写属性可以替换被选中的文本，如果没有选择文本则会在光标位置插入文本。</p>
+	<p align="left">同名的读属性可以读取当前被选择的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/36.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1被单击后执行本属性进行插入或替换选择文本操作。</p>
+	<p align="left">按钮2被单击后读取被选择的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/37.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，在编辑框有选区的时候会进行替换操作，当没有选区的时候会进行插入操作。</p>
+	<p align="left">点击另一个按钮可以取出被选择的文本，如果没有选择会返回空文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/38.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="ycxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 隐藏选择(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置超级编辑框失去焦点后，是否还显示当前选区。</p>
+	<p align="left">本属性提供真将隐藏选区，否则继续显示选区。</p>
+	<p align="left"><img border="0" src="cjbjk_img/39.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在组件属性栏设置本属性即可，根据自己的需求设置真或者假。</p>
+	<p align="left"><img border="0" src="cjbjk_img/40.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：属性值设置为真后，可以看到当组件失去焦点后选区也同时隐藏。</p>
+	<p align="left">右图：属性值设置为假后，可以看到组件失去焦点后选区依然处于选择状态。</p>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="cjbjk_img/41.gif" >
+	&nbsp;&nbsp;
+	<img border="0" src="cjbjk_img/42.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="shanchu"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以删除超级编辑框被选择的内容。</p>
+	<p align="left"><img border="0" src="cjbjk_img/43.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法进行删除选区内容操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/44.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到超级编辑框存在选区时，按钮点击会进行删除操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/45.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="jianqie"></a>
+<font style="font-size: 12pt; font-weight:700">● 剪切</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将超级编辑框选区中的文本剪切到系统剪贴板中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/46.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法进行剪切操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/47.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按钮点击后会发现选区的文本被剪切走，光标切换到另外一个编辑框中按Ctrl+V可以进行粘贴刚刚剪贴的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/48.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="fuzhu"></a>
+<font style="font-size: 12pt; font-weight:700">● 复制</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以将超级编辑框选区内的文本进行复制操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/49.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法进行复制即可。</p>
+	<p align="left"><img border="0" src="cjbjk_img/50.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终点击按钮复制后，切换编辑框按Ctrl+V可以粘贴刚复制的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/51.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="chexiao"></a>
+<font style="font-size: 12pt; font-weight:700">● 撤销</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可撤销编辑框上一次的更改操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/52.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法即可。</p>
+	<p align="left"><img border="0" src="cjbjk_img/53.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当编辑框内容被删除后，点击按钮可进行撤销删除操作。</p>
+	<p align="left"><img border="0" src="cjbjk_img/54.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="zhantei"></a>
+<font style="font-size: 12pt; font-weight:700">● 粘贴</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以将系统剪贴板中的文本粘贴到光标所在位置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/55.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后在剪贴板中放一串文本，并调用粘贴方法粘贴。</p>
+	<p align="left"><img border="0" src="cjbjk_img/56.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到<b>“火山软件”</b>四个字被粘贴到了超级编辑框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/57.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="qkcxsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 清空撤销数据</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将超级编辑框的撤销数据清空。</p>
+	<p align="left"><img border="0" src="cjbjk_img/58.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，首先调用<b>“清空撤销数据()”</b>进行清空，然后在调用<b>“撤销()”</b>方法，测试是否能撤销。</p>
+	<p align="left"><img border="0" src="cjbjk_img/59.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当编辑框内容被改变后，取点击按钮不会有任何撤销更改的操作，因为撤销数据已经清空。</p>
+	<p align="left"><img border="0" src="cjbjk_img/60.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="xunzhao"></a>
+<font style="font-size: 12pt; font-weight:700">● 寻找</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以在超级编辑框中查找指定文本，未找到则返回-1.</p>
+	<p align="left">参数1：提供起始查找位置，留空则为0.</p>
+	<p align="left">参数2：是否区分大小写，留空则为真。</p>
+	<p align="left">参数3：是否匹配单词，留空则为假。</p>
+	<p align="left">参数4：提供要查找的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/61.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">利用查找方法的特性，结合选择位置实现查找选择文本的效果。</p>
+	<p align="left">1、首先调用<b>“寻找()”</b>方法查找<b>“开发”</b>。</p>
+	<p align="left">2、让编辑框获得焦点以便于实现选区效果。</p>
+	<p align="left">3、设置<b>“起始选择位置”</b>和<b>“被选择字符数”</b>属性，用来将找到的文本选择起来。</p>
+	<p align="left"><img border="0" src="cjbjk_img/62.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后可以看到<b>“开发”</b>两个字被选中，证明查找成功。</p>
+	<p align="left"><img border="0" src="cjbjk_img/63.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="jiaru"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以添加内容到超级编辑框的尾部，本方法共有四个参数。</p>
+	<p align="left">参数1：提供要添加的文本。</p>
+	<p align="left">参数2：用于设置字符样式，譬如字体尺寸颜色等，可空。</p>
+	<p align="left">参数3：用于设置段落样式，可空。</p>
+	<p align="left">参数4：是否自动滚动到尾部，默认为真。</p>
+	<p align="left"><img border="0" src="cjbjk_img/64.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先定义类型为<b>“超级编辑框字符格式”</b>的变量，设置字符格式信息。</p>
+	<p align="left">2、调用加入文本方法加入测试文本，并设置字符格式。</p>
+	<p align="left"><img border="0" src="cjbjk_img/65.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到按钮点击后，添加的文本和原有文本的字符格式不同。</p>
+	<p align="left"><img border="0" src="cjbjk_img/66.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="jiaruhang"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入文本行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法与<b>“加入文本()”</b>方法不同之处在于，本方法会在要加入文本的结尾自动添加一个换行符，实现行文本添加。</p>
+	<p align="left">除此之外其余参数的作用与<b>“加入文本()”</b>方法一致。</p>
+	<p align="left"><img border="0" src="cjbjk_img/67.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法加入一行文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/68.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到文本被一行一行的加入。</p>
+	<p align="left"><img border="0" src="cjbjk_img/69.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="qzfszh"></a>
+<font style="font-size: 12pt; font-weight:700">● 取字符所在行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定字符位置所在行，提供-1则取出光标位置所在行。</p>
+	<p align="left">返回的行号从0开始，0表示第一行以此类推。</p>
+	<p align="left"><img border="0" src="cjbjk_img/70.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加超级编辑框的<b>“鼠标左键被放开”</b>事件，然后调用<b>“取字符所在行”</b>，这样就可以实现鼠标点击编辑框后实时取出所在行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/71.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到窗口标题会实时显示当前所在行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/72.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qwbcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取文本长度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前超级编辑框中的字符长度。</p>
+	<p align="left">注意：一个汉字，标点符号，英文字母，数字都属于一个字符。</p>
+	<p align="left"><img border="0" src="cjbjk_img/73.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出当前编辑框的字符长度显示在信息框中。 </p>
+	<p align="left"><img border="0" src="cjbjk_img/74.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终字符长度可以被取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/75.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qhs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取行数</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前超级编辑框组件的所有行数。</p>
+	<p align="left"><img border="0" src="cjbjk_img/76.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法取出行数显示在信息框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/77.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到行数被取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/78.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qhwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取行文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出超级编辑框指定行的行文本。</p>
+	<p align="left">注意：行号从0开始，0表示第一行，以此类推。</p>
+	<p align="left"><img border="0" src="cjbjk_img/79.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后利用<b>“取随机数()”</b>方法进行随机取行文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/80.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到行文本可以随机取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/81.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qhswz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取行首位置</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定行的首字符在整个编辑框中的字符位置。</p>
+	<p align="left">注意：字符位置从0开始，如果参数提供-1则自动选择光标所在行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/82.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出第二行首字符的位置。</p>
+	<p align="left"><img border="0" src="cjbjk_img/83.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">根据方法注释得知索引是从0开始。</p>
+	<p align="left">第一行索引终止在2，因为还有一个换行符因此第二行首字符位置就是4。</p>
+	<p align="left"><img border="0" src="cjbjk_img/84.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qxzqzfgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取选择区字符格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出选区内的字符格式，返回值为<b>“超级编辑框字符格式”</b>。</p>
+	<p align="left">文本尺寸颜色等信息都存储在这个类中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/85.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、添加<b>“创建完毕”</b>事件，在超级编辑框中加入一段12字号的文本。</p>
+	<p align="left">2、按钮点击后调用本方法取出被选择文本的字体尺寸信息。</p>
+	<p align="left"><img border="0" src="cjbjk_img/86.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到选区内的字体尺寸可以被取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/87.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qxzqdlgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取选择区段落格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出超级编辑框选区内的段落格式，返回值为<b>“超级编辑框段落格式”</b>类。</p>
+	<p align="left">通过本类可以取出首行缩进信息等数据。</p>
+	<p align="left"><img border="0" src="cjbjk_img/88.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先在<b>“创建完毕”</b>事件下调用<b>“加入文本行()”</b>方法加入一段具有首行缩进段落格式的文本。</p>
+	<p align="left">2、按钮点击后调用<b>“取选择区段落格式”</b>取出选区的首行缩进。</p>
+	<p align="left"><img border="0" src="cjbjk_img/89.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到首行缩进信息被成功取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/90.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zxzqzfgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置选择区字符格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以设置选区内的字符格式。</p>
+	<p align="left"><img border="0" src="cjbjk_img/91.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先定义类型为<b>“超级编辑框字符格式”</b>的变量，并设置文本颜色和字体尺寸。</p>
+	<p align="left">2、调用本方法将<b>“字符格式”</b>变量填入参数中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/92.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到选区内的字符格式被改变。</p>
+	<p align="left"><img border="0" src="cjbjk_img/93.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zxzqdlgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置选择区段落格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法会设置选区所在行的整个段落格式。</p>
+	<p align="left"><img border="0" src="cjbjk_img/94.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法设置首行缩进。</p>
+	<p align="left"><img border="0" src="cjbjk_img/95.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到选区所在行被缩进。</p>
+	<p align="left"><img border="0" src="cjbjk_img/96.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qxzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取选择文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出被选择的文本。</p>
+	<p align="left"><img border="0" src="cjbjk_img/97.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法赋值给编辑框显示。</p>
+	<p align="left"><img border="0" src="cjbjk_img/98.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到被选择的文本出现在另外一个编辑框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/99.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qshks"></a>
+<font style="font-size: 12pt; font-weight:700">● 取首可视行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">取出当前超级编辑框中首个可视行的行号。</p>
+	<p align="left">注意：如果首行只显示半行或者一点点，也算显示，只有彻底不可见才不算。</p>
+	<p align="left"><img border="0" src="cjbjk_img/100.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法取出行号显示在编辑框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/101.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到行号被取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/102.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qmrzfgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 取默认字符格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出超级编辑框中默认的字符格式。</p>
+	<p align="left">注意：如果使用过<b>“置默认字符格式”</b>方法，则会取出这个方法设置的格式。</p>
+	<p align="left"><img border="0" src="cjbjk_img/103.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法取出默认字符格式中的字体大小，并显示在编辑框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/104.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到默认的字体尺寸被取出。</p>
+	<p align="left"><img border="0" src="cjbjk_img/105.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zmrzfgs"></a>
+<font style="font-size: 12pt; font-weight:700">● 置默认字符格式</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以设置超级编辑框的默认字符格式。</p>
+	<p align="left">注意：如果部分文本设置了<b>“置选择区字符格式”</b>，则这部分文本不受影响。</p>
+	<p align="left"><img border="0" src="cjbjk_img/106.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置字体尺寸和文本颜色。</p>
+	<p align="left"><img border="0" src="cjbjk_img/107.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到默认字符格式被修改。</p>
+	<p align="left"><img border="0" src="cjbjk_img/108.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="kefoucx"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否撤销</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以判断当前编辑框是否可以撤销，返回真表示可以撤销。</p>
+	<p align="left"><img border="0" src="cjbjk_img/109.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后判断本方法的返回值即可。</p>
+	<p align="left"><img border="0" src="cjbjk_img/110.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当超级编辑框内容被更改后，会提示<b>“可以撤销”</b>。</p>
+	<p align="left"><img border="0" src="cjbjk_img/111.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="kezt"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否粘贴</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以判断当前剪贴板是否有文本，是否可以粘贴数据到当前编辑框中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/112.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先添加<b>“创建完毕”</b>事件，并在系统剪贴板中随便设置一串文本。</p>
+	<p align="left">2、<b>“按钮1”</b>点击后判断是否可以粘贴。 </p>
+	<p align="left">3、<b>“按钮2”</b>点击后清空剪贴板。 </p>
+	<p align="left"><img border="0" src="cjbjk_img/113.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当剪贴板被清空后，将会提示<b>“不可以粘贴”</b>。</p>
+	<p align="left"><img border="0" src="cjbjk_img/114.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="gundong"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚动</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以滚动编辑框内容，正数向后滚动，负数向前滚动。</p>
+	<p align="left"><img border="0" src="cjbjk_img/115.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调用本方法向后滚动两行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/116.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到编辑框向后滚动了两行。</p>
+	<p align="left"><img border="0" src="cjbjk_img/117.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="xzwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法共有两个参数，用于选择文本操作。</p>
+	<p align="left">参数1：提供要选择的起始索引，从0开始。</p>
+	<p align="left">参数2：提供选择的字符数。</p>
+	<p align="left"><img border="0" src="cjbjk_img/118.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后首先让超级编辑框获得焦点，然后在进行选择文本操作。</p>
+	<p align="left">因为如果编辑框没有焦点是无法进行选择的。</p>
+	<p align="left"><img border="0" src="cjbjk_img/119.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到指定文本被选中。</p>
+	<p align="left"><img border="0" src="cjbjk_img/120.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="nrbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 内容被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当前的超级编辑框内容被改变时将触发本事件。</p>
+	<p align="left"><img border="0" src="cjbjk_img/121.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加内容被改变事件，并在另外一个编辑框中加入内容行，验证事件是否被触发。</p>
+	<p align="left"><img border="0" src="cjbjk_img/122.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以当超级编辑框输入新内容的时候，另外一个超级编辑框会增加内容，证明事件被触发。</p>
+	<p align="left"><img border="0" src="cjbjk_img/123.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="xzqbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择区被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当超级编辑框选区内容发生改变后将会触发本事件。</p>
+	<p align="left"><img border="0" src="cjbjk_img/124.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“选区被改变”</b>事件，并取出超级编辑框1的选区文本赋值给超级编辑框2。</p>
+	<p align="left"><img border="0" src="cjbjk_img/125.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到另外一个超级编辑框显示的内容就是当前选区文本，证明事件被触发。</p>
+	<p align="left"><img border="0" src="cjbjk_img/126.gif" ></p>
+</blockquote>	
+	<blockquote>
+		<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_bianjikuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_IP_bianjikuang.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<html>
+<head>
+<title>火山PC视窗横向滚动条组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗横向滚动条组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.横向滚动条 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#位置">1.位置(写)</a></blockquote></li>  
+          <li><blockquote><a href="#允许拖动跟踪">2.允许拖动跟踪(写)</a></blockquote></li>  
+          <li><blockquote><a href="#允许拖动跟踪">3.位置被改变(事件)</a></blockquote></li>      
+          <li><blockquote><a href="#最大位置">4.最大位置(写)</a></blockquote></li>      
+          <li><blockquote><a href="#最小位置">5.最小位置(写)</a></blockquote></li>      
+          <li><blockquote><a href="#行改变值">6.行改变值(写)</a></blockquote></li>      
+          <li><blockquote><a href="#页改变值">7.页改变值(写)</a></blockquote></li>      
+          <li><blockquote><a href="#置滚动范围">8.置滚动范围</a></blockquote></li>      
+          <li><blockquote><a href="#小案例">9.小案例</a></blockquote></li>          
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_TiaoJieQi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ZongXiang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="位置"></a>
+<p align="left">
+<h2>横向滚动条组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件主要用于为其它组件提供一个横向滚动能力，让其组件能横向展示更多内容。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 位置(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前滚动条的滚动位置，默认最大位置为100。</p>
+	<p align="left">同名的读属性可以读取当前滚动的位置。</p>
+	<p align="left"><img border="0" src="HengXiang_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮1点击后设置当前位置为50。</p>
+	<p align="left">2、按钮2点击后读取当前位置。</p>
+	<p align="left"><img border="0" src="HengXiang_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到横向滚动条的滚动位置可以成功被设置和读取。</p>
+	<p align="left"><img border="0" src="HengXiang_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="允许拖动跟踪"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许拖动跟踪(写) </font><br/>
+<font style="font-size: 12pt; font-weight:700">● 位置被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“允许拖动跟踪”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">设置本属性值为真，可以触发<b>“位置被改变”</b>事件。</p>
+	<p align="left"><img border="0" src="HengXiang_img/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“位置被改变”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当<b>“允许拖动跟踪”</b>属性设置为真后，滚动条位置被改变时会触发本事件。</p>
+	<p align="left"><img border="0" src="HengXiang_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先在<b>“横向滚动条”</b>的属性栏设置<b>“允许拖动跟踪”</b>属性值为真。</p>
+	<p align="left">2、添加<b>“位置被改变”</b>事件，取出当前位置显示在标签组件上。</p>
+	<p align="left"><img border="0" src="HengXiang_img/6.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当滚动条位置被改变的时候，会实时取出当前位置并显示在标签上。</p>
+	<p align="left"><img border="0" src="HengXiang_img/7.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最大位置"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大位置(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前组件的最大滚动位置，如果不设置默认最大为100。</p>
+	<p align="left">注意：使用本属性不能超过32627且不能小于0。</p>
+	<p align="left"><img border="0" src="HengXiang_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、在当前组件的属性栏调用本属性设置最大88。</p>
+	<p align="left">2、添加<b>“位置被改变”</b>事件，取出实时滚动的位置。</p>
+	<p align="left"><img border="0" src="HengXiang_img/9.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到当滚动位置在最尾部时，当前位置显示为88,证明最大值设置成功。</p>
+	<p align="left"><img border="0" src="HengXiang_img/10.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最小位置"></a>
+<font style="font-size: 12pt; font-weight:700">● 最小位置(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前滚动条的最小可滚动位置。</p>
+	<p align="left">注意：使用本属性范围在0到32627之间。</p>
+	<p align="left"><img border="0" src="HengXiang_img/11.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、直接在当前组件的属性栏调用本属性设置即可。</p>
+	<p align="left">2、添加<b>“位置被改变”</b>事件取出实时位置。</p>
+	<p align="left"><img border="0" src="HengXiang_img/12.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到当滚动位置在最头部时，当前位置显示为10,证明最小值设置成功。</p>
+	<p align="left"><img border="0" src="HengXiang_img/13.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="行改变值"></a>
+<font style="font-size: 12pt; font-weight:700">● 行改变值(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当用户点击滚动条左右两边按钮时的步进值，不设置默认为1。</p>
+	<p align="left">例如：设置本属性值为10后，点击滚动条左边按钮当前进度会-10，点击右边按钮当前进度会+10。</p>
+	<p align="left">注意：本属性不能为0，并且不能超过32627。</p>
+	<p align="left"><img border="0" src="HengXiang_img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性值为20。</p>
+	<p align="left"><img border="0" src="HengXiang_img/15.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到按钮点击后，再去点击滚动条按钮时滚动条的步进值发生变化。</p>
+	<p align="left"><img border="0" src="HengXiang_img/16.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="页改变值"></a>
+<font style="font-size: 12pt; font-weight:700">● 页改变值(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可修改点击滚动条空白区域时的步进值，不设置默认为10。</p>
+	<p align="left"><img border="0" src="HengXiang_img/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置步进值为1。</p>
+	<p align="left"><img border="0" src="HengXiang_img/18.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到按钮点击后，再去点击滚动条空白区域时步进值会发生变化。</p>
+	<p align="left"><img border="0" src="HengXiang_img/19.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置滚动范围"></a>
+<font style="font-size: 12pt; font-weight:700">●  置滚动范围</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以同时设置最小滚动位置和最大滚动位置。</p>
+	<p align="left">注意：最小不能小于0，最大不能超过32627。</p>
+	<p align="left"><img border="0" src="HengXiang_img/20.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先设置<b>“允许拖动跟踪”</b>属性为真。</p>
+	<p align="left">2、然后添加<b>“位置被改变”</b>事件实时取出当前滚动位置。</p>
+	<p align="left">3、最后添加窗口<b>“创建完毕”</b>事件，调用当前方法设置滚动范围。</p>
+	<p align="left"><img border="0" src="HengXiang_img/21.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到滚动范围和设置的范围一致。</p>
+	<p align="left"><img border="0" src="HengXiang_img/22.gif" ></p>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="小案例"></a>
+<font style="font-size: 12pt; font-weight:700">●  小案例</font><br/>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">利用其滚动特性实现一个横向滚动其它组件的效果。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、设置<b>“允许拖动跟踪”</b>属性值为真。</p>
+	<p align="left">2、添加滚动条的<b>“位置被改变”</b>事件，设置<b>“标签1”</b>组件的左边为负的当前位置值。</p>
+	<p align="left">3、添加主窗口<b>“创建完毕”</b>事件，设置滚动范围为标签组件的隐藏区域的尺寸。</p>
+	<p align="left"><img border="0" src="HengXiang_img/23.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当操作滚动条的时候，标签组件也会跟随滚动。</p>
+	<p align="left"><img border="0" src="HengXiang_img/24.gif" ></p>
+</blockquote>	
+		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_TiaoJieQi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ZongXiang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

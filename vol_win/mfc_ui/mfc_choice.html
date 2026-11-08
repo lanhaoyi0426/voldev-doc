@@ -1,0 +1,518 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗选择夹组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗选择夹组件讲解" />
+<meta name="description" content="火山软件开发平台,火山视窗选择夹组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="choice_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.选择夹 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#添加子夹">1.添加子夹</a></blockquote></li>  
+		 <li><blockquote><a href="#插入子夹">2.插入子夹</a></blockquote></li>
+		  <li><blockquote><a href="#置子夹名称">3.置子夹名称</a></blockquote></li>
+		  <li><blockquote><a href="#取子夹名称">4.取子夹名称</a></blockquote></li>
+		 <!-- <li><blockquote><a href="#子夹是否为空">5.子夹是否为空</a></blockquote></li> -->
+		  <li><blockquote><a href="#删除子夹">5.删除子夹</a></blockquote></li>
+		   <li><blockquote><a href="#删除所有子夹">6.删除所有子夹</a></blockquote></li>
+		<!--  <li><blockquote><a href="#取内容区位置">7. 取内容区位置</a></blockquote></li> -->
+		  <li><blockquote><a href="#取子夹数目">7.取子夹数目</a></blockquote></li>
+		  <li><blockquote><a href="#取子夹标签位置">8.取子夹标签位置</a></blockquote></li>
+		  <li><blockquote><a href="#计算调整尺寸">9.计算调整尺寸</a></blockquote></li>
+		  <li><blockquote><a href="#置子夹图标索引">10.置子夹图标索引</a></blockquote></li>
+		  <li><blockquote><a href="#取子夹内容组件">11.取子夹内容组件</a></blockquote></li>
+		  <li><blockquote><a href="#取子夹内容组件参考">12.取子夹内容组件参考</a></blockquote></li>
+		  <li><blockquote><a href="#允许多行表头">13.允许多行表头(写)</a></blockquote></li>
+		  <li><blockquote><a href="#现行子夹">14.现行子夹(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#表头方向">15.表头方向(写)</a></blockquote></li>
+		  <li><blockquote><a href="#图片组">16.图片组(写)</a></blockquote></li>
+		  <li><blockquote><a href="#图片组">17.图片组文件(写)</a></blockquote></li>
+		  <li><blockquote><a href="#取子夹标签位置">18.子夹被改变(事)</a></blockquote></li>
+		 <!-- <li><blockquote><a href="#子夹被改变">19.将改变子夹(事)</a></blockquote></li> -->
+		   <li><blockquote><a href="#被单击">19.被单击(事)</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote><p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_layout.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_group.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>选择夹组件讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">选择夹是一种多页面容器，可以通过点击选择夹标题进行页面切换，其效果如下：</p>
+<blockquote>
+	<p><img border="0" src="choice_img/1.gif" ></p>
+</blockquote> 
+
+</blockquote>
+<p align="left">&nbsp;</p><a name="添加子夹"></a>
+<font style="font-size: 12pt; font-weight:700">● 添加子夹</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法共有四个参数。</p>
+	<p align="left">参数1：提供子夹标题，不想要标题可提供空文本。</p>
+	<p align="left">参数2：提供子夹图标索引，如果设置了<b>“图片组”</b>属性，则可通过本属性设置图标索引。</p>
+	<p align="left">参数3：提供子夹内容组件，在火山中使用组件布局器即可。</p>
+	<p align="left">参数4：设置子夹内容位置，调用方式为<b>“子夹内容位置.XX”</b>。</p>
+	<p>添加成功返回子夹索引，否则返回-1。</p>
+	<p align="left"><img border="0" src="choice_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">流程如下： </p>
+<blockquote>
+	<p align="left">1、定义基础类为<b>“组件布局器”</b>的类，并右键打开设计器。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/2.png" ></p>
+	</blockquote>
+	<p align="left">2、根据需求设置布局内容。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/3.png" ></p>
+	</blockquote>
+	<p align="left">3、根据实际需求设计多个布局器。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/4.png" ></p>
+	</blockquote>
+	<p align="left">4、最后就可以调用<b>“添加子夹()”</b>方法进行子夹添加。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/5.png" ></p>
+	</blockquote>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"></p>
+  <p align="left"><img border="0" src="choice_img/6.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="插入子夹"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入子夹</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“添加子夹()”</b>方法相比只是多了一个<b>“插入索引位置”</b>的参数。</p>
+	<p align="left"><img border="0" src="choice_img/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设计一个要插入的子夹，按钮点击后将其插入到选择夹首部。</p>
+	<p align="left"><img border="0" src="choice_img/8.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终选择夹首部被插入了一个子夹。</p>
+	<p align="left"><img border="0" src="choice_img/9.gif" ></p>
+</blockquote>		
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="置子夹名称"></a>
+<font style="font-size: 12pt; font-weight:700">● 置子夹名称</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义，用于设置指定子夹的名称，本方法共有两个参数。</p>
+	<p align="left">参数1：提供子夹索引，从0开始。</p>
+	<p align="left">参数2：提供要修改的新名称。</p>
+	<p align="left"><img border="0" src="choice_img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改第一个子夹的名称。</p>
+	<p align="left"><img border="0" src="choice_img/11.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终子夹名称将被修改。</p>
+	<p align="left"><img border="0" src="choice_img/12.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="取子夹名称"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子夹名称</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义，用于取出指定子夹的名称。</p>
+	<p align="left">本方法只有一个参数，提供要取出子夹名称的索引即可。</p>
+	<p align="left"><img border="0" src="choice_img/13.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出首个子夹标题显示在信息框中。</p>
+	<p align="left"><img border="0" src="choice_img/14.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终子夹标题被取出。</p>
+	<p align="left"><img border="0" src="choice_img/15.png" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="删除子夹"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除子夹</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义，用于删除某个子夹，子夹索引从0开始。</p>
+	<p align="left"><img border="0" src="choice_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后删除首个子夹。</p>
+	<p align="left"><img border="0" src="choice_img/17.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终首个子夹被删除。</p>
+	<p align="left"><img border="0" src="choice_img/18.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="删除所有子夹"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除所有子夹</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">顾名思义用于删除所有子夹包括其内容。</p>
+	<p align="left"><img border="0" src="choice_img/19.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接调用本方法即可删除。</p>
+	<p align="left"><img border="0" src="choice_img/20.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终所有子夹被删除。</p>
+	<p align="left"><img border="0" src="choice_img/21.gif" >
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="取子夹数目"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子夹数目</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以返回所有子夹数量。</p>
+	<p align="left"><img border="0" src="choice_img/22.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">利用<b>“逆向计次循环”</b>结合当前方法实现删除所有子夹功能。</p>
+	<p align="left"><img border="0" src="choice_img/23.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终所有子夹将被删除。</p>
+	<p align="left"><img border="0" src="choice_img/24.gif" > </p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="取子夹标签位置"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子夹标签位置</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 子夹被改变(事)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取子夹标签位置”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">用于取出子夹标签位置，通过此位置信息可以实现在选择夹上添加关闭按钮的效果。</p>
+	<p align="left"><img border="0" src="choice_img/25.png" ></p>
+</blockquote> 
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“子夹被改变(事)”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当子夹被改变后将触发本事件，如果想要子夹改变后处理某些任务可以在此事件下操作。</p>
+	<p align="left"><img border="0" src="choice_img/26.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">利用以上方法和事件实现一个关闭子夹按钮： </p>
+<blockquote>
+	<p align="left">1、打开界面设计器放置一个图形按钮，设置图标后并将组件隐藏。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/27.png" ></p>
+	</blockquote>
+	<p align="left">2、添加<b>“子夹被改变”</b>事件，处理图形按钮位置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/28.png" ></p>
+	</blockquote>
+	<p align="left">3、添加子夹后，调用一下子夹事件处理图形按钮位置，同时将图形按钮可视。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="choice_img/29.png" ></p>
+	</blockquote>
+	<p align="left">4、添加图形按钮被单击事件，用于处理删除子夹操作。</p>
+	<blockquote> 
+		<p align="left"><img border="0" src="choice_img/30.png" ></p>
+	</blockquote>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终关闭按钮可以正常的在子夹上显示，同时也可以实现关闭子夹效果。</p>
+	<p align="left"><img border="0" src="choice_img/31.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="计算调整尺寸"></a>
+<font style="font-size: 12pt; font-weight:700">● 计算调整尺寸</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">将选择夹内容区的尺寸填入参数中就可以计算出最合适的选择夹尺寸。</p>
+	<p align="left"><img border="0" src="choice_img/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">假如内容区域尺寸为200*200，将其填入参数后返回的尺寸类对象就是最合适的选择夹尺寸。</p>
+	<p align="left"><img border="0" src="choice_img/33.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote> 
+	<p align="left">最终选择夹尺寸被调整到了合适的位置。</p>
+	<p align="left"><img border="0" src="choice_img/34.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="置子夹图标索引"></a>
+<font style="font-size: 12pt; font-weight:700">● 置子夹图标索引</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当设置<b>“图片组”</b>或<b>“图片组文件”</b>属性后，就可以通过本方法来修改子夹的图标索引，本方法共有两个参数。</p>
+	<p>参数1：用于提供子夹索引，从0开始。</p>
+	<p>参数2：用于提供图标索引，从0开始。</p>
+	
+	<p align="left"><img border="0" src="choice_img/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">修改子夹1的图标索引为1。</p>
+	<p align="left"><img border="0" src="choice_img/36.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终子夹图标被修改。</p>
+	<p align="left"><img border="0" src="choice_img/37.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="取子夹内容组件"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子夹内容组件</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以取出子夹内容，从而用于选择夹组件之间的交互，本方法共有两个参数。</p>
+	<p>参数1：提供子夹索引，子夹必须保证已经创建。</p>
+	<p>参数2：提供子夹容器的变量即可。</p>
+	<p align="left"><img border="0" src="choice_img/38.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">操作流程如下：</p>
+<blockquote>
+	<p align="left">1、公开需要操作的子夹组件，便于后续访问操作。</p>
+	<blockquote>
+			<p align="left"><img border="0" src="choice_img/39.png" ></p>
+	</blockquote>
+	<p align="left">2、定义子夹布局器变量。</p>
+	<p align="left">3、调用<b>“取子夹内容组件()”</b>方法，取出子夹布局。</p>
+	<p align="left">4、挂接子夹中的按钮事件。</p>
+	<blockquote>
+			<p align="left"><img border="0" src="choice_img/40.png" ></p>
+	</blockquote>
+	<p align="left">5、最后添加按钮事件，判断来源对象后通过布局器变量修改子夹中的组件内容。</p>
+	<blockquote>
+			<p align="left"><img border="0" src="choice_img/41.png" ></p>
+	</blockquote>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终实现选择夹组件之间的交互。</p>
+	<p align="left"><img border="0" src="choice_img/42.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="取子夹内容组件参考"></a>
+<font style="font-size: 12pt; font-weight:700">● 取子夹内容组件参考</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“取子夹内容组件”</b>类似，不同之处为本方法可以直接返回子夹内容，可直接用于挂接子夹内组件事件。</p>
+	<p align="left"><img border="0" src="choice_img/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在添加子夹后就可以调用本方法，经过强制转换后就可以访问到子夹内组件，进行挂接事件操作。</p>
+	<p align="left">2、注意在进行按钮单击后，只能通过<b>“标记值”</b>来判断按钮来源，不能通过<b>“来源对象”</b>参数判断。</p>
+	<p align="left"><img border="0" src="choice_img/44.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终按钮事件成功触发。</p>
+	<p align="left"><img border="0" src="choice_img/45.gif" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+
+<p align="left">&nbsp;</p><a name="允许多行表头"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许多行表头(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当子夹过多时，通过本属性可设置表头自动折行。</p>
+	<p align="left">注：本属性设置时机为<b>“组件创建前”</b>表示只能在变量的属性表中调用。</p>
+	<p align="left"><img border="0" src="choice_img/46.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在选择夹变量的属性表中，将本属性设置为真。</p>
+	<p align="left">2、在窗口创建后添加10个子夹。</p>
+	<p align="left"><img border="0" src="choice_img/47.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：属性设置为真的效果。</p>
+	<p align="left">右图：属性设置为假的效果。</p>
+	<p align="left"><img border="0" src="choice_img/48.png" >&nbsp;&nbsp;<img border="0" src="choice_img/49.png" ></p>
+
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<a name="现行子夹"></a>
+<font style="font-size: 12pt; font-weight:700">● 现行子夹(读写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性用于设置当前显示的子夹，从0开始。</p>
+	<p align="left">同名读属性可用于判断当前显示的子夹索引。</p>
+	<p align="left"><img border="0" src="choice_img/50.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">利用本属性可以制作一个切换首页的功能，判断当前子夹是否为首页，如果不为首页则切换到首页。</p>
+	<p align="left"><img border="0" src="choice_img/51.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮点击后可以切换到首页显示内容。</p>
+	<p align="left"><img border="0" src="choice_img/52.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="表头方向"></a>
+<font style="font-size: 12pt; font-weight:700">● 表头方向(写)</font>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可用于设置表头显示的方向。</p>
+	<p align="left">注：本属性的设置时机为<b>“组件创建前”</b>只能用于变量属性表中，不支持动态设置。</p>
+	<p align="left"><img border="0" src="choice_img/53.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">本属性共有四个选项，通过点击按钮可选择。</p>
+	<p align="left"><img border="0" src="choice_img/54.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="choice_img/55.png" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="图片组"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片组(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 图片组文件(写)</font>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个属性都是用于设置图片组，不同之处为<b>“图片组”</b>的属性值为资源类型，<b>“图片组文件”</b>可提供文件路径。</p>
+<p align="left">此处介绍图片组属性的使用方式。</p>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置<b>“图片组资源”</b>类型的图片组数据。</p>
+	<p align="left"><img border="0" src="choice_img/56.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、准备一个符合要求的图片组图片数据。</p>
+	<p align="left"><img border="0" src="choice_img/57.png" > </p>
+	<p align="left">2、在变量属性栏设置本属性即可，设置后就可以在添加子夹时设置图标索引参数，图标索引从0开始。</p>
+	<p align="left"><img border="0" src="choice_img/58.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="choice_img/59.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="被单击"></a>
+<font style="font-size: 12pt; font-weight:700">● 被单击(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当子夹标题被单击时将触发本事件。</p>
+	<p align="left">注：本事件只针对子夹标题，子夹内单击无效。</p>
+	<p align="left"><img border="0" src="choice_img/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件后弹出信息框演示。</p>
+	<p align="left"><img border="0" src="choice_img/61.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终当单击子夹标题时，将会弹出信息框。</p>
+	<p align="left"><img border="0" src="choice_img/62.gif" ></p>
+</blockquote>	
+	
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_layout.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_group.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

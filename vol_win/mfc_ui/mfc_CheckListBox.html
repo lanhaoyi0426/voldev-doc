@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>火山PC视窗选择列表框组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗滑选择列表框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.选择列表框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#单选">1.单选</a></blockquote></li>  
+          <li><blockquote><a href="#行间距">2.行间距</a></blockquote></li>  
+          <li><blockquote><a href="#取所有选择项">3.取所有选择项</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ListBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ListView.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="单选"></a>
+<p align="left">
+<h2>选择列表框组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left"> 本组件和<a href="mfc_ListBox.html">列表框组件</a>增删查改的操作方式是一样的，只是选择列表框增加了选择框，可以通过选择框进行选择列表项。</p>
+<p align="left">如下所示：</p> 
+<blockquote>
+	<p align="left"><img border="0" src="CheckListBox_img/1.png" ></p>
+</blockquote>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 单选</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">通过本属性可将选择列表框的选择状态调整为单选状态，其默认为多选。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/2.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后就可以将其切换为单选状态。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/3.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+	  <p align="left">最终按钮点击后将切换为单选。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/4.gif" ></p>
+	</blockquote>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="行间距"></a>
+<font style="font-size: 12pt; font-weight:700">● 行间距</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">本属性用于设置行间距，如果未设置本属性默认行间距为2像素。</p>
+		<p align="left">注：本属性不支持动态调用。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/5.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">在属性值中提供一个合适的行间距即可。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/6.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+		<p align="left">最终行间距将会调整。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/7.png" ></p>
+	</blockquote>		
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取所有选择项"></a>
+<font style="font-size: 12pt; font-weight:700">● 取所有选择项</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图： </p>
+	<blockquote>
+		<p align="left">想要取出所有被选择的项目，需要使用<b>“取选中状态”</b>方法，返回值为三态选中状态的常量类。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/8.png" ></p>
+	</blockquote>
+		<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+	<blockquote>
+		<p align="left">利用循环方法判断所有的列表项是否被选中，如果被选中就取出项目文本加入到编辑框中。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/9.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+	  <p align="left">最终可看到所有被选择的列表项都会出现在列表框中。</p>
+		<p align="left"><img border="0" src="CheckListBox_img/10.gif" ></p>
+	</blockquote>		
+</blockquote>
+
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_ListBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ListView.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗图形按钮讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗图形按钮讲解" />
+<meta name="description" content="火山软件开发平台,火山视窗图形按钮讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="txan_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.图形按钮 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#bdj">1.被单击(事)</a></blockquote></li>  
+          <li><blockquote><a href="#axtp">2.按下图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#axtp">3.正常图片(写)</a></blockquote></li>   
+          <li><blockquote><a href="#axtp">4.点燃图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jztp">5.禁止图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tmys">6.透明颜色(写)</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ChaoJiAnNiu.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_TiaoJieQi.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>图形按钮讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="bdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件虽然属于按钮组件，但是并未继承<b>“按钮基础类”</b>，只继承了<a href="mfc_ui.html"><b>“窗口组件”</b></a>类,并且按钮无标题只能设置图片。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 被单击(事件)</font><br/>
+<p align="left">&nbsp;</p>
+
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当按钮被鼠标左键点击后将触发本事件。</p>
+	<p align="left"><img border="0" src="txan_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">1、设置两个图形按钮组件。</p>
+  <p align="left">2、添加本事件后，通过<b>“来源对象”</b>参数可确定是哪个图形按钮点击。</p>
+	<p align="left"><img border="0" src="txan_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终图形按钮点击后会弹出不同的信息框。</p>
+	<p align="left"><img border="0" src="txan_img/3.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="axtp"></a>
+<font style="font-size: 12pt; font-weight:700">● 按下图片(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 正常图片(写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 点燃图片(写)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left"><b>“正常图片”</b>帮助文档如下图： </p>	
+<blockquote>
+	<p align="left">当鼠标离开图形按钮时显示的图片，如果想清空图片可使用<b>“空资源.空位图”</b>。</p>
+	<p align="left"><img border="0" src="txan_img/4.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“按下图片”</b>帮助文档如下图： </p>	
+<blockquote>
+	<p align="left">当鼠标左键点击组件后显示的图片。</p>
+	<p align="left">如果想清空图片可使用<b>“空资源.空位图”</b>。</p>
+	<p align="left"><img border="0" src="txan_img/5.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“正常图片”</b>帮助文档如下图： </p>	
+<blockquote>
+	<p align="left">当鼠标经过组件时显示的图片。</p>
+	<p align="left">如果想清空图片可使用<b>“空资源.空位图”</b>。</p>
+	<p align="left"><img border="0" src="txan_img/6.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在图形按钮属性栏分别设置以上三个属性。</p>
+	<p align="left"><img border="0" src="txan_img/7.png" > </p>
+
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终呈现出来的效果和设置的属性一致。</p>
+	<p align="left"><img border="0" src="txan_img/8.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="jztp"></a>
+<font style="font-size: 12pt; font-weight:700">● 禁止图片(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当图形按钮被禁止操作后显示本图片。</p>
+	<p align="left"><img border="0" src="txan_img/9.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在图形按钮属性栏设置本属性。</p>
+	<p align="left">2、按钮点击后禁止本组件。</p>
+	<p align="left"><img border="0" src="txan_img/10.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终图形按钮禁止后，图片将发生改变。</p>
+	<p align="left"><img border="0" src="txan_img/11.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="tmys"></a>
+<font style="font-size: 12pt; font-weight:700">● 透明颜色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">如果想让图形按钮上面显示的图片部分颜色透明，可通过本属性进行设置。</p>
+	<p align="left">例如：设置红色后，图片的红色部分想透明显示。</p>
+	<p align="left">如果提供的图片是具有透明通道，可直接使用<b>“颜色类.透明色”</b>。</p>
+	<p align="left"><img border="0" src="txan_img/12.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、给图形按钮设置一个具有透明通道的正常图片。</p>
+	<p align="left">2、按钮点击后设置透明颜色为透明色。</p>
+	<p align="left"><img border="0" src="txan_img/13.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">软件运行后点击按钮，可看到原本按钮的黑色区域将进行透明处理。</p>
+  <p align="left">注意：黑色区域为图形按钮颜色，并非图片颜色。</p>
+	<p align="left"><img border="0" src="txan_img/14.gif" >
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ChaoJiAnNiu.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_TiaoJieQi.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+<head>
+<title>火山PC视窗标签组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗标签组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.标签 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#ditu">1.底图(写)</a></blockquote></li>  
+          <li><blockquote><a href="#ditufangshi">2.底图方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#wbys">3.文本颜色(写)</a></blockquote></li>   
+          <li><blockquote><a href="#sfzdzh">4.是否自动折行(写)</a></blockquote></li>  
+          <li><blockquote><a href="#背景颜色">5.背景颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#横向对齐方式">6.横向对齐方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#纵向对齐方式">7.纵向对齐方式(写)</a></blockquote></li>   
+		</ol>		
+	</ol>
+</ul>
+</div><a name="ditu"></a>
+
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_Painter.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_LianJieKuang.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>
+
+<p align="left">
+<h2>标签组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件主要用于标签提示功能，比如：将本组件放在编辑框的左边可用于提示这个编辑框的用途。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 底图(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以给标签组件设置一个背景图。</p>
+	<p align="left">属性值为<b>“位图资源”</b>，如果想要清空图片将本属性设置为<b>“空资源.空位图”</b>即可。</p>
+	<p align="left"><img border="0" src="biaoqian_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、通过<a href="mfc_ui.html#biaoti"><b>“标题”</b></a>属性可以设置标签的标题信息。</p>
+	<p align="left">2、定义一个类型为<b>“位图资源”</b>的常量值，并引用一个图片。</p>
+	<p align="left">3、最后调用<b>“底图”</b>属性设置本图片即可。</p>
+	<p align="left"><img border="0" src="biaoqian_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到标签增加了一个背景图。</p>
+	<p align="left"><img border="0" src="biaoqian_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="ditufangshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 底图方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置标签组件背景图的缩放方式。</p>
+	<p align="left"><img border="0" src="biaoqian_img/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用<b>“底图方式”</b>属性设置为<b>“图片放置方式.缩放图片”</b>。</p>
+	<p align="left">这个属性值的意思表示，将图片缩放到和组件尺寸一致。</p>
+	<p align="left"><img border="0" src="biaoqian_img/6.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到标签的底图会被缩放到和图片尺寸一致。</p>
+	<p align="left"><img border="0" src="biaoqian_img/6.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="wbys"></a>
+<font style="font-size: 12pt; font-weight:700">● 文本颜色(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置标签的文本颜色。</p>
+	<p align="left">可以使用<b>“颜色类”</b>中定义的常量值，或者使用<b>“0x0000FF”</b>十六进制颜色值。</p>
+	<p align="left"><img border="0" src="biaoqian_img/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用本属性设置为红色。</p>
+	<p align="left"><img border="0" src="biaoqian_img/8.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终标签的文本颜色将会转换成红色。</p>
+	<p align="left"><img border="0" src="biaoqian_img/9.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="sfzdzh"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否自动折行(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置标签的标题是否进行自动折行。</p>
+	<p align="left">如果不设置本属性，则标签组件默认是单行显示，只有将本属性设置为真，标签的标题才能多行显示。</p>
+	<p align="left"><img border="0" src="biaoqian_img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先给标签组件设置一大段文本。</p>
+	<p align="left">2、按钮点击后调用本属性设置为真。</p>
+	<p align="left"><img border="0" src="biaoqian_img/11.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最后可看到标签的标题变成了多行显示。</p>
+	<p align="left"><img border="0" src="biaoqian_img/12.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="背景颜色"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义通过本属性可以设置标签的背景颜色。</p>
+	<p align="left">属性值可以提供<b>“颜色类”</b>中的常量值或使用<b>“0x0000FF”</b>十六进制颜色值。</p>
+	<p align="left"><img border="0" src="biaoqian_img/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置背景色为红色。</p>
+	<p align="left"><img border="0" src="biaoqian_img/14.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终标签背景色会变成红色。</p>
+	<p align="left"><img border="0" src="biaoqian_img/15.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="横向对齐方式"></a>
+<font style="font-size: 12pt; font-weight:700">● 横向对齐方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前标签内文本的对齐方式。</p>
+	<p align="left"><img border="0" src="biaoqian_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用本属性设置为<b>“横向对齐模式.右边”</b>，表示标题文本右对齐。</p>
+	<p align="left"><img border="0" src="biaoqian_img/17.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到标题文本进行了右对齐。</p>
+	<p align="left"><img border="0" src="biaoqian_img/18.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="纵向对齐方式"></a>
+<font style="font-size: 12pt; font-weight:700">● 纵向对齐方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置标题文本的纵向对齐方式，属性值为<b>“纵向对齐模式”</b>中的常量值。</p>
+	<p align="left"><img border="0" src="biaoqian_img/19.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性值为<b>“纵向对齐模式.底边”</b>，表示标题文本对齐到组件底边。</p>
+	<p align="left"><img border="0" src="biaoqian_img/20.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到标签进行了底部对齐操作。</p>
+	<p align="left"><img border="0" src="biaoqian_img/21.gif" ></p>
+</blockquote>		
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_Painter.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_LianJieKuang.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗GIF动画框(GIF图片框)组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗GIF动画框组件教程" />
+<link rel="shortcut icon" type="image/x-icon" href="gif_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.GIF动画框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#tupian">1.图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tpfzfs">2.图片放置方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#dise">3.底色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#qptcc">4.取图片尺寸</a></blockquote></li>  
+          <li><blockquote><a href="#bofang">5.播放</a></blockquote></li>  
+          <li><blockquote><a href="#sfbf">6.是否正在播放</a></blockquote></li>  
+          <li><blockquote><a href="#ztp">7.置图片</a></blockquote></li>  
+          <li><blockquote><a href="#ztpsj">8.置图片数据</a></blockquote></li>  
+          <li><blockquote><a href="#zhiwj">9.置图片文件</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_img.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_Painter.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>	
+<p align="left">
+<h2>GIF动画框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="tupian"></a>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">●图片(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置GIF动画框要显示的gif图片。</p>
+	<p align="left">如果想要清除图像设置本属性值为<b>“空资源.空位图”</b>即可。</p>
+	<p align="left">注意：属性值为位图资源，引用后的图片会打包到程序内，任何东西都无法转换成位图资源。</p>
+	<p align="left"><img border="0" src="gif_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">配置模块后在基本组件中就可以看到<b>“GIF动画框”</b>。</p>
+	<p align="left">将这个组件放到窗口上，选择右侧<b>“图片”</b>属性就可以导入图片。</p>
+	<p align="left"><img border="0" src="gif_img/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">保存后会自动生成属性代码，也可以通过属性代码这里进行修改图片。</p>
+	<p align="left"><img border="0" src="gif_img/3.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终GIF运行效果。</p>
+	<p align="left"><img border="0" src="gif_img/4.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="tpfzfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片放置方式(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置图片放置方式，默认为<b>“图片居中”</b>。</p>
+	<p align="left">属性值调用方式：图片放置方式.XXX</p>
+	<p align="left"><img border="0" src="gif_img/5.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">打开界面设计器选中图片框，并设置一个边框效果，用于观察图片框边界位置。</p>
+	<p align="left">设置后可以看出，整个GIF图片是居中显示的效果。</p>
+	<p align="left"><img border="0" src="gif_img/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置<b>“图片放置方式”</b>属性为<b>“图片放置方式.缩放图片”</b>。</p>
+	<p align="left">这个效果会让图片铺满整个图片框。</p>
+	<p align="left"><img border="0" src="gif_img/7.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到图片框被图片铺满。</p>
+	<p align="left"><img border="0" src="gif_img/8.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="dise"></a>
+<font style="font-size: 12pt; font-weight:700">● 底色(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置底色，默认底色为<b>“颜色类.默认色”</b>。</p>
+	<p align="left"><img border="0" src="gif_img/9.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改底色为红色。</p>
+	<p align="left"><img border="0" src="gif_img/10.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到底色被修改为红色。</p>
+	<p align="left"><img border="0" src="gif_img/11.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="qptcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 取图片尺寸</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以取出GIF动画框中的图片尺寸，返回尺寸类。</p>
+	<p align="left"><img border="0" src="gif_img/12.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后取出尺寸类对象，通过本对象取出宽度和高度信息。</p>
+	<p align="left"><img border="0" src="gif_img/13.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到尺寸信息被取出。</p>
+	<p align="left"><img border="0" src="gif_img/14.png" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="bofang"></a>
+<font style="font-size: 12pt; font-weight:700">● 播放</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以播放或者暂停GIF动画。</p>
+	<p align="left">参数提供真则继续播放，否则暂停。</p>
+	<p align="left"><img border="0" src="gif_img/15.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在界面中增加两个按钮，用于播放和暂停控制。</p>
+	<p align="left"><img border="0" src="gif_img/16.png" ></p>
+</blockquote>	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">两个按钮分别点击后进行播放或暂停操作。</p>
+	<p align="left"><img border="0" src="gif_img/17.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到GIF动画可以被暂停，也可以继续播放。</p>
+	<p align="left"><img border="0" src="gif_img/18.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="sfbf"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否正在播放</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以判断是否正在播放，返回真表示正在播放，否则返回假。</p>
+	<p align="left"><img border="0" src="gif_img/19.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1点击后执行如果命令来判断本方法的返回值，并执行不同的信息框提示。</p>
+	<p align="left">按钮2点击后执行暂停操作。</p>
+	<p align="left"><img border="0" src="gif_img/20.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到，本方法可以成功判断当前播放状态。</p>
+	<p align="left"><img border="0" src="gif_img/21.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="ztp"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以修改图片，共有三个参数。</p>
+	<p align="left">参数1：提供要修改的位图资源图片。</p>
+	<p align="left">参数2：提供播放背景色。</p>
+	<p align="left">参数3：如果本参数为假，则上一张图片会暂停，但是新的图片不会加载出来，需要手动调用<b>“播放()”</b>方法才会加载。</p>
+	<p align="left"><img border="0" src="gif_img/22.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1点击后调用本方法设置图片，但是不自动播放。</p>
+	<p align="left">按钮2点击后播放。</p>
+	<p align="left"><img border="0" src="gif_img/23.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到图片可以被修改并播放。</p>
+	<p align="left"><img border="0" src="gif_img/23.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="ztpsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片数据</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以设置字节集图片数据，成功返回真。</p>
+	<p align="left"><img border="0" src="gif_img/24.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后通过<b>“读入文件()”</b>方法读取字节集数据。</p>
+	<p align="left">2、调用<b>“置图片数据()”</b>方法设置字节集即可。</p>
+	<p align="left"><img border="0" src="gif_img/25.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到图片被成功替换。</p>
+	<p align="left"><img border="0" src="gif_img/26.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="zhiwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置图片文件</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以直接载入指定路径的GIF图片。</p>
+	<p align="left">注：必须提供完整的路径。</p>
+	<p align="left"><img border="0" src="gif_img/27.png" ></p>
+</blockquote>		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">将指定的图片路径填入本方法的参数中即可。</p>
+	<p align="left"><img border="0" src="gif_img/28.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到图片被成功替换。</p>
+	<p align="left"><img border="0" src="gif_img/29.gif" ></p>
+</blockquote>
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_img.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_Painter.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>		
+	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

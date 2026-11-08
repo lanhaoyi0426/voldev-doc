@@ -1,0 +1,651 @@
+
+<html>
+<head>
+<title>火山PC视窗状态条组件教程_火山软件开发平台</title>
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗状态条组件教程." />
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.状态条 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#项目">1.项目(写)</a></blockquote></li>                    
+          <li><blockquote><a href="#位置">2.位置(写)</a></blockquote></li>                    
+          <li><blockquote><a href="#图片组">3.图片组(写)</a></blockquote></li>                    
+          <li><blockquote><a href="#尺寸调节器">4.尺寸调节器(写)</a></blockquote></li>                    
+          <li><blockquote><a href="#加入栏目">5.加入栏目</a></blockquote></li>                    
+          <li><blockquote><a href="#删除栏目">6.删除栏目</a></blockquote></li>                    
+          <li><blockquote><a href="#置图片">7.置图片</a></blockquote></li>                    
+          <li><blockquote><a href="#取图片">8.取图片</a></blockquote></li>                    
+          <li><blockquote><a href="#取宽度">9.取宽度</a></blockquote></li>                    
+          <li><blockquote><a href="#置宽度">10.置宽度</a></blockquote></li>                    
+          <li><blockquote><a href="#置提示文本">11.置提示文本</a></blockquote></li>                    
+          <li><blockquote><a href="#取提示文本">12.取提示文本</a></blockquote></li>                    
+          <li><blockquote><a href="#取文本">13.取文本</a></blockquote></li>                    
+          <li><blockquote><a href="#置文本">14.置文本</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目宽度">15.取栏目宽度</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目左边">16.取栏目左边</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目数">17.取栏目数</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目矩形">18.取栏目矩形</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目顶边">19.取栏目顶边</a></blockquote></li>                    
+          <li><blockquote><a href="#取栏目高度">20.取栏目高度</a></blockquote></li>                    
+          <li><blockquote><a href="#更新位置">21.更新位置</a></blockquote></li>                    
+          <li><blockquote><a href="#清空">22.清空</a></blockquote></li>                                   
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_LianJieKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_RiQi.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>
+<a name="项目"></a>
+<p align="left">
+<h2>状态条组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p align="left">本组件通常位于软件的底边，用于显示一些当前软件状态信息。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 项目(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设计要显示的状态栏栏目信息，可以通过注释中的描述手动拼接文本，也可以通过设计器进行设计。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在<b>“状态条”</b>组件属性栏增加<b>“项目”</b>属性，点击属性值按钮打开设计器。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/2.png" ></p><br>
+	<p align="left">打开设计器后，首先需要点击<b>“插入”</b>后才能设置<b>“内容文本”</b>。</p>
+	<p align="left">插入后根据自己的需求填写相关信息。</p>
+	<p align="left">如果想要插入更多，点击<b>“向后插入”</b>即可。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/3.png" ></p>
+	<br>
+	<p align="left">这里插入3个，并对<b>“栏目2”</b>设置100宽度。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/4.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">软件运行后可以在窗口底部看到有三个栏目的文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/7.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="位置"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前状态条的显示位置，默认是在底部显示，可以通过本方法调整到顶部显示或者自由显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“状态条”</b>组件的属性栏增加本属性并设置为<b>“顶边”</b>显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/9.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到，状态条会在软件的顶部显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/10.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="图片组"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片组(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置图片组资源。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/11.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">什么是图片组？ </p>
+<blockquote>
+	<p align="left">简单来说就是一系列尺寸一致的单个图片横向排列组合后的图片。</p>
+	<p align="left">在使用图片组的时候，就可以直接通过图片的排列索引直接使用指定图片。</p>
+	<p align="left">图片组具体格式要求如下：</p>
+	<blockquote>
+		<p align="left">1、图片组中单个图片的高度 等于整个图片组位图的高度,图片组中所有单个图片的总宽度等于整个图片组位图 的宽度。</p>
+		<p align="left">2、图片组中单个图片的宽度和高度尽量保持一致,如果不能保持一致,就使用近似尺寸 (如:高度为15,则宽度为16)。</p>
+		<p align="left">3、图片中的透明部分用洋红色(红绿蓝分量值分别为: 255, 0, 255)填充标记。</p>
+		
+	</blockquote>
+	<p align="left">图片组效果大致如下图所示：</p>
+	<p align="left"><img border="0" src="zhuangtai_img/12.png" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">在<b>“状态条”</b>的属性栏填写本属性并设置一个图片组图片。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/13.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">重新打开<b>“项目”</b>设计器，给每个栏目都设置<b>“图片索引”</b>。</p>
+	<p align="left">注意：图片索引从0开始，0代表图片组的第一个图片。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/14.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">当软件运行后可以看到，设置的图片组图片会自动分割并显示在状态栏标题前。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/15.png" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="尺寸调节器"></a>
+<font style="font-size: 12pt; font-weight:700">● 尺寸调节器(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过设置本属性值为真，会在本组件的右下角位置显示一个三角图标，用于在需要调节窗口大小的时候三角图标能够起到一个指示的作用。</p>
+	<p align="left">注意：想要本属性有效，必须即将窗口属性<b>“窗口边框”</b>调整为可调边框，并且<b>“位置”</b>属性必须设置底边。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先设置<b>“窗口边框”</b>属性为<b>“普通可调边框”</b>。</p>
+	<p align="left">2、然后设置<b>“位置”</b>属性为底边。</p>
+	<p align="left">3、最后将当前属性值设置为真。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/17.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">当软件运行后可以看到，状态条组件右下角会出现一个三角图标， 可以给用户起到一个指示性的作用。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/18.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">完善代码： </p>
+	<blockquote>
+		<p align="left">虽然右下角的图标可以正常显示，但是可以看到软件出现一个问题，状态条并没有一直在底边，解决这个问题也很简单。</p>
+		<p align="left">添加窗口的<b>“尺寸被改变”</b>事件，在这个事件下动态的去调整<b>“状态条”</b>组件的<b>“顶边”</b>和<b>“宽度”</b>属性。</p>
+		<p align="left"><img border="0" src="zhuangtai_img/19.png" ></p>
+	</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">运行效果如下图： </p>
+	<blockquote>
+	  <p align="left">最终可以看到软件运行正常。</p>
+		<p align="left"><img border="0" src="zhuangtai_img/20.gif" ></p>
+	</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="加入栏目"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入栏目</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可用于动态向状态条添加栏目，并返回新栏目的索引。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮1点击后调用本方法加入栏目即可。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/22.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到，新栏目被加入并且也成功返回栏目索引。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/23.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="删除栏目"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除栏目</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义，通过本方法可以实现删除指定栏目，栏目索引从0开始。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮1点击后删除栏目0。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/25.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到第一个栏目被删除。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/26.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置图片"></a>
+<font style="font-size: 12pt; font-weight:700">●  置图片</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以动态设置图片组的图片。</p>
+	<p align="left">参数1：提供栏目索引。</p>
+	<p align="left">参数2：提供图片组的图片索引。</p>
+	<p align="left">这两个参数的索引都是从0开始。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先给状态条设置图片组。</p>
+	<p align="left">2、然后按钮点击后调用本方法给状态条设置图片组图片。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/28.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到，状态条的栏目增加了图片显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/29.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取图片"></a>
+<font style="font-size: 12pt; font-weight:700">●  取图片</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的图片索引，返回-1表示当前栏目无图片。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出栏目1的图片设置给栏目3。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/31.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到栏目3的图片和栏目1一致，证明栏目图片正常取出。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/32.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取宽度"></a>
+<font style="font-size: 12pt; font-weight:700">●  取宽度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的宽度，返回-1表示宽度在窗口最右边。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/33.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出栏目1的宽度。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/34.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终栏目1的宽度将被取出。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/35.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置宽度"></a>
+<font style="font-size: 12pt; font-weight:700">●  置宽度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以设置指定栏目的宽度，单位像素，提供-1表示宽度到窗口最右边。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置栏目1的宽度为200。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/37.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到栏目1的宽度发生了改变。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/38.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置提示文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  置提示文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以设置指定栏目的提示文本，设置后可通过鼠标在栏目悬停后出现提示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/39.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法设置栏目1的提示文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/40.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮点击后鼠标在栏目1悬停会出现被设置的提示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/41.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取提示文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取提示文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的提示文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/42.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">首先打开<b>“项目”</b>设计器，给栏目1设置提示文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/43.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">按钮点击后调用本方法取出栏目1的提示文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/44.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到，状态条的栏目增加了图片显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/45.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  取文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出栏目1的文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/47.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终栏目1的文本被取出。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/48.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置文本"></a>
+<font style="font-size: 12pt; font-weight:700">●  置文本</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">调用本方法可以更新指定栏目文本。</p>
+	<p align="left">参数1：提供栏目索引。</p>
+	<p align="left">参数2：提供要更新的文本即可。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法更新栏目2的文本。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/50.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到栏目2的文本被更新。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/51.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目宽度"></a>
+<font style="font-size: 12pt; font-weight:700">●  取栏目宽度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的实际显示宽度。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/52.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">首先打开状态条<b>“项目”</b>设计器，设置栏目2的宽度为100。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/53.png" ></p>
+	<p align="left">&nbsp;</p>
+	<p align="left">按钮点击后取出栏目2的实际宽度。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/54.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到栏目2的实际宽度只有98，有两个像素被栏目边框占用。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/55.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目左边"></a>
+<font style="font-size: 12pt; font-weight:700">●  取栏目左边</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的左边位置，本方法可用于实现简单对组件排版。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/56.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置标签的左边等于栏目2的左边。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/57.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到标签的左边与栏目2左边对齐。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/58.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目数"></a>
+<font style="font-size: 12pt; font-weight:700">●   取栏目数</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出所有栏目数量。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/59.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">利用本方法的功能，结合<b>“循环”</b>可以实现取出所有栏目文本的功能。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/60.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到所有栏目文本被取出。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/61.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目矩形"></a>
+<font style="font-size: 12pt; font-weight:700">●  取栏目矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可取出指定栏目的可显示区域的矩形位置。</p>
+	<p align="left">注意：取出的可显示区域<b>“顶边”</b>，只会相当于状态条组件本身，并不会相当于窗口。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/62.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出栏目2的矩形位置并移动编辑框组件。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/63.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到，编辑框组件的尺寸和栏目2的尺寸大小一致，利用本方法的特性也可进行简单的组件排版操作。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/64.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目顶边"></a>
+<font style="font-size: 12pt; font-weight:700">●  取栏目顶边</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目可视区域的顶边位置。</p>
+	<p align="left">注意：此位置是相对于状态条组件本身，并不相当于窗口。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后取出顶边并移动编辑框组件，以实现覆盖状态条栏目2的效果。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/66.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到栏目2被覆盖，利用本方法可以实现在状态条上显示编辑框。</p>
+	<p align="left">注意：需要注意组件的层级关系，如果移动后发现编辑框组件消失，证明状态条组件将编辑框组件被覆盖，可使用<b>“调整层次 ()”</b>方法调整组件层级。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/67.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取栏目高度"></a>
+<font style="font-size: 12pt; font-weight:700">●  取栏目高度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出指定栏目的可视区域高度，可用于简单的美化软件操作。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/68.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后设置编辑框的宽度等于栏目2显示区域的高度。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/69.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框组件的高度被调整到和栏目高度一致。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/70.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="更新位置"></a>
+<font style="font-size: 12pt; font-weight:700">●  更新位置</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当状态条的父组件尺寸被改变的时候，当前组件不会自动更新位置，可通过本方法更新位置显示。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/71.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加窗口的<b>“尺寸被改变”</b>事件，然后调用本方法进行位置更新即可。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/72.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当软件运行后可以看到状态条组件的位置正常显示，不会固定在某个地方。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/73.gif" ></p>
+</blockquote>
+	
+		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="清空"></a>
+<font style="font-size: 12pt; font-weight:700">●  清空</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以删除状态条的所有栏目。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/74.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法删除。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/75.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终状态条的所有栏目均被删除。</p>
+	<p align="left"><img border="0" src="zhuangtai_img/76.gif" ></p>
+</blockquote>
+	<blockquote>
+				<p>&nbsp;</p>
+				<p align="left">  [<a href="mfc_LianJieKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_RiQi.html">下一章</a>] </p>
+				<p>&nbsp;</p>
+		</blockquote>
+		
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

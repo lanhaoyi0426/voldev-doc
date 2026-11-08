@@ -1,0 +1,393 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗超级按钮组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗超级按钮组件讲解" />
+<meta name="description" content="火山软件开发平台,火山视窗超级按钮组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="cjan_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.超级按钮 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#bdj">1.被单击(事)</a></blockquote></li>  
+          <li><blockquote><a href="#anfg">2.按钮风格(写)</a></blockquote></li>  
+          <li><blockquote><a href="#xzkfs">3.选择框方式(写)</a></blockquote></li>   
+          <li><blockquote><a href="#xz">4.选中(写)</a></blockquote></li>  
+          <li><blockquote><a href="#dqfs">5.对齐方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#hzbk">6.绘制边框(写)</a></blockquote></li>  
+          <li><blockquote><a href="#hzjd">7.绘制焦点(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tctp">8.通常图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tptptms">9.通常图片透明色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tctp">10.点燃图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#drtptms">11.点燃图片透明色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jztp">12.禁止图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jztptms">13.禁止图片透明色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tcqjs">14.通常前景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tcqjs">15.点燃前景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tcqjs">16.焦点前景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jdbjs">17.焦点背景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jdbjs">18.通常背景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#jdbjs">19.点燃背景色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tswb">20.提示文本(写)</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_SanTai.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_Tuxing.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>超级按钮讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="bdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件虽然属于按钮组件，但是并未继承<b>“按钮基础类”</b>，只继承了<a href="mfc_ui.html"><b>“窗口组件”</b></a>类。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 被单击(事件)</font><br/>
+<p align="left">&nbsp;</p>
+
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当超级按钮被鼠标左键点击后将触发本事件。</p>
+	<p align="left"><img border="0" src="cjan_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加本事件后，通过<b>“来源对象”</b>参数可确定是哪个按钮点击。</p>
+	<p align="left"><img border="0" src="cjan_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终点击后将弹出信息框。</p>
+	<p align="left"><img border="0" src="cjan_img/3.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="anfg"></a>
+<font style="font-size: 12pt; font-weight:700">● 按钮风格(写)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>	
+<blockquote>
+	<p align="left">通过本属性可切换超级按钮风格，调用方式：<b>“超级按钮风格.XXX”</b></p>
+	<p align="left"><img border="0" src="cjan_img/4.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1点击后，设置本属性值为<b>“超级按钮风格.XP风格”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/5.png" > </p>
+
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">可看到按钮点击前后，超级按钮的风格发生了变化。</p>
+	<p align="left"><img border="0" src="cjan_img/6.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="xzkfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择框方式(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性值设置为真，可以将超级按钮设置为选择框模式。</p>
+	<p align="left">设置后超级按钮点击后，会一直处于按压状态，在此点击恢复正常状态。</p>
+	<p align="left">注意：本属性只能在组件属性栏中设置。</p>
+	<p align="left"><img border="0" src="cjan_img/7.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在超级按钮的组件属性栏中设置本属性为真。</p>
+	<p align="left"><img border="0" src="cjan_img/8.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">左图：本属性值为假的效果。</p>
+  <p align="left">右图：本属性值为真的效果。</p>
+	<p align="left"><img border="0" src="cjan_img/9.gif" ><img border="0" src="cjan_img/10.gif" ></p>
+	
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="xz"></a>
+<font style="font-size: 12pt; font-weight:700">● 选中(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前超级按钮是否被选中。</p>
+	<p align="left">注意：必须将<b>“选择框方式=真”</b>本属性才有效。</p>
+	<p align="left"><img border="0" src="cjan_img/11.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先将<b>“选择框方式”</b>设置为真。</p>
+	<p align="left">2、按钮点击后切换选中状态。</p>
+	<p align="left"><img border="0" src="cjan_img/12.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到按钮点击后，超级按钮可以进行选中状态的切换。</p>
+	<p align="left"><img border="0" src="cjan_img/13.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="dqfs  "></a>
+<font style="font-size: 12pt; font-weight:700">●对齐方式(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可设置超级按钮图文排版模式，调用方式：<b>“超级按钮对齐方式.XX”</b>.</p>
+	<p align="left"><img border="0" src="cjan_img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先给超级按钮设置一个图片。</p>
+	<p align="left">2、按钮点击后设置本属性为<b>“超级按钮对齐方式.图上文下”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/15.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+ <p align="left">可看到当按钮点击后，超级按钮的图文排版将发生变化。</p>
+	<p align="left"><img border="0" src="cjan_img/16.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="hzbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制边框(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性设置为真，可让超级按钮出现边框效果，为假则取消边框。</p>
+	<p align="left"><img border="0" src="cjan_img/17.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别在两个超级按钮的属性栏设置不同的属性值。</p>
+	<p align="left"><img border="0" src="cjan_img/18.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到超级按钮1存在边框，超级按钮2不存在边框。</p>
+	<p align="left"><img border="0" src="cjan_img/19.gif" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="hzjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 绘制焦点(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性设置为真，当超级按钮获得焦点后，将会出现一个边框虚线。</p>
+	<p align="left">本属性值默认为假，不会出现虚线效果。</p>
+	<p align="left"><img border="0" src="cjan_img/20.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别给两个超级按钮设置不同的属性值。</p>
+	<p align="left"><img border="0" src="cjan_img/21.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到超级按钮1获得焦点后，边框会出现虚线效果。</p>
+	<p align="left"><img border="0" src="cjan_img/22.png" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="tctp"></a>
+<font style="font-size: 12pt; font-weight:700">● 通常图片(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 点燃图片(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“通常图片”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可给超级按钮设置一个图片，当鼠标位于超级按钮范围外时显示此图片。</p>
+	<p align="left">如果想取消图片显示，设置本属性值为<b>“空资源.空位图”</b>即可。</p>
+	<p align="left"><img border="0" src="cjan_img/23.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“点燃图片”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当鼠标经过超级按钮时显示此图片。</p>
+	<p align="left">如果想取消图片显示，设置本属性值为<b>“空资源.空位图”</b>即可。</p>
+	<p align="left"><img border="0" src="cjan_img/24.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在组件属性栏分别设置以上两个属性，并引入两个不同的图片。</p>
+	<p align="left"><img border="0" src="cjan_img/25.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当鼠标经过和离开超级按钮时，显示的图片不一样。</p>
+	<p align="left"><img border="0" src="cjan_img/26.gif" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="jztp"></a>
+<font style="font-size: 12pt; font-weight:700">● 禁止图片(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">顾名思义，当超级按钮被禁止操作后将显示本图片。</p>
+	<p align="left">注意：想要使用本属性必须设置<b>“通常图片”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/27.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left"> 1、设置<b>“通常图片”</b>和<b>“禁止图片”</b>属性。</p>
+	<p align="left"> 2、按钮点击后禁止超级按钮。</p>
+	<p align="left"><img border="0" src="cjan_img/28.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当按钮点击后，超级按钮的图片将会被改变，此时超级按钮也被禁止操作。</p>
+	<p align="left"><img border="0" src="cjan_img/29.gif" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="yrfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 通常图片透明色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 点燃图片透明色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 禁止图片透明色(写)</font><br>
+<p align="left">&nbsp;</p>
+<p align="left">以上三个写属性的作用是一致的，此处讲解<b>“通常图片透明色”</b>。</p>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可将图片指定颜色的部分进行透明化处理。</p>
+	<p align="left"><img border="0" src="cjan_img/31.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">准备一张黑绿两色的图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="cjan_img/30.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在超级按钮的属性栏，设置<b>“通常图片透明色”</b>的属性值为<b>“颜色类.黑色”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/33.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终软件运行后，黑色部分将透明只保留绿色部分。</p>
+	<p align="left"><img border="0" src="cjan_img/32.png" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="tcqjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 通常前景色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 点燃前景色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 焦点前景色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">说明： </p>
+<blockquote>
+	<p align="left">以上三个属性用于设置不同状态下的文本颜色。</p>
+	<p align="left">通常：鼠标离开组件时显示的颜色。</p>
+	<p align="left">点燃：鼠标经过组件时显示的颜色。</p>
+	<p align="left">焦点：组件获得焦点时显示的颜色。</p>
+	<p align="left">注意：使用以上属性必须将<b>“使用默认色”</b>设置为假。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置两个超级按钮，分别设置上相同的颜色值。</p>
+	<p align="left"><img border="0" src="cjan_img/34.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按tab键切换组件焦点时，文本颜色将会变成<b>“青绿色”</b>。</p>
+	<p align="left">当鼠标经过组件时，会变成<b>“蓝色”</b>，离开时会变成<b>“红色”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/35.gif" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="jdbjs"></a>
+<font style="font-size: 12pt; font-weight:700">● 焦点背景色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 通常背景色(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 点燃背景色(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">说明： </p>
+<blockquote>
+	<p align="left">以上三个属性用于设置不同状态下的背景颜色。</p>
+	<p align="left">通常：鼠标离开组件时显示的颜色。</p>
+	<p align="left">点燃：鼠标经过组件时显示的颜色。</p>
+	<p align="left">焦点：组件获得焦点时显示的颜色。</p>
+	<p align="left">注意：使用以上属性必须将<b>“使用默认色”</b>设置为假。</p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加两个超级按钮并设置颜色。</p>
+	<p align="left"><img border="0" src="cjan_img/36.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按tab键切换组件焦点时，背景颜色将会变成<b>“青绿色”</b>。</p>
+	<p align="left">当鼠标经过组件时，会变成<b>“蓝色”</b>，离开时会变成<b>“红色”</b>。</p>
+	<p align="left"><img border="0" src="cjan_img/37.gif" > </p>
+</blockquote>	
+	<p align="left">&nbsp;</p><a name="tswb"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示文本(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当鼠标在超级按钮上停留时会提示本属性设置的文本内容。</p>
+	<p align="left"><img border="0" src="cjan_img/38.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加两个超级按钮并设置本属性内容。</p>
+	<p align="left"><img border="0" src="cjan_img/39.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可看到当鼠标在超级按钮上停留时，会显示文本。</p>
+	<p align="left">注意：如果没有提示文本，可以尝试点击一下按钮进行鼠标停留。</p>
+	<p align="left"><img border="0" src="cjan_img/40.gif" > </p>
+</blockquote>	
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_SanTai.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_Tuxing.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+
+<html>
+<head>
+<title>火山PC视窗日期框教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗日期框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.日期框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#今天">1.今天(写)</a></blockquote></li>     
+          <li><blockquote><a href="#最大日期">2.最大日期(写)</a></blockquote></li>     
+          <li><blockquote><a href="#最小日期">3.最小日期(写)</a></blockquote></li>     
+          <li><blockquote><a href="#附件类型">4.附件类型(写)</a></blockquote></li>     
+          <li><blockquote><a href="#置日期范围">5.置日期范围</a></blockquote></li>     
+          <li><blockquote><a href="#选择日期被改变">6.选择日期被改变(事件)</a></blockquote></li>     
+          <li><blockquote><a href="#格式化日期显示">7.格式化日期显示</a></blockquote></li>     
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_ZhuangTaiTiao.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_YueLi.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>
+<a name="今天"></a>
+<p align="left">
+<h2>日期框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p align="left">本组件主要用于日期选择。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 今天(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前组件所显示的日期，属性值为小数时间，提供0表示为系统当前日期。</p>
+	<p align="left"><img border="0" src="RiQi_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先利用<b>“增减时间()”</b>方法对当前时间进行增加一天操作。</p>
+	<p align="left">2、随后将增加后的时间赋值给本属性。</p>
+	<p align="left"><img border="0" src="RiQi_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到日期框的日期增加了一天。</p>
+	<p align="left"><img border="0" src="RiQi_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最大日期"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大日期(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前日期框显示的最大日期。</p>
+	<p align="left">注意：单位不是时间戳，是小数时间，提供0表示无限制。</p>
+	<p align="left"><img border="0" src="RiQi_img/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先定义<b>“最大日期”</b>的小数变量，利用<b>“增减时间()”</b>方法增加两天时间为当前最大时间。</p>
+	<p align="left">2、将增加后的时间赋值给本属性。</p>
+	<p align="left"><img border="0" src="RiQi_img/5.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到按钮点击后日期框的最大日期停留在了两天后。</p>
+	<p align="left"><img border="0" src="RiQi_img/6.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="最小日期"></a>
+<font style="font-size: 12pt; font-weight:700">● 最小日期(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前组件能显示的最小日期。</p>
+	<p align="left"><img border="0" src="RiQi_img/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先定义<b>“最小日期”</b>的小数变量，利用<b>“增减时间()”</b>方法减少两天时间为当前最小时间。</p>
+	<p align="left">2、将减少后的时间赋值给本属性。</p>
+	<p align="left"><img border="0" src="RiQi_img/8.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到按钮点击后日期框的最小日期停留在了两天前。</p>
+	<p align="left"><img border="0" src="RiQi_img/9.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="附件类型"></a>
+<font style="font-size: 12pt; font-weight:700">● 附件类型(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置日期框的调节样式，共有两个样式分别为<b>“下拉月历”</b>和<b>“调节器”</b>，如果不设置默认为<b>“下拉月历”</b>。</p>
+	<p align="left">注意：本属性只能在属性表格中调用。</p>
+	<p align="left"><img border="0" src="RiQi_img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">直接在当前组件的属性栏设置本属性并选择<b>“调节器”</b>样式。</p>
+	<p align="left"><img border="0" src="RiQi_img/11.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到日期框变成调节器样式，可通过调节器按钮去调节日期。</p>
+	<p align="left"><img border="0" src="RiQi_img/12.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="置日期范围"></a>
+<font style="font-size: 12pt; font-weight:700">● 置日期范围</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以同时设置显示的最大日期和最小日期。</p>
+	<p align="left"><img border="0" src="RiQi_img/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、首先利用<b>“增减时间()”</b>方法将最小和最大日期分别定义出来。</p>
+	<p align="left">2、然后将定义出来的时间填写到对应的参数中即可。</p>
+	<p align="left"><img border="0" src="RiQi_img/14.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到日期框的日期被限制在了5天。</p>
+	<p align="left"><img border="0" src="RiQi_img/15.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="选择日期被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择日期被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当日期框的日期被选择时将触发本事件，可通过<b>“今天”</b>读属性读取当前选择的日期。</p>
+	<p align="left"><img border="0" src="RiQi_img/16.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加本事件后利用<b>“时间到文本()”</b>将小数时间转换成可以被正常阅读的文本时间。</p>
+	<p align="left"><img border="0" src="RiQi_img/17.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到当日期被选择后标签会同步显示当前选择的时间。</p>
+	<p align="left"><img border="0" src="RiQi_img/18.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="格式化日期显示"></a>
+<font style="font-size: 12pt; font-weight:700">● 格式化日期显示</font>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">如果你想让日期框显示格式化日期显示，例如：yyyy/MM/dd HH:mm:ss ddd的格式。</p>
+	<p align="left">可以利用窗口组件的<b>“发送消息()”</b>方法实现，发送多字节指针给日期框组件。</p>
+	<p align="left">参数1：固定填写4101。</p>
+	<p align="left">参数2：固定填写0。</p>
+	<p align="left">参数3：必须提供文本到多字节指针。</p>
+	<p align="left">因为消息内容只能接收多字节指针，注意<b>“文本到多字节()”</b>方法的参数2要提供假。</p>
+	<p align="left"><img border="0" src="RiQi_img/19.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到日期框的日期可以显示时分秒和周几。</p>
+	<p align="left"><img border="0" src="RiQi_img/20.gif" ></p>
+</blockquote>
+	<blockquote>
+				<p>&nbsp;</p>
+				<p align="left">  [<a href="mfc_ZhuangTaiTiao.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_YueLi.html">下一章</a>] </p>
+				<p>&nbsp;</p>
+		</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

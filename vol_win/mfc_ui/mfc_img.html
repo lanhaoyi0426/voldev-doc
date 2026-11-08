@@ -1,0 +1,188 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗图片框组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗图片框组件教程" />
+<link rel="shortcut icon" type="image/x-icon" href="img_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.图片框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#tupian">1.图片(写)</a></blockquote></li>  
+          <li><blockquote><a href="#xianshi">2.显示方式(写)</a></blockquote></li>  
+          <li><blockquote><a href="#bjys">3.背景颜色(写)</a></blockquote></li>  
+          <li><blockquote><a href="#ditushuju">4.置底图数据</a></blockquote></li>  
+          <li><blockquote><a href="#rongqi">5.容器特性演示</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_rejiankuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_gifimg.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+<p align="left">
+<h2>图片框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="tupian"></a>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件除了具备显示图片的能力之外，还是一个容器，继承了<b>“组件布局器”</b>的所有方法。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">●图片(写)</font>
+	<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">1、通过本属性可以设置当前组件要显示的图片。</p>
+	<p align="left">2、属性值为<b>“位图资源”</b>属于程序内置资源，不能动态载入本地图片数据，任何东西都无法转换为<b>“位图资源”</b>。</p>
+	<p align="left">3、如果想要清空图片将本属性值设置为<b>“空资源.空位图”</b>即可。</p>
+	<p align="left">注意：本属性等同于<b>“组件布局器”</b>中的<b>“底图”</b>属性。</p>
+	<p align="left"><img border="0" src="img_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">配置模块后，在<b>“基本容器组件”</b>中就可以找到图片框组件，在右侧属性栏就可以导入要显示的图片。</p>
+	<p align="left">当软件被编译后，导入的图片会自动编译到exe程序内部。</p>
+	<p align="left"><img border="0" src="img_img/2.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">也可以通过组件的属性栏增加图片属性来进行导入图片。</p>
+	<p align="left"><img border="0" src="img_img/4.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终导入的图片会显示在图片框上。</p>
+	<p align="left"><img border="0" src="img_img/3.png" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="xianshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 显示方式(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本书属性可以设置图片的显示方式，默认显示为左上角放置。</p>
+	<p align="left">注意：本属性等同于<b>“组件布局器”</b>中的<b>“底图方式”</b>属性。</p>
+	<p align="left"><img border="0" src="img_img/5.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">可以选择在界面设计器中设置显示方式，比如设置成<b>“缩放图片”</b>，就可以将图片缩放铺满图片框。</p>
+	<p align="left"><img border="0" src="img_img/6.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">也可以选择按钮点击后动态设置，调用方式为<b>“图片放置方式.XXX”</b>.</p>
+	<p align="left">比如这里提供<b>“图片放置方式.缩放图片”</b>。</p>
+	<p align="left"><img border="0" src="img_img/7.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到图片被成功缩放。</p>
+	<p align="left"><img border="0" src="img_img/8.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="bjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置图片框的背景色。</p>
+	<p align="left">注意：本属性等同于<b>“组件布局器”</b>中的<b>“底色”</b>属性。</p>
+	<p align="left"><img border="0" src="img_img/9.png" ></p>
+</blockquote>	
+		
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置本组件的背景颜色属性即可，可以使用<b>“颜色类”</b>中的常量值也可以使用十六进制颜色值。</p>
+	<p align="left"><img border="0" src="img_img/10.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到图片框底色被改变。</p>
+	<p align="left"><img border="0" src="img_img/11.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="ditushuju"></a>
+<font style="font-size: 12pt; font-weight:700">● 置底图数据</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以给图片框设置字节集图片数据。</p>
+	<p align="left">注意：本方法来自于<b>“组件布局器”</b>，因为图片框继承了本类，因此也可以使用本类中的方法。</p>
+	<p align="left"><img border="0" src="img_img/12.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法，利用<b>“读入文件()”</b>方法读取本地图片的字节集数据。</p>
+	<p align="left"><img border="0" src="img_img/13.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到图片框图片发生改变。</p>
+	<p align="left"><img border="0" src="img_img/14.gif" ></p>
+</blockquote>
+		
+<p align="left">&nbsp;</p><a name="rongqi"></a>
+<font style="font-size: 12pt; font-weight:700">● 容器特性演示</font><br/>
+
+		<p align="left">&nbsp;</p>
+<p align="left">界面演示：</p>
+<blockquote>
+	<p align="left">在图片框组件上方一个按钮，拖动图片框的时候按钮也会跟随拖动，这也就是图片框容器的特性。</p>
+	<p align="left">即使是通过代码调整图片框移动，图片框内的按钮也会跟随移动。</p>
+	<p align="left"><img border="0" src="img_img/15.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置图片框左边为0.</p>
+	<p align="left"><img border="0" src="img_img/16.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">界面演示：</p>
+<blockquote>
+	<p align="left">最终可看到按钮依然会跟随图片框移动。</p>
+	<p align="left"><img border="0" src="img_img/17.gif" ></p>
+</blockquote>	
+	<blockquote>
+			<p>&nbsp;</p>
+			<p align="left">  [<a href="mfc_rejiankuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_gifimg.html">下一章</a>] </p>
+			<p>&nbsp;</p>
+	</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

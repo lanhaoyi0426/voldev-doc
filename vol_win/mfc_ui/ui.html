@@ -1,0 +1,68 @@
+<html>
+
+	<head>
+		<title>火山PC视窗平台窗口组件介绍_火山软件开发平台</title>
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+		<meta name="description" content="火山软件开发平台,火山PC视窗平台窗口组件介绍" />
+		<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+		<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+	</head>
+
+	<body>
+		<p>&nbsp;</p>
+		<p align="left"> <!-- [<a href="dataType.html">上一章</a>] -->&nbsp;&nbsp; [<a href="mfc_ui.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+		<h2>窗口组件介绍</h2>
+		<p><b>作者：创世魂</b></p>
+		<p>&nbsp;</p>
+		<h4>1、什么是窗口组件？</h4>
+		<blockquote>
+			<p style="text-indent:2em">
+				在Windows软件中，常会看到各式各样的软件界面效果，组成这些软件效果的元素就被称为组件，常见的有<b>按钮、编辑框、选择框、列表框</b>等。除此之外还有一个特殊的组件叫<b>窗口</b>，可以理解为整个程序的根组件，除窗口外其它的所有组件都需要在窗口上才可以显示出来，因此组件又被称为<b>窗口组件</b>。
+			</p>
+			<p>窗口组件大致可以分为以下几个类型：</p>
+			<blockquote>
+				<p>容器类组件：譬如<b>窗口、分组框、选择夹</b>等可以存放其它组件的组件；</p>
+				<p>控制类组件：譬如<b>按钮、选择框、单选框</b>等需要进行操作的组件；</p>
+				<p>展示类组件：譬如<b>标签、编辑框、图片框</b>等主要以展示为目的的组件。</p>
+			</blockquote>
+			<p style="text-indent:2em">
+				除以上三个分类外，组件整体上还可以分为两个大类型：<b>“可视组件”</b>和<b>“不可视组件”</b>，譬如：<b>时钟</b>就属于不可视组件，它必须依赖窗口才可以正常使用，但是软件运行时又看不到此组件。
+			</p>
+			<p>&nbsp;</p>
+
+		</blockquote>
+		<h4>2、什么是界面库？</h4>
+		<blockquote>
+			<p style="text-indent:2em">
+				界面库是某种类型组件的集合被称为界面库，市面上的界面库有很多比较知名的有MFC、QT、win32界面库。火山视窗官方库目前封装了MFC和WTL两个界面库，其中MFC界面库体积较大，同样空窗口程序编译，使用MFC大约4mb左右，WTL仅有几百KB大小，在开发过程中可根据实际需求选择合适的界面库即可。
+			</p>
+			<p>在火山中选择界面库，其实就是一个配置模块的过程，如下所示：</p>
+			<blockquote>
+				<p>右键项目，选择<b>配置项目所使用模块</b>。</p>
+				<p><img src="ui_img/1.png" border="0"></p>
+				<p>在模块配置窗口中，选择需要配置的界面库即可，如下图中，以<b>“MFC”</b>字符开始的类库就是MFC界面库。</p>
+				<p><img src="ui_img/2.png" border="0"></p>
+			</blockquote>
+			<p>在火山视窗中界面库不支持混用，譬如：已经配置了mfc界面库想要同时配置wtl界面库就会提示<b>“同一个项目内只能存在其中一个”</b>。</p>
+			<blockquote><img src="ui_img/3.png" border="0"></blockquote>
+			<p>本篇教程将以MFC界面库的视角来介绍其组件如何使用。</p>
+			<p>&nbsp;</p>
+
+			<p align="left"> <!-- [<a href="dataType.html">上一章</a>] -->&nbsp;&nbsp; [<a href="mfc_ui.html">下一章</a>] </p>
+		</blockquote>
+
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+
+
+	</body>
+</html>

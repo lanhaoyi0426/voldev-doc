@@ -1,0 +1,132 @@
+
+<html>
+<head>
+<title>火山PC视窗颜色选择器组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗颜色选择器组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.颜色选择器 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#颜色">1.颜色(写)</a></blockquote></li>        
+          <li><blockquote><a href="#允许透明">2.允许透明(写)</a></blockquote></li>        
+          <li><blockquote><a href="#允许透明">3.透明颜色标题(写)</a></blockquote></li>        
+          <li><blockquote><a href="#颜色被改变">4.颜色被改变(事件)</a></blockquote></li>              
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_FenGeTiao.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_HuaKuai.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="颜色"></a>
+<p align="left">
+<h2>颜色选择器组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left"> 本组件主要用于颜色选择操作。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 颜色(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以修改当前组件的显示的颜色。</p>
+	<p align="left">可以使用<b>“颜色类”</b>中的常量值或者<b>“0x0000FF”</b>十六进制颜色值。</p>
+	<p align="left"><img border="0" src="YanSe_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置本属性值为<b>“颜色类.红色”</b>。</p>
+	<p align="left"><img border="0" src="YanSe_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到颜色选择器的当前显示颜色被修改成红色。</p>
+	<p align="left"><img border="0" src="YanSe_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="允许透明"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许透明(写)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 透明颜色标题(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“允许透明”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前颜色选择器组件是否支持透明色选择，默认为假不显示。</p>
+	<p align="left"><img border="0" src="YanSe_img/4.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“透明颜色标题”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">如果设置<b>“允许透明”</b>为真，则本属性可以设置透明色的标题。</p>
+	<p align="left"><img border="0" src="YanSe_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">按钮点击后分别设置以上两个属性值。</p>
+	<p align="left"><img border="0" src="YanSe_img/6.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到按钮点击后，颜色选择器出现了透明色，并且透明色标题也发生了改变。</p>
+	<p align="left"><img border="0" src="YanSe_img/7.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="颜色被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 颜色被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当颜色被选择时会触发本事件，可通过<b>“颜色”</b>属性读取改变后的颜色。</p>
+	<p align="left"><img border="0" src="YanSe_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加当前事件后，将被改变后的颜色赋值给标签背景色。</p>
+	<p align="left"><img border="0" src="YanSe_img/9.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到，标签组件背景颜色可被动态修改，证明当前事件被触发。</p>
+	<p align="left"><img border="0" src="YanSe_img/10.gif" ></p>
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_FenGeTiao.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_HuaKuai.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

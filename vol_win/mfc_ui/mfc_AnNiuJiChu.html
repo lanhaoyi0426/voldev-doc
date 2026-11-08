@@ -1,0 +1,199 @@
+
+
+<html>
+
+<head>
+<title>火山视窗按钮基础组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗按钮基础组件讲解" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，火山视窗按钮基础组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="anjc_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.按钮基础类 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#bdj">1.被单击(事)</a></blockquote></li>  
+          <li><blockquote><a href="#tubiao">2.图标(写)</a></blockquote></li>  
+          <li><blockquote><a href="#tp">3.图片(写)</a></blockquote></li>   
+          <li><blockquote><a href="#hxdqfs">4.横向对齐方式(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#zxdqfs">5.纵向对齐方式(读写)</a></blockquote></li>  
+          <li><blockquote><a href="#bjys">6.背景颜色(读写)</a></blockquote></li>  
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_Shape.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_AnNiu.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>按钮基础类讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="bdj"></a>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类中的功能不能直接使用，必须依赖于某个组件使用，例如：<b>“按钮”</b>、<b>“选择框”</b>等继承了本类的组件才能使用。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 被单击(事件)</font><br/>
+<p align="left">&nbsp;</p>
+
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当按钮被鼠标左键点击后将触发本事件。</p>
+	<p align="left"><img border="0" src="anjc_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">添加本事件后，通过<b>“来源对象”</b>参数可确定是哪个按钮点击。</p>
+	<p align="left"><img border="0" src="anjc_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终两个按钮点击后会弹出不同的信息框。</p>
+	<p align="left"><img border="0" src="anjc_img/3.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="tubiao"></a>
+<font style="font-size: 12pt; font-weight:700">● 图标(写)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图： </p>	
+<blockquote>
+	<p align="left">通过本属性可以在按钮上设置一个图标，想要清空图标属性值可填写<b>“空资源.空图标”</b>即可。</p>
+	<p align="left"><img border="0" src="anjc_img/4.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在按钮组件属性栏，增加本属性并引用一个ico格式的图标文件。</p>
+	<p align="left"><img border="0" src="anjc_img/5.png" > </p>
+
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终软件运行后按钮上会显示一个图标，但是按钮标题会被图标覆盖。</p>
+	<p align="left"><img border="0" src="anjc_img/6.png" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="tp"></a>
+<font style="font-size: 12pt; font-weight:700">● 图片(写)</font><br/>
+	<p align="left">&nbsp;</p>
+<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可给当前组件设置一个图片。</p>
+	<p align="left">本属性和<b>“图标”</b>属性的区别在于，本属性不限制图片格式。</p>
+	<p align="left"><img border="0" src="anjc_img/7.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在按钮组件的属性栏，设置本属性并引入一个png图片。</p>
+	<p align="left"><img border="0" src="anjc_img/8.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终图片会显示在按钮上，但是会覆盖标题。</p>
+	<p align="left"><img border="0" src="anjc_img/9.png" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="hxdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 横向对齐方式(读写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置按钮标题的文本对齐方式，调用方法<b>“横向对齐模式.XXX”</b>。</p>
+	<p align="left">同名读属性可以读取当前的对齐模式。</p>
+	<p align="left"><img border="0" src="anjc_img/10.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在按钮组件的属性栏中设置本属性，并选择左边。</p>
+	<p align="left">2、当按钮点击后，判断当前按钮的横向对齐方式是否为左边。</p>
+	<p align="left"><img border="0" src="anjc_img/11.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">软件运行后可以看到按钮标题显示在组件的左边位置，并且点击后弹出的信息框也是左边。</p>
+	<p align="left"><img border="0" src="anjc_img/12.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="zxdqfs"></a>
+<font style="font-size: 12pt; font-weight:700">●纵向对齐方式(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">本属性用于设置标题的纵向对齐方式，调用方法<b>“纵向对齐模式.XXX”</b>.</p>
+  <p align="left">同名读属性可以用于判断当前纵向对齐模式。</p>
+	<p align="left"><img border="0" src="anjc_img/13.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在按钮组件的属性栏设置本属性为顶边。</p>
+	<p align="left">2、按钮点击后，读取当前组件的对齐方式是否为顶边。</p>
+	<p align="left"><img border="0" src="anjc_img/14.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+ <p align="left">软件运行后可以看到按钮的标题位于顶边，并且点击后也提示顶边。</p>
+	<p align="left"><img border="0" src="anjc_img/15.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="bjys"></a>
+<font style="font-size: 12pt; font-weight:700">● 背景颜色(读写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置组件背景色，属性值可使用<b>“颜色类.XX”</b>提供的常量值。</p>
+	<p align="left">或者使用<b>“0x”</b>+十六进制的颜色值，例如：0xFF0000，表示蓝色。</p>
+	<p align="left">注意：本属性对按钮组件无效，<b>“单选框”</b>，<b>“选择框”</b>等组件可以使用，如果某个组件继承了本属性但设置颜色无效，证明该组件不支持本属性。</p>
+	<p align="left"><img border="0" src="anjc_img/16.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在单选框组件的属性栏设置本属性为蓝色。</p>
+	<p align="left"><img border="0" src="anjc_img/17.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">软件运行后可看到当前组件背景色被设置成了蓝色。</p>
+	<p align="left"><img border="0" src="anjc_img/18.png" > </p>
+</blockquote>	
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_Shape.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_AnNiu.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>	
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

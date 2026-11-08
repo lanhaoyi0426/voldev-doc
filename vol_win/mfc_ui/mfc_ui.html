@@ -1,0 +1,1430 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗窗口组件基础讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC视窗窗口组件基础讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.窗口组件 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+            <li><blockquote><a href="#ktljd">1.可停留焦点(读写)</a></blockquote></li>  
+		  <li><blockquote><a href="#keshi">2.可视(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#kuandu">3.宽度(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#gd">4.高度(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zuobian">5.左边(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#dingbian">6.顶边(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#biaoti">7.标题(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#jinzhi">8.禁止(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zjwz">9.组件位置(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#szj">10.首组件(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zt">11.字体(写)</a></blockquote></li>
+		  <li><blockquote><a href="#bzsbzz">12.标准鼠标指针(写)</a></blockquote></li>
+		  <li><blockquote><a href="#zjbk">13.组件边框(写)</a></blockquote></li>
+		  <li><blockquote><a href="#zdysbzz">14.自定义鼠标指针(写)</a></blockquote></li>
+		  <li><blockquote><a href="#bj">15.标记(变)</a></blockquote></li>
+		  <li><blockquote><a href="#sqjds">16.失去焦点(事)</a></blockquote></li>
+		  <li><blockquote><a href="#zfsrsj">17.字符输入(事)</a></blockquote></li>
+		  <li><blockquote><a href="#anxmj">18.按下某键(事)</a></blockquote></li>
+		  <li><blockquote><a href="#anxmj">19.放开某键(事)</a></blockquote></li>
+		  <li><blockquote><a href="#glbgd">20.滚轮被滚动(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sqjds">21.获得焦点(事)</a></blockquote></li>
+		  <li><blockquote><a href="#bsj">22.被双击(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sbwzbyd">23.鼠标位置被移动(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sbyjanx">24.鼠标右键被按下(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sbyjanx">25.鼠标右键被放开(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sbzjbax">26.鼠标左键被按下(事)</a></blockquote></li>
+		  <li><blockquote><a href="#sbzjbax">27.鼠标左键被放开(事)</a></blockquote></li>
+		  <li><blockquote><a href="#xxk">28.信息框</a></blockquote></li>
+		  <li><blockquote><a href="#jzch">29.允许重画</a></blockquote></li>
+		  <li><blockquote><a href="#cjzj">30.创建组件</a></blockquote></li>
+		  <li><blockquote><a href="#qpmwz">31.取屏幕位置</a></blockquote></li>
+		  <li><blockquote><a href="#jzch">32.禁止重画</a></blockquote></li>
+		  <li><blockquote><a href="#qyhqkd">33.取用户区宽度</a></blockquote></li>
+		  <li><blockquote><a href="#qyhqgd">34.取用户区高度</a></blockquote></li>
+		  <li><blockquote><a href="#qyhqjx">35.取用户区矩形</a></blockquote></li>
+		  <li><blockquote><a href="#qckjb">36.取窗口句柄</a></blockquote></li>
+		  <li><blockquote><a href="#kyjd">37.可有焦点</a></blockquote></li>
+		  <li><blockquote><a href="#sfwk">38.是否为空</a></blockquote></li>
+		  <li><blockquote><a href="#phwzdpm">39.用户区截图</a></blockquote></li>
+		  <li><blockquote><a href="#yd">40.移动</a></blockquote></li>
+		  <li><blockquote><a href="#phwzdpm">41.组件截图</a></blockquote></li>
+		  <li><blockquote><a href="#zhizt">42.置字体</a></blockquote></li>
+		  <li><blockquote><a href="#shanchu">43.删除到回收站</a></blockquote></li>
+		  <li><blockquote><a href="#zfck">44.置父窗口</a></blockquote></li>
+		  <li><blockquote><a href="#hqjd">45.获取焦点</a></blockquote></li>
+		  <li><blockquote><a href="#tzcc">46.调整层次</a></blockquote></li>
+		  <li><blockquote><a href="#srk">47.输入框</a></blockquote></li>
+		  <li><blockquote><a href="#sfwk">48.销毁</a></blockquote></li>
+		  <li><blockquote><a href="#quziti">49.取字体</a></blockquote></li>
+		  <li><blockquote><a href="#tcslcd">50.弹出实例菜单</a></blockquote></li>
+		  <li><blockquote><a href="#tccd">51.弹出菜单</a></blockquote></li>
+		  <li><blockquote><a href="#zhixing">52.执行</a></blockquote></li>
+		  <li><blockquote><a href="#tidao">53.提到前方</a></blockquote></li>
+		  <li><blockquote><a href="#llwjj">54.浏览文件夹</a></blockquote></li>
+		  <li><blockquote><a href="#jihuo">55.激活</a></blockquote></li>
+		  <li><blockquote><a href="#jihuo">56.置为前台窗口</a></blockquote></li>
+		  <li><blockquote><a href="#jindufuzhi">57.进度复制文件</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left">  [<a href="ui.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ck.html">下一章</a>] </p>
+</blockquote>
+<p>&nbsp;</p>
+<p align="left">
+<h2>窗口组件实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本类中的功能并不能单独使用，必须基于窗口组件进行操作，例如：编辑框、按钮等。</p>
+<p align="left"></p>
+</blockquote>
+<p align="left">&nbsp;</p><a name="ktljd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可停留焦点(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性的主要作用可以决定在使用TAB按键进行焦点切换时，当前组件是否允许获得焦点。</p>
+	<p align="left"><img border="0" src="img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+  <p align="left">在窗口中放三个编辑框。</p>
+	<p align="left"><img border="0" src="img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">给编辑框2设置当前属性为假。</p>
+	<p align="left"><img border="0" src="img/3.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：设置前按TAB键的效果。</p>
+	<p align="left">右图：设置后按TAB键的效果。 </p>
+	<p align="left">可以看到，当设置当前属性为假后，按tab键时会跳过编辑框2组件。</p>
+  <p align="left"><img border="0" src="img/4.gif" >&nbsp;&nbsp;<img border="0" src="img/5.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="keshi"></a>
+<font style="font-size: 12pt; font-weight:700">● 可视(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本组的作用可用于设置组件的显示和隐藏状态，同名的读属性可用于判断当前组件是否显示。</p>
+	<p align="left"><img border="0" src="img/6.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和一个编辑框组件用于演示。</p>
+	<p align="left"><img border="0" src="img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后，判断编辑框的可视状态，来绝对编辑框是否显示。</p>
+	<p align="left"><img border="0" src="img/7.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">当按钮点击后，组件可以在显示和不显示之间任意切换。</p>
+	<p align="left"><img border="0" src="img/8.gif" ></p>
+</blockquote>		
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="kuandu"></a>
+<font style="font-size: 12pt; font-weight:700">●宽度 (读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性可用于设置组件宽度，单位像素。同名读属性可用于读取宽度。</p>
+	<p align="left"><img border="0" src="img/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">设计界面时让编辑框组件的尺寸小于按钮尺寸。</p>
+	<p align="left"><img border="0" src="img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，设置编辑框的宽度等于按钮宽度。</p>
+	<p align="left"><img border="0" src="img/11.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终编辑框尺寸将会和按钮尺寸一致。</p>
+	<p align="left"><img border="0" src="img/12.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="gd"></a>
+<font style="font-size: 12pt; font-weight:700">● 高度(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用于设置组件高度，单位像素。同名读属性可用于读取组件高度。</p>
+	<p align="left"><img border="0" src="img/13.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">设计界面时让编辑框组件的尺寸小于按钮尺寸。</p>
+	<p align="left"><img border="0" src="img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">取出按钮的高度赋值给编辑框的高度。</p>
+	<p align="left"><img border="0" src="img/15.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终两个组件的高度将一致。</p>
+	<p align="left"><img border="0" src="img/16.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="zuobian"></a>
+<font style="font-size: 12pt; font-weight:700">● 左边(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性可修改组件左边距离父组件左边的距离，单位像素。</p>
+	<p align="left">如果当前组件无父组件时，将以窗口为准。</p>
+	<p align="left"><img border="0" src="img/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="img/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后，修改编辑框的左边等于按钮的左边位置。</p>
+	<p align="left"><img border="0" src="img/19.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到编辑框的左边与按钮左边对齐。</p>
+	<p align="left"><img border="0" src="img/20.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="dingbian"></a>
+<font style="font-size: 12pt; font-weight:700">● 顶边(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可修改组件顶边距离父组件顶边的距离，单位像素。</p>
+	<p align="left">如果当前组件无父组件时，将以窗口为准。</p>
+	<p align="left"><img border="0" src="img/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后，修改编辑框的顶边等于按钮顶边。 </p>
+	<p align="left"><img border="0" src="img/22.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终编辑框顶边位置等于按钮顶边。</p>
+	<p align="left"><img border="0" src="img/23.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="biaoti"></a>
+<font style="font-size: 12pt; font-weight:700">●标题 (读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本属性可设置组件标题，但并非所有组件都具备标题显示，例如：画板、进度条等组件就不具备标题显示。</p>
+	<p align="left">注意：如果需要在组件上显示&符号，则需要输入两个符号才能显示出来。</p>
+	<p align="left"><img border="0" src="img/24.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放置一些可以设置标题的组件。</p>
+	<p align="left"><img border="0" src="img/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改这些标题。</p>
+	<p align="left"><img border="0" src="img/26.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到所有组件的标题内容都被修改。</p>
+	<p align="left">并且可以看到单独使用&符号时并不会显示，只有使用了两个&&符号后才会显示出来。</p>
+	<p align="left"><img border="0" src="img/27.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="jinzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 禁止(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以让组件禁止操作，同名读属性可以判断组件是否被禁止。</p>
+	<p align="left"><img border="0" src="img/28.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放两个组件，分别是按钮和编辑框。</p>
+	<p align="left"><img border="0" src="img/29.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后判断编辑框的禁止状态，并执行是否对编辑框进行禁止操作。</p>
+	<p align="left"><img border="0" src="img/30.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按钮点击后编辑框将被禁止，禁止后将不能操作编辑框组件，取消禁止后可继续操作。</p>
+	<p align="left"><img border="0" src="img/31.gif" > </p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zjwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 组件位置(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性可用于调整组件位置，并且在调整位置的同时设置组件尺寸。</p>
+	<p align="left">注意：针对父组件的左上角为准。</p>
+	<p align="left"><img border="0" src="img/32.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“矩形类”</b>的变量，分别设置矩形区域属性。</p>
+	<p align="left">2、给编辑框组件设置本属性值为此变量。</p>
+	<p align="left"><img border="0" src="img/33.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框组件位置和尺寸均被改变。</p>
+	<p align="left"><img border="0" src="img/34.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="szj"></a>
+<font style="font-size: 12pt; font-weight:700">● 首组件(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性可设置一组组件的首组件，通常用于单选框操作。</p>
+	<p align="left"><img border="0" src="img/35.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在界面中设置两组单选框组件。</p>
+	<p align="left">第一组：直接放置在窗口中。</p>
+	<p align="left">第二组：放置在分组框容器内。</p>
+	<p align="left"><img border="0" src="img/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别给第一组和第二组的第一个组件都设置首组件属性。</p>
+	<p align="left"><img border="0" src="img/37.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：没设置本属性之前的效果，可以看到两组组件之间冲突。</p>
+	<p align="left">右图：设置后可以看到两组组件可以正常操作。</p>
+	<p align="left"><img border="0" src="img/38.gif" >&nbsp;&nbsp;&nbsp;<img border="0" src="img/39.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zt"></a>
+<font style="font-size: 12pt; font-weight:700">●字体 (写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置组件字体样式，共有7个选项，每个选项之间用英文逗号隔开。</p>
+	<p align="left">例如："宋体, 10, 0, 1, 1, 0, 100"</p>
+	<p align="left"><img border="0" src="img/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和编辑框。</p>
+	<p align="left"><img border="0" src="img/41.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">第一种方式：按照帮助页的注释规则，直接设置本属性值。</p>
+	<p align="left"><img border="0" src="img/43.png" ></p>
+	<p align="left">第二种方式：在属性栏可以点击打开字体选择器，手动选择字体样式。</p>
+	<p align="left"><img border="0" src="img/44.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框的字体将会被改变。</p>
+	<p align="left"><img border="0" src="img/42.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="bzsbzz"></a>
+<font style="font-size: 12pt; font-weight:700">● 标准鼠标指针(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前组件鼠标经过时的鼠标指针样式。</p>
+	<p align="left">属性值调用方式：标准鼠标指针类型.XXX。</p>
+	<p align="left"><img border="0" src="img/45.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图： </p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和两个编辑框。</p>
+	<p align="left"><img border="0" src="img/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，分别给编辑框设置不同的鼠标样式。</p>
+	<p align="left"><img border="0" src="img/47.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，当按钮点击后，鼠标经过编辑框时样式会发生变化。</p>
+	<p align="left"><img border="0" src="img/48.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="zjbk"></a>
+<font style="font-size: 12pt; font-weight:700">●组件边框 (写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本属性用于设置组件边框效果，调用方式<b>“组件边框类型.XXX”</b>.</p>
+	<p align="left">注意：本属性对窗口无效。</p>
+	<p align="left"><img border="0" src="img/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮1被点击后，分别设置两个编辑框组件的边框效果。</p>
+	<p align="left"><img border="0" src="img/50.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框样式发生改变。</p>
+	<p align="left"><img border="0" src="img/51.gif" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+
+	
+<p align="left">&nbsp;</p><a name="ktljd"></a>
+<font style="font-size: 12pt; font-weight:700">● 自定义鼠标指针(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以给当前组件设置一个外部的指针文件，后缀名通常为cur格式。</p>
+	<p align="left">注意：使用本属性会覆盖<b>“标准鼠标指针”</b>属性。</p>
+	<p align="left"><img border="0" src="img/52.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放两个编辑框，给其中一个编辑框设置本属性，引入一个鼠标指针文件。</p>
+	<p align="left"><img border="0" src="img/53.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">运行后可以看到当前<b>“编辑框1”</b>和<b>“编辑框2”</b>显示的鼠标指针不同。</p>
+	<p align="left"><img border="0" src="img/54.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<a name="bj"></a>
+<font style="font-size: 12pt; font-weight:700">● 标记(变)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本变量是窗口组件的成员变量，任何窗口组件都可以使用，用于设置一个标记文本。</p>
+	<p align="left"><img border="0" src="img/55.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和编辑框。</p>
+	<p align="left"><img border="0" src="img/56.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在表格属性中设置标记文本。</p>
+	<p align="left">2、按钮点击后取出设置的标记文本。</p>
+	<p align="left"><img border="0" src="img/57.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮的标记文本被取出。</p>
+	<p align="left"><img border="0" src="img/58.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="sqjds"></a>
+<font style="font-size: 12pt; font-weight:700">●失去焦点 (事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">●获得焦点 (事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“失去焦点”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当组件失去焦点的时候将会触发本事件。</p>
+	<p align="left"><img border="0" src="img/59.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“获得焦点”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件获得焦点后会触发本事件。</p>
+	<p align="left"><img border="0" src="img/60.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，并给编辑框的内容赋值。</p>
+	<p align="left"><img border="0" src="img/61.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，当编辑框失去和获得输入焦点时，编辑框的内容将会被随之改变。</p>
+	<p align="left"><img border="0" src="img/62.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zfsrsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 字符输入(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当任意字符被输入时，将会触本事件，其中也包含退格键，回车键。</p>
+	<p align="left"><img border="0" src="img/63.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">打开设计器在窗口上方两个编辑框组件。</p>
+	<p align="left"><img border="0" src="img/64.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加字符输入事件，将编辑框1输入的字符显示在编辑框2中。</p>
+	<p align="left"><img border="0" src="img/65.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到编辑框1的字符出现在了编辑框2中。</p>
+	<p align="left"><img border="0" src="img/66.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="anxmj"></a>
+<font style="font-size: 12pt; font-weight:700">● 按下某键(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 放开某键(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“按下某件”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当按下键盘某个按键时可触发本事件，并返回两个参数。</p>
+	<p align="left">参数1：调用方式<b>“按键码.XX”</b>，包含了键盘上所有的按键。</p>
+	<p align="left">参数2：调用方式<b>“辅助键状态.XX”</b>，主要用于组合按键操作，包含了<b>“Ctrl”</b>、<b>“Shift”</b>和<b>“Alt”</b>按键。。</p>
+	<p align="left"><img border="0" src="img/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“放开某键”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当键盘上的按键被放开时触发本事件，返回的两个参数与<b>“按下某件”</b>一致。</p>
+	<p align="left"><img border="0" src="img/68.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，并判断ctrl键被按下和放开。</p>
+	<p align="left"><img border="0" src="img/69.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框2中输出了相关字符，证明ctrl监听成功。</p>
+	<p align="left"><img border="0" src="img/70.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+	<p align="left">实现组合按键代码：</p>
+<blockquote>
+	<p align="left">组合按键通常使用<b>“放开某键”</b>事件。</p>
+	<p align="left">添加事件后，判断<b>“键代码”</b>和<b>“辅助键状态”</b>是否等于指定按键，如果相等就输出内容。</p>
+	<p align="left"><img border="0" src="img/71.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当键盘放开Ctrl+B按键后，将会在编辑框2中输出信息。</p>
+	<p align="left"><img border="0" src="img/72.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="glbgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 滚轮被滚动(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当鼠标滚轮被滚动后触发本事件，共返回两个参数。</p>
+	<p align="left">参数1：用于判断滚动方向。</p>
+	<p align="left">参数2：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/73.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件后判断<b>“滚动距离”</b>并输出对应内容。</p>
+	<p align="left"><img border="0" src="img/74.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当在编辑框1中滚动鼠标滚轮滚轮时，编辑框2会输出内容。</p>
+	<p align="left"><img border="0" src="img/75.gif" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="bsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 被双击(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件被双击时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/76.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当编辑框1被双击时，在编辑框2中输出内容。</p>
+	<p align="left"><img border="0" src="img/77.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到编辑框内容中输出了不同的坐标位置。</p>
+	<p align="left"><img border="0" src="img/78.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="sbwzbyd"></a>
+<font style="font-size: 12pt; font-weight:700">● 鼠标位置被移动(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件鼠标指针位置发生移动时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/79.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">判断编辑框2鼠标移动时，在编辑框1中输出坐标信息。</p>
+	<p align="left"><img border="0" src="img/80.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">可以看到坐标被实时显示在编辑框1中。</p>
+	<p align="left"><img border="0" src="img/81.gif" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p><a name="sbyjanx"></a>
+<font style="font-size: 12pt; font-weight:700">● 鼠标右键被按下(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 鼠标右键被放开(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“鼠标右键被按下”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件鼠标右键被按下时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/82.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“鼠标右键被放开”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件鼠标右键被放开时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/83.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，并在编辑框中输出内容。</p>
+	<p align="left"><img border="0" src="img/84.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当鼠标右键按下和放开时会分别显示不同的信息。</p>
+	<p align="left"><img border="0" src="img/85.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="sbzjbax"></a>
+<font style="font-size: 12pt; font-weight:700">● 鼠标左键被按下(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 鼠标左键被放开(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“鼠标左键被按下”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件鼠标左键被按下时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/86.png" > </p>
+</blockquote><p align="left">&nbsp;</p>
+	<p align="left"><b>“鼠标左键被放开”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件鼠标左键被放开时，会触发本事件并返回三个参数。</p>
+	<p align="left">参数1、2：返回鼠标所在位置。</p>
+	<p align="left">参数3：用于组合键判断。</p>
+	<p align="left"><img border="0" src="img/87.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别添加这两个事件，并在编辑框中输出内容。</p>
+	<p align="left"><img border="0" src="img/88.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当鼠标左键按下和放开时会触发本事件。</p>
+	<p align="left"><img border="0" src="img/89.gif" >
+	</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="xxk"></a>
+<font style="font-size: 12pt; font-weight:700">● 信息框</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法在使用时可以不依赖窗口组件，但是必须保证调用本方法时，当前所处类是窗口。</p>
+	<p align="left">参数1：提供要显示的信息。</p>
+	<p align="left">参数2：提供按钮或图标类型，例如<b>“信息框按钮.取消是否钮 + 信息框按钮.信息图标”</b>。</p>
+	<p align="left">参数3：提供信息框标题。</p>
+	<p align="left"><img border="0" src="img/90.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">打开窗口后放一个按钮。</p>
+	<p align="left"><img border="0" src="img/91.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“返回按钮类型”</b>的局部变量用来存储信息框返回值。</p>
+	<p align="left">2、调用信息框方法，设置相关参数后赋值给定义的变量。</p>
+	<p align="left">3、判断被点击的按钮类型。</p>
+	<p align="left"><img border="0" src="img/92.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当信息框按钮被点击后，窗口标题也会随之修改。</p>
+	<p align="left"><img border="0" src="img/93.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="jzch"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许重画</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 禁止重画</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“允许重画”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法配合<b>“禁止重画()”</b>方法，可以实现快速加载数据。</p>
+	<p align="left">同样也可以防止数据加载过快发生的组件闪烁现象。</p>
+	<p align="left"><img border="0" src="img/94.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“禁止重画”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可让组件禁止绘制，提升组件加载数据效率，防止组件闪烁。</p>
+	<p align="left"><img border="0" src="img/95.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放三个组件分别是：按钮，列表框和标签。</p>
+	<p align="left"><img border="0" src="img/96.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后首先记录启动时间。</p>
+	<p align="left">2、调用禁止重画后循环加载1000条数据到列表框。</p>
+	<p align="left">3、循环结束后调用允许重画。</p>
+	<p align="left">4、最后计算耗时。</p>
+	<p align="left"><img border="0" src="img/97.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">左图：未使用禁止重画方法耗时<b>“0.22秒”</b>。</p>
+	<p align="left">右图：使用后仅耗时<b>“0.03”</b>秒，快了7倍。</p>
+	<p align="left"><img border="0" src="img/98.png" >&nbsp;&nbsp;
+	<img border="0" src="img/99.gif" >
+	</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="cjzj"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建组件</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以动态创建窗口组件，成功返回真。</p>
+	<p align="left">注意：创建窗口组件时务必使用成员变量。</p>
+	<p align="left"><img border="0" src="img/100.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“按钮”</b>的成员变量，起名<b>“按钮1”</b>。</p>
+	<p align="left">2、添加<b>“创建完毕”</b>窗口事件，通过<b>“按钮1”</b>调用本方法创建组件。</p>
+	<p align="left"><img border="0" src="img/101.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">软件运行后将会在窗口左上角看见一个100*100尺寸的按钮组件。</p>
+	<p align="left"><img border="0" src="img/102.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="qpmwz"></a>
+<font style="font-size: 12pt; font-weight:700">● 取屏幕位置</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以取出当前组件在屏幕中的位置，如果单独调用本方法则会取出窗口在屏幕中的位置。</p>
+	<p align="left"><img border="0" src="img/103.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和编辑框。</p>
+	<p align="left"><img border="0" src="img/104.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别取出窗口位置和按钮1的位置信息。</p>
+	<p align="left"><img border="0" src="img/105.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到位置信息被成功取出。</p>
+	<p align="left"><img border="0" src="img/106.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qyhqkd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取用户区宽度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">可用于取出组件宽度或者当前窗口用户区宽度。</p>
+	<p align="left">注意：窗口用户区宽度不等于窗口宽度。</p>
+	<p align="left"><img border="0" src="img/107.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别取出窗口用户区宽度和按钮宽度。</p>
+	<p align="left"><img border="0" src="img/108.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">按钮宽度和窗口用户区宽度被成功取出。</p>
+	<p align="left"><img border="0" src="img/109.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qyhqgd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取用户区高度</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法可用于取出窗口用户区高度或组件高度。</p>
+	<p align="left">注意：窗口用户区高度不等于窗口高度。</p>
+	<p align="left"><img border="0" src="img/110.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后分别取出窗口用户区高度或按钮高度。</p>
+	<p align="left"><img border="0" src="img/111.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终两个高度尺寸均被取出。</p>
+	<p align="left"><img border="0" src="img/112.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="qyhqjx"></a>
+<font style="font-size: 12pt; font-weight:700">● 取用户区矩形</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可取出组件或者窗口的矩形区域。</p>
+	<p align="left">注意：并非坐标信息。</p>
+	<p align="left"><img border="0" src="img/113.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后分别取出窗口和按钮的矩形区域。</p>
+	<p align="left"><img border="0" src="img/114.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终两个矩形区域被分别取出。</p>
+	<p align="left"><img border="0" src="img/115.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="qckjb"></a>
+<font style="font-size: 12pt; font-weight:700">● 取窗口句柄</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">在使用mfc界面库时，任何一个窗口组件都有句柄，通过本方法可以取出句柄信息。</p>
+	<p align="left"><img border="0" src="img/116.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">窗口句柄可用于投递消息判断。</p>
+	<p align="left">1、按钮点击后通过按钮组件投递消息。</p>
+	<p align="left">2、添加<b>“消息过滤”</b>窗口虚拟方法，可以获取按钮组件投递的消息。</p>
+	<p align="left">3、判断消息值和窗口句柄，可以确定是否为<b>“按钮1”</b>投递的消息。</p>
+	<p align="left"><img border="0" src="img/117.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框1将会输出内容。</p>
+	<p align="left"><img border="0" src="img/118.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="kyjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可有焦点</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可用于判断当前组件是否获得焦点。</p>
+	<p align="left"><img border="0" src="img/119.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法判断。</p>
+	<p align="left"><img border="0" src="img/120.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">因为当按钮点击后，焦点会转移到按钮上，因此会提示编辑框1没有焦点。</p>
+	<p align="left"><img border="0" src="img/121.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="sfwk"></a>
+<font style="font-size: 12pt; font-weight:700">● 是否为空</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 销毁</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“是否为空”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可用于判断窗口组件是否被创建。</p>
+	<p align="left"><img border="0" src="img/122.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“销毁”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用当前方法可销毁当前组件，销毁后窗口组件将会消失在窗口上。</p>
+	<p align="left"><img border="0" src="img/123.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放两个按钮和一个编辑框组件。</p>
+	<p align="left"><img border="0" src="img/124.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮1点击后执行销毁方法。</p>
+	<p align="left">2、按钮2点击后判断当前组件是否存在。</p>
+	<p align="left"><img border="0" src="img/125.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到编辑框1销毁前后弹出的信息框不一样。</p>
+	<p align="left"><img border="0" src="img/127.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="phwzdpm"></a>
+<font style="font-size: 12pt; font-weight:700">● 用户区截图</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 组件截图</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上两个方法用法一致，不同之处在于<b>“用户区截图”</b>不会截图菜单标题栏边框等信息。</p>
+<p align="left">而组件截图会将组件完整的元素进行截图操作。</p>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“组件截图”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法会将组件所有区域完整截图，单独调用则截图窗口。</p>
+	<p align="left">参数1：提供一个类型为<b>“位图对象类”</b>的变量。</p>
+	<p align="left">参数2、3：提供要输出的尺寸、可留空。</p>
+	<p align="left"><img border="0" src="img/126.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮，一个编辑框和一个图片框组件。</p>
+	<p align="left"><img border="0" src="img/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义类型为<b>“位图对象类”</b>，并将变量放入到<b>“组件截图”</b>方法的参数中。</p>
+	<p align="left">2、取出位图对象的字节集数据。</p>
+	<p align="left">3、将取出的字节集数据设置在图片框上。</p>
+	<p align="left"><img border="0" src="img/129.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当前整个窗口所有内容被截图并显示在图片框上。</p>
+	<p align="left"><img border="0" src="img/131.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="yd"></a>
+<font style="font-size: 12pt; font-weight:700">● 移动</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以进行组件移动操作。</p>
+	<p align="left">参数1、2：相对于父组件设置当前组件的左边和顶边位置，。</p>
+	<p align="left">参数3、4：设置组件的宽度和高度。</p>
+	<p align="left"><img border="0" src="img/130.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和编辑框组件。</p>
+	<p align="left"><img border="0" src="img/132.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后移动编辑框组件到窗口左上角。</p>
+	<p align="left"><img border="0" src="img/133.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框组件出现在窗口左上角区域。</p>
+	<p align="left"><img border="0" src="img/134.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zhizt"></a>
+<font style="font-size: 12pt; font-weight:700">● 置字体</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以设置组件字体信息，参数为字体对象类。</p>
+	<p align="left"><img border="0" src="img/135.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在窗口创建完毕下，调用<b>“从描述文本创建字体()”</b>方法就可以创建<b>“字体对象类”</b>。</p>
+	<p align="left">本方法所提供的文本参数与<b>“字体”</b>写属性的文本一致。</p>
+	<p align="left"><img border="0" src="img/136.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终 软件运行后编辑框的字体会被修改。</p>
+	<p align="left"><img border="0" src="img/137.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p><a name="shanchu"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除到回收站</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可实现删除文件到系统回收站。</p>
+	<p align="left">注意：本方法只能在窗口或者MDI主窗口中使用，通过窗口组件调用无效。</p>
+	<p align="left"><img border="0" src="img/138.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，调用本方法删除一个文件。</p>
+	<p align="left"><img border="0" src="img/139.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到当按钮点击后，系统回收站会出现刚删除的文件。</p>
+	<p align="left"><img border="0" src="img/140.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zfck"></a>
+<font style="font-size: 12pt; font-weight:700">● 置父窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以调整当前组件的父组件，参数填写目标父组件。</p>
+	<p align="left"><img border="0" src="img/140.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和分组框。</p>
+	<p align="left"><img border="0" src="img/141.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，设置当前按钮组件的父组件为分组框1.</p>
+	<p align="left"><img border="0" src="img/142.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到按钮的父组件由窗口变成了分组框。</p>
+	<p align="left"><img border="0" src="img/143.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="hqjd"></a>
+<font style="font-size: 12pt; font-weight:700">● 获取焦点</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以让指定组件获得焦点。</p>
+	<p align="left"><img border="0" src="img/144.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和两个编辑框组件。</p>
+	<p align="left"><img border="0" src="img/145.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后编辑框2调用本方法获得焦点。</p>
+	<p align="left">2、添加<b>“编辑框_获得焦点”</b>事件验证编辑框是否获得焦点。</p>
+	<p align="left"><img border="0" src="img/146.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终编辑框2的内容被改变，证明获取焦点成功。</p>
+	<p align="left"><img border="0" src="img/147.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="tzcc"></a>
+<font style="font-size: 12pt; font-weight:700">● 调整层次</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可调整组件层次，参数调用方式<b>“组件层次.XX”</b>.</p>
+	<p align="left"><img border="0" src="img/148.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放四个按钮，其中让<b>“按钮1”</b>实现覆盖<b>“按钮2”</b>的效果。</p>
+	<p align="left"><img border="0" src="img/149.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">调整按钮被点击后，将<b>“按钮2”</b>调整到顶层。</p>
+	<p align="left"><img border="0" src="img/150.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮2将会被调整到所有组件顶层显示。</p>
+	<p align="left"><img border="0" src="img/151.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="srk"></a>
+<font style="font-size: 12pt; font-weight:700">● 输入框</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以弹出一个输入文本的对话框。</p>
+	<p align="left">参数1：用来存放输入结果。</p>
+	<p align="left">参数2、3：填写提示信息和标题。</p>
+	<p align="left">参数4：设置输入框内的初始文本。</p>
+	<p align="left">参数5：调用方式<b>“输入框输入方式.XX”</b>.</p>
+	<p align="left"><img border="0" src="img/152.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和一个编辑框组件。</p>
+	<p align="left"><img border="0" src="img/153.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后弹出一个输入框并将输入结果显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/154.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终结果显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/155.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="quziti"></a>
+<font style="font-size: 12pt; font-weight:700">● 取字体</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可取出设置的字体信息，返回值为<b>“字体对象类”</b>。</p>
+	<p align="left">如果没有设置过字体，会返回默认字体信息。</p>
+	<p align="left"><img border="0" src="img/156.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法取出编辑框的字体信息。</p>
+	<p align="left"><img border="0" src="img/157.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">编辑框组件的字体信息被取出。</p>
+	<p align="left"><img border="0" src="img/158.png" ></p>
+</blockquote>	
+		
+<p align="left">&nbsp;</p><a name="tcslcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 弹出实例菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">在屏幕指定位置弹出一个菜单。</p>
+	<p align="left">注意：本方法不能通过窗口组件调用，否则菜单点击命令会失效。</p>
+	<p align="left"><img border="0" src="img/159.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下：</p>
+<blockquote>
+	<p align="left">1、定义一个基础类为<b>“菜单类”</b>的类，右键可以打开设计器。</p>
+	<p align="left"><img border="0" src="img/160.png" ></p>
+	<p align="left">2、在设计器中简单的设计三个菜单。</p>
+	<p align="left"><img border="0" src="img/161.png" ></p>
+	<p align="left">3、设计完毕后效果如图。</p>
+	<p align="left"><img border="0" src="img/162.png" ></p>
+	<p align="left">4、定义类型为<b>“菜单按钮”</b>的变量，此变量类型名称要和定义的菜单类名称一致。</p>
+	<p align="left">5、按钮点击后调用本方法弹出此实例菜单。</p>
+	<p align="left"><img border="0" src="img/163.png" ></p>
+	<p align="left">6、添加<b>“接收到命令”</b>事件，可以判断菜单被点击，当菜单点击后取菜单标题显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/164.png" ></p>
+</blockquote>
+	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按钮点击后可弹出菜单，菜单点击后编辑框会显示菜单标题。</p>
+	<p align="left"><img border="0" src="img/165.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="tccd"></a>
+<font style="font-size: 12pt; font-weight:700">● 弹出菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和<b>“弹出实例菜单”</b>的区别在于，使用本方法弹出菜单可以不定义菜单变量。</p>
+	<p align="left"><img border="0" src="img/166.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后，调用本方法弹出菜单。</p>
+	<p align="left"><img border="0" src="img/167.png" ></p>
+	<p align="left">2、在菜单被点击后，如果想要取出菜单标题依然可以通过定义菜单变量的形式取出。</p>
+	<p align="left"><img border="0" src="img/168.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left"></p>
+	<p align="left"><img border="0" src="img/169.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zhixing"></a>
+<font style="font-size: 12pt; font-weight:700">● 执行</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以打开指定文件。</p>
+	<p align="left">参数1：提供要打开的文件路径。</p>
+	<p align="left">参数2：调用方式<b>“所执行命令类型.XXX”</b>。</p>
+	<p align="left">参数3：如果打开的文件是可执行文件，本参数可提供传入命令行。</p>
+	<p align="left">参数4：提供一下默认路径。</p>
+	<p align="left">注意：本方法只能在窗口或者MDI主窗口中使用。</p>
+	<p align="left"><img border="0" src="img/170.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后调用本方法打开一个txt文件。</p>
+	<p align="left"><img border="0" src="img/171.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到txt文件被打开。</p>
+	<p align="left"><img border="0" src="img/172.gif" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p><a name="tidao"></a>
+<font style="font-size: 12pt; font-weight:700">● 提到前方</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可将组件提到前方，如果在窗口类中直接调用，将会把当前窗口提到最前方。</p>
+	<p align="left"><img border="0" src="img/173.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放三个按钮，其中按钮2覆盖按钮3.</p>
+	<p align="left"><img border="0" src="img/174.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后，将按钮3提到前方。</p>
+	<p align="left"><img border="0" src="img/175.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮3将会覆盖按钮2。</p>
+	<p align="left"><img border="0" src="img/176.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="llwjj"></a>
+<font style="font-size: 12pt; font-weight:700">● 浏览文件夹</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可以实现文件夹选择功能，通过调整参数2还可以实现选择文件功能。</p>
+	<p align="left">注意：本方法不支持窗口组件调用。</p>
+	<p align="left"><img border="0" src="img/177.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口上放一个按钮和一个编辑框。</p>
+	<p align="left"><img border="0" src="img/178.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法将结果赋值给编辑框。</p>
+	<p align="left"><img border="0" src="img/179.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终选择结果会显示在编辑框中。</p>
+	<p align="left"><img border="0" src="img/180.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="jihuo"></a>
+<font style="font-size: 12pt; font-weight:700">● 激活</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置为前台窗口</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">上述两个方法用法和作用基本一致，此处讲解<b>“激活”</b>方法。</p>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可激活窗口，注意本方法只能通过窗口或MDI窗口调用。</p>
+	<p align="left"><img border="0" src="img/181.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义一个新的窗口类。</p>
+	<p align="left">2、在主窗口中定义的窗口2变量。</p>
+	<p align="left">3、主窗口创建完毕后载入窗口2.</p>
+	<p align="left">4、主窗口按钮点击后，激活窗口2.</p>
+	<p align="left"><img border="0" src="img/182.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到窗口2被激活到前面。</p>
+	<p align="left"><img border="0" src="img/183.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="jindufuzhi"></a>
+<font style="font-size: 12pt; font-weight:700">● 进度复制文件</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">调用本方法可进行文件复制操作，并同时会显示一个进度对话框。</p>
+	<p align="left">注意：本方法不支持窗口组件调用，同时如果复制的文件过小不会显示进度。</p>
+	<p align="left"><img border="0" src="img/184.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法将D盘的文件复制到G盘中。</p>
+	<p align="left"><img border="0" src="img/185.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到文件出现在G盘中，因复制的文件过小因此没有出现进度提示。</p>
+	<p align="left"><img border="0" src="img/186.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left">  [<a href="../ui.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ck.html">下一章</a>] </p>
+</blockquote>
+
+<p>&nbsp;</p>
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

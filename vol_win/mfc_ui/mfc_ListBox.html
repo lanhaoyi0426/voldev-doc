@@ -1,0 +1,326 @@
+<html>
+<head>
+<title>火山PC视窗列表框组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗列表框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.列表框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+         <li><blockquote><a href="#预设项目数据">1.预设项目数据</a></blockquote></li>  
+         <li><blockquote><a href="#加入项目">2.加入项目</a></blockquote></li>      
+         <li><blockquote><a href="#插入项目">3.插入项目</a></blockquote></li>      
+         <li><blockquote><a href="#修改项目">4.修改项目</a></blockquote></li>      
+         <li><blockquote><a href="#删除项目">5.删除项目</a></blockquote></li>      
+         <li><blockquote><a href="#取项目文本">6.取项目文本</a></blockquote></li>      
+         <li><blockquote><a href="#允许选择多项">7.允许选择多项</a></blockquote></li>       
+         <li><blockquote><a href="#多列">8.多列</a></blockquote></li>          
+         <li><blockquote><a href="#查找项目">9.查找项目</a></blockquote></li>          
+         <li><blockquote><a href="#选择项目">10.选择项目</a></blockquote></li>          
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ComboBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_CheckListBox.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="预设项目数据"></a>
+<p align="left">
+<h2>列表框组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 预设项目数据</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">预设项目数据通过<b>“列表项目”</b>属性设置，</p>
+	<p align="left">在属性栏设置本属性后，点击属性值的按钮就可以打开列表项目的设计器。</p>
+	<blockquote>
+			<p align="left"><img border="0" src="ListBox_img/1.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">打开设计器后点击<b>“向后插入”</b>按钮并设置<b>“标题”</b>即可添加项目，最后点击<b>“确定”</b>即可保存。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/2.png" ></p>
+	</blockquote>
+	
+    <p align="left">&nbsp;</p>
+	<p align="left">保存后会自动生成项目所需的文本数据。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/3.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">最终效果如下：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/4.gif" ></p>
+	</blockquote> 
+	<p align="left">如果需要软件运行后，默认选中某个项目，通过<b>“现行选中项”</b>即可设置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/5.png" ></p>
+	</blockquote>
+	<p align="left">软件运行后会默认选中第三个项目。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/6.png" ></p>
+	</blockquote>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="加入项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p>本方法共有两个参数。</p>
+		<p>参数1：提供要添加的项目文本。</p>
+		<p>参数2：提供项目的附加数据，默认为0可忽略。</p>
+		<p align="left"><img border="0" src="ListBox_img/7.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后调用本方法添加即可。</p>
+		<p align="left"><img border="0" src="ListBox_img/8.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后就会在项目末尾加入新项目。</p>
+		<p align="left"><img border="0" src="ListBox_img/9.gif" ></p>
+	</blockquote>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="插入项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入项目</font>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">本方法共有三个参数。</p>
+		<p align="left">参数1：提供插入的位置，从0开始，且需要小于等于项目数量。</p>
+		<p align="left">参数2：提供要插入的项目文本。</p> 
+		<p align="left">参数3：项目附加数据。</p>
+		<p align="left"><img border="0" src="ListBox_img/10.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后在列表首插入项目。</p>
+		<p align="left"><img border="0" src="ListBox_img/11.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终列表首被插入新的项目。</p> 
+		<p align="left"><img border="0" src="ListBox_img/12.gif" ></p>
+	</blockquote>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="修改项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 修改项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">修改项目需要使用<b>“置项目文本()”</b>方法，本方法共有两个参数。</p>
+		<p align="left">参数1：提供要修改项目的索引，从0开始。</p>
+		<p align="left">参数2：提供修改的新文本。</p>
+		<p align="left"><img border="0" src="ListBox_img/13.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后，如果参数1提供<b>“现行选中项”</b>属性，即可修改选中项的文本。</p>
+		<p align="left"><img border="0" src="ListBox_img/14.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终可以修改被选中的项目。</p> 
+		<p align="left"><img border="0" src="ListBox_img/15.gif" ></p>
+	</blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="删除项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">本方法只有一个参数，提供项目索引即可删除项目。</p>
+		<p align="left"><img border="0" src="ListBox_img/16.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">利用<b>“逆向计次循环”</b>命令，可循环删除所有项目，达到清空项列表框的目的。</p>
+		
+		<p align="left"><img border="0" src="ListBox_img/17.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终所有项目被删除。</p> 
+		<p align="left">注：也可以直接调用<b>“清空()”</b>方法实现相同的效果。</p>
+		<p align="left"><img border="0" src="ListBox_img/18.gif" ></p>
+	</blockquote>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">● 取项目文本</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">本方法只有一个参数，提供项目索引即可取出项目文本。</p>
+		<p align="left"><img border="0" src="ListBox_img/19.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">如果想要在项目被选择时取出项目文本，可在<b>“列表项被选择”</b>事件中调用本方法，同时结合<b>“现行选中项”</b>读属性即可实现在项目选择时读取项目文本。</p>
+		<p align="left"><img border="0" src="ListBox_img/20.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终项目选择时，窗口标题会同步项目文本。</p> 
+		<p align="left"><img border="0" src="ListBox_img/21.gif" ></p>
+	</blockquote>
+</blockquote>
+
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="允许选择多项"></a>
+<font style="font-size: 12pt; font-weight:700">● 允许选择多项</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">本属性用于设置列表框是否支持多选，属性值提供为真则表示支持多选。</p>
+		<p align="left">注：本属性不支持动态调用。</p>
+		<p align="left"><img border="0" src="ListBox_img/22.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">1、首先在属性表中设置本属性值为真。</p>
+		<p align="left">2、添加<b>“列表项被选择”</b>事件后首先清空编辑框内容。</p>
+		<p align="left">3、调用<b>“取所有被选择项目()”</b>方法即可取出所有被选择的项目索引。</p>
+		<p align="left">4、循环所有被选择的项目索引，继而取出所有被选择的项目文本。</p>
+		<p align="left"><img border="0" src="ListBox_img/23.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终项目进行多选时，会取出所有被选择的项目文本。</p> 
+		<p align="left">注：除了通过鼠标点击拖动进行多选外，还支持按下<b>ctrl键</b>进行多选。</p> 
+		<p align="left"><img border="0" src="ListBox_img/24.gif" ></p>
+	</blockquote>
+</blockquote>
+
+
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="多列"></a>
+<font style="font-size: 12pt; font-weight:700">● 多列</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">用于设置列表框是否支持多列显示。</p>
+		<p align="left">注：本属性不支持动态调用。</p>
+		<p align="left"><img border="0" src="ListBox_img/25.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">列表框默认为单列显示，将其设置为真后，当列表框内容无法完整显示时会自动进行多列显示。</p>
+		<p align="left"><img border="0" src="ListBox_img/26.png" ></p>
+	</blockquote>
+	<p align="left">多列效果如下：</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ListBox_img/27.png" ></p>
+	</blockquote>
+</blockquote>
+
+
+
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="查找项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 查找项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">查找项目可直接使用<b>“选择”</b>方法实现，其帮助页如下：</p>
+		<p align="left">本方法只有一个参数，提供要选择的项目文本即可，如果列表中存在重复的项目，则会选择首个查找到的项目，并返回项目索引。</p>
+		<p align="left"><img border="0" src="ListBox_img/28.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后查找<b>“项目9”</b>将其索引值在信息框中。</p>
+		<p align="left"><img border="0" src="ListBox_img/29.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终按钮点击后会选中<b>“项目9”</b>同时返回索引值。</p> 
+		<p align="left"><img border="0" src="ListBox_img/30.gif" ></p>
+	</blockquote>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="选择项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 选择项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">本方法通过<b>项目索引</b>可选择或取消选择该项目。</p>
+		<p align="left">参数1：提供项目索引即可。</p>
+		<p align="left">参数2：默认为真表示选中项目，提供假则可以取消选择。</p>
+		<p align="left"><img border="0" src="ListBox_img/31.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后取消选择首项目。</p>
+		<p align="left"><img border="0" src="ListBox_img/32.png" ></p>
+	</blockquote> 
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终首项目可取消选择。</p> 
+		<p align="left"><img border="0" src="ListBox_img/33.gif" ></p>
+	</blockquote>
+</blockquote>
+
+
+
+
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_ComboBox.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_CheckListBox.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

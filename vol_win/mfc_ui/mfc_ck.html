@@ -1,0 +1,1241 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗窗口讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山PC窗口讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="ck_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.窗口 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#cjzck">1.创建主窗口</a></blockquote></li>  
+		 <li><blockquote><a href="#cjycdzck">2.创建有菜单主窗口</a></blockquote></li>
+		  <li><blockquote><a href="#duihuakuang">3.创建对话框</a></blockquote></li>
+		  <li><blockquote><a href="#cjycddhk">4.创建有菜单对话框</a></blockquote></li>
+		  <li><blockquote><a href="#cjzick">5.创建子窗口</a></blockquote></li>
+		  <li><blockquote><a href="#cjtczck">6.创建弹出子窗口</a></blockquote></li>
+		   <li><blockquote><a href="#cjck">7.创建窗口</a></blockquote></li>
+		  <li><blockquote><a href="#cjycdck">8. 创建有菜单窗口</a></blockquote></li>
+		  <li><blockquote><a href="#duihuakuang">9.关闭窗口</a></blockquote></li>
+		  <li><blockquote><a href="#zwzck">10.置为主窗口</a></blockquote></li>
+		  <li><blockquote><a href="#zwxtp">11.置外形图片</a></blockquote></li>
+		  <li><blockquote><a href="#zslcd">12.置实例菜单</a></blockquote></li>
+		  <li><blockquote><a href="#ztptb">13.置托盘图标</a></blockquote></li>
+		  <li><blockquote><a href="#zcd">14.置菜单</a></blockquote></li>
+		  <li><blockquote><a href="#czcd">15.重置菜单</a></blockquote></li>
+		  <li><blockquote><a href="#qcd">16.取菜单</a></blockquote></li>
+		  <li><blockquote><a href="#qccd">17.清除菜单</a></blockquote></li>
+		  <li><blockquote><a href="#zdtsj">18.置底图数据</a></blockquote></li>
+		  <li><blockquote><a href="#zdtwj">19.置底图文件</a></blockquote></li>
+		  <li><blockquote><a href="#cjwb">20.创建完毕(事)</a></blockquote></li>
+		  <li><blockquote><a href="#cjwb">21.被显示(事)</a></blockquote></li>
+		   <li><blockquote><a href="#cjwb">22.被激活(事)</a></blockquote></li>
+		  <li><blockquote><a href="#cjwb">23.首次激活(事)</a></blockquote></li>
+		  <li><blockquote><a href="#wzbgb">24.位置被改变(事)</a></blockquote></li>
+		  <li><blockquote><a href="#jbxh">25.将被销毁(事)</a></blockquote></li>
+		  <li><blockquote><a href="#ccbgb">26.尺寸被改变(事)</a></blockquote></li>
+		  <li><blockquote><a href="#byc">27.被隐藏(事)</a></blockquote></li>
+		  <li><blockquote><a href="#wzxz">28.位置限制(事)</a></blockquote></li>
+		  <li><blockquote><a href="#kfbgb">29.可否被关闭(事)</a></blockquote></li>
+		  <li><blockquote><a href="#mlbxz">30.命令被选中(事)</a></blockquote></li>
+		  <li><blockquote><a href="#dhkycsh">31.对话框已初始化(事)</a></blockquote></li>
+		  <li><blockquote><a href="#tpsj">32.托盘事件(事)</a></blockquote></li>
+		  <li><blockquote><a href="#jsdml">33.接收到命令(事)</a></blockquote></li>
+		  <li><blockquote><a href="#bqxjh">34.被取消激活(事)</a></blockquote></li>
+		  <li><blockquote><a href="#escgb">35.ESC关闭(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#wz">36.位置(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#bcbttjh">37.保持标题条激活(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#kfyd">38.可否移动(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#syyd">39.随意移动(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#waixing">40.外形(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zzzq">41.总在最前(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#kzann">42.控制按钮(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zdhann">43.最大化按钮(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#zxhann">44.最小化按钮(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#ckbk">45.窗口边框(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#dtfs">46.底图方式(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#dtfs">47.底图(写)</a></blockquote></li>
+		  <li><blockquote><a href="#ds">48.底色(读写)</a></blockquote></li>
+		  <li><blockquote><a href="#xxgl">49.消息过滤(虚拟)</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ui.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_layout.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>窗口实例讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">通过本类可以创建MFC窗口程序，具体可看<a href="../../vol_win/step/step1.htm">新手入门教程</a>的操作流程。</p>
+<p align="left">本篇教程使用了<a href="mfc_caidan.html" title="菜单教程">菜单操作教程</a>中讲解的知识。</p>
+</blockquote>
+<p align="left">&nbsp;</p><a name="cjzck"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建主窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法共有5个参数，用于创建用户程序的主窗口。</p>
+	<p align="left">参数1、2：提供主窗口左边和顶边的位置，忽略后则在默认位置显示。</p>
+	<p align="left">参数3、4：提供主窗口宽度和高度、忽略后使用默认尺寸。</p>
+	<p align="left">参数5：提供要显示的窗口<a href="mfc_caidan.html" title="菜单教程">菜单</a>变量，忽略后不显示菜单。</p>
+	<p align="left">注意：主窗口只能创建一个，并且建议在启动类中创建。</p>
+	<p align="left"><img border="0" src="ck_img/1.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">新建项目： </p>
+<blockquote>
+  <p align="left">新建项目时选择<b>“MFC窗口程序”</b>会自动生成<b>“创建主窗口”</b>代码。</p>
+	<p align="left"><img border="0" src="ck_img/2.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码界面： </p>
+<blockquote>
+	<p align="left">创建后自动生成启动类、主窗口类、主窗口变量以及<b>“创建主窗口”</b>方法。</p>
+	<p align="left"><img border="0" src="ck_img/3.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">默认窗口运行效果如下图,如果想使用菜单可看<a href="mfc_caidan.html" title="菜单教程"><b>“菜单操作教程”</b></a></p>
+  <p align="left"><img border="0" src="ck_img/4.png" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="cjzick"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建子窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可创建一个子窗口，此窗口将会嵌入在主窗口内部，并不会弹出。</p>
+	<p align="left">参数1：需要提供要嵌入的窗口对象，如果想在当前窗口嵌入，直接填写本对象即可。</p>
+	<p align="left">参数2、3：提供位置参数，忽略后将使用默认参数。</p>
+	<p align="left">参数4、5：提供尺寸信息，忽略后将使用默认尺寸。</p>
+	<p align="left">参数6：提供菜单变量就可以使用。</p>
+	<p align="left"><img border="0" src="ck_img/5.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先定义一个子窗口类、可以打开设计器设计一下尺寸。</p>
+	<p align="left">2、定义子窗口变量。</p>
+	<p align="left">3、按钮点击后调用本方法创建子窗口。</p>
+	<p align="left"><img border="0" src="ck_img/6.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">当按钮点击后可以看到，在主窗口的内部出现了一个嵌入式的子窗口。</p>
+	<p align="left"><img border="0" src="ck_img/7.gif" ></p>
+</blockquote>		
+	
+	
+	<p align="left">&nbsp;</p>
+<a name="duihuakuang"></a>
+<font style="font-size: 12pt; font-weight:700">●创建对话框</font><br/>
+<font style="font-size: 12pt; font-weight:700">●关闭窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“创建对话框”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可创建一个对话框窗口，进入对话框窗口后将无法操作其它窗口。</p>
+	<p align="left">参数1：强制使用对话框风格后，弹出的窗口将只有一个关闭按钮。</p>
+	<p align="left">参数2、3：调整窗口位置，忽略则使用默认位置。</p>
+	<p align="left">参数4、5：提供窗口尺寸，忽略则使用默认尺寸。</p>
+	<p align="left">参数6：如果需要菜单可通过本参数传递。</p>
+	<p align="left">注意：本方法的返回值是由<b>“关闭窗口()”</b>方法返回。</p>
+	<p align="left"><img border="0" src="ck_img/8.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left"><b>“关闭窗口”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过调用本方法可实现关闭窗口，提供的参数对话框系列窗口有效。</p>
+	<p align="left"><img border="0" src="ck_img/14.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">主窗口界面设计： </p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_img/9.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">对话框窗口界面设计： </p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_img/10.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">主窗口代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义对话框窗口变量。</p>
+	<p align="left">2、按钮点击后创建对话框窗口，并判断返回值。</p>
+	<p align="left"><img border="0" src="ck_img/11.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">对话框窗口代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用<b>“关闭窗口”</b>传递参数1.</p>
+	<p align="left"><img border="0" src="ck_img/12.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终主窗口编辑框会显示对应内容。</p>
+	<p align="left"><img border="0" src="ck_img/13.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="cjtczck"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建弹出子窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可创建一个弹出子窗口，本窗口与弹出子窗口的区别是，本窗口不会嵌入到父窗口内部。</p>
+	<p align="left">并且弹出窗口后，依然可以操作父窗口内容。</p>
+	<p align="left">参数1：提供父窗口对象，如果当前窗口是父窗口提供<b>“本对象”</b>即可。</p>
+	<p align="left">参数2、3：调整窗口位置，忽略则使用默认位置。</p>
+	<p align="left">参数4、5：提供窗口尺寸，忽略则使用默认尺寸。</p>
+	<p align="left">参数6：如果需要菜单可通过本参数传递。</p>
+	<p align="left"><img border="0" src="ck_img/15.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义弹出子窗口类。</p>
+	<p align="left">2、在主窗口中定义弹出子窗口变量。</p>
+	<p align="left">3、按钮点击调用本方法弹出子窗口。</p>
+	<p align="left"><img border="0" src="ck_img/16.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可以看到当子窗口弹出后，依然可以操作主窗口，并且还是已对话框的形式展示。</p>
+	<p align="left"><img border="0" src="ck_img/16.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="cjycdzck"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建有菜单主窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可创建主窗口，与<b>“创建主窗口”</b>的区别是直接提供菜单类名就可以使用菜单。</p>
+	<p align="left">而<b>“创建主窗口”</b>需要提供<a href="mfc_caidan.html" title="详细菜单教程">菜单</a>变量才能使用。</p>
+	<p align="left">参数1、4分别提供窗口位置和尺寸信息，忽略则使用默认值。</p>
+	<p align="left"><img border="0" src="ck_img/17.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><a href="mfc_caidan.html" title="详细菜单教程">菜单</a>设计如下图： </p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_img/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接将菜单的类名填入本方法的参数中即可。</p>
+	<p align="left"><img border="0" src="ck_img/19.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">主窗口运行后可以在窗口的顶部位置出现菜单。</p>
+	<p align="left"><img border="0" src="ck_img/20.gif" ></p>
+</blockquote>
+	
+	<p align="left">&nbsp;</p><a name="cjycddhk"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建有菜单对话框</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可创建一个有菜单的对话框窗口。</p>
+	<p align="left">与普通对话框窗口的区别是，本方法可直接传递菜单类名使用菜单。</p>
+	<p align="left"><img border="0" src="ck_img/21.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中放一个按钮和编辑框。</p>
+	<p align="left"><img border="0" src="ck_img/22.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先设计个<a href="mfc_caidan.html" title="菜单教程">菜单</a>。</p>
+	<p align="left">2、定义一个新的窗口类。</p>
+	<p align="left">3、在主窗口中定义窗口变量。</p>
+	<p align="left">4、按钮点击后调用本方法载入一个带菜单的窗口。</p>
+	<p align="left"><img border="0" src="ck_img/23.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到弹出的窗口中存在菜单。</p>
+	<p align="left"><img border="0" src="ck_img/24.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="cjck"></a>
+<font style="font-size: 12pt; font-weight:700">●创建窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+  <p align="left">通过本方法可以创建一个普通窗口，与其他窗口的区别在于，本窗口没有子父区别，可以相互覆盖。</p>
+	<p align="left">参数1、4：提供窗口位置和尺寸，忽略则使用默认值。</p>
+	<p align="left">参数5：提供要使用的<a href="mfc_caidan.html">菜单</a>，忽略则不显示。</p>
+	<p align="left"><img border="0" src="ck_img/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义普通窗口类。</p>
+	<p align="left">2、在主窗口中定义普通窗口变量。</p>
+	<p align="left">3、按钮点击后创建普通窗口。</p>
+	<p align="left"><img border="0" src="ck_img/26.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">在普通窗口弹出后，主窗口和普通窗口可以随意的相互覆盖，不存在任何子父关系。</p>
+	<p align="left"><img border="0" src="ck_img/27.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="cjycdck"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建有菜单窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法与<b>“创建窗口”</b>的区别是，本方法可以直接使用菜单类名来载入菜单。</p>
+	<p align="left">参数1、4：用于设置位置和尺寸信息，忽略采用默认尺寸。</p>
+	<p align="left"><img border="0" src="ck_img/28.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、设计一个菜单。</p>
+	<p align="left">2、定义有菜单窗口类。</p>
+	<p align="left">3、在主窗口中定义菜单变量。</p>
+	<p align="left">4、按钮点击后载入有菜单窗口。</p>
+	<p align="left"><img border="0" src="ck_img/29.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">可以看到当窗口载入后，窗口上会有菜单。</p>
+	<p align="left"><img border="0" src="ck_img/30.gif" > </p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zwzck"></a>
+<font style="font-size: 12pt; font-weight:700">● 置为主窗口</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可设置当前窗口为主窗口，可用于主窗口切换。</p>
+	<p align="left">注意：如果想要进行主窗口切换，必须将被切换的窗口定义在启动类中，防止窗口被释放。</p>
+	<p align="left"><img border="0" src="ck_img/31.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、定义子窗口类，子窗口按钮点击后设置当前窗口为主窗口。</p>
+	<p align="left"><img border="0" src="ck_img/32.png" ></p>
+	<p align="left">2、在启动类中定义子窗口变量，并公开。</p>
+	<p align="left">3、主窗口创建完毕后载入子窗口，用于同时显示两个窗口。</p>
+	<p align="left"><img border="0" src="ck_img/33.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">下图是子窗口没设置主窗口时，如果关闭主窗口整个程序都会退出。</p>
+	<p align="left"><img border="0" src="ck_img/34.gif" ></p>
+	<p align="left">下图是子窗口设置主窗口后，如果关闭主窗口程序不会退出。</p>
+	<p align="left"><img border="0" src="ck_img/35.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="zwxtp"></a>
+<font style="font-size: 12pt; font-weight:700">● 置外形图片</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将图片外形设置成窗口的外形，从而改变窗口的形状。</p>
+	<p align="left">参数1：提供要设置的图片。</p>
+	<p align="left">参数2：提供要透明部分的颜色，例如：设置白色后白色将进入透明状态，其它非白色区域将会设置成窗口外形。</p>
+	<p align="left"><img border="0" src="ck_img/36.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">准备一张简单的黑白图：</p>
+<blockquote>
+	<p align="left"><img border="0" src="ck_img/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，调用本方法设置准备好的黑白图，并将透明部分设置白色。</p>
+	<p align="left"><img border="0" src="ck_img/38.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终窗口外形将会按照黑色区域显示。</p>
+	<p align="left"><img border="0" src="ck_img/39.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zslcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置实例菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可动态设置窗口菜单，参数需要提供菜单变量。</p>
+	<p align="left"><img border="0" src="ck_img/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先设计个<a href="mfc_caidan.html" title="菜单设计教程">菜单</a>。</p>
+	<p align="left">2、在主窗口中定义菜单变量。</p>
+	<p align="left">3、按钮点击后，调用本方法显示设计的菜单。</p>
+	<p align="left"><img border="0" src="ck_img/41.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终菜单会显示在窗口上。</p>
+	<p align="left"><img border="0" src="ck_img/42.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 置菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本方法和置实例菜单的区别是，本方法的参数可直接提供菜单类名。</p>
+	<p align="left"><img border="0" src="ck_img/43.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后，直接提供菜单类名即可设置菜单。</p>
+	<p align="left"><img border="0" src="ck_img/44.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到，窗口菜单被显示。</p>
+	<p align="left"><img border="0" src="ck_img/45.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="ztptb"></a>
+<font style="font-size: 12pt; font-weight:700">●置托盘图标</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以在系统托盘中设置一个程序图标，格式必须为ico格式。</p>
+	<p align="left"><img border="0" src="ck_img/46.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义一个局部常量，类型填写<b>“图标资源”</b>，初始值选择一个ico格式图片。</p>
+	<p align="left">2、将定义好的图标资源常量，填入本方法的参数1中。</p>
+	<p align="left"><img border="0" src="ck_img/47.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">当按钮点击后，系统托盘中会出现被选择的图标。</p>
+	<p align="left"><img border="0" src="ck_img/48.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+
+	
+<p align="left">&nbsp;</p><a name="czcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 重置菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可将菜单设置成初始状态。</p>
+	<p align="left"><img border="0" src="ck_img/49.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、设计一个<a href="mfc_caidan.html" title="菜单设计教程">菜单</a>。</p>
+	<p align="left">2、在主窗口中定义菜单变量。</p>
+	<p align="left">3、在主窗口创建完毕事件下设置菜单。</p>
+	<p align="left"><img border="0" src="ck_img/50.png" > </p>
+	<p align="left">4、按钮1点击后重置菜单、按钮2点击后修改菜单标题。</p>
+	<p align="left"><img border="0" src="ck_img/51.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当重置按钮被点击后，菜单会恢复初始状态。</p>
+	<p align="left"><img border="0" src="ck_img/52.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<a name="qcd"></a>
+<font style="font-size: 12pt; font-weight:700">● 取菜单</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可取出窗口上被设置的菜单对象，取出后可对菜单进行操作。</p>
+	<p align="left"><img border="0" src="ck_img/53.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在主窗口创建完毕时设置菜单。</p>
+	<p align="left">2、按钮点击后取出菜单，并修改菜单标题。</p>
+	<p align="left"><img border="0" src="ck_img/54.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到菜单标题被成功修改。</p>
+	<p align="left"><img border="0" src="ck_img/55.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="qccd"></a>
+<font style="font-size: 12pt; font-weight:700">●清除菜单</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本方法可以将窗口菜单删除。</p>
+	<p align="left"><img border="0" src="ck_img/56.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置菜单。</p>
+	<p align="left">2、按钮点击后调用本方法清除菜单。</p>
+	<p align="left"><img border="0" src="ck_img/57.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到菜单被删除。</p>
+	<p align="left"><img border="0" src="ck_img/58.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zdtsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置底图数据</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以给窗口设置字节集背景图。</p>
+	<p align="left">注意：本方法继承自<b>“组件布局器”</b>。</p>
+	<p align="left"><img border="0" src="ck_img/59.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后利用<b>“读入文件()”</b>方法读取一个图片设置窗口底图。</p>
+	<p align="left"><img border="0" src="ck_img/60.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到底图被改变。</p>
+	<p align="left"><img border="0" src="ck_img/61.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="zdtwj"></a>
+<font style="font-size: 12pt; font-weight:700">● 置底图文件</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本方法可直接设置图片文件为窗口底图。</p>
+	<p align="left">注意：必须保证提供的文件是图片格式。</p>
+	<p align="left"><img border="0" src="ck_img/62.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用本方法设置窗口底图。</p>
+	<p align="left"><img border="0" src="ck_img/63.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终可看到窗口底图被改变。</p>
+	<p align="left"><img border="0" src="ck_img/64.gif" ></p>
+</blockquote>	
+
+	
+<p align="left">&nbsp;</p><a name="cjwb"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建完毕(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 被显示(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 被激活(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 首次激活(事件)</font><br/>
+<p align="left">&nbsp;</p>
+<p align="left">以上几个事件可用于判断窗口启动顺序，这里统一讲解。</p>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“创建完毕”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当窗口内的所有子组件创建完毕时会触发本事件。</p>
+	<p align="left">这其中也包括分组框等容器组件内的子组件。</p>
+	<p align="left">注意：本事件只会触发一次。</p>
+	<p align="left"><img border="0" src="ck_img/65.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“被显示”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当窗口被显示后会触发本事件。</p>
+	<p align="left">注意：本事件如果当窗口隐藏后，显示窗口时还会触发。</p>
+	<p align="left"><img border="0" src="ck_img/66.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“被激活”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当窗口被激活时会触发本事件。</p>
+	<p align="left">注意：当窗口获得焦点后，也会触发本事件，因此本事件可重复触发。</p>
+	<p align="left"><img border="0" src="ck_img/67.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“首次激活”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本事件在首次激活时会触发，并且只会触发一次。</p>
+	<p align="left">在此事件下可以操作画板组件。</p>
+	<p align="left"><img border="0" src="ck_img/68.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">依次添加事件输出内容到编辑框组件中。</p>
+	<p align="left"><img border="0" src="ck_img/69.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以在编辑框中看到窗口正确的启动顺序。</p>
+	<p align="left"><img border="0" src="ck_img/70.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="wzbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置被改变(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当窗口位置被改变时会触发本事件。</p>
+	<p align="left"><img border="0" src="ck_img/71.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加<b>“位置被改变”</b>事件，输出窗口左边和顶边的位置到编辑框中。</p>
+	<p align="left"><img border="0" src="ck_img/72.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终移动窗口时编辑框内容会实时更新改变，证明事件被触发。</p>
+	<p align="left"><img border="0" src="ck_img/73.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="jbxh"></a>
+<font style="font-size: 12pt; font-weight:700">● 将被销毁(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当窗口将被销毁时触发本事件。</p>
+	<p align="left">注意：本事件继承自<b>“组件布局器”</b>。</p>
+	<p align="left"><img border="0" src="ck_img/74.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">添加本事件后弹出一个信息框。</p>
+	<p align="left"><img border="0" src="ck_img/75.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">当窗口点击关闭按钮后，信息框被弹出，证明事件被触发。 </p>
+	<p align="left"><img border="0" src="ck_img/76.gif" ></p>
+</blockquote>	
+
+	<p align="left">&nbsp;</p><a name="ccbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 尺寸被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当窗口尺寸被改变时会触发本事件。</p>
+	<p align="left">注意：本事件继承自组件布局器。</p>
+	<p align="left"><img border="0" src="ck_img/77.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">界面设计如下图：</p>
+<blockquote>
+	<p align="left">在窗口中添加一个按钮和编辑框。</p>
+	<p align="left"><img border="0" src="ck_img/78.png" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后修改窗口尺寸。</p>
+	<p align="left">2、添加尺寸被改变事件，取出窗口尺寸。</p>
+	<p align="left"><img border="0" src="ck_img/79.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到当窗口尺寸发生改变后，窗口尺寸会显示在编辑框中，证明事件被触发。</p>
+	<p align="left"><img border="0" src="ck_img/80.gif" >
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="byc"></a>
+<font style="font-size: 12pt; font-weight:700">● 被隐藏(事件)</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当窗口被隐藏时会触发本事件。</p>
+	<p align="left">注意：本事件继承自<b>“组件布局器”</b>。</p>
+	<p align="left"><img border="0" src="ck_img/81.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、首先在启动类中公开主窗口变量。</p>
+	<p align="left"><img border="0" src="ck_img/82.png" ></p>
+	<p align="left">2、按钮点击后，隐藏主窗口。</p>
+	<p align="left">3、添加被隐藏事件，显示一个信息框。</p>
+	<p align="left"><img border="0" src="ck_img/83.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当按钮点击后会弹出信息框，证明事件被触发。</p>
+	<p align="left">之所以窗口没有立刻隐藏，是因为信息框会阻塞隐藏方法的执行，信息框结束后会自动隐藏。</p>
+	<p align="left"><img border="0" src="ck_img/84.gif" >
+	</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="wzxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置限制(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本事件可对窗口进行尺寸或窗口位置限制。</p>
+	<p align="left">注意：本事件必须设置返回1才能开启限制。</p>
+	<p align="left"><img border="0" src="ck_img/85.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、添加<b>“位置限制”</b>事件，并限制最小宽度220像素。</p>
+	<p align="left">2、按钮点击后设置窗口宽度为200，并且读取宽度到按钮标题上。</p>
+	<p align="left"><img border="0" src="ck_img/86.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到窗口尺寸被改变后，实际读取的尺寸是220像素，证明尺寸限制成功。</p>
+	<p align="left"><img border="0" src="ck_img/87.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="kfbgb"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否被关闭(事件)</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当窗口将被关闭时会触发本事件，本事件返回1表示不允许关闭，返回0允许关闭。</p>
+	<p align="left"><img border="0" src="ck_img/88.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在主窗口中添加本事件，并弹出一个带是否按钮的信息，判断按钮点击后从而决定是否关闭软件。</p>
+	<p align="left"><img border="0" src="ck_img/89.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到只有点击<b>“是”</b>钮后才会关闭软件。</p>
+	<p align="left"><img border="0" src="ck_img/90.gif" >
+	</p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="mlbxz"></a>
+<font style="font-size: 12pt; font-weight:700">● 命令被选中（事件）</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当鼠标移动到菜单上方时会触发本事件，命令代码参数可用于判断是哪个菜单项。</p>
+	<p align="left"><img border="0" src="ck_img/91.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、简单的设计一个菜单，并设置菜单提示。</p>
+	<p align="left"><img border="0" src="ck_img/92.png" ></p>
+  <p align="left">2、定义成员菜单变量。</p>
+	<p align="left">3、在窗口创建完毕后设置菜单。</p>
+	<p align="left">4、添加命令被选中事件，并取出菜单提示。</p>
+	<p align="left"><img border="0" src="ck_img/93.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到当鼠标经过菜单项目时，窗口标题被改变，证明命令被选中事件被触发。</p>
+	<p align="left"><img border="0" src="ck_img/94.gif" ></p>
+</blockquote>
+	
+
+	<p align="left">&nbsp;</p><a name="dhkycsh"></a>
+<font style="font-size: 12pt; font-weight:700">● 对话框已初始化(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当对话框窗口初始化完毕后，会触发本事件。</p>
+	<p align="left">注意：本事件只对对话框窗口有效。</p>
+	<p align="left"><img border="0" src="ck_img/151.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义一个对话框窗口类，并添加<b>“对话框已初始化”</b>事件弹出信息框。</p>
+	<p align="left">2、在主窗口中定义对话框变量。</p>
+	<p align="left">3、主窗口按钮点击后创建对话框窗口。</p>
+	<p align="left"><img border="0" src="ck_img/152.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终信息框被弹出，证明对话框事件被触发。</p>
+	<p align="left"><img border="0" src="ck_img/153.gif" ></p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p><a name="tpsj"></a>
+<font style="font-size: 12pt; font-weight:700">● 托盘事件(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当托盘图标被点击后触发本事件。</p>
+	<p align="left">通过参数可判断是左键点击还是右键点击。</p>
+	<p align="left"><img border="0" src="ck_img/154.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、窗口创建完毕后设置托盘图标。</p>
+	<p align="left">2、添加本事件判断操作类型并调试输出信息。</p>
+	<p align="left"><img border="0" src="ck_img/155.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最后当软件托盘图标被点击后，火山输出栏会输出对应文本，证明事件被触发。</p>
+	<p align="left"><img border="0" src="ck_img/156.png" ></p>
+</blockquote>	
+	
+		<p align="left">&nbsp;</p><a name="jsdml"></a>
+<font style="font-size: 12pt; font-weight:700">● 接收到命令(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本事件可判断菜单被点击。</p>
+	<p align="left"><img border="0" src="ck_img/157.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、设计一个<a href="mfc_caidan.html" title="菜单设计教程">菜单</a>.</p>
+	<p align="left">2、窗口创建完毕后设置窗口菜单。</p>
+	<p align="left">3、添加本事件判断菜单点击。</p>
+	<p align="left"><img border="0" src="ck_img/158.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最后菜单被点击后会弹出信息框。</p>
+	<p align="left"><img border="0" src="ck_img/159.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="bqxjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 被取消激活(事件)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当窗口被取消激活时将触发本事件，例如：多窗口交互时点击其它窗口本事件就会触发。</p>
+	<p align="left"><img border="0" src="ck_img/95.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、定义一个子窗口。</p>
+	<p align="left">2、在主窗口中定义子窗口变量。</p>
+	<p align="left">3、主窗口创建完毕后，创建子窗口。</p>
+	<p align="left">4、添加被取消激活事件，修窗口标题。</p>
+	<p align="left"><img border="0" src="ck_img/96.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当子窗口被点击后，主窗口标题被修改，证明当前事件被触发。 </p>
+	<p align="left"><img border="0" src="ck_img/97.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="escgb"></a>
+<font style="font-size: 12pt; font-weight:700">● ESC关闭(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置窗口是否支持按下ESC关闭窗口。</p>
+	<p align="left">提供真则可以按下esc按键关闭窗口，提供假则不能。</p>
+	<p align="left">注意：如果忽略本属性，默认则为真。</p>
+	<p align="left"><img border="0" src="ck_img/98.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在主窗口类的属性栏设置本属性为真。</p>
+	<p align="left"><img border="0" src="ck_img/99.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当按下esc按键后，窗口将关闭。</p>
+	<p align="left"><img border="0" src="ck_img/100.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="wz"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可用于读取当前窗口位置信息，同名的写属性可设置位置信息。</p>
+	<p align="left"><img border="0" src="ck_img/101.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后判断窗口位置是哪种类型。</p>
+	<p align="left"><img border="0" src="ck_img/102.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到窗口的默认类型是<b>“通常”</b>类型。</p>
+	<p align="left"><img border="0" src="ck_img/103.png" ></p>
+</blockquote>
+	
+<p align="left">&nbsp;</p><a name="bcbttjh"></a>
+<font style="font-size: 12pt; font-weight:700">● 保持标题条激活(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置标题条一直处于激活状态，默认为假，不保持激活。</p>
+	<p align="left"><img border="0" src="ck_img/104.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在窗口类的属性栏即可设置本属性。 </p>
+	<p align="left"><img border="0" src="ck_img/105.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当本属性为假时，切换窗口焦点时可看到标题条会发生变化。</p>
+	<p align="left"><img border="0" src="ck_img/106.gif" ></p>
+	<p align="left">当本属性为真时，窗口焦点切换时标题条会始终处于激活状态。</p>
+	<p align="left"><img border="0" src="ck_img/107.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="kfyd"></a>
+<font style="font-size: 12pt; font-weight:700">● 可否移动(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置鼠标点击拖动标题栏时，是否同时移动窗口。</p>
+	<p align="left">注意：本属性默认值为真。</p>
+	<p align="left"><img border="0" src="ck_img/108.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类的属性栏设置本属性即可。</p>
+	<p align="left"><img border="0" src="ck_img/109.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">如果属性值为假，则点击标题栏不能拖动窗口。</p>
+	<p align="left"><img border="0" src="ck_img/110.gif" ></p>
+	<p align="left">当属性为真或者不提供属性时，都可以点击标题栏拖动窗口。</p>
+	<p align="left"><img border="0" src="ck_img/111.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="syyd"></a>
+<font style="font-size: 12pt; font-weight:700">● 随意移动(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可设置当前窗口是否支持任意位置点击移动。</p>
+	<p align="left">注意：当设置本属性为真后，窗口上所有不支持输入焦点的组件将不能接收到鼠标左键被按下和被放开事件。</p>
+	<p align="left"><img border="0" src="ck_img/112.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在窗口类的属性栏中设置即可。</p>
+	<p align="left"><img border="0" src="ck_img/113.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">设置本属性为真后，点击窗口任意区域都可以进行窗口移动。</p>
+	<p align="left"><img border="0" src="ck_img/114.gif" ></p>
+	<p align="left">设置为假后，将不支持任意位置移动。</p>
+	<p align="left"><img border="0" src="ck_img/115.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="waixing"></a>
+<font style="font-size: 12pt; font-weight:700">● 外形(读写)</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本方法可以设置窗口外形，属性值调用方式<b>“串口外形类型.XXX”</b>.</p>
+	<p align="left"><img border="0" src="ck_img/116.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">如果在窗口类属性栏中设置，直接下拉选择即可。</p>
+	<p align="left"><img border="0" src="ck_img/117.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">圆角矩形效果会很丑，这是因为mfc组件本身的问题。</p>
+	<p align="left"><img border="0" src="ck_img/118.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zzzq"></a>
+<font style="font-size: 12pt; font-weight:700">● 总在最前(读写)</font><br/>
+
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以将当前程序窗口设置在电脑所有软件的最前面。</p>
+	<p align="left">当操作其它软件时，其它软件不会覆盖当前软件。</p>
+	<p align="left"><img border="0" src="ck_img/119.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类的属性栏中设置本属性即可。</p>
+	<p align="left"><img border="0" src="ck_img/120.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当属性值为真时，操作其它软件不会覆盖当前软件。</p>
+	<p align="left"><img border="0" src="ck_img/121.gif" ></p>
+	<p align="left">当属性值为假时，操作其它软件会覆盖当前软件。</p>
+	<p align="left"><img border="0" src="ck_img/122.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="kzann"></a>
+<font style="font-size: 12pt; font-weight:700">● 控制按钮(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置当前窗口是否具有控制按钮，即窗口右上角的三个按钮。</p>
+	<p align="left"><img border="0" src="ck_img/123.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类的属性栏设置本属性即可。</p>
+	<p align="left"><img border="0" src="ck_img/124.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当属性值为真或者忽略属性时右上角都会显示控制按钮。</p>
+	<p align="left"><img border="0" src="ck_img/125.png" ></p>
+	<p align="left">当属性值为假时，右上角将没有控制按钮，并且软件图标也不会显示。</p>
+	<p align="left"><img border="0" src="ck_img/126.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="zdhann"></a>
+<font style="font-size: 12pt; font-weight:700">● 最大化按钮(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可以设置最大化按钮是否可以点击，从而控制程序进行最大化操作。</p>
+	<p align="left">注意：本属性只有当<b>“控制按钮=真”</b>时有效。</p>
+	<p align="left"><img border="0" src="ck_img/127.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类的属性栏设置本属性即可。</p>
+	<p align="left"><img border="0" src="ck_img/128.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">当属性值为真时，可以看到最大化按钮处于可点击状态。</p>
+	<p align="left"><img border="0" src="ck_img/129.gif" ></p>
+	<p align="left">当属性值为假时，最大化按钮会变成灰色不可点击。</p>
+	<p align="left"><img border="0" src="ck_img/130.png" ></p>
+</blockquote>	
+
+<p align="left">&nbsp;</p><a name="zxhann"></a>
+<font style="font-size: 12pt; font-weight:700">● 最小化按钮(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过设置本属性可绝对是否显示最小化按钮。</p>
+	<p align="left">注意：只有当<b>“控制按钮”</b>属性值为真时有效。</p>
+	<p align="left"><img border="0" src="ck_img/131.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类属性栏中设置即可。</p>
+	<p align="left"><img border="0" src="ck_img/132.png" ></p>
+</blockquote>
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当属性值为真时，最小化按钮处于可点击状态。</p>
+	<p align="left"><img border="0" src="ck_img/133.gif" ></p>
+	<p align="left">当属性值为假时，则只会剩下关闭按钮。</p>
+	<p align="left"><img border="0" src="ck_img/134.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="ckbk"></a>
+<font style="font-size: 12pt; font-weight:700">● 窗口边框(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置窗口边框效果。</p>
+	<p align="left"><img border="0" src="ck_img/135.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">直接在窗口类属性栏中设置即可，此处设置为<b>“镜框式可调边框”</b>。</p>
+	<p align="left"><img border="0" src="ck_img/136.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">设置为<b>“镜框式可调边框”</b>后，鼠标点击窗口边角区域可以对窗口尺寸进行自由调整。</p>
+	<p align="left"><img border="0" src="ck_img/137.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="dtfs"></a>
+<font style="font-size: 12pt; font-weight:700">● 底图方式(读写)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 底图(写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“底图方式”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置底图放置方式，调用方式：<b>“图片放置方式.XXX”</b>.</p>
+	<p align="left">注意：本属性继承自组件布局器。</p>
+	<p align="left"><img border="0" src="ck_img/138.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left"><b>“底图”</b>帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置窗口底图，属性值为位图资源。</p>
+	<p align="left">注意：本属性继承自组件布局器。</p>
+	<p align="left"><img border="0" src="ck_img/139.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在窗口类的属性栏中设置底图。</p>
+	<p align="left">2、按钮点击后设置底图方式为缩放图片。</p>
+	<p align="left"><img border="0" src="ck_img/140.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮点击后，窗口底图会缩放填充整个软件界面。</p>
+	<p align="left"><img border="0" src="ck_img/141.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="ds"></a>
+<font style="font-size: 12pt; font-weight:700">● 底色(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本属性可设置窗口底色。</p>
+	<p align="left">属性值可以使用<b>“颜色类”</b>中定义的常量值，例如：<b>“颜色类.白色”</b>或者<b>“0xFFFFFF”</b>十六进制颜色值。</p>
+	<p align="left">注意：本属性实际继承自组件布局器。</p>
+	<p align="left"><img border="0" src="ck_img/142.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后设置窗口颜色为红色。</p>
+	<p align="left"><img border="0" src="ck_img/143.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终窗口将修改成红色。</p>
+	<p align="left"><img border="0" src="ck_img/144.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p><a name="xxgl"></a>
+<font style="font-size: 12pt; font-weight:700">● 消息过滤(虚拟)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过本虚拟方法可以进行消息拦截操作。</p>
+	<p align="left"><img border="0" src="ck_img/145.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、在窗口类上按钮可添加本虚拟方法。</p>
+	<p align="left"><img border="0" src="ck_img/146.png" > </p>
+	<p align="left">2、添加后判断来源组件，并弹出消息值。</p>
+	<p align="left"><img border="0" src="ck_img/147.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终按钮组件所有的消息值会显示在信息框中。</p>
+	<p align="left"><img border="0" src="ck_img/148.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">修改代码，判断消息值等于15后在显示信息框。</p>
+	<p align="left"><img border="0" src="ck_img/149.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终弹出的信息框只会有显示15,其它的消息都不会显示出来。</p>
+	<p align="left"><img border="0" src="ck_img/150.gif" ></p>
+</blockquote>	
+<blockquote><p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ui.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_layout.html">下一章</a>] </p><p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗选择框组件讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，火山视窗选择框组件讲解" />
+<meta name="description" content="火山软件开发平台,火山视窗选择框组件讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="duoxuan_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_AnNiu.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_DanXuan.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+
+<p align="left">
+<h2>选择框讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+<a name="xuanzhong"></a>
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">本组件还继承了<a href="mfc_AnNiuJiChu.html"><b>“按钮基础类”</b></a>的所有方法，和单选框的区别在于，本组件可以进行多项选择。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 选中(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以设置当前选择框的选择状态，为真表示选中。</p>
+	<p align="left">同名读属性可以读取当前选择框的选中状态。</p>
+	<p align="left"><img border="0" src="duoxuan_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">按钮点击后，利用<b>“取反()”</b>方法可以对当前选择框的状态进行随意切换。</p>
+	<p align="left"><img border="0" src="duoxuan_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终按钮点击后，选择框的状态可以随意切换。</p>
+
+	<p align="left"><img border="0" src="duoxuan_img/3.gif" ></p>
+</blockquote>
+	<a name="xingshi"></a>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 按钮形式(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以将选择框设置成按钮效果，当选中时按钮会处于按下效果。</p>
+	<p align="left"><img border="0" src="duoxuan_img/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">1、在选择框组件的属性栏设置本属性值为真。</p>
+  <p align="left">2、按钮点击后切换选择框选择状态。</p>
+	<p align="left"><img border="0" src="duoxuan_img/5.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">运行后选择框会变成按钮形状，并且可以在按下状态和非按压状态下切换。</p>
+
+	<p align="left"><img border="0" src="duoxuan_img/6.gif" ></p>
+</blockquote>			
+	<a name="juzuo"></a>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 标题居左(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">本属性设置为真则标题位于图标的左边，否则位于图标的右边。</p>
+	<p align="left">同名读属性可以读取标题是否位于左边。</p>
+	<p align="left"><img border="0" src="duoxuan_img/7.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">按钮点击后，利用<b>“取反()”</b>切换标题方向。</p>
+	<p align="left"><img border="0" src="duoxuan_img/8.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终按钮点击后标题方向可以进行自由切换。</p>
+	<p align="left"><img border="0" src="duoxuan_img/9.gif" ></p>
+</blockquote>			
+	
+	<a name="shoudong"></a>
+	<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 手动(读写)</font><br/>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当本属性设置为真后，选择框点击后将不能进行选中状态切换。</p>
+	<p align="left">只能通过<b>“选中”</b>属性动态设置，或者通过<b>“被单击”</b>事件动态设置。</p>
+	<p align="left"><img border="0" src="duoxuan_img/10.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">按钮点击后设置为手动模式。</p>
+	<p align="left"><img border="0" src="duoxuan_img/11.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">按钮点击前，选择框可以正常切换状态。</p>
+  <p align="left">按钮点击后，选择框将不能进行切换。</p>
+
+	<p align="left"><img border="0" src="duoxuan_img/12.gif" ></p>
+</blockquote>			
+		<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+  <p align="left">在选择框组件的属性栏，设置本属性为真，并添加单击事件手动切换选中状态。</p>
+	<p align="left"><img border="0" src="duoxuan_img/13.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终选择框的选中状态依然可以正常切换。</p>
+	<p align="left"><img border="0" src="duoxuan_img/14.gif" ></p>
+</blockquote>	
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_AnNiu.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_DanXuan.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

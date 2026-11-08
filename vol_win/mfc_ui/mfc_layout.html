@@ -1,0 +1,436 @@
+
+
+<html>
+
+<head>
+<title>火山PC视窗组件布局器讲解_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台，安卓开发" />
+<meta name="description" content="火山软件开发平台,火山视窗组件布局器讲解" />
+<link rel="shortcut icon" type="image/x-icon" href="layout_img/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.组件布局器 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#取底图">1.取底图</a></blockquote></li>  
+          <li><blockquote><a href="#取底图">2.置底图数据</a></blockquote></li>  
+          <li><blockquote><a href="#置底图文件">3.置底图文件</a></blockquote></li>  
+          <li><blockquote><a href="#位置被改变">4.位置被改变(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#创建完毕">5.创建完毕(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#将被销毁">6.将被销毁(事件)</a></blockquote></li>  
+		   <li><blockquote><a href="#将被销毁">7.已被销毁(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#尺寸被改变">8.尺寸被改变(事件)</a></blockquote></li>  
+          <!-- <li><blockquote><a href="#接收到子组件命令">9.接收到子组件命令(事件)</a></blockquote></li>  -->
+          <li><blockquote><a href="#被显示">9.被显示(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#被显示">10.被隐藏(事件)</a></blockquote></li>  
+          <li><blockquote><a href="#提示框弹出时间">11.提示框弹出时间(写)</a></blockquote></li>  
+		  <li><blockquote><a href="#提示框保持时间">12.提示框保持时间(写)</a></blockquote></li>
+		  <li><blockquote><a href="#提示框切换时间">13.提示框切换时间(写)</a></blockquote></li>
+		  <li><blockquote><a href="#提示框边空">14.提示框边空(写)</a></blockquote></li>
+		  <li><blockquote><a href="#提示框最大宽度">15.提示框最大宽度(写)</a></blockquote></li>
+		  <li><blockquote><a href="#提示框背景颜色">16.提示框背景颜色(写)</a></blockquote></li>
+		   <li><blockquote><a href="#提示框背景颜色">17.提示框文本颜色(写)</a></blockquote></li>
+		  <li><blockquote><a href="#提示框禁用系统主题">18. 提示框禁用系统主题(写)</a></blockquote></li>
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote><p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ck.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_choice.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">
+<h2>组件布局器讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p>组件布局器是一种通用的窗口容器组件，既可以单独当一个容器使用，也可以基于此容器进行组件封装。</p>
+	<p>同时<b>“窗口”</b>也是基于组件布局器实现，继承了组件布局器的所有属性、方法、事件。</p>
+	<blockquote>
+		<p><img src="layout_img/1.png" border="0"></p>
+	</blockquote>
+	<p><b>单独当容器使用时：</b></p>
+	<blockquote>
+		<p>打开界面设计器后在<b>“基本容器组件”</b>中就可以看到此组件。</p>
+		<p>将此组件在窗口上绘制后，就可以在此组件中放置其它组件。</p>
+		<p><img src="layout_img/2.png" border="0"></p>
+		<p>当组件布局器移动时，其内部的其它组件也会跟随移动，这也是所有容器类组件的特性。</p>
+		<p><img src="layout_img/3.gif" border="0"></p>
+	</blockquote>
+	<p><b>用于组件封装时：</b></p>
+	<blockquote>
+		<p>定义一个基础类为<b>“组件布局器”</b>的类，然后打开其界面设计器，其打开方式和窗口设计器快捷键一致，都可以通过<b>“Ctrl+U”</b>打开。</p>
+		<p><img src="layout_img/4.png" border="0"></p>
+		<p>组件布局器的界面设计器和窗口设计器的使用方式和效果都是一致的，在界面上拖拽标签和编辑框，实现一个简单的带标签的编辑框组件。</p>
+		<p><img src="layout_img/5.png" border="0"></p>
+		<p>保存布局后，在主窗口中定义两个成员变量，其类型务必要和组件布局器的类名一致。</p>
+		<p><img src="layout_img/6.png" border="0"></p>
+		<p>打开窗口设计器，在<b>“布局内容”</b>中选中一个组件，然后修改组件尺寸将其显示在窗口上。</p>
+		<p><img src="layout_img/7.gif" border="0"></p>
+		<p>重复操作，将两个组件都显示在界面设计器中。</p> 
+		<p><img src="layout_img/8.png" border="0"></p>
+		<p>最终软件运行后就可以轻松得到两个带标签的编辑框组件。</p>
+		<p>如果其它窗口也需要使用这个组件，直接在其它窗口中类定义相同的变量，打开设计器调整组件位置即可。</p>
+		<p><img src="layout_img/9.png" border="0"></p>
+	</blockquote>
+	
+</blockquote>
+<p align="left">&nbsp;</p><a name="取底图"></a>
+<font style="font-size: 12pt; font-weight:700">● 取底图</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 置底图数据</font>
+
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“取底图”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">可用于取出<b>“底图”</b>属性设置的底图，同时也可以取出<b>“置底图数据/文件”</b>设置的底图。</p>
+	<p align="left">注：底图通过<b>“位图对象类”</b>参数返回。</p>
+	<p align="left"><img border="0" src="layout_img/10.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“置底图数据”</b>帮助文档： </p>
+<blockquote>
+	<p align="left">用于设置字节集类型的位图。</p>
+	<p align="left"><img border="0" src="layout_img/11.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、<b>按钮1</b>单击后调用<b>“置底图数据”</b>方法给<b>组件布局器1</b>设置底图。</p>
+	<p align="left">2、<b>按钮2</b>单击后调用<b>“取底图”</b>方法，取出位图对象后转换成字节集后赋值给<b>组件布局器2</b>。</p>
+	<p align="left"><img border="0" src="layout_img/13.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到底图可以正常的赋值和取出。</p>
+  <p align="left"><img border="0" src="layout_img/14.gif" ></p>
+</blockquote>	
+	
+	<p align="left">&nbsp;</p><a name="置底图文件"></a>
+<font style="font-size: 12pt; font-weight:700">● 置底图文件</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">通过一个位图文件路径直接设置底图。</p>
+	<p align="left">注：需要提供绝对路径。</p>
+	<p align="left"><img border="0" src="layout_img/15.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">因窗口继承了组件布局器，所以在窗口中可以直接调用本方法为窗口设置底图。</p>
+	<p align="left">注：如果在给当前窗口设置底图时，如果底图并未铺满整个窗口可使用<b>“底图方式”</b>写属性调整底图的缩放方式，使其达到铺满整个窗口的目的。</p>
+	<p align="left"><img border="0" src="layout_img/16.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote> 
+  <p align="left">最终窗口的背景被修改成指定图片。</p>
+	<p align="left"><img border="0" src="layout_img/17.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p>
+<a name="位置被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 位置被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当组件位置发生改变时，本事件会被触发。</p>
+	<p align="left"><img border="0" src="layout_img/18.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改组件布局器的位置，同时在事件下修改窗口标题，验证事件是否被触发。</p>
+	<p align="left"><img border="0" src="layout_img/19.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终当组件布局器位置被修改后，<b>位置被改变</b>事件可以被正常触发。</p>
+	<p align="left"><img border="0" src="layout_img/20.gif" ></p>
+</blockquote>		
+	
+	<p align="left">&nbsp;</p><a name="创建完毕"></a>
+<font style="font-size: 12pt; font-weight:700">● 创建完毕(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">本事件虽然是组件布局器的事件，但是单独的组件布局器使用本事件是无效的，本事件主要提供给窗口使用。</p>
+	<p align="left"><img border="0" src="layout_img/21.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">在窗口类中添加本事件并修改底色。</p>
+	<p align="left"><img border="0" src="layout_img/22.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">软件运行后窗口会修改为黑色背景，证明事件被触发。</p>
+	<p align="left"><img border="0" src="layout_img/23.png" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="将被销毁"></a>
+<font style="font-size: 12pt; font-weight:700">● 将被销毁(事件)</font><br>
+<font style="font-size: 12pt; font-weight:700">● 已被销毁(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“将被销毁”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当组件即将被销毁时触发本事件，本事件也可提供给窗口使用，用于判断窗口是否即将被销毁。</p>
+	<p align="left"><img border="0" src="layout_img/24.png" ></p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“已被销毁”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当组件已经被销毁后触发本事件，本事件也可提供给窗口使用，用于判断窗口是否已经被销毁。</p>
+	<p>注1：当组件被销毁后，不能对当前组件进行任何操作。</p>
+	<p>注2：当组件非正常销毁时，本事件不会触发。</p>
+	<p align="left"><img border="0" src="layout_img/25.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后调用<b>“销毁()”</b>方法手动销毁组件。</p> 
+	<p align="left">同时在两个事件中向编辑框中输出对应内容。</p> 
+	<p align="left"><img border="0" src="layout_img/26.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到，<b>将被销毁</b>信息输出后紧跟着就是<b>已被销毁</b>信息。</p>
+	<p align="left"><img border="0" src="layout_img/26.gif" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p><a name="尺寸被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 尺寸被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">当组件布局器的尺寸被改变时，本事件会被触发。</p>
+	<p align="left"><img border="0" src="layout_img/27.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后修改组件布局器的尺寸，同时在当前事件下修改窗口标题，验证事件是否被触发。</p>
+	<p align="left"><img border="0" src="layout_img/28.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终当尺寸改变时，窗口标题也被修改，证明事件被触发。</p>
+	<p align="left"><img border="0" src="layout_img/29.gif" >
+</blockquote>	
+
+	
+	<p align="left">&nbsp;</p><a name="被显示"></a>
+<font style="font-size: 12pt; font-weight:700">● 被显示(事件)</font><br/>
+<font style="font-size: 12pt; font-weight:700">● 被隐藏(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left"><b>“被显示”</b>帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当组件被显示时会触发本事件，本事件也可以给窗口使用，用来判断窗口是否被显示。</p>
+	<p align="left"><img border="0" src="layout_img/33.png" > </p>
+</blockquote>
+<p align="left">&nbsp;</p>
+	<p align="left">“被隐藏”帮助文档如下图：  </p>
+<blockquote> 
+	<p align="left">当组件被隐藏是会触发本事件，本事件也可以给窗口使用，用来判断窗口是否被隐藏。</p>
+	<p align="left"><img border="0" src="layout_img/34.png" > </p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">1、按钮点击后通过判断按钮标题实现对组件的隐藏和显示。</p>
+	<p align="left">2、添加对应的事件后，修改窗口标题验证事件是否被正常触发。</p>
+	<p align="left"><img border="0" src="layout_img/35.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终两个事件均可以正常触发。</p>
+	<p align="left"><img border="0" src="layout_img/36.gif" > </p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p><a name="提示框弹出时间"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框弹出时间(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">1、提示框的提示内容由其子组件的<b>“提示信息”</b>属性提供。</p>
+	<p align="left">2、鼠标位于子组件时必须保持静止状态才可以弹出提示。</p>
+	<p align="left">3、本属性用于设置弹出提示框需要的静止时间，单位毫秒。</p>
+	<p align="left"><img border="0" src="layout_img/37.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">1、因窗口继承了组件布局器，可以直接给窗口设置此属性，在100毫秒弹出提示。</p>
+	<p align="left">2、给窗口上的按钮设置提示信息。</p>
+	<p align="left"><img border="0" src="layout_img/38.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当鼠标停留在按钮上时，提示信息会以极快的速度显示。</p>
+	<p align="left"><img border="0" src="layout_img/39.gif" ></p>
+</blockquote>	
+	
+	
+	<p align="left">&nbsp;</p><a name="提示框保持时间"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框保持时间(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">设置子组件提示框的持续时间，单位毫秒。</p>
+	<p align="left"><img border="0" src="layout_img/40.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置提示信息保持1秒钟。</p>
+	<p align="left"><img border="0" src="layout_img/41.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p> 
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终当提示信息显示1秒后将自动取消显示。</p>
+	<p align="left"><img border="0" src="layout_img/42.gif" ></p>
+</blockquote>	
+	
+	
+<p align="left">&nbsp;</p><a name="提示框切换时间"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框切换时间(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">用于设置鼠标从一个提示框的组件移动到另一个有提示框的组件时，切换显示的延迟时间。</p>
+	<p align="left"><img border="0" src="layout_img/43.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置提示框切换时间为500毫秒后显示。</p>
+	<p align="left"><img border="0" src="layout_img/44.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终在鼠标移动切换组件后，很快就可以将提示框显示出来。</p>
+	<p align="left"><img border="0" src="layout_img/45.gif" ></p>
+</blockquote>	
+	
+
+<p align="left">&nbsp;</p><a name="提示框边空"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框边空(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">用于设置提示框内容四边的空白尺寸，单位像素。</p>
+	<p align="left"><img border="0" src="layout_img/46.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置空白尺寸为10像素。</p>
+	<p align="left"><img border="0" src="layout_img/47.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可看到空白尺寸变大。</p>
+	<p align="left"><img border="0" src="layout_img/48.gif" ></p>
+</blockquote>		
+	
+<p align="left">&nbsp;</p><a name="提示框最大宽度"></a>
+<font style="font-size: 12pt; font-weight:700">●提示框最大宽度(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图：</p>
+<blockquote>
+	<p align="left">设置提示框的最大显示宽度，只有设置本属性后提示框文本内容过长时才会自动换行。</p>
+	<p align="left"><img border="0" src="layout_img/49.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性为50像素的宽度，并设置一个较长的提示文本。</p>
+	<p align="left"><img border="0" src="layout_img/50.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图：</p>
+<blockquote>
+	<p align="left">最终提示文本将进行换行显示。</p>
+	<p align="left"><img border="0" src="layout_img/51.gif" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+
+	
+<p align="left">&nbsp;</p><a name="提示框背景颜色"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框背景/文本颜色(写)</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">顾名思义，以上两个属性用于设置提示框的背景色和文本颜色。</p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">分别设置以上两个属性的颜色。</p>
+	<p align="left"><img border="0" src="layout_img/52.png" > </p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终提示框的颜色会被修改。</p>
+	<p align="left"><img border="0" src="layout_img/53.gif" ></p>
+</blockquote>	
+	
+<p align="left">&nbsp;</p>
+<a name="提示框禁用系统主题"></a>
+<font style="font-size: 12pt; font-weight:700">● 提示框禁用系统主题(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以禁用系统主题，如果本属性为假则部分效果属性将失效，所有显示效果将有系统接管。</p>
+	<p align="left"><img border="0" src="layout_img/54.png" ></p>
+</blockquote>
+
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">设置本属性为假后，同时设置提示文本颜色属性。</p>
+	<p align="left"><img border="0" src="layout_img/55.png" ></p>
+</blockquote>	
+		<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">最终可以看到颜色属性并未生效，这是因为系统接管了提示框的样式。</p>
+	<p align="left"><img border="0" src="layout_img/56.gif" ></p>
+</blockquote>	
+<blockquote><p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_ck.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_choice.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

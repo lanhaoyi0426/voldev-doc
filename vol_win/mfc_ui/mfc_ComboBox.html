@@ -1,0 +1,269 @@
+<html>
+<head>
+<title>火山PC视窗组合框组件教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗组合框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<div class="xuanfu">
+<ul class="menu">
+	<ol>
+		<li style="background-color:#E0F0F0;"><h6  class="tree_expand" onClick="StartupPage_ShowItem(this,'new1')" >一.组合框 <span>(可收缩)</span></h6></li>
+	  <ol id="new1">
+          <li><blockquote><a href="#项目类型">1.项目类型</a></blockquote></li>  
+          <li><blockquote><a href="#预设项目数据">2.预设项目数据</a></blockquote></li>  
+          <li><blockquote><a href="#加入项目">3.加入项目</a></blockquote></li>      
+          <li><blockquote><a href="#插入项目">4.插入项目</a></blockquote></li>      
+          <li><blockquote><a href="#修改项目">5.修改项目</a></blockquote></li>      
+          <li><blockquote><a href="#删除项目">6.删除项目</a></blockquote></li>      
+          <li><blockquote><a href="#取项目文本">7.取项目文本</a></blockquote></li>      
+          <li><blockquote><a href="#监听编辑框内容">8.监听编辑框内容</a></blockquote></li>      
+		</ol>		
+	</ol>
+</ul>
+</div>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_YueLi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ListBox.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<a name="项目类型"></a>
+<p align="left">
+<h2>组合框组件操作讲解</h2>
+<p><b>作者：创世魂</b></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+<p align="left">组合框通常情况下只显示某个项目的内容，需要显示更多内容时，可点击后在弹出的下拉列表中选择，因此又称下拉列表框。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 项目类型</font>
+<p align="left">&nbsp;</p>
+	<p align="left">概述： </p>
+<blockquote>
+	<p align="left">本组件共有三个类型，可编辑列表式、可编辑下拉式和不可编辑下拉式，用于不同的显示需求。</p>
+	<p align="left"><img border="0" src="ComboBox_img/1.png" ></p>
+</blockquote>
+
+<p align="left">&nbsp;</p>
+<p align="left">可编辑下拉式效果如下： </p>
+<blockquote>
+  <p align="left">当前项目可以进行编辑操作，也可以选择下拉列表中的数据。</p>
+	<p align="left"><img border="0" src="ComboBox_img/3.gif" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">不可编辑下拉式效果如下： </p>
+<blockquote>
+  <p align="left">与<b>“可编辑下拉式”</b>正好相反，选中的项目无法进行编辑操作。</p>
+	<p align="left"><img border="0" src="ComboBox_img/4.gif" ></p>
+</blockquote>	
+	<p align="left">&nbsp;</p>
+<p align="left">可编辑列表式效果如下：</p>
+<blockquote>
+	<p align="left">被添加的项目会以列表的显示展示出来，同时在列表的顶部会有一个编辑框组件，当项目选中时当前项目内容会出现在编辑框中。</p>
+	<p align="left"><img border="0" src="ComboBox_img/2.gif" ></p>
+</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="预设项目数据"></a>
+<font style="font-size: 12pt; font-weight:700">● 预设项目数据</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">预设项目数据通过<b>“列表项目”</b>属性设置，</p>
+	<p align="left">在属性栏设置本属性后，点击属性值的按钮就可以打开列表项目的设计器。</p>
+	<blockquote>
+			<p align="left"><img border="0" src="ComboBox_img/5.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">打开设计器后点击<b>“向后插入”</b>按钮并设置<b>“标题”</b>即可添加项目成功。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ComboBox_img/6.png" ></p>
+	</blockquote>
+	
+    <p align="left">&nbsp;</p>
+	<p align="left">保存后会自动生成项目所需的文本数据。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ComboBox_img/7.png" ></p>
+	</blockquote>
+	<p align="left">&nbsp;</p>
+	<p align="left">最终效果如下，默认为类型为可编辑下拉式，且无默认选中项。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ComboBox_img/3.gif" ></p>
+	</blockquote>
+	<p align="left">如果需要软件运行后，默认选中某个项目，通过“现行选中项”即可设置。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ComboBox_img/8.png" ></p>
+	</blockquote>
+	<p align="left">软件运行后会默认选中第二个项目。</p>
+	<blockquote>
+		<p align="left"><img border="0" src="ComboBox_img/9.png" ></p>
+	</blockquote>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="加入项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 加入项目</font>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p>本方法共有两个参数。</p>
+		<p>参数1：提供要添加的项目文本。</p>
+		<p>参数2：提供项目的附加数据，默认为0可忽略。</p>
+		<p align="left"><img border="0" src="ComboBox_img/10.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后调用本方法添加即可。</p>
+		<p align="left"><img border="0" src="ComboBox_img/11.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后就会在项目末尾加入一个新项目。</p>
+		<p align="left"><img border="0" src="ComboBox_img/12.gif" ></p>
+	</blockquote>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="插入项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 插入项目</font>
+<p align="left">&nbsp;</p>
+
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">本方法共有三个参数。</p>
+		<p align="left">参数1：提供插入的位置，从0开始，且需要小于等于项目数量。</p>
+		<p align="left">参数2：提供要插入的项目文本。</p>
+		<p align="left">参数3：项目附加数据。</p>
+		<p align="left"><img border="0" src="ComboBox_img/13.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后在项目首插入项目。</p>
+		<p align="left"><img border="0" src="ComboBox_img/14.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终项目被成功插入。</p> 
+		<p align="left"><img border="0" src="ComboBox_img/15.gif" ></p>
+	</blockquote>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="修改项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 修改项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">修改项目需要使用“置项目文本()”方法，本方法共有两个参数。</p>
+		<p align="left">参数1：提供要修改项目的索引，从0开始。</p>
+		<p align="left">参数2：提供修改的新文本。</p>
+		<p align="left"><img border="0" src="ComboBox_img/16.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后修改首个项目的文本。</p>
+		<p align="left"><img border="0" src="ComboBox_img/17.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终首个项目的文本将被修改。</p> 
+		<p align="left"><img border="0" src="ComboBox_img/18.gif" ></p>
+	</blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="删除项目"></a>
+<font style="font-size: 12pt; font-weight:700">● 删除项目</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote>
+		<p align="left">本方法只有一个参数，提供项目索引即可删除项目。</p>
+		<p align="left"><img border="0" src="ComboBox_img/19.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">按钮点击后删除首个项目。</p>
+		<p align="left"><img border="0" src="ComboBox_img/20.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终首个项目被删除，如果想要删除所有项目可直接调用<b>“清空()”</b>方法。</p> 
+		<p align="left"><img border="0" src="ComboBox_img/20.gif" ></p>
+	</blockquote>
+</blockquote>
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="取项目文本"></a>
+<font style="font-size: 12pt; font-weight:700">● 取项目文本</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">帮助文档如下图：</p>
+	<blockquote> 
+		<p align="left">本方法只有一个参数，提供项目索引即可取出项目文本。</p>
+		<p align="left"><img border="0" src="ComboBox_img/21.png" ></p>
+	</blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">如果想要在项目被选择时取出项目文本，可在<b>“列表项被选择”</b>事件中调用本方法，同时结合<b>“现行选中项”</b>读属性即可实现在项目选择时读取项目文本。</p>
+		<p align="left"><img border="0" src="ComboBox_img/22.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终项目选择时，窗口标题会同步项目文本。</p> 
+		<p align="left"><img border="0" src="ComboBox_img/22.gif" ></p>
+	</blockquote>
+</blockquote>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="监听编辑框内容"></a>
+<font style="font-size: 12pt; font-weight:700">● 监听编辑框内容</font>
+<p align="left">&nbsp;</p>
+<blockquote>
+	<p align="left">代码编写如下图：</p>
+	<blockquote>
+		<p align="left">当组合框处于可编辑状态时，可通过<b>“编辑内容被改变”</b>事件，监听编辑框组件内容被改变。</p>
+		<p align="left">在事件下调用<b>“内容”</b>读属性即可实时读取编辑框的内容。</p>
+		<p align="left"><img border="0" src="ComboBox_img/23.png" ></p>
+	</blockquote>
+	<p align="left">运行效果如下图：</p>
+	<blockquote>
+		<p align="left">最终组合框的内容会实时显示在窗口标题中。</p> 
+		<p align="left"><img border="0" src="ComboBox_img/24.gif" ></p>
+	</blockquote>
+</blockquote>
+
+	<blockquote>
+		<p>&nbsp;</p>
+		<p align="left">  [<a href="mfc_YueLi.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_ListBox.html">下一章</a>] </p>
+		<p>&nbsp;</p>
+	</blockquote>	
+
+
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>

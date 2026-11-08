@@ -1,0 +1,90 @@
+
+<html>
+<head>
+<title>火山PC视窗驱动器框教程_火山软件开发平台</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+<meta name="description" content="火山软件开发平台,火山视窗驱动器框组件教程." />
+<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+</head>
+<body>
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_WenJianKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_MuLuKuang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>	
+<a name="驱动器"></a>
+<p align="left">
+<h2>驱动器框组件操作讲解</h2>
+<p><strong>作者：创世魂</strong></p>
+<p align="left">&nbsp;</p>
+
+<font style="font-size: 12pt; font-weight:700">● 概述</font><br/>
+<br/>
+<blockquote>
+	<p align="left">本组件主要用于显示系统磁盘。</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+<font style="font-size: 12pt; font-weight:700">● 驱动器(写)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">通过本属性可以切换到指定磁盘显示，注意需要提供大写字母。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/1.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图：</p>
+<blockquote>
+	<p align="left">按钮点击后切换驱动器到C盘。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/2.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+  <p align="left">最终可看到驱动器组件被切换到了C盘。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/3.gif" ></p>
+</blockquote>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<a name="驱动器被改变"></a>
+<font style="font-size: 12pt; font-weight:700">● 驱动器被改变(事件)</font>
+<p align="left">&nbsp;</p>
+	<p align="left">帮助文档如下图： </p>
+<blockquote>
+	<p align="left">当驱动器被选择时，会触发本事件。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/4.png" ></p>
+</blockquote>
+	<p align="left">&nbsp;</p>
+<p align="left">代码编写如下图： </p>
+<blockquote>
+	<p align="left">添加本事件后利用<b>“驱动器”</b>读属性取出当前盘符显示在编辑框中。</p>
+	<p align="left">注意：因\属于转义符，所以这里需要输入两个\\才能表示出\。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/5.png" ></p>
+</blockquote>	
+<p align="left">&nbsp;</p>
+<p align="left">运行效果如下图： </p>
+<blockquote>
+	<p align="left">当驱动器盘符发送改变后可以看到编辑框也实时显示了当前盘符。</p>
+	<p align="left">注：这里使用了鼠标滚轮滚动切换盘符。</p>
+	<p align="left"><img border="0" src="QuDongQi_img/6.gif" ></p>
+</blockquote>		
+<blockquote>
+	<p>&nbsp;</p>
+	<p align="left">  [<a href="mfc_WenJianKuang.html">上一章</a>] &nbsp;&nbsp;  [<a href="mfc_MuLuKuang.html">下一章</a>] </p>
+	<p>&nbsp;</p>
+</blockquote>
+<p align="left">&nbsp;</p>
+<p align="left">&nbsp;</p>
+	<p align="left">&nbsp;</p>
+
+</body>
+</html>
