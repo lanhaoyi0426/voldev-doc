@@ -1,0 +1,882 @@
+﻿<html>
+
+	<head>
+		<title>火山安卓新手入门教程_火山软件开发平台</title>
+		<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发,火山视窗" />
+		<meta name="description" content="火山软件开发平台,火山安卓软件开发平台新手入门教程." />
+		<link rel="shortcut icon" type="image/x-icon" href="../../images/voldev.ico" media="screen" />
+		<link href="../../scripts/style.css" rel="stylesheet" type="text/css" />
+		<script language="JavaScript" type="text/javascript" src="../../scripts/common.js"></script>
+		<script language="JavaScript" type="text/javascript" src="../../scripts/jquery-1.10.2.min.js"></script>
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="Content-Language" content="zh-cn">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	</head>
+	<body>
+
+		<div class="xuanfu">
+			<ul class="menu">
+				<li>
+					<h4>新手入门</h4>
+				</li>
+				<ol>
+					<li style="background-color:#E0F0F0;">
+						<h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new2')">一.项目介绍 <span>(可收缩)</span>
+						</h6>
+					</li>
+					<ol id="new2">
+						<li>
+							<blockquote><a href="#xjxm">1.建立第一个项目</a></blockquote>
+						</li>
+					</ol>
+
+					<li style="background-color:#E0F0F0;">
+						<h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'debug')">二.调试程序 <span>(可收缩)</span>
+						</h6>
+					</li>
+					<ol id="debug">
+						<li>
+							<blockquote><a href="#真机调试">1.真机调试</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#模拟器调试">2.模拟器调试</a></blockquote>
+						</li>
+					</ol>
+
+					<li style="background-color:#E0F0F0;">
+						<h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new3')">三.编译发布版<span>(可收缩)</span>
+						</h6>
+					</li>
+					<ol id="new3">
+						<li>
+							<blockquote><a href="#txbm">1.填写包名</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#jlmywj">2.建立密钥文件</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#szrjxx">3.设置软件信息</a></blockquote>
+						</li>
+
+						<li>
+							<blockquote><a href="#byfbbb">4.编译发布版本</a></blockquote>
+						</li>
+					</ol>
+
+					<li style="background-color:#E0F0F0;">
+						<h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new4')">四.学习资源<span>(可收缩)</span>
+						</h6>
+					</li>
+					<ol id="new4">
+						<li>
+							<blockquote><a href="#twjc">1.图文教程</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#cxjgckq">2.类库手册</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#gflt">3.官方论坛</a></blockquote>
+						</li>
+					</ol>
+
+					<li style="background-color:#E0F0F0;">
+						<h6 class="tree_expand" onClick="StartupPage_ShowItem(this,'new5')">五.常见问题<span>(可收缩)</span>
+						</h6>
+					</li>
+					<ol id="new5">
+						<li>
+							<blockquote><a href="#cjbc">1.常见问题</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#myxrquanx">2.提示没有写入权限？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#xinjian">3.新建类/方法/变量？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#dbk">4.界面布局打不开？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#sfcz">5.判断文件是否不位于项目中？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#queshao">6.提示缺少XX类？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#xiangmucuowu">7.调试的项目不是当前打开项目？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#du">8.判断读属性？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#xie">9.判断写属性？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#tongchang">10.判断通常方法？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#jingtai">11.判断静态方法？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#quanjingtai">12.判断全局静态方法？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#调试报错">13.未找到任何有效安卓设备？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#旧版">14.此应用专为旧版Android打造？</a></blockquote>
+						</li>
+						<li>
+							<blockquote><a href="#全屏">15.软件底部出现黑色(无法全屏)</a></blockquote>
+						</li>
+					</ol>
+
+				</ol>
+			</ul>
+		</div>
+
+		<p align="left">
+		<h2>火山安卓平台新手入门教程</h2>
+		<p><strong>作者：创世魂</strong></p>
+		<p align="left">&nbsp;</p>
+		<font style="font-size: 12pt; font-weight:700">● 教程说明</font><br />
+		<br />
+		<p align="left">本篇教程共分为五个部分：</p>
+		<p align="left">第一：<a href="#xjxm">安卓项目建立和程序编写。</a></p>
+		<p align="left">第二：<a href="#真机调试">调试程序</a></p>
+		<p align="left">第三：<a href="#txbm">编译发布版安卓程序。</a></p>
+		<p align="left">第四：<a href="#twjc">学习资源。</a></p>
+		<p align="left">第五：<a href="#cjbc">常见问题。</a></p>
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p><a name="xjxm"></a>
+				<h2>一、安卓项目建立和程序编写</h2>
+				<p align="left">&nbsp;</p>
+
+				<h4>● 通过一个具体的火山程序来演示</h4>
+				<p align="left">&nbsp;</p>
+				<p align="left">1、打开火山程序。</p>
+				<blockquote>
+					<p align="left">选择<b>“文件->新建->项目”</b>，也可以使用快捷键<b>“Ctrl+Shift+N”</b>。</p>
+					<p align="left">也可以点击<b>“欢迎页”</b>中的“新建项目”。</p>
+					<p align="left"><img src="new_images/24.png" border="0"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">2、左侧选择<b>“空白安卓程序”</b>，右侧选择<b>“空窗口”</b>。</p>
+				<blockquote>
+					<p align="left">依次填写<b>“项目名称”</b>，<b>“所处位置”</b>和<b>“解决方案名称”</b>。</p>
+					<p align="left">最后点击<b>“确定”</b>即可。</p>
+					<p align="left"><img border="0" src="new_images/25.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">3、最后会在<b>“所处位置”</b>创建以下文件和目录。 </p>
+				<blockquote>
+					<p align="left">（1）其中<b>“test.vsln”</b>文件是解决方案主文件，打开一个火山项目都是通过此文件来打开。</p>
+					<p align="left">（2）<b>“test”</b>是当前解决方案中的其中一个项目，火山的解决方案可以建立多个项目进行同时管理，每个项目都可以独立编译一个安卓程序并且互不干扰。</p>
+					<p align="left"><img border="0" src="new_images/26.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">4、创建后：</p>
+				<blockquote>
+					<p align="left">（1）其中<strong>“test”</strong>解决方案名称对应上图中的<strong>“test.vsln”</strong>文件。</p>
+					<p align="left">
+						（2）<strong>“模块”</strong>是当前项目自动引用的核心库模块，默认引用<strong>“Java基本类”</strong>和<strong>“安卓基本类”</strong>模块。
+					</p>
+					<blockquote>
+						<p align="left">如果需要引用更多模块，请看
+							<a href="p_vcom.htm" hidefocus="true">模块的封装和使用方法</a>中的<strong>“三、如何在程序中使用火山模块”</strong>。
+						</p>
+					</blockquote>
+					<p align="left">（3）<strong>“test”</strong>项目名称对应上图中的<strong>“test”</strong>目录。</p>
+					<p align="left"><img src="new_images/27.png" border="0"></p>
+					<p align="left">
+						（4）<strong>“main.v”</strong>当前文档名称位于<strong>“test/src/”</strong>目录中，src目录为火山自动生成，知道即可无需了解其含义。
+					</p>
+					<p align="left"><img src="new_images/27a.png" border="0"></p>
+					<p align="left">
+						（5）另外在<strong>“test”</strong>项目目录中，还存在一个<strong>“test.vprj”</strong>的文件，此文件为当前项目结构文件，存储了当前项目结构信息。
+					</p>
+					<p align="left">注意：如果新建了一个<strong>“test2”</strong>的项目，那么结构文件就会是<strong>“test2.vprj”</strong>。</p>
+					<p align="left"><img src="new_images/27b.png" border="0"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">5、一个解决方案中建立多个项目 </p>
+				<blockquote>
+					<p align="left">（1）选择<strong>“文件-新建-项目”</strong>。</p>
+					<p align="left"><img border="0" src="new_images/27c.png"></p><br />
+					<p align="left">
+						（2）选择<strong>“空窗口”</strong>后，输入<strong>“项目名称”</strong>，<strong>“所处位置”</strong>不建议修改，方便管理整体解决方案，保持原样即可。
+					</p>
+					<p align="left"><img border="0" src="new_images/27d.png"></p><br />
+					<p align="left">（3）建立完成后界面如下。</p>
+					<p align="left"><img border="0" src="new_images/27e.png"></p><br />
+					<p align="left">（4）建立完成后<strong>“所处位置”</strong>处会生成一个新的文件夹<strong>“test2”</strong>，此文件夹就是项目2的文件夹。
+					</p>
+					<p align="left"><img border="0" src="new_images/27f.png"></p><br />
+					<p align="left">（5）右键项目<strong>“test”</strong>选择<strong>“设置为活动项目”</strong>，可进行项目切换。</p>
+					<p align="left"><img border="0" src="new_images/27g.png"></p><br />
+					<p align="left">（6）切换项目后状态。 </p>
+					<p align="left"><img border="0" src="new_images/27h.png"></p><br />
+				</blockquote>
+
+				<p align="left">6、在<b>“启动类”</b>的代码区域右键，可以打开<b>“启动类”</b>的界面设计器。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/28.png"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<p align="left">7、打开后如下图所示。</p>
+				<blockquote>
+					<p align="left">左侧：显示了所有的窗口组件。</p>
+					<p align="left">右侧：显示了窗口组件部分属性。</p>
+					<p align="left">注意：<b>“并非”</b>所有属性都能够正常的进行设置。</p>
+					<p align="left">例如：你在使用<strong>“按钮”</strong>时，无法在右侧属性栏设置<strong>“垂直滚动条滑块图”</strong>属性。</p>
+					<p align="left">因为<strong>“按钮”</strong>并不具备此属性。</p>
+					<p align="left"><img border="0" src="new_images/29.png" width="800px"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">8、点击<b>“按钮”</b>可拖放到<b>“界面设计器”</b>内，右侧的<b>“文本”</b>可修改标题。</p>
+				<blockquote>
+					<p align="left">点击<b>“确定”</b>可保存布局。</p>
+					<p align="left"><img border="0" src="new_images/30.png" width="800px"></p>
+
+				</blockquote>
+				<p align="left"></p>
+				<p align="left">9、保存后如下图所示。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/32.png"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">10、如有<b>“多个窗口”</b>，想要打开指定窗口的设计器，需要在指定<strong>窗口类</strong>的<strong>代码区域</strong>右键。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/31.png"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<p align="left">10、右键<b>“按钮”</b>，选择<b>“添加‘按钮1’的事件接收方法”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/33.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">11、选择<b>“按钮_被单击”</b>，点击<b>“添加”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/34.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">12、添加事件后如下图所示。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/35.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">13、执行单击事件需要在<b>“返回”</b>之前书写代码。</p>
+
+				<blockquote>
+					<p align="left"> 在<b>“如果”</b>条件命令内，指定<b>“来源对象==按钮1”</b>，就可以判断<strong>按钮1</strong>被单击。</p>
+					<p align="left">在此行代码的下方，填写<b>“提示信息框()”</b>方法，就可以弹出一个信息框。</p>
+					<p align="left"><b>“//”</b>双斜线后面的文本代表注释。</p>
+					<p align="left">注意：在火山中编写代码无需输入中文，只需要填写首拼即可完成代码输入。</p>
+					<p align="left">例如：<b>“如果”</b>只需要输入<b>“rg”</b>。</p>
+					<p align="left"><img border="0" src="new_images/36.png"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">14、最后调试程序</p>
+				<blockquote>
+					<p align="left">点击绿色的三角按钮可启动调试。</p>
+					<p align="left"><img border="0" src="debug_images/10.png"></p>
+
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">15、正常编译后，最终会提示<strong>“调试准备工作完成”</strong>。</p>
+				<blockquote>
+					<p><a href="#真机调试" title="点击查看解决方案">报错“未找到任何有效安卓设备？”</a></p>
+					<p align="left"><img border="0" src="new_images/77.png"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">16、程序打开后，点击<b>“按钮1”</b>就会弹出带有提示图标的<b>“提示信息框”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/42.gif"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<a name="真机调试"></a>
+				<p align="left">
+				<h2>二、程序调试</h2>
+				<p align="left">&nbsp;</p>
+				<h4>● 真机调试</h4>
+				<blockquote>
+					<p>1、进行真机调试之前首先保证手机充电口、数据线以及电脑USB接口能够正常工作且供电充足，如果电脑端使用的是拓展坞，保证拓展坞供电充足。</p>
+
+					<p>2、然后需要打开手机的<strong>“开发者选项”</strong>进入<strong>“开发者模式”</strong>，并且启用<strong>“USB调试”</strong>等设置，部分手机还存在<strong>“USB安装”</strong>选项也需要打开。
+					</p>
+					<p>不同手机品牌直接打开方式基本相同，此处以小米手机为例：</p>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>1、打开系统设置</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/1.png" border="0"> </p>
+						</blockquote>
+
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>2、点击我的设备</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/2.png" border="0"> </p>
+						</blockquote>
+
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>3、选择全部参数与信息</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/3.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>4、连续多次点击MIUI版本即可打开开发者模式</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/4.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>5、如果已打开会提示无需此操作</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/5.png" border="0"> </p>
+						</blockquote>
+
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>6、回到设置界面，选择更多设置</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/6.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>7、选择开发者选项</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/7.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>8、开启开发者选项</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/8.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<blockquote>
+						<h6>9、向下滑动找到USB调试和USB安装全部打开</h6>
+						<blockquote>
+							<p align="left"><img src="debug_images/9.png" border="0"> </p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<p>将所有设置项全部打开后，将数据线连接手机和电脑，即可点击火山工具栏中的绿色按钮进行调试。</p>
+					<blockquote>
+						<p align="left"><img src="debug_images/10.png" border="0"> </p>
+					</blockquote>
+					<p>&nbsp;</p>
+					<p>需要注意的是，调试程序后可能需要在手机上点击<strong>“继续安装”</strong>才能安装软件到手机上。</p>
+					<blockquote>
+						<p align="left"><img src="debug_images/11.png" border="0"> </p>
+					</blockquote>
+					<p align="left">真机调试结果：</p>
+					<blockquote>
+						<p align="left"><img border="0" src="new_images/78.png"></p>
+					</blockquote>
+				</blockquote>
+				<a name="模拟器调试"></a>
+				<p align="left">&nbsp;</p>
+				<h4>● 模拟器调试</h4>
+				<blockquote>
+					<h5>模拟器安装：</h5>
+					<blockquote>
+						<p>1、首选需要下载一个安卓模拟器，这里推荐使用<a href="https://ldmnq.com/" target="_blank">“雷电模拟器”</a>。</p>
+						<p>2、打开雷电官网后选择最新版点击下载。</p>
+						<blockquote>
+							<p><img src="debug_images/16.png" width="800px"></p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>3、下载完毕后打开会看到如下界面，选择<strong>“自定义安装”</strong>。</p>
+						<blockquote>
+							<p><img src="debug_images/17.png" alt=""></p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>4、选择路径尽量不要选择系统盘(即C盘)，因为模拟器体积通常都很大，如果系统只有一个盘符保持默认即可，选择后点击<strong>“立即安装”</strong>。</p>
+						<blockquote>
+							<p><img src="debug_images/18.png" alt=""></p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>5、因雷电模拟器的安装包为在线安装包，此处耐心等待下载完毕后会自动安装。</p>
+						<blockquote>
+							<p><img src="debug_images/19.png" alt=""></p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>6、等待安装完毕后，点击<strong>“立即体验”</strong>即可打开模拟器。</p>
+						<p>备注：如果在安装过程中遇到问题，可以咨询雷电模拟器客服，寻求解决方案。</p>
+						<blockquote>
+							<p><img src="debug_images/20.png" alt=""></p>
+						</blockquote>
+					</blockquote>
+					<p>&nbsp;</p>
+					<h5>模拟器调试：</h5>
+					<blockquote>
+						<p>正常情况下在雷电模拟器打开完毕后，点击火山中的绿色按钮可以直接调试成功。</p>
+						<blockquote>
+							<p align="left"><img src="debug_images/10.png" border="0"> </p>
+						</blockquote>
+						<p>当遇到模拟器调试报错：未找到任何有效安卓设备？</p>
+						<blockquote>
+							<p align="left"><img src="debug_images/15.png" border="0" width="800px"> </p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>1、 打开菜单<strong>“工具-选项”</strong>。</p>
+						<blockquote>
+							<p align="left"><img src="debug_images/12.png" border="0"> </p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>2、
+							找到<strong>“安卓项目管理器->全局->调试->欲连接的设备地址”</strong>，选择自己使用的模拟器，如果为<strong>雷电模拟器</strong>通常情况下无需选择。
+						</p>
+						<blockquote>
+							<p align="left"><img src="debug_images/13.png" border="0" width="800px"> </p>
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>3、选择了设备依然无法调试？</p>
+						<blockquote>
+							<p>假设您使用的为雷电模拟器出现无法调试的问题。</p>
+							<p>可以选择百度搜索<strong>“雷电模拟器端口号”</strong>或者咨询雷电模拟器客服人员adb端口号是多少，得到答案后在<strong>“欲连接的设备地址”</strong>中输入<strong>“IP+端口”</strong>。
+							</p>
+							<p>如下图：雷电模拟器的端口为<strong>5554</strong>，因此提供<strong>“127.0.0.1:5554”</strong>即可。</p>
+							<blockquote>
+								<p align="left"><img src="debug_images/14.png" border="0"> </p>
+							</blockquote>
+
+						</blockquote>
+						<p align="left">&nbsp;</p>
+						<p>当所有工作准备完毕后，最后点击调试按钮时，会自动在模拟器中安装并打开。</p>
+						<blockquote>
+							<p align="left"><img src="debug_images/21.png" border="0" width="800px"> </p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				<a name="txbm"></a>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p>
+				<h2>三、编译发布版安卓程序</h2>
+				<p align="left">&nbsp;</p>
+
+				<h4>● 填写包名</h4>
+
+				<p align="left">&nbsp;</p>
+				<h5 align="left">1、<b>“包名”</b>位于所有程序代码的最上方位置。</h5>
+				<blockquote>
+					<p align="left">通常书写格式为<b>“公司名.程序名”</b>，名称随意。</p>
+					<p align="left">填写包名，必须保证有一个小数点，并且保证唯一性，不能与其它程序包名重复，以免造成无法安装的后果。</p>
+					<p align="left">例如：腾讯QQ的包名为<b>“com.tencent.mobileqq
+							”</b>，当前程序不可填写同样的包名，会造成包名冲突，从而无法安装程序。</p>
+					<p align="left">注意：确定包名后不能更改，如果程序内有多个<b>“.v”</b>文件，则每个文件都需要填写包名。</p>
+					<p align="left">程序内多个文件的包名可重复。</p>
+					<p align="left"><img src="new_images/45.png" border="0"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="jlmywj"></a>
+				<h4>● 建立密钥文件</h4>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">1、点击菜单<b>“工具->安卓密钥文件建立器”</b>。</p>
+				<blockquote>
+					<p align="left"><img src="new_images/47.png" border="0"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">2、填写<b>“姓名”</b>，名称随意，不能为中文。</p>
+				<blockquote>
+					<p align="left">随后点击<b>“生成到密钥文件”</b>后方的按钮。</p>
+					<p align="left"><img border="0" src="new_images/44.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">3、输入<b>“文件名”</b>点击<b>“保存”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/48.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">4、保存后，编辑框内就会出现保存路径。</p>
+				<blockquote>
+					<p align="left">最后点击<b>“生成”</b>。</p>
+					<p align="left"><img border="0" src="new_images/49.png"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<p align="left">5、点击<b>“确定”</b>即可完成<b>“密钥文件建立”</b>的所有操作。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/50.png"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p>
+				<a name="szrjxx"></a>
+				<font style="font-size: 12pt; font-weight:700">● 设置软件信息</font>
+				<p align="left">&nbsp;</p>
+				<p align="left">1、右键项目名称，选择<b>“属性”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/46.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">2、软件必备信息设置。</p>
+				<blockquote>
+					<p align="left">
+						<strong>程序标题</strong>，<strong>程序版本号</strong>，<strong>程序版本名称</strong>，<strong>程序图标</strong>以及<strong>签名用的密钥文件名</strong>。
+					</p>
+					<p align="left">依次填写完毕后，点击<b>“确定”</b>即可。</p>
+					<p align="left">注意：软件应用市场升级软件通常以<b>“程序版本号”</b>为准，在升级软件时建议修改<b>“程序版本号”</b>。</p>
+					<p align="left"><img border="0" src="new_images/51.png"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p>
+				<a name="byfbbb"></a>
+				<font style="font-size: 12pt; font-weight:700">● 编译发布版本</font>
+				<p align="left">&nbsp;</p>
+
+				<p align="left">1、点击菜单<b>“生成->生成活动项目”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/52.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">2、在输出栏可看到提示<b>“编译成功”</b>和“APK保存路径”。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/53.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">3、找到输出的APK文件，安装后如下图所示。</p>
+				<blockquote>
+					<p align="left">可以看到<b>“程序名称”</b>和<b>“图标”</b>均被修改。</p>
+					<p align="left"><img border="0" src="new_images/54.png"></p>
+				</blockquote>
+
+
+
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p><a name="twjc"></a>
+				<h2>四、学习资源</h2>
+				<p align="left">&nbsp;</p>
+
+				<font style="font-size: 12pt; font-weight:700">● 图文教程</font>
+				<p align="left">&nbsp;</p>
+				<p align="left">1、在线帮助文档查看：<a href="http://doc.voldp.com/">http://doc.voldp.com/</a></p>
+				<blockquote>
+					<p align="left">左侧列表中的加号可进行收缩。</p>
+					<p align="left"><img src="new_images/55.png" border="0"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">2、离线帮助文档，点击菜单<b>“帮助->帮助手册”</b>即可打开离线帮助文档。</p>
+				<blockquote>
+					<p align="left"><img src="new_images/56.png" border="0" width="800px"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p>
+				<a name="cxjgckq"></a>
+				<font style="font-size: 12pt; font-weight:700">● 类库手册</font>
+				<p align="left">&nbsp;</p>
+				<p align="left">1、点击软件左侧<b>“类库手册”</b>，即可查看火山类库所有类或方法。</p>
+				<p align="left">2、首次打开<b>“帮助页”</b>需要双击，双击打开后即可单击切换要查看的类或方法。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/57.png" width="800px"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<!--<p align="left">2、左侧：可以看到<b>“当前程序结构”</b>和<b>“系统库”</b>结构。</p> 
+<blockquote>
+<p align="left">所有的<b>“窗口组件”</b>，各种<b>“功能类”</b>都位于<b>“系统库”</b>中。</p>
+<p align="left">点击左侧的分类，右侧可看到更加详细的信息。</p>
+<p align="left"><img border="0" src="new_images/58.png" ></p>
+</blockquote>-->
+
+				<p align="left">3、右键想要打开帮助的方法，选择<b>“显示‘提示信息框’的帮助内容”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/59.png"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">4、点击后会快速定位<b>“提示信息框”</b>方法。</p>
+				<blockquote>
+					<p align="left">点击<b>“选择”</b>，可以快速定位<b>“当前方法”</b>在<b>“左侧列表”</b>的位置。 </p>
+					<p align="left"><img src="new_images/60.png" border="0" width="800px"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">5、点击<b>“帮助页”</b>向下拖拽，出现<b>“小图标”</b>后可分离<b>“帮助页和代码框”</b>。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/60a.png"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">6、<b>“帮助页和代码框”</b>分离效果图。</p>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/60b.png" width="800px"></p>
+				</blockquote>
+
+
+
+				<p align="left">&nbsp;</p>
+				<a name="gflt"></a>
+				<font style="font-size: 12pt; font-weight:700">● 官方论坛</font>
+				<p align="left">&nbsp;</p>
+				<p align="left">点击进入官方论坛：<a href="http://bbs.voldp.com/forum.php">http://bbs.voldp.com/forum.php</a></p>
+				<blockquote>
+					<p align="left"><img src="new_images/79.png" border="0" width="800px"></p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p><a name="cjbc"></a>
+				<h2>五、常见问题</h2>
+
+				<p align="left">&nbsp;</p><a name="myxrquanx"></a>
+				<h5 align="left">1、没有写入权限。</h5>
+				<blockquote>
+					<p align="left">出现这种情况的原因，通常是火山程序安装在了<b>“系统盘”</b>中。</p>
+					<p align="left"><img src="new_images/61.png" border="0" width="800px"></p>
+
+					<p align="left">&nbsp;</p>
+					<blockquote>
+						<p align="left"><strong>①</strong>&nbsp;&nbsp;打开项目所处目录，右键空白区域，选择<b>“属性”</b>。</p>
+						<p align="left"><img border="0" src="new_images/63.png"></p>
+						<p align="left">&nbsp;</p>
+						<p align="left"><strong>②</strong>&nbsp;&nbsp;选择<b>“安全”</b>在，找到当前登录用户，最后点击<strong>“编辑”</strong>。
+						</p>
+						<p align="left"><img border="0" src="new_images/62.png"></p>
+
+						<p align="left">&nbsp;</p>
+						<p align="left"><strong>③</strong>&nbsp;&nbsp;找到当前系统登录用户，勾选允许。</p>
+						<p align="left"><img border="0" src="new_images/80.png"></p>
+
+						<p align="left">&nbsp;</p>
+						<p align="left"><strong>④</strong>&nbsp;&nbsp;会提示正在<strong>设置安全信息</strong>。</p>
+						<p align="left"><img border="0" src="new_images/81.png"></p>
+
+						<p align="left">&nbsp;</p>
+						<p align="left"><strong>⑤</strong>&nbsp;&nbsp;点击<strong>“确定”</strong>。</p>
+						<p align="left"><img border="0" src="new_images/82.png"></p>
+
+					</blockquote>
+				</blockquote>
+				<a name="xinjian"></a>
+				<h5 align="left">2、如何新建类，常量，变量和方法？</h5>
+				<blockquote>
+					<p align="left"><img border="0" src="new_images/70.png"></p>
+				</blockquote>
+
+
+				<p align="left">&nbsp;</p><a name="dbk"></a>
+				<h5 align="left">3、为什么<b>“界面布局”</b>菜单是灰色的？</h5>
+				<blockquote>
+					<p align="left">&nbsp;</p>
+					<p align="left">第一：当前程序正在调试，停止调试即可解决。</p>
+					<p align="left"><img border="0" src="new_images/83.png"></p>
+
+					<p align="left">第二：当前文件不位于项目中，将该文件加入到一个项目中即可解决。</p>
+
+					<p align="left"><img border="0" src="new_images/71.png"></p>
+					<p align="left">&nbsp;</p>
+					<p align="left"><strong>①</strong>&nbsp;&nbsp;右键<b>“项目名称”</b>选择<b>“添加->现有文件/文档组”</b>。</p>
+					<p align="left"><img border="0" src="new_images/72.png"></p>
+
+					<p align="left">&nbsp;</p>
+					<p align="left"><strong>②</strong>&nbsp;&nbsp;选择要添加的文件，点击<b>“打开”</b>。</p>
+					<p align="left"><img border="0" src="new_images/73.png"></p>
+
+					<p align="left">&nbsp;</p>
+					<p align="left"><strong>③</strong>&nbsp;&nbsp;添加进项目后，就可以设计该程序中窗口类的布局。
+					</p>
+					<p align="left"><img border="0" src="new_images/74.png"></p>
+
+
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="sfcz"></a>
+				<h5 align="left">4、如何判断当前文件是否不位于项目中？</h5>
+				<p align="left">&nbsp;</p>
+				<blockquote>
+
+
+					<p align="left">第一：如果已经打开解决方案，查看文档标题第二栏是否为"无"。
+						。</p>
+
+					<p align="left"><img src="new_images/86.png" border="0"></p>
+					<p align="left">&nbsp;</p>
+					<p align="left">第二：如果尚未打开解决方案，则当前并无文档标题。</p>
+					<p align="left"><img border="0" src="new_images/85.png"></p>
+					<p align="left">&nbsp;</p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="queshao"></a>
+				<h5 align="left">6、火山输出提示缺少XX类？</h5>
+				<p align="left">&nbsp;</p>
+				<blockquote>
+
+					<p align="left">确定类名没有写错，但是火山输出提示<strong>“没有找到所指定名称的类"轮播图"”</strong>。</p>
+					<p align="left">此时需要添加火山模块，具体可参考<a
+							href="p_vcom.htm"><strong>“火山模块的封装和使用方法”</strong></a>教程中第三条：如何在程序中使用火山模块。
+					</p>
+
+					<p align="left"><img src="new_images/87.png" border="0"></p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="xiangmucuowu"></a>
+				<h5 align="left">7、调试的项目不是当前打开项目？</h5>
+				<blockquote>
+
+					<p align="left">多个项目时，注意设置其调试项目为<strong>“活动项目”</strong>，右键指定项目即可设置，如下图。</p>
+
+					<p align="left"><img src="new_images/88.png" border="0"> </p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+
+
+				<a name="du"></a>
+				<h5 align="left">8、如何判断读属性？</h5>
+				<blockquote>
+					<p align="left">判断读属性的方法很简单，在<a href="#cxjgckq">帮助页</a>中如果遇到<strong>“属性读方法”</strong>，就证明是读属性。</p>
+					<p align="left"><img src="new_images/89.png" border="0"> </p><br>
+					<p align="left">代码编写如下图：</p>
+					<p align="left"><img src="new_images/90.png" border="0"> </p><br>
+					<p align="left">最终可以将<strong>“编辑框1”</strong>的内容读取出来显示在信息框中。</p>
+					<p align="left"><img src="new_images/91.png" border="0"> </p>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="xie"></a>
+				<h5 align="left">9、如何判断写属性？</h5>
+				<blockquote>
+					<p align="left">判断写属性的方法很简单，在<a href="#cxjgckq">帮助页</a>中如果遇到<strong>“属性写方法”</strong>，就证明是写属性。</p>
+					<p align="left"><img src="new_images/92.png" border="0"> </p><br>
+					<p align="left">代码编写如下图：</p>
+					<p align="left">属性写需要使用<strong>“=”</strong>连接起来，左边的为<strong>属性名</strong>右边的内容为<strong>属性值</strong>。
+					</p>
+					<p align="left">因<strong>“内容”</strong>属性值为<strong>“文本型”</strong>因此使用时需要使用引号。</p>
+					<p align="left"><img src="new_images/93.png" border="0"> </p><br>
+					<p align="left">最终单击<strong>按钮1</strong>后<strong>编辑框1</strong>会显示内容。。</p>
+					<p align="left"><img src="new_images/94.png" border="0"> </p>
+
+				</blockquote>
+				<p align="left">&nbsp;</p>
+
+				<a name="tongchang"></a>
+				<h5 align="left">10、如何判断通常方法？</h5>
+				<blockquote>
+					<p align="left">在帮助页如下位置如果看到<strong>“通常方法”</strong>四个字，代表本方法为通常方法。</p>
+					<p align="left"><img src="new_images/95.png" border="0"> </p>
+
+					<br>
+					<p align="left">如下图所示，通常方法需要定义变量，通过变量名称去调用。</p>
+					<p align="left"><img src="new_images/96.png" border="0"> </p>
+					<br>
+					<p align="left">运行效果如下图：</p>
+					<p align="left"><img src="new_images/97.gif" border="0"> </p>
+				</blockquote>
+
+				<p align="left">&nbsp;</p>
+				<a name="jingtai"></a>
+				<h5 align="left">11、如何判断静态方法？</h5>
+				<blockquote>
+					<p align="left">在帮助页中看到“静态方法”四个字，就证明本方法为静态方法。</p>
+					<p align="left"><img src="new_images/98.png" border="0"> </p><br>
+
+					<p align="left">静态方法调用可直接通过类名访问，不需要定义变量。</p>
+					<p align="left"><img src="new_images/99.png" border="0"> </p><br>
+
+					<p align="left">运行结果如下图：</p>
+					<p align="left"><img src="new_images/100.png" border="0"> </p><br>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<a name="quanjingtai"></a>
+				<h5 align="left">12、如何判断全局静态方法？</h5>
+				<blockquote>
+					<p align="left">只要类别是<strong>“全局静态方法”</strong>都可以忽略类名直接访问本方法，并且是全局性质，任何类都可以调用。</p>
+					<p align="left"><img src="new_images/101.png" border="0"> </p><br>
+					<p align="left">代码编写如下图：</p>
+					<p align="left"><img src="new_images/102.png" border="0"> </p><br>
+
+					<p align="left">运行结果如下图：</p>
+					<p align="left"><img src="new_images/103.png" border="0"> </p><br>
+				</blockquote>
+				<p>&nbsp;</p>
+				<a name="调试报错"></a>
+				<h5 align="left">13、未找到任何有效的安卓设备？</h5>
+				<blockquote>
+					<p><a href="#真机调试">点击查看详细解决流程</a></p>
+				</blockquote>
+				<p>&nbsp;</p>
+				<a name="旧版"></a>
+				<h5 align="left">14、此应用专为旧版Android打造？</h5>
+				<blockquote>
+					<p>注：鸿蒙系统可能会提示<strong>“此应用专为旧版HarmonyOS打造”</strong>或<strong>“此应用的SDK版本过低”</strong>，提示信息虽然不同但设置方式是一样的。
+					</p>
+					<p align="left"><img src="new_images/108.png" border="0"> </p>
+					<p>&nbsp;</p>
+					<p>(1) 根据《移动应用软件高API等级预置与分发自律公约》"目标安卓平台SDK的API级别"应该设置为(26\安卓8.0) 或者更高版本。</p>
+					<blockquote>
+						<p align="left"><img src="new_images/109.png" border="0" width="800px"> </p>
+					</blockquote>
+					<p>(2) 在火山中需要鼠标右键项目，选择<strong>“属性”</strong>。</p>
+					<blockquote>
+						<p align="left"><img src="new_images/110.png" border="0"> </p>
+
+					</blockquote>
+					<p>(3) 找到<strong>“目标安卓平台SDK的API级别”</strong>选择<strong>“26”</strong>即可解决此问题。</p>
+					<blockquote>
+
+						<p align="left"><img src="new_images/111.png" border="0"> </p>
+					</blockquote>
+				</blockquote>
+				<p>&nbsp;</p>
+				<a name="全屏"></a>
+				<h5 align="left">15、软件底部出现黑色无法全屏？</h5>
+				<blockquote>
+					<p>如下所示：</p>
+					<blockquote>
+						<p align="left"><img src="new_images/112.png" border="0"> </p>
+					</blockquote>
+
+				</blockquote>
+
+				<blockquote>
+					<p>找到<strong>“启动类”</strong>在属性名填写<strong>“@安卓.附加清单”</strong>，属性值填写<strong>“常用窗口附加清单.全面屏2”</strong>，即可解决软件底部黑色问题。
+					</p>
+					<blockquote>
+						<p>注1：清单在启动类使用一次即可，如果有多个窗口其它窗口不需要填写。</p>
+						<p>注2：务必使用<strong>“全面屏2”</strong>属性，此属性可以适配更长屏幕的手机。</p>
+						<p align="left"><img src="new_images/113.png" border="0"> </p>
+					</blockquote>
+				</blockquote>
+				<p align="left">&nbsp;</p>
+				<p align="left">&nbsp;</p>
+
+	</body>
+</html>
