@@ -1,0 +1,243 @@
+
+<html>
+
+<head>
+<title>火山软件循环结构语句介绍_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台循环结构语句介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Process.html">上一章</a>]&nbsp;&nbsp;  [<a href="lib.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">八、火山软件开发平台循环结构语句介绍</h2>
+<p>&nbsp;</p>
+<blockquote>
+	
+	<a name="概述"></a>
+	<p>&nbsp;</p>
+	<h4>1、概述</h4>
+	<blockquote>
+		<p>如果想要同样的程序语句被执行多次，就需要使用循环结构语句。</p>
+		<p>在火山中提供了如下循环结构：</p>
+		<blockquote>
+			<p>(1) <a href="#循环">循环</a></p>
+			<p>(2) <a href="#计次循环">计次循环</a></p>
+			<p>(3) <a href="#逆向计次循环">逆向计次循环</a></p>
+			<p>(4) <a href="#判断循环首">判断循环首/尾</a></p>
+			<p>(5) <a href="#判断循环">判断循环</a></p>
+		</blockquote>
+		<p>在循环结构执行时，有时需要提前结束循环。</p>
+		<p>火山提供了如下的循环控制语句：</p>
+		<blockquote>
+			<p>(1) <a href="#跳出循环">跳出循环</a></p>
+			<p>(2) <a href="#到循环尾">到循环尾</a></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="循环"></a>
+	<p>&nbsp;</p>
+	<h4>2、循环</h4>
+	<blockquote>
+		<p style="text-indent:2em">本语句将利用变量对循环体(本语句的子语句体)内的命令进行循环执行。</p>
+		<p style="text-indent:2em">第一次执行此语句时将使用<b>“变量起始值”</b>参数初始化<b>“循环变量”</b>参数所指定的变量，每次(包括第一次)执行到此语句处都将判断循环变量内的值是否已经到达<b>“变量目标值”</b>参数所指定的值，如已等于或超过，则跳转到循环体的下一条语句处，否则进入循环体。</p>
+		<p>本语句共有四个参数，分别如下：</p>
+		<blockquote>
+			<p><b>(1) 变量起始值：</b></p>
+			<blockquote>
+				<p>定义循环变量的起始数值。</p>
+				<p>如果被省略，<b>默认为0</b>。</p>
+			</blockquote>
+			<p><b>(2) 变量目标值：</b></p>
+			<blockquote>
+				<p>定义循环变量的目标数值，在循环首部如果发现<b>循环变量值</b>已到达此目标值时(递增值小于0时小于等于目标值，递增值大于0时大于等于目标值)将跳出循环而不再进入循环体。</p>
+				<p>如果被省略，<b>默认值为1</b>。</p>
+			</blockquote>
+			<p><b>(3) 循环变量：</b></p>
+			<blockquote>
+				<p>本整数型变量将用作控制循环执行次数，在循环尾部将自动递增或递减该变量内的数值(由<b>变量递增值</b>参数决定)，在循环体中的可以直接取用此变量中的值。</p>
+				<p>如果被省略，将自动使用内部临时变量。</p>
+			</blockquote>
+			<p><b>(4) 变量递增值：</b></p>
+			<blockquote>
+				<p>每次执行到循环尾部时都将把此值加入到循环变量中去，此值可为正数或负数，如为正数则递增，为负数则递减。</p>
+				<p>如果被省略，<b>默认值为1</b>。</p>
+				<p>注意: 必须为本参数提供非0整数立即值，以便编译器建立循环结束条件。</p>
+			</blockquote>
+		</blockquote>
+		<p>实现正向循环计数，示例如下：</p>
+		<blockquote>
+			<p>循环语句的参数1、4忽略、参数2提供要循环的数量、参数3提供循环变量，然后在其子语句体内利用循环变量实现正向计数。</p> 
+			<p><img src="loop_img/5.png" border="0"></p>
+			<p>最终实现从0到9的计数。</p>
+			<p><img src="loop_img/6.png" border="0"></p>
+		</blockquote>
+		
+		<p>实现逆向循环计数，示例如下：</p>
+		<blockquote> 
+			<p>循环语句的参数1提供要循环的数量、参数2提供0、参数3提供循环变量、参数4提供-1，然后在其子语句体内利用循环变量实现逆向从10到1进行输出。</p>
+			<p><img src="loop_img/7.png" border="0"></p>
+			<p>最终实现了10到1的逆向计数。</p>
+			<p><img src="loop_img/8.png" border="0"></p>
+		</blockquote>
+		<p>利用其循环变量的特性，还可以实现循环正/逆向取出数组成员内容，如下：</p>
+		<blockquote>
+			<p><b>(1) </b>实现正向遍历数组成员，示例如下：</p>
+			<blockquote>
+				<p>循环语句的参数1、4忽略、参数2提供数组成员数、参数3提供循环变量，就可实现正向遍历输出数组成员。</p>
+				<p><img src="loop_img/1.png" border="0"></p>
+				<p>最终数组所有成员将被输出到编辑框中显示。</p>
+				<p><img src="loop_img/2.png" border="0"></p>
+			</blockquote>
+			<p><b>(2) </b>实现逆向遍历数组成员，示例如下：</p>
+			<blockquote>
+				<p>循环语句的参数1提供数组成员数、参数2提供0、参数3提供循环变量、参数4提供-1，就可实现逆向遍历输出数组成员。</p>
+				<p><img src="loop_img/3.png" border="0"></p>
+				<p>最终数组所有成员将被逆向输出到编辑框中显示。</p>
+				<p><img src="loop_img/4.png" border="0"></p> 
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="计次循环"></a>
+	<p>&nbsp;</p>
+	<h4>3、计次循环</h4>
+	<blockquote>
+		<p>本语句只有一个参数，用于提供子语句体要循环的次数。</p>
+		<p>本语句相当于<b>“循环”</b>语句的精简版，但只提供正向循环，在本语句的子语句体内利用<b>“取循环索引()”</b>方法就可以很方便的取出被循环的索引值。</p>
+		<blockquote>
+			<p><img src="loop_img/9.png" border="0"></p>
+			<p>利用本语句循环10次，取出循环索引到编辑框中。</p>
+			<p><img src="loop_img/10.png" border="0"></p>
+			<p>最终循环索引会依次显示在编辑框中。</p>
+			<p><img src="loop_img/11.png" border="0"></p>
+			
+			<p><font color="#FF0000">注：</font>本语句在<b>火山安卓</b>中不支持嵌套使用，如下图所示：</p>
+			<blockquote>
+				<p><img src="loop_img/14.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="逆向计次循环"></a>	
+	<p>&nbsp;</p>
+	<h4>4、逆向计次循环</h4>
+	<blockquote>
+		<p>本语句只有一个参数，用于提供子语句体要循环的次数。</p>
+		<p>本语句相当于<b>“循环”</b>语句的精简版，但只提供逆向循环，在本语句的子语句体内利用<b>“取循环索引()”</b>方法就可以很方便的取出被循环的索引值。</p>
+		<blockquote>
+			<p><img src="loop_img/15.png" border="0"></p>
+			<p>利用本语句逆向循环10次，取出循环索引到编辑框中。</p>
+			<p><img src="loop_img/16.png" border="0"></p>
+			<p>最终循环索引会逆向依次显示在编辑框中。</p>
+			<p><img src="loop_img/17.png" border="0"></p>
+			<p><font color="#FF0000">注：</font>本语句在<b>火山安卓</b>中不支持嵌套使用，如下图所示：</p>
+			<blockquote> 
+				<p><img src="loop_img/18.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="取循环索引"></a>
+	<p>&nbsp;</p>
+	<h4>5、取循环索引</h4>
+	<blockquote>
+		<p>本方法只能用于<b>“计次循环”</b>或<b>“逆向计次循环”</b>的子语句体中使用，用于取出循环索引值。</p>
+		<blockquote>
+			<p><img src="loop_img/19.png" border="0"></p>
+		</blockquote>
+		<p><font color="#FF0000">注1：</font>务必保证本方法位于子语句体内，如下图所示是错误的：</p>
+		<blockquote>
+			<p><img src="loop_img/12.png" border="0"></p>
+		</blockquote>
+		<p><font color="#FF0000">注2：</font>如果有多层循环嵌套，本方法只能取出最近层循环的索引值，无法取出其它循环层的循环索引。</p>
+		<blockquote>
+			<p>如下图所示的嵌套循环，其中<b>“取循环索引()”</b>方法取出的索引值为<b>“计次循环(2)”</b>的。</p>
+			<p><img src="loop_img/13.png" border="0"></p>
+		</blockquote>
+	</blockquote>
+	<a name="循环判断首"></a>
+	<p>&nbsp;</p>
+	<h4>6、循环判断首和循环判断尾</h4>
+	<blockquote>
+		<p><b>“循环判断首”</b>和<b>“循环判断尾”</b>语句必须配套使用，当<b>“循环判断首”</b>被执行后，首先会执行其子语句体的内容，然后会根据<b>“循环判断尾”</b>所提供的逻辑参数决定是否继续循环执行，如果参数为真则继续循环执行，否则跳出循环。</p>
+		<p>注：因本循环语句的判断条件是在循环语句的尾部，所以本循环在使用时会至少保证循环一次。</p>
+		<p>示例：</p>
+		<blockquote>
+			<p>在本语句的子语句体内对<b>“计数”</b>变量进行累计<b>+1</b>，并输出计数结果，实现正向计数效果。</p>
+			<p><img src="loop_img/20.png" border="0"></p>
+			<p>最终利用本语句实现了正向计数效果。</p>
+			<p><img src="loop_img/21.png" border="0"></p>
+			<p>同理，也可以实现逆向计数如下所示：</p>
+			<p><img src="loop_img/22.png" border="0"></p>
+			<p>最终实现了逆向计数。</p>
+			<p><img src="loop_img/23.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	<a name="判断循环"></a>	
+	<p>&nbsp;</p>
+	<h4>7、判断循环</h4>
+	<blockquote>
+		<p>本语句是先对其逻辑参数进行判断，根据其结果值（真或假）来决定是否开始循环，和<b>“循环判断首/尾”</b>正好相反。</p>
+		<p>示例：</p>
+		<blockquote>
+			<p>在本语句的子语句体内对<b>“计数”</b>变量进行累计<b>+1</b>，并输出计数结果，实现正向计数效果。</p>
+			<p><img src="loop_img/24.png" border="0"></p>
+			<p>最终利用本语句实现了正向计数效果。</p>
+			<p><img src="loop_img/21.png" border="0"></p>
+			<p>同理，也可以实现逆向计数如下所示：</p>
+			<p><img src="loop_img/25.png" border="0"></p>
+			<p>最终实现了逆向计数。</p> 
+			<p><img src="loop_img/23.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="跳出循环"></a>	
+	<p>&nbsp;</p>
+	<h4>8、跳出循环</h4>
+	<blockquote>
+		<p>本命令转移当前程序执行位置到当前所处循环体尾部的下一条语句处，可用于所有循环语句。</p>
+		<blockquote>
+			<p>如下图所示，当循环索引为5时执行<b>跳出循环</b>。</p>
+			<p><img src="loop_img/26.png" border="0"></p>
+			<p>最终循环提前结束。</p>
+			<p><img src="loop_img/27.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="到循环尾"></a>	
+	<p>&nbsp;</p>
+	<h4>9、到循环尾</h4>
+	<blockquote>
+		<p>本命令转移当前程序执行位置到当前所处循环体的尾部。</p>
+		<!-- <p>注意: 由于火山的所有循环类别关键字均没有循环尾语句，所以此关键字也可以看作为<b>“到循环首”</b>。</p> -->
+		<p>示例：</p>
+		<blockquote>
+			<p><img src="loop_img/28.png" border="0"></p>
+			<p>因循环体内对<b>“整数变量”</b>进行了一次判断，并执行了一次<b>“到循环尾”</b>相当于跳过了一个循环，所以最终会输出<b>2、3</b>。</p>
+			<p><img src="loop_img/29.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="Process.html">上一章</a>]&nbsp;&nbsp;  [<a href="lib.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

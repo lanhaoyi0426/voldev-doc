@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>火山软件面向对象程序设计_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台面向对象的程序设计方法" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="term.html">上一章</a>]&nbsp;&nbsp;  [<a href="structure.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">二、火山软件开发平台面向对象的程序设计方法</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<p>&nbsp;</p>
+	<h4>以火山视窗为例介绍：</h4>
+	<blockquote>
+		<p>● 假设有一家工厂，所生成的产品是电水壶，这种电水壶有这些主要特点：</p>	
+		<blockquote>
+			<p>1、由壶体和壶盖组成；</p>
+			<p>2、颜色是银白色的；</p>	
+			<p>3、有一个开关可以控制启动烧水；</p>	
+			<p>4、水烧开后会发出鸣叫声音报警。</p>	
+		</blockquote>
+		<p>按照面向对象的设计方法，我们把这个电水壶称为这个工厂的一<b>“类”</b>产品，简称为<b>“电水壶类”</b>，它具有同样的4个特点：</p>
+			
+		<blockquote>
+			<p>1、有两个成员<a href="structure.html#变量">变量</a>：壶体和壶盖；</p>	
+			<p>2、有一个成员<a href="structure.html#属性方法">属性</a>：颜色，它的值等于银白色；</p>	
+			<p>3、有一个成员<a href="structure.html#方法">方法</a>：烧水（即按下开关就开始烧水）；</p>	
+			<p>5、有一个成员<a href="structure.html#事件方法">事件</a>：水已经烧开警报。</p>	
+		</blockquote>
+		<p>&nbsp;</p>	
+		<blockquote>
+			<p style="text-indent:2em"><strong>变量</strong>用来存储类中的数据，<strong>属性</strong>用来表达或修改类的特征，<strong>方法</strong>用作执行类的功能，<strong>事件</strong>用来对外发送通知，<strong>类</strong>就是记录有一系列<strong>变量、属性、方法、事件</strong>成员的集合，所有具有这些特征成员的具体产品就叫做这个<strong>类的对象</strong>，这就是<strong>面向对象</strong>的程序设计理念来由。</p>
+			<p style="text-indent:2em">用前面的例子来讲，<b>“电水壶类”</b>就是电水壶的产品设计规范，而具体的单个电水壶产品就是<b>“电水壶类”</b>的对象（有时也叫对象实例）。</p>	
+			<p style="text-indent:2em">这就是<strong>类的封装</strong>，我们根据上述描述可以得出如下图所示代码：</p>	
+			<blockquote> 
+				<p><img src="object_img/1.png" border="0"></p>
+			</blockquote>
+			<p>假设火山可以驱动这个电水壶操作，那么上述类在火山中的一步一步的调用示例如下图所示：</p>
+			<blockquote>
+				<p>(1) 首先要定义一个类型为<b>“电水壶类”</b>的变量。</p>
+				<p><img src="object_img/2.png" border="0"></p>
+				<p>(2) 添加我的主窗口<b>“创建完毕”</b>事件。</p>
+				<p><img src="object_img/3.png" border="0"></p>
+				<p>(3) 在窗口创建完毕事件下调用<b>“电水壶变量.烧水()”</b></p>
+				<p><img src="object_img/4.png" border="0"></p>
+				<p>(4) 添加<b>“水烧开警告”</b>事件。</p>
+				<p><img src="object_img/5.png" border="0"></p>
+				<p>(5) 添加事件后显示一个信息框，提示水烧开了。</p>
+				<p><img src="object_img/6.png" border="0"></p>
+				<p>(6) 最终当火山程序运行时，会弹出水烧开的信息框，证明整个程序的执行流程是没有任何问题的。</p>
+				<p><img src="object_img/7.png" border="0"></p>
+			</blockquote>
+		<p>上述案例下载：<a href="volfile/a_object.zip" target="_blank">安卓平台</a>，<a href="volfile/w_object.zip" target="_blank">视窗平台</a>。</p>	
+		</blockquote>
+		<p>&nbsp;</p>	
+		<p>● 假设有一天，工厂想生产一种具有自动保温功能的电水壶，有两种方案：一是完全重新设计一个新的电水壶，二是在现有电水壶的基础上增加一个保温开关。很显然，第二种方式更经济实惠，工厂把这种新的电水壶称为<strong>保温电水壶</strong>，它增加了一个特点：</p>	
+		<blockquote>
+			<p>1、增加了一个开关： 保温，按下开关后可以对已经烧开的水进行自动保温。</p>
+		</blockquote>
+			<p style="text-indent:2em">按照前面的设计方法，由于新电水壶增加了一个成员，所以我们不能把它归纳到已有的<b>“电水壶类”</b>里面，但是我们可以建立一个新的类：<b>“保温电水壶类”</b>，它在<b>“电水壶类”</b>的基础上同样增加了一个新成员：</p>
+		<blockquote>
+			<p>1、成员方法：保温（即按下开关就开始保温）</p>
+		</blockquote>
+		<p>通过上述我们可以得出如下代码：</p>
+		<blockquote> 
+			<p><img src="object_img/8.png" ></p>
+		</blockquote>
+		<p style="text-indent:2em">由于它基于<b>“电水壶类”</b>设计而来，因此我们把<b>“电水壶类”</b>称为<b>“保温电水壶类”</b>的<strong>基础类</strong>或<strong>父类</strong>，把<b>“保温电水壶类”</b>称为<b>“电水壶类”</b>的<strong>继承类</strong>或<strong>子类</strong>，它们之间是<strong>继承</strong>与<strong>被继承</strong>的关系，继承类自动具有基础类的所有特征成员。</p>
+		<p style="text-indent:2em">由于<strong>继承类</strong>包括了<strong>基础类</strong>的所有成员，因此<strong>继承类</strong>也可以认为是<strong>基础类</strong>的一种。这个也很容易理解：我们可以把<b>“保温电水壶”</b>称为<b>“电水壶”</b>，但是不能把<b>“电水壶”</b>称为<b>“保温电水壶”</b>。假设客户要买1000个<b>“电水壶”</b>，现有产品数量不够时我们可以用<b>“保温电水壶”</b>来充数，但是客户要买1000个<b>“保温电水壶”</b>就绝对不能用<b>“电水壶”</b>来充数，是不是这个道理？</p>
+		<p style="text-indent:2em">从程序设计的角度来讲，就是我可以把一个数据类型为<b>“保温电水壶类”</b>的对象赋值到一个数据类型为<b>“电水壶”</b>的变量，但是不允许把一个数据类型为<b>“电水壶”</b>的对象赋值到一个数据类型为<b>“保温电水壶类”</b>的变量。</p>
+		
+		<blockquote>
+			<p>如下图所示：</p>
+			<p><img src="object_img/18.png" border="0"></p>
+			<p><img src="object_img/19.png" border="0" ></p>
+		</blockquote>
+		<p style="text-indent:2em">需要注意的是：如果把一个数据类型为<b>“保温电水壶类”</b>的对象赋值到一个数据类型为<b>“电水壶”</b>的变量，那么这个变量里面实际存储的还是一个<b>“保温电水壶类”</b>对象，并不会因为变量的数据类型为<b>“电水壶”</b>存储进去的对象的数据类型就也为<b>“电水壶”</b>了。这个也很好理解：工厂用<b>“保温电水壶”</b>充作<b>“电水壶”</b>交付给了客户，不会因为这个充数行为就导致<b>“保温电水壶”</b>产品变成<b>“电水壶”</b>产品了。</p>
+		<p style="text-indent:2em">这就是<strong>类的继承</strong>，可以如下所示调用<b>“保温电水壶类”</b>：</p>
+		<blockquote>
+			<p>(1) 首先定义<b>“保温电水壶类”</b>的成员变量。</p>
+			<p><img src="object_img/9.png" border="0"></p>
+			<p>(2) 在窗口创建完毕后调用<b>“烧水”</b>方法。</p>
+			<p><img src="object_img/10.png" border="0"></p>
+			<p>(3) 当水烧开后执行<b>“保温”</b>。</p>
+			<p><img src="object_img/11.png" border="0"></p>
+			<p>(4) 最终会弹出信息框提示，证明保温执行成功。</p>
+			<p><img src="object_img/12.png" border="0"></p>
+		</blockquote>
+		<p>上述案例下载：<a href="volfile/a_object2.zip" target="_blank">安卓平台</a>，<a href="volfile/w_object2.zip" target="_blank">视窗平台</a>。</p>	
+
+		<p>&nbsp;</p>
+		<p style="text-indent:2em">● 让我们继续假设，假设有一天工厂发现<strong>电茶壶</strong>的销路要比电水壶好，同样有两种方案：一是完全重新设计一个新的<strong>电茶壶</strong>，二是修改现有电水壶的烧水功能，将其改为烧茶。同样很显然，第二种方式更经济实惠。那么这种电茶壶的特点为：</p>	
+		 <blockquote>
+		 	<p>1、修改了电水壶的烧水功能，使其改去烧茶。</p>
+		 </blockquote>
+		<p style="text-indent:2em">同样，我们需要定义一个名为<b>“电茶壶类”</b>的类，然后定义一个同样名为<b>“烧水”</b>的方法，该方法覆盖了<b>“电水壶类”</b>中的原有名为<b>“烧水”</b>的方法，然后将<b>“电水壶类”</b>中的<b>“烧水”</b>方法标记为<a href="structure.html#虚拟方法">虚拟方法</a>（虚拟方法仅是一个标记，用作标记<b>“烧水”</b>方法可以被继承类覆盖），这样以后调用<b>“电茶壶类”</b>类的<b>“烧水”</b>方法时，就会改去烧茶，而不会去烧水。</p>	
+		<blockquote>
+			<p>(1) 如上所描，首先对<b>“电水壶类”</b>进行一些细微的修改。</p>
+			<blockquote>
+				<p><img src="object_img/13.png" border="0"></p>
+			</blockquote>
+			
+			<p>(2) 定义<b>“电茶壶类”</b>并继承电水壶类，添加<b>“烧水”</b>的虚拟方法。</p>
+			<blockquote><p><img src="object_img/14.png" border="0"></p></blockquote>
+			<p>(3) 在<b>“烧水”</b>虚拟方法下调用<b>“水烧开警告(假)”</b>，用于发送茶烧开完毕。</p>
+			<blockquote><p><img src="object_img/15.png" border="0"></p></blockquote>
+			<p>(4) 首先在主窗口中声明<b>“电茶壶类”</b>变量。</p>
+			<p>(5) 窗口创建完毕后调用<b>“烧水”</b>方法，本方法因设置了虚拟方法进行了修改，实际上是烧茶。</p>
+			<p>(6) 最后添加<b>“水烧开警告”</b>事件，判断茶是否烧开。</p>
+			<blockquote><p><img src="object_img/16.png" border="0"></p></blockquote>
+			<p>(7) 最终茶被烧开。</p>
+			<blockquote><p><img src="object_img/17.png" border="0"></p></blockquote>
+		</blockquote>
+		<p style="text-indent:2em">需要注意的是：如果把一个数据类型为<b>“电茶壶类”</b>的对象赋值到一个数据类型为<b>“电水壶”</b>的变量，据前所述，这个变量里面实际存放的还是一个<b>“电茶壶类”</b>的对象，因此如果调用该变量的<b>“烧水”</b>方法，实际上调用的还是<b>“电茶壶类”</b>的烧茶功能。</p>	
+		<p style="text-indent:2em">这就是<strong>类的多态</strong>，在<a href="structure.html#虚拟方法"><b>“虚拟方法”</b></a> 中的也有相应的操作案例可以学习。</p>
+			<p style="text-indent:2em">上述案例下载：<a href="volfile/a_object3.zip" target="_blank">安卓平台</a>，<a href="volfile/w_object3.zip" target="_blank">视窗平台</a>。</p>	
+		<p>&nbsp;</p>	
+		<p>● 以上就是火山中所使用的面向对象程序设计的全部内容了，最后一点其实与面向对象设计无关：</p>	
+		<p style="text-indent:2em">假设甲公司和乙公司都生产电水壶，商店如果同时进货了这两种电水壶，就必须在电水壶上分别贴上标签：<b>“甲公司的电水壶”</b>、<b>“乙公司的电水壶”</b>，以免引起混淆。</p>	
+		<p style="text-indent:2em">在程序设计里面，就对应为<b>“甲公司.电水壶类”</b>、<b>“乙公司.电水壶类”</b>，前面的<b>“甲公司”</b>和<b>“乙公司”</b>分别定义了一个命名空间，也叫做<a href="structure.html#包"><b>“包”</b></a>。包用作避免名称混淆，在同一个名称的包内，不允许存在相同名称的类，在不同名称的包内，可以存在相同名称的类。</p>	
+		<p style="text-indent:2em">所有在包中定义的类，其名称前被自动加上包名，<b>“包名.类名”</b>称为类的绝对名称。如果该类的名称在程序的所有包中均唯一或者在该类所处包内部引用此类,可以省略掉其包名来引用此类。</p>	
+		<p style="text-indent:2em">譬如，假设程序中不存在<b>“乙公司.电水壶类”</b>或者在<b>“甲公司”</b>包自身的代码内部，就可以直接使用<b>“电水壶类”</b>来引用<b>“甲公司.电水壶类”</b>。</p>	
+		<p style="text-indent:2em">注意：包名中间也可以包括句点，譬如<b>“湖北.武汉.甲公司”</b>或<b>“湖南.长沙.乙公司”</b>，这样的命名空间更明确清晰一些，也更具有唯一性。</p>	
+		<p style="text-indent:2em">上述内容可参考关于<a href="structure.html#包"><b>“包”</b></a>中的介绍案例。</p>	
+			
+			
+	</blockquote>	
+
+	 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="term.html">上一章</a>]&nbsp;&nbsp;  [<a href="structure.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,187 @@
+
+<html>
+
+<head>
+<title>火山软件开发平台介绍_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> <!-- [<a href="dataType.html">上一章</a>] -->&nbsp;&nbsp;  [<a href="sdk.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">一、火山软件开发平台概述</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="介绍"></a>
+	<p>&nbsp;</p>
+	<h4>1、火山开发平台介绍</h4>
+	<blockquote>
+		<p  style="text-indent:2em">火山软件开发平台是完全拥有自主知识产权、一种目的<strong>硬件设备无关、目的软件环境无关、易学易用实用、完全本地化</strong>的中文软件快速开发平台。</p>
+		<p style="text-indent:2em">火山平台采用独创的<strong>“语言之上的语言”</strong>（LOL）技术，成功屏蔽了火山程序对特定目标环境的依赖。用户只需要学习掌握火山程序语言，就可以针对各种目的环境进行软件开发。同时由于火山程序编译器所编译出来的是目标语言的源代码，因此能够最大限度地提升火山程序员与第三方的合作和资源共享效率， 以及所开发火山程序被社会的认可程度。</p>
+		<p style="text-indent:2em"><a href="http://www.voldp.com/nav_lang.htm" target="_blank">本地化编程语言具有极其重要的价值及社会意义</a>。</p>
+		<p style="text-indent:2em">以下为火山软件开发平台的架构图：</p>
+		<div align="center">
+		<table border="1" width="80%" style="border-collapse: collapse" bgcolor="#F2F3F8">
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#D2D2DE">火山平台用户源程序 </td>
+			</tr>
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#F2F3F8">支持对应目标环境的火山类库</td>
+			</tr>
+			<tr>
+				<td colspan="6" align="center" height="40" bgcolor="#F2F3F8">支持对应目标环境的火山编译器</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">
+				Assembly / C / C++ / C# ......</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">Java</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">Objective C 
+				/ Swift</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">HTML5 + JavaScript + CSS</td>
+				<td align="center" width="15%" height="40" bgcolor="#D2D2DE">PHP</td>
+				<td align="center" width="10%" rowspan="3" height="40">其它 .....</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言编译器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言解释器</td>
+				<td align="center" width="15%" height="40" bgcolor="#F2F3F8">本地语言解释器</td>
+			</tr>
+			<tr>
+				<td align="center" width="15%" height="40">Windows桌面、Linux/Unix服务器端、嵌入式设备、单片机 ......</td>
+				<td align="center" width="15%" height="40">安卓移动端、安卓嵌入式设备、服务器 ......</td>
+				<td align="center" width="15%" height="40">ios应用</td>
+				<td align="center" width="15%" height="40">网站前端展示、HTML5跨平台应用。</td>
+				<td align="center" width="15%" height="40">WEB服务器端</td>
+			</tr>
+		</table>
+	</div>
+		
+		
+		
+	</blockquote>	
+	<a name="特点"></a>
+	<p>&nbsp;</p>
+	<h4>2、火山开发特点</h4>
+	<blockquote>
+		
+		<p><h5>2.1 全中文支持</h5></p>
+		<blockquote>
+			<p style="text-indent:2em">对普通用户而言，火山软件开发平台实现了彻底的中文化开发，用户无需掌握太多的专业知识、无需学习英文，即可快速开发高效实用的各类应用软件。目前具有<a href="http://www.voldp.com/voldev.html" target="_blank"><strong>火山安卓软件开发平台</strong></a>和<a href="http://www.voldp.com/voldev.html" target="_blank"><strong>火山视窗软件开发平台</strong></a>两个子平台，用作分别支持用户开发基于安卓和Windows视窗操作系统的应用程序。</p>
+			<p>如下图为火山视窗程序部分演示代码：</p>
+			<blockquote>
+				<p><img src="summary_img/1.png" border="0"></p>
+			</blockquote>
+			<p>如下图为火山安卓程序部分演示代码：</p>
+			<blockquote>
+				<p><img src="summary_img/2.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+
+		<p><h5>2.2 可视化编程</h5></p>
+		<blockquote>
+			<p><strong>(1) 界面可视化</strong></p>
+			<blockquote>
+				<p>火山视窗平台支持界面可视化，设计的程序界面所见即所得，如下图所示：</p>
+				<blockquote>
+					<p><img src="summary_img/3.png" border="0"></p>
+					<p>最终运行后：</p>
+					<p><img src="summary_img/4.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p><strong>(2) 代码可视化</strong></p>
+			<blockquote>
+				<p>火山平台中<a href="structure.html#类">类</a>、<a href="structure.html#变量">变量</a>、<a href="structure.html#常量">常量</a>、<a href="structure.html#方法">方法</a>均采用表格可视化设计，可节省关键词记忆、提高程序开发效率。</p>
+				<blockquote>
+					<p><img src="summary_img/5.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	
+		<p><h5>2.3 语句快速录入</h5></p>
+		<blockquote>
+			<p>火山平台内置了<strong>“首/全拼输入法”</strong>，可快速使用中文名称首拼或全拼进行程序代码输入。</p>
+			<p>譬如：<strong>信息框()</strong> 只需要输入<strong>“xxk”</strong>即可。</p>
+			<blockquote>
+				<p><img src="summary_img/6.png" border="0"></p>
+			</blockquote> 
+			<p>除了<strong>“首/全拼输入法”</strong>外，火山中对于很多符号的输入也都进行了智能处理。</p>
+			<p>譬如：进行条件比较时需要双等号，但在火山中仅需要输入一个等号即可，火山会自动补充。</p>
+			<blockquote>
+				<p><img src="summary_img/7.gif" border="0"></p>
+			</blockquote>
+			<p>又譬如：在调用某方法时，使用了中文状态下的括号和逗号，火山会自动转换成英文符号。</p>
+			<blockquote>
+				<p><img src="summary_img/8.gif" border="0"></p>
+			</blockquote>
+			<p>对于<strong><a href="Symbol.html#且">“&&”</a></strong>(且)和<strong><a href="Symbol.html#或">“||”</a></strong>(或)这两个<a href="Symbol.html#运算符">关系运算符</a>，可通过拼音快速输入。</p>
+			<blockquote>
+				<p><img src="summary_img/9.gif" border="0"></p>
+				<p><img src="summary_img/10.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<p><h5>2.4 代码即文档</h5></p>
+		<blockquote>
+			<p style="text-indent:2em">在火山中只要不刻意使用奇奇怪怪的名称进行命名，基本可以实现代码即文档，即使是没有注释、或者说非常少量的注释也可以轻松的阅读源代码，非常便于代码传播与交流，这是其它编程语言所不具备的特性。</p>
+		</blockquote>
+		
+		<p><h5>2.5 参数引导</h5></p>
+		<blockquote>
+			<p style="text-indent:2em">通过参数引导，可减少用户记忆量，减少出错的可能性。</p>
+			<p style="text-indent:2em">火山中每个方法都有各自的参数，想要记住所有方法有哪些参数以及使用方法显然是不太现实。在程序实际开发过程中，通常都需要利用<a href="lib.html">火山即时帮助系统</a>或官方图文教程来学习使用这个方法，而参数引导技术就即时帮助中的一种功能。</p>
+			<p>如下图所示：</p> 
+			<blockquote>
+				<p>当输入<a href="Symbol.html#逗号">参数分隔符</a>时，注意观察悬浮提示颜色变化，会智能提示当前正在输入哪个参数。</p>
+				<p><img src="summary_img/11.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<p><h5>2.6 跨平台实现语法统一</h5></p>
+		<blockquote>
+			<p>如<a href="#特定">“2.1 全中文支持”</a>中的例图可知，即使是开发平台不同，但程序语法几乎是一致的。</p>
+			<p>最终可以达到，学会其中任意一个开发平台后，都可以轻松实现火山软件开发一通百通，快速开发各类应用软件。</p>
+		</blockquote>
+		
+		
+	</blockquote>	
+	<a name="差异"></a>
+	<p>&nbsp;</p>
+	<h4>3、火山平台差异</h4>
+	<blockquote>
+		<h5>3.1 关于火山安卓软件开发平台</h5>
+		<blockquote>
+			<p style="text-indent:2em">火山安卓软件开发平台由“<b>火山软件开发基础平台</b>”+“<b>支持安卓目标环境的火山类库</b>”+“<b>支持安卓目标环境的编译器/调试器插件及相关工具</b>”三部分组成，能够将用户开发的火山源程序编译为可以在安卓系统下运行的Java源程序。</p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<h5>3.2 关于火山视窗软件开发平台</h5>
+		<blockquote>
+			<p style="text-indent:2em">火山视窗软件开发平台由“<b>火山软件开发基础平台</b>”+“<b>支持windows视窗系统目标环境的火山类库</b>”+“<b>支持windows视窗系统目标环境的编译器/调试器插件及相关工具</b>”三部分组成，能够将用户开发的火山源程序编译为可以在windows视窗系统下运行的C++源程序。</p>
+			<p style="text-indent:2em">火山视窗支持编译<strong>“32/64位”</strong>的exe可执行文件和dll动态链接库，并全面支持Unicode(统一码）字符集。</p>
+		</blockquote>
+	</blockquote>	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"><!-- [<a href="dataType.html">上一章</a>] -->&nbsp; &nbsp;  [<a href="sdk.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

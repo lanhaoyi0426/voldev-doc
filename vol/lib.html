@@ -1,0 +1,288 @@
+
+<html>
+
+<head>
+<title>火山软件类库方法的识别与调用_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台类库方法的识别与调用" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="loop.html">上一章</a>]&nbsp;&nbsp; [<a href="debug.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">九、火山软件开发平台类库方法的识别与调用</h2>
+<p>&nbsp;</p>
+<blockquote>
+	
+	<a name="分类"></a>
+	<p>&nbsp;</p>
+	<h4>1、概述</h4>
+	<blockquote>
+		<p>在火山核心库中存在大量的类，每个类都有多个方法，这些方法在火山中又进行了分类，不同类型的方法其调用方式也不一样。</p>
+		<p>本节的内容主要利用火山帮助页，正确的识别不同类型的方法，以及如何正确的使用这些方法，从而快速掌握火山核心库的使用。</p>
+		<p>火山中的方法分类如下：</p>
+		<blockquote>
+			<p>1. <a href="#通常方法">通常方法</a></p>
+			<p>2. <a href="#静态方法">静态方法</a></p>
+			<blockquote>
+				<p>(1) <a href="#普通静态方法">普通静态方法</a></p>
+				<p>(2) <a href="#动态调用">支持动态方式调用的静态方法</a></p>
+				<p>(3) <a href="#全局静态方法">全局静态方法</a></p>
+			</blockquote>
+			<p>3. <a href="#写属性">属性写方法</a></p>
+			<p>4. <a href="#读属性">属性读方法</a></p>
+			<p>5. <a href="#事件">事件方法</a></p>
+			
+			<p>6. <a href="#虚拟方法">虚拟方法</a></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="通常方法"></a>
+	<p>&nbsp;</p>
+	<h4>2、通常方法的识别与调用</h4>
+	<blockquote>
+		<p><b>识别：</b></p>
+		<blockquote>
+			<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#通常方法">通常方法</a></b>就可以在帮助页中看到<b>“通常方法”</b>的分类。</p>
+			<p>如下图所示为<b>“编辑框”</b>组件的部分通常方法：</p>
+			<p><img src="lib_img/3.png" border="0"></p>
+			<p>点击帮助页中的某个方法，也可以在方法的<b>类别</b>处看到<b>“通常方法”</b>的关键字。</p>
+			<p><img src="lib_img/1.png" border="0"></p>
+		</blockquote>
+		<p><b>调用：</b></p>
+		<blockquote>
+			<p>通常方法调用时通常需要通过类对象来访问。</p>
+			<p>如下图所示，通过编辑框组件的名称，就可以调用当前组件中的通常方法。</p>
+			<p>除了这种方式，如果某个方法返回一个类对象，也可以直接通过类对象来调用，如: <strong>方法1 ().XX方法 ()</strong></p>
+			<p><img src="lib_img/2.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="静态方法"></a>
+	<p>&nbsp;</p>
+	<h4>3、静态方法</h4>
+	<blockquote>
+		<p>在静态方法中，又分为<strong>“普通静态方法”</strong>、<strong>“支持动态格式调用的静态方法”</strong>和<strong>“全局静态方法”</strong>，其识别和调用方式均不相同，分别如下：</p>
+		<blockquote>
+			<a name="普通静态方法"></a>
+			<h5>3.1 普通静态方法的识别与调用</h5>
+			<blockquote>
+				<p><b>识别：</b></p>
+				<blockquote>
+				<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#静态方法">静态方法</a></b>就可以在帮助页中看到<b>“静态方法”</b>的分类。</p> 
+					<p>如下图所示为<b>“加解密类”</b>中的部分静态方法：</p>
+					<p><img src="lib_img/4.png" border="0"></p>
+					<p>点击帮助页中的某个静态方法，也可以在方法的<b>类别</b>处看到<b>“静态方法”</b>的关键字，访问权限为<b>“公开、静态”</b>。</p>
+					<p><img src="lib_img/5.png" border="0"></p>
+				</blockquote>
+				<p><b>调用：</b></p>
+				<blockquote>
+					<p>静态方法调用时可直接通过类名访问。</p>
+					<p>如下图所示，通过<b>“加解密类”</b>就可以直接访问<b>“加密_RC4”</b>方法。</p>
+					<p><img src="lib_img/6.png" border="0"></p>
+				</blockquote>
+			</blockquote>	
+			<p>&nbsp;</p>
+			<a name="动态调用"></a>
+			<h5>3.2 支持动态格式调用的静态方法，如何识别与调用</h5>
+			<blockquote>
+				<p><b>识别：</b></p>
+				<blockquote>
+				<p>本类型方法本质上也是静态方法，只是增加了<b><a href="structure.html#动态方法">“支持动态格式调用”</a></b>的特性。</p>
+				<p>在帮助页中会全部归类为<b>“静态方法”</b>，至于是否支持<b>“动态格式调用”</b>则需要打开方法的帮助页进行查看。</p>
+					<p>如下图所示为<b>“JSON对象类”</b>中的部分静态方法：</p>
+					<p><img src="lib_img/7.png" border="0"></p>
+					<p>如果在方法的帮助页中没有看到<b>“支持以动态格式调用”</b>关键字，就证明本方法为普通的静态方法。</p>
+					<p><img src="lib_img/8.png" border="0"></p>
+				</blockquote>
+				<p><b>调用：</b></p>
+				<blockquote>
+					<p>本方法有两种调用方式：</p>
+					<blockquote>
+						<p>(1) 通过类对象访问：其第一个参数被移动到方法访问对象上，这种方式在编译时将被自动转换为第一种方式。</p>
+						<blockquote>
+							<p><img src="lib_img/9.png" border="0"></p>
+						</blockquote>
+						<p>(2) 通过类名访问：标准的静态方法访问方式。</p>
+						<blockquote>
+							<p><img src="lib_img/10.png" border="0"></p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>	
+			
+			<a name="全局静态方法"></a>
+			<p>&nbsp;</p>
+			<h5>3.3 全局静态方法的识别与调用</h5>
+			<blockquote>
+				<p><b>识别：</b></p>
+				<blockquote>
+				<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#全局静态方法">全局静态方法</a></b>就可以在帮助页中看到<b>“全局静态方法”</b>的分类。</p> 
+					<p>如下图所示为<b>“文本类”</b>中的部分全局静态方法：</p>
+					<p><img src="lib_img/22.png" border="0"></p>
+					<p>点击帮助页中的某个方法，也可以在方法的<b>类别</b>处看到<b>“全局静态方法”</b>的关键字。</p>
+					<p><img src="lib_img/23.png" border="0"></p>
+				</blockquote>
+				<p><b>调用：</b></p>
+				<blockquote>
+					<p>全局静态方法可以直接通过方法名进行访问。</p>
+					<p>如下图所示，不需要输入类名、也不需要定义变量就可以直接调用“分割子文本()”方法。</p>
+					<p><img src="lib_img/24.png" border="0"></p>
+				</blockquote>
+			</blockquote>	
+			
+		</blockquote>
+	</blockquote>
+	
+	
+	
+	
+	<a name="写属性"></a>	
+	<p>&nbsp;</p>
+	<h4>4、属性写方法的识别与调用</h4>
+	<blockquote>
+		<p><b>识别：</b></p>
+		<blockquote>
+		<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#属性方法">属性写方法</a></b>就可以在帮助页中看到<b>“属性写方法”</b>的分类。</p>
+			<p>如下图所示为<b>“编辑框”</b>组件中的部分属性写方法：</p>
+			<p><img src="lib_img/11.png" border="0"></p>
+			<p>点击帮助页中的某个属性写方法，也可以在方法的<b>类别</b>处看到<b>“属性写方法”</b>的关键字。</p>
+			<p><img src="lib_img/12.png" border="0"></p>
+		</blockquote>
+		<p><b>调用：</b></p>
+		<blockquote>
+			<p>属性写方法有两种调用方式，如下图所示：</p>
+			<blockquote>
+				<p>通过变量属性表或代码语句调用。</p>
+				<p>注：如果属性值为类数据类型(<a href="structure.html#常量类">常量类</a>除外)，不支持在表格中调用。</p>
+				<p><img src="lib_img/13.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>	
+	
+	<a name="读属性"></a>	
+	<p>&nbsp;</p>
+	<h4>5、属性读方法的识别与调用</h4>
+	<blockquote>
+		<p><b>识别：</b></p>
+		<blockquote>
+		<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#属性方法">属性读方法</a></b>就可以在帮助页中看到<b>“属性读方法”</b>的分类。</p>
+			<p>如下图所示为<b>“编辑框”</b>组件中的部分属性读方法：</p>
+			<p><img src="lib_img/14.png" border="0"></p>
+			<p>点击帮助页中的某个属性读方法，也可以在方法的<b>类别</b>处看到<b>“属性读方法”</b>的关键字。</p>
+			<p><img src="lib_img/15.png" border="0"></p>
+		</blockquote>
+		<p><b>调用：</b></p>
+		<blockquote>
+			<p>通过类对象调用属性名即可。</p>
+			<blockquote>
+				<p><img src="lib_img/16.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>	
+	
+	
+	<a name="事件"></a>
+	<p>&nbsp;</p>
+	<h4>6、事件方法的识别与调用</h4>
+	<blockquote>
+		<h5>5.1 识别与调用</h5>
+		<blockquote>
+			<p><b>识别：</b></p>
+			<blockquote>
+			<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#事件方法">事件方法</a></b>就可以在帮助页中看到<b>“事件定义方法”</b>的分类。</p> 
+				<p>如下图所示为<b>“编辑框”</b>组件中的部分事件方法：</p>
+				<p><img src="lib_img/17.png" border="0"></p>
+				<p>点击帮助页中的某个事件方法，也可以在方法的<b>类别</b>处看到<b>“事件定义方法”</b>的关键字。</p>
+				<p><img src="lib_img/18.png" border="0"></p>
+			</blockquote>
+			<p><b>调用：</b></p>
+			<blockquote>
+				<p>事件调用共有两种方式，如下：</p>
+				<blockquote>
+					<p>(1) 通过变量<strong>“类型”</strong>的小按钮可以添加事件。</p>
+					<blockquote>
+						<p><img src="lib_img/19.gif" border="0"></p>
+					</blockquote>
+					<p>(2) 通过右键<strong>“类型”</strong>添加。</p>
+					<blockquote>
+						<p><img src="lib_img/20.png" border="0"></p>
+						<p>选择“添加XX的事件接受及虚拟方法”菜单后，会弹出一个事件选择窗口，选择自己要添加的事件进行添加即可。</p>
+						<p><img src="lib_img/21.png" border="0"></p>
+					</blockquote>
+					
+				</blockquote>
+				
+			</blockquote>
+		</blockquote>
+		<h5>5.2 事件不被触发时的处理方案</h5>
+		<blockquote>
+			<p>当事件不触发时可通过<a href="keyword.html#挂接事件"><strong>“挂接事件”</strong></a>解决。</p>
+		</blockquote>
+	</blockquote>	
+	
+	
+	
+	<a name="虚拟方法"></a>
+	<p>&nbsp;</p>
+	<h4>7、虚拟方法的识别与调用</h4>
+	<blockquote>
+		<p><b>识别：</b></p>
+		<blockquote>
+			<p>打开某类的帮助页，如果此类拥有<b><a href="structure.html#虚拟方法">虚拟方法</a></b>就可以在帮助页中看到<b>“虚拟方法”</b>的分类。</p> 
+			<p>如下图所示为<b>“窗口”</b>中的部分虚拟方法：</p>
+			<p><img src="lib_img/25.png" border="0"></p>
+			<p>点击帮助页中的某个虚拟方法，也可以在方法的<b>类别</b>处看到<b>“虚拟方法”</b>的关键字。</p>
+			<p><img src="lib_img/26.png" border="0"></p> 
+		</blockquote>
+		<p><b>调用：</b></p>
+		<blockquote>
+			
+			<p>虚拟方法调用共有两种方式，如下：</p>
+			<blockquote>
+				<p>(1) 通过<strong>“类名”</strong>的小按钮可以添加虚拟方法。</p>
+				<blockquote>
+					<p><img src="lib_img/26.gif" border="0"></p>
+				</blockquote>
+				<p>(2) 通过右键添加。</p>
+				<blockquote>
+					<p><img src="lib_img/27.png" border="0"></p>
+					<p>选择“添加XX的事件接受及虚拟方法”菜单后，会弹出一个选择窗口，选择自己要添加的虚拟方法进行添加即可。</p>
+					<p><img src="lib_img/28.png" border="0"></p>
+				</blockquote>
+				
+			</blockquote>
+
+		</blockquote>
+		<p><b>虚拟方法的作用：</b></p>
+		<blockquote>
+			<p>如果在火山中，某个类中的某个方法不能满足使用需求，但是我们又不想重新定义一个方法来操作，这个时候就可以利用火山的<strong>“虚拟方法”</strong>来实现对这个方法进行重写，这样的重写操作在火山中就称为虚拟方法。</p>
+			<p>具体可看<a href="structure.html#虚拟方法">“定义虚拟方法”</a>中的示例。</p>
+		</blockquote>
+	</blockquote>	
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="loop.html">上一章</a>]&nbsp;&nbsp; [<a href="debug.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

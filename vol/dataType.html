@@ -1,0 +1,533 @@
+
+<html>
+
+<head>
+<title>火山软件基本数据类型介绍_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台数据类型介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Symbol.html">上一章</a>]&nbsp;&nbsp;  [<a href="keyword.html">下一章</a>] </p> 
+</blockquote>
+
+<h2 align="center">五、火山软件开发平台数据类型介绍</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="数据类型"></a>
+	<p>&nbsp;</p>
+	<h4>1、数据类型</h4>
+	<blockquote><a name="了解数据类型"></a>
+		<p><b>1.1 了解数据类型</b></p>
+		<blockquote>
+			<p style="text-indent:2em">数据：是指能够输入到计算机中，并能够被计算机识别和加工处理的符号的集合，是程序处理的最小对象。如：<b>数值、字符、图像</b>和<b>声音</b>等都是数据。数据在程序中通常以<b>变量</b>或<b>常量</b>的方式被引用，不同的数据特点有不同的存储要求和处理方法。</p>
+			<p style="text-indent: 2em;">在火山中数据类型可以分为两种：基本数据类型和对象类。</p>
+			<p style="text-indent: 2em;">基本数据类型共有10种：
+			<a href="dataType.html#字节">字节</a>、
+			<a href="dataType.html#短整数">短整数</a>、
+			<a href="dataType.html#整数">整数</a>、
+			<a href="dataType.html#长整数">长整数</a>、
+			<a href="dataType.html#变整数">变整数</a>、
+			<a href="dataType.html#小数">小数</a>、
+			<a href="dataType.html#逻辑型">逻辑型</a>、
+			<a href="dataType.html#字符">字符</a>、
+			<a href="dataType.html#文本型">文本型</a>、
+			<!-- <a href="dataType.html#模板类型">模板类型1~模板类型8</a></p> -->
+			<p style="text-indent: 2em;">其中<b>字节、短整数、字符、整数、长整数、小数、变整数</b>这七种类型又统称为数值数据类型。</p>
+			<p style="text-indent: 2em;">数值数据类型按照所能容纳数值范围的大小(也称为精度)从小到大顺序排列为：<b>字节 < 短整数 < 字符 < 整数 < 长整数 < 小数</b></p>
+			<p style="text-indent: 2em;">注：精度小的数值类型在需要时可以被自动转换为精度大的数值类型，而精度大的数值类型必须使用<a href="Symbol.html#强制类型">“强制转换”</a>操作符才能转换为精度小的数值类型。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="data_img/59.png" border="0"></p>
+			</blockquote>
+			<p style="text-indent: 2em;"><b>对象类：</b>在火山中是所有类的最基础类(父类)。</p>
+		</blockquote><a name="数据类型使用"></a>
+		<p><b>1.2 数据类型的使用</b></p>
+		<blockquote>
+			<p><b>1.2.1 使用方式</b> </p>
+			<blockquote>
+				<p>数据类型可以在类定义表的<b>“基础类”</b>中使用，也可以在变量、常量、参数定义表的<b>“类型”</b>中和方法中的<b>“返回值类型”</b>一栏中使用，如下图所示：</p>
+				<blockquote>
+					<p>类型在填写时有以下注意事项：</p>
+					<p>1. 基础类中不允许提供基本数据类型。</p>
+					<p>2. 常量的类型只能为基本数据类型。</p>
+					<!-- <p>3. 变量的类型不能提供<a href="#模板类型">模板类型</a>。</p>
+					<p>4. 方法的参数和返回值可以提供模板类型，但是也不是直接可以用的，具体可看<a href="#模板类型">模板类型</a>中的介绍。</p> -->
+					<p><img src="data_img/1.png" border="0" ></p>
+				</blockquote>
+			</blockquote>
+			<p><b>1.2.2 基本数据类型的输入字</b> </p>
+			<blockquote>
+				<p>在火山中基本数据类型除了使用全拼、首拼进行输入外，还提供了额外的输入字，如下所示：</p>
+				<blockquote>
+					<p>字节：sbyte；</p>
+					<p>短整数：short；</p>
+					<p>字符：wchar；</p>
+					<p>整数：int；</p>
+					<p>变整数：vint；</p>
+					<p>长整数：long；</p>
+					<p>小数：double；</p>
+					<p>逻辑型：bool；</p>
+					<p>文本型：string。</p>
+					<p>如文本型的<b>“string”</b>输入<b>“st”</b>就可以将文本型提示出来。</p>
+					<p><img src="data_img/2.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>
+	<p>&nbsp;</p><a name="基本"></a>
+	<h4>2、基本数据类型</h4>
+	<blockquote>
+		<a name="字节"></a>
+		<p><h5>2.1 字节</h5></p>
+		<blockquote>
+			<p><b>字节</b>(有符号)是二进制数据的单位，在火山中基本数据类型之一，有效值范围从<b>-128到127</b>，占用1个字节空间。</p>
+			<!-- <p>字节类型一般情况下很少用到，不需要去定义变量或常量使用，除非你对二进制特别了解。</p>
+			<p>如果真的需要手动定义字节类型时，字节的数据范围必须控制在<b>-128到127</b>(包含)之间。</p> -->
+			<p>如下图所示写法是错误的：</p>
+			<blockquote>
+				<p><img src="data_img/3.png" border="0"></p>
+				<p>如果按照上图所写进行调试程序，最终会在火山输出栏提示如下错误：</p>
+				<p><img src="data_img/4.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="短整数"></a>
+		<p><h5>2.2 短整数</h5></p>
+		<blockquote>
+			<p><b>短整数</b>用于表达较短的整数值，有效值范围从<b>-32768到32767</b>，占用2个字节空间。</p>
+			<blockquote>
+				<p><img src="data_img/5.png" border="0"></p>
+			</blockquote>
+			<p>如果想要让短整数转换成整数或长整数，直接赋值即可，如下图：</p>
+			<blockquote>
+				<p><img src="data_img/13.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<a name="整数"></a>
+		<p><h5>2.3 整数</h5></p>
+		<blockquote>
+			<p><b>整数</b>的有效值范围从<b>-2147483648到2147483647</b>，占用4个字节空间。</p>
+			<p>整数是处理和存储效率最高的数值数据类型，如果所欲处理的数值不包含小数部分，一般都使用本数据类型。</p>
+			<blockquote>
+				<p><img src="data_img/6.png" border="0"></p>
+			</blockquote> 
+			<p>如果想要让整数转换成短整数需要进行强制转换操作，需要注意整数值的范围是否在短整数的范围之内，如下图所示：</p>
+			<blockquote>
+				<p><img src="data_img/14.png" border="0"></p>
+			</blockquote>
+			<p>整数想要转换成长整数，直接赋值即可： </p>
+			<blockquote>
+				<p><img src="data_img/15.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="长整数"></a>
+		<p><h5>2.4 长整数</h5></p>
+		<blockquote>
+			<p><b>长整数</b>有效值范围从<b>-9223372036854775808到9223372036854775807</b>，占用8个字节空间。</p>
+			<p>在软件开发过程中，如果数值超过了整数范围，那就必须使用长整数类型。如果在你不确定数值范围是否会超过整数，例如：两个较大整数的相乘，结果可以使用<b>长整数</b>类型来表达。</p>
+			<blockquote>
+				<p><img src="data_img/7.png" border="0"></p>
+			</blockquote> 
+			<p>长整数转换成整数或短整数需要进行强制转换，且必须保证在目标类型的范围值之内，如下图所示：</p>
+			<blockquote> 
+				<p><img src="data_img/16.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<a name="变整数"></a>
+		<p><h5>2.5 变整数</h5></p>
+		<blockquote>
+			<p><b>变整数</b>主要提供给火山视窗平台使用，在编译64位程序时等效于长整数类型，编译32位程序时等效于整数类型。在火山安卓平台中固定等效于整数类型。</p>
+			<p>通常用作表达地址指针或句柄之类的本地数据，普通用户一般无需使用。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>在视窗平台中<b>“取窗口句柄()”</b>方法会返回变整数。</p>
+				<p><img src="data_img/8.png" border="0"></p>
+				<p>然后就可以定义变整数变量，去使用这个类型。</p>
+				<p><img src="data_img/9.png" border="0"></p>
+			</blockquote>
+			
+		</blockquote>
+		<a name="小数"></a>
+		<p><h5>2.6 小数</h5></p>
+		<blockquote>
+			<p><b>双精度小数</b>有效值范围从<b>2.2250738585072014e-308到1.7976931348623158e+308</b>（最长小数点后15位），占用8个字节空间。</p>
+			<blockquote>
+				<p><img src="data_img/10.png" border="0"></p>
+			</blockquote>
+			<p>小数数值也可以通过强制转换，转换成整数、短整数或长整数，但是会丢失精度，如下图所示：</p>
+			<blockquote> 
+				<p>将一个初始值为1.6小数变量强制转换成整数。</p>
+				<p><img src="data_img/17.png" border="0"></p>
+				<p>最终可以看到结果为1，小数部分的内容会全部丢失。</p>
+				<p><img src="data_img/18.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<a name="逻辑型"></a>
+		<p><h5>2.7 逻辑型</h5></p>
+		<blockquote>
+			<p><b>逻辑型</b>是<a href="term.html#Number">逻辑立即数</a>的基本类型，也就是说有效值为<b>“真”</b>或<b>“假”</b></p>
+			<blockquote> 
+				<p><img src="data_img/11.png" border="0"></p>
+			</blockquote>
+			<p>在火山中，逻辑值也可以转换为文本格式，不同的平台表现方式不同，但都是使用<b>“到文本()”</b>进行转换。</p>
+			<blockquote>
+				<p><b>2.7.1 火山视窗平台</b></p>
+				<blockquote>
+					<p>当逻辑值以文本格式展示时：其中<b>“1”</b>表示<b>“真”</b>，<b>“0”</b>表示<b>“假”</b>，如下图所示，使用<b>“到文本()”</b>方法转换：</p>
+					<blockquote>
+						<p><img src="data_img/19.png" border="0"></p>
+						<p>运行结果：</p>
+						<p><img src="data_img/20.png" border="0"></p>
+					</blockquote>
+					<p>如果想要重新转换为逻辑值，可以使用<b>“文本到逻辑值()”</b>方法转换。</p>
+					<blockquote>
+						<p>在<b>“文本到逻辑值()”</b>方法的帮助页中可以看到，只要参数提供<b>“真”</b>、<b>“true”</b>、<b>“1”</b>结果值都会返回真，其它任意文本都会返回假。</p>
+						<p><img src="data_img/21.png" border="0"></p>
+						<p>因此想要结果返回真，正确的方式就是从如下三个方法中选择其中一个即可。</p>
+						<p><img src="data_img/22.png" border="0"></p>
+					</blockquote>
+					
+				</blockquote>
+				<p><b>2.7.2 火山安卓平台</b></p>
+				<blockquote>
+					<p>当逻辑值以文本格式展示时：其中<b>“true”</b>表示<b>“真”</b>，<b>“false”</b>表示<b>“假”</b>，如下图所示，使用<b>“到文本()”</b>方法转换：</p>
+					<blockquote>
+						<p><img src="data_img/23.png" border="0"></p>
+						<p>运行结果：</p> 
+						<p><img src="data_img/24.png" border="0"></p>
+					</blockquote>
+					<p>如果想要重新转换为逻辑值，使用<b>“文本到逻辑值()”</b>方法转换，本方法只能转换<b>“true”</b>为真，其它任意文本都会返回假。</p>
+					<blockquote>
+						<p>如下图所示：</p>
+						<p><img src="data_img/25.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+		
+		<a name="字符"></a>
+		<p><h5>2.8 字符</h5></p>
+		<blockquote>
+			<p>宽字符有效值范围从<b>0到65535</b>，占用2个字节空间。字符主要指包括汉字、英文字母、英文数字、运标点符号等。</p>
+			<p>在火山中想要表达立即数字符，需要使用单引号<b>''</b>来操作，例如：<b>'火'</b>、<b>'山'</b>，字符也支持转义符，譬如<b>'\n'</b>。</p>
+			<p>注：火山平台使用Unicode-16(即双字节统一码)字符编码格式。</p>
+			<blockquote> 
+				<p><img src="data_img/12.png" border="0"></p>
+			</blockquote>
+			<p><b>2.8.1 字符转整数</b></p>
+			<blockquote>
+				<p>无论安卓还是视窗，都可以通过强制转换实现将字符转换成对应的整数值。</p>
+				<p><b>(1) 火山安卓平台</b></p>
+				<blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="data_img/26.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="data_img/27.png" border="0" >
+					</blockquote>
+				</blockquote>
+				<p><b>(2) 火山视窗平台</b></p>
+				<blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="data_img/28.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="data_img/29.png" border="0" >
+					</blockquote>
+				</blockquote>
+				<p>无论是视窗还是安卓平台的字符，它们的编码格式都是Unicode-16编码格式，因此转换成整数后都是一致的，不会存在任何差异问题。</p>
+				
+			</blockquote>
+			<p><b>2.8.2 整数转字符</b></p>
+			<blockquote>
+				<p>当字符被转换成整数后，如果想要重新转换成字符也可通过强制转换进行操作。</p>
+				<p><b>(1) 火山安卓平台</b></p>
+				<blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="data_img/30.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="data_img/31.png" border="0" >
+					</blockquote>
+				</blockquote>
+				<p><b>(2) 火山视窗平台</b></p>
+				<blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<img src="data_img/32.png" border="0" >
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<img src="data_img/33.png" border="0" >
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p><b>2.8.3 文本取字符</b></p>
+			<blockquote>
+				<p>如果想要在一串文本中取出指定字符，火山安卓和火山视窗的处理方案不同，但原理基本一致。</p>
+				<p><b>(1) 火山安卓平台</b></p>
+				<blockquote>
+					<p>在安卓中处理这个问题需要使用两个方法<b>“文本到字符串()”</b>和<b>“取字符()”</b>。</p>
+					<p>帮助文档如下图：</p>
+					<blockquote>
+						<p>文本到字符串方法可以将文本转换成<b>“字符串类”</b>对象。</p>
+						<p><img src="data_img/34.png" border="0" ></p>
+						<p>转换后的字符串类对象中，会有一个方法叫<b>“取字符()”</b>，通过此方法就可以将指定索引位置的文本取出转换成字符。</p>
+						<p>注意：字符位置从0开始，0代表第一个字符。</p>
+						<p><img src="data_img/35.png" border="0" ></p>
+					</blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<p>因<b>“文本到字符串()”</b>方法返回的就是字符串对象，而<b>“取字符()”</b>方法又是字符串类中的方法。</p>
+						<p>因此可以将这两个方法直接结合起来使用，在代码中调用<b>“文本到字符串().取字符()”</b>就可以取出文本中指定位置的字符。</p>
+						<p><img src="data_img/36.png" border="0" ></p>
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<p>最终可以看到指定位置的字符被取出。</p>
+						<p><img src="data_img/37.png" border="0" ></p>
+					</blockquote>
+				</blockquote>
+				<p><b>(2) 火山视窗平台</b></p>
+				<blockquote>
+					<p>在火山视窗平台中就比较简单，直接调用<b>“取字符()”</b>方法就可以取出一串文本中指定位置的字符。</p>
+					<p>帮助文档如下图：</p>
+					<blockquote>
+						<p>方法中提供了两个参数。</p>
+						<p>参数1：用于提供要取字符的文本。</p>
+						<p>参数2：提供索引位置值即可，位置从0开始。</p>
+						<p><img src="data_img/38.png" border="0" ></p>
+					</blockquote>
+					<p>代码编写如下图：</p>
+					<blockquote>
+						<p>直接调用本方法提供对应参数就可以获取指定位置字符。</p>
+						<p><img src="data_img/39.png" border="0" ></p>
+					</blockquote>
+					<p>运行结果如下图：</p>
+					<blockquote>
+						<p>最终可以看到指定位置的字符被取出。</p>
+						<p><img src="data_img/40.png" border="0" ></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+		
+		<a name="文本型"></a>
+		<p><h5>2.9 文本型</h5></p>
+		<blockquote>
+			<p><b>文本型</b>用作记录一段字符串文本，使用立即数表达时需要在文本的左右两边使用英文双引号括起来。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="data_img/41.png" border="0" ></p>
+			</blockquote>
+			<p>文本型中支持<b>\n</b>、<b>\t</b>等转义符操作，具体可参考<a href="term.html#字符串立即数"><b>“字符串立即数”</b></a>中的介绍。</p>
+			<p>如果需要将数值型数据转换成文本型，可以直接使用<b>“到文本()”</b>方法即可，重新转换会目标数值型则需要对应的<b>“文本到XX()”</b>系列方法。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="data_img/42.png" border="0" ></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="模板类型"></a>
+		<p><h5>2.10 模板类型1~模板类型8</h5></p>
+		<blockquote>
+			<p>注意: 本类型普通用户知道即可，无需深入了解。</p>
+			<p>模板数据类型，只能在<a href="../p_grammar.htm#template_base_class">模板基础类</a>中使用。</p>
+			<p>模板数据类型本身并不是真实存在的数据类型，所对应的真实数据类型需要由<a href="../p_grammar.htm#template_inherit_class">模板实现类</a>来提供。</p>
+			<p>我们举个例子，假设我们需要开发一个数组操作类，用作支持对各种数组类型进行操作，如果不使用模板类型，那么我们需要写很多类似的类：</p>
+			<blockquote>
+				<p>整数数组操作类、小数数组操作类、文本数组操作类等等……</p>
+			</blockquote>
+			<p>而这些类的处理代码是完全一样的,唯一不同之处就是其所操作的数据类型不同，使用模板类型，我们可以把所有代码都放到<a href="../p_grammar.htm#template_base_class">模板基础类</a>里面，然后定义对应的<a href="../p_grammar.htm#template_inherit_class">模板实现类</a>即可。
+					如:</p>
+			<blockquote>
+				<p><img border="0" src="../images/b121.png" width="648" height="519"></p>
+			</blockquote>
+			<p>这样能大大减少工作量，也能让程序具有更好的可维护性(只需维护一处即可)。</p>
+			<p>对于火山普通用户而言，不需要深入了解如何具体定义这些模板类型，掌握如何使用已有模板类型即可。</p>
+			<blockquote>
+					<p>假设有下面这段代码：</p>
+					<blockquote>
+						<p><img border="0" src="data_img/60.png" ></p>
+					</blockquote>
+					<p>当你右键单击末语句行上的<b>“插入”</b>方法，然后选择查看其帮助菜单项后，看到帮助页面中参数部分为以下内容：</p>
+					<blockquote>
+						<p><img border="0" src="data_img/61.png"></p>
+					</blockquote>
+					<p>你一定会感到困惑，<b>“模板类型1”</b>和<b>“模板类型2”</b>所对应的真实数据类型到底是什么呢？</p>
+					<p>很简单，请继续单击该<b>“模板类型1”</b>/<b>“模板类型2”</b>链接，譬如点击前者将看到如下页面：</p>
+					<blockquote>
+						<p><img border="0" src="data_img/62.png"></p>
+					</blockquote>
+					<p>
+					根据<b>“变量1”</b>的当前数据类型<b>“整数到文本哈希表”</b>，就可以得知，<b>“模板类型1”</b>当前所对应的真实数据类型为<b>“整数”</b>，这就是<b>“插入”</b>方法第一个参数提供的真实数据类型。</p>
+					<p>利用同样的方法，可以得知<b>“插入”</b>方法的第二个参数的实际类型为<b>“文本型”</b>。</p>
+					<p>由此可得出如下正确的调用代码：</p>
+					<blockquote>
+						<p><img src="data_img/63.png"  border="0"></p>
+					</blockquote>
+				</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="其它"></a>
+	<p>&nbsp;</p>
+	<h4>3、基本数据类型扩展类与对象类</h4>
+	<blockquote>
+		<a name="字节集"></a>
+		<p><h5>3.1 字节集类与字节数组</h5></p>
+		<blockquote>
+			<p><b>“字节集类”</b>和<b>“字节[]”</b>都是<b>“字节”</b>基本数据类型的集合，用于表达二进制数据，不同之处为前者用于火山视窗平台，是火山类库中提供的一个数据类，后者用于火山安卓平台、是基本数据类型数组。</p>
+			<p>虽然名称不同，但本质上是一样的，例如将一个文件读入到火山程序中：</p>
+			<blockquote>
+				<p>火山安卓平台：</p>
+				<p><img src="data_img/44.png" border="0" ></p>
+				<p>火山视窗平台：</p>
+				<p><img src="data_img/45.png" border="0" ></p>
+			</blockquote>
+			<p>需要注意的是，如果将文本数据转换成二进制数据需要注意文本编码问题。</p>
+			<p>火山视窗中使用<b>“文本到字节集()”</b>转换出来的文本编码是<b>“UTF-16LE”</b>(也就是常说的Unicode编码，万国码)，火山安卓中使用<b>“文本到字节数组()”</b>转换出来的文本编码则是<b>“UTF-8”</b>编码。</p>
+			<p>例如：你的程序需要让安卓平台和视窗平台进行通讯，这个时候就需要注意文本编码问题，否则可能会乱码，如果没有特殊需求的话，推荐统一使用<b>“UTF-8编码”</b>。</p>
+			<p>即：</p>
+			<blockquote>
+				<p>在<b>火山安卓平台</b>中，可以使用<b>“文本到字节数组()”</b>或<b>“文本到指定编码字节数组()”</b>转换成UTF8编码。</p>
+				<p><img src="data_img/46.png" border="0" ></p>
+				<p>在<b>火山视窗平台</b>中，使用<b>“文本到UTF8()”</b>方法即可，注意第二个参数要设置为假。</p>
+				<p><img src="data_img/47.png" border="0" ></p>
+			</blockquote>
+			<p>如果想让火山安卓和视窗统一使用Unicode编码，可以如下操作：</p>
+			<blockquote>
+				<p>在<b>火山安卓平台</b>中，可以使用<b>“文本到指定编码字节数组()”</b>转换，第二个参数提供<b>“文本编码.小端UTF16”</b>即可和火山视窗平台的默认编码一致。</p>
+				<p><img src="data_img/49.png" border="0" ></p>
+				<p>在<b>火山视窗平台</b>中，直接使用<b>“文本到字节集()”</b>方法即可。</p>
+				<p><img src="data_img/48.png" border="0" ></p>
+			</blockquote>
+			<p><b>常用字符集编码转换总结：</b></p>
+			<blockquote>
+				<p><b>火山安卓平台：</b></p>
+				<blockquote>
+					<p><b>1. </b>文本转换成字节数组：</p>
+					<blockquote>
+						<p><b>(1)</b> 文本到字节数组 ("")，将文本转换成UTF-8编码的字节数组。</p>
+						<p><b>(2)</b> 文本到指定编码字节数组 ("", 文本编码.GBK)，将文本转换成GBK编码的字节数组。</p>
+						<p><b>(3)</b> 文本到指定编码字节数组 ("", 文本编码.小端UTF16)，将文本转换成Unicode编码的字节数组。</p>
+					</blockquote>
+					<p><b>2. </b>字节数组转换成文本：</p>
+					<blockquote>
+						<p><b>(1)</b> 字节数组到文本 (数组内容)，将UTF-8编码的字节数组重新转换成文本。</p>
+						<p><b>(2)</b> 指定编码字节数组到文本 (数组内容, 文本编码.GBK)，将GBK编码的字节数组重新转换成文本，如果编码是GB2312，ANSI等多字节编码都可以使用GBK进行转换。</p>
+						<p><b>(3)</b> 指定编码字节数组到文本 (数组内容, 文本编码.小端UTF16)，将Unicode编码的字节数组重新转换成文本。</p>
+					</blockquote>
+				</blockquote>
+				<p><b>火山视窗平台：</b></p>
+				<blockquote>
+					<p><b>1. </b>文本转换成字节集类：</p>
+					<blockquote>
+						<p><b>(1)</b> 文本到UTF8 ("", 假)，将文本转换成UTF-8编码的字节集，如果要和火山安卓通讯参数2要设置为假。</p>
+						<p><b>(2)</b> 文本到多字节 ("")，将文本转换成多字节编码字节集，常见的GBK，ANSI编码等都是多字节编码。</p>
+						<p><b>(3)</b> 文本到字节集 ("")，将文本转换成Unicode编码的字节集。</p>
+					</blockquote>
+					<p><b>2. </b>字节集类转换成文本：</p>
+					<blockquote>
+						<p><b>(1)</b> UTF8到文本 (字节集内容)，将UTF-8编码的字节集重新转换成文本。</p>
+						<p><b>(2)</b> 多字节到文本 (字节集内容)，将多字节编码字节集重新转换成文本。</p>
+						<p><b>(3)</b> 字节集到文本 (字节集内容)，将Unicode编码的字节集重新转换成文本。</p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<a name="包装类"></a>
+		<p><h5>3.2 基本数据类型包装类</h5></p>
+		<blockquote>
+			<p>所有基本类型包装类如下：</p>
+			<blockquote>
+				<p>1. 字节类；</p>
+				<p>2. 短整数类；</p>
+				<p>3. 整数类；</p>
+				<p>4. 长整数类；</p>
+				<p>5. 变整数类(安卓平台无此类型)；</p>
+				<p>6. 小数类；</p>
+				<p>7. 字符类；</p>
+				<p>8. 逻辑型类；</p>
+				<p>9. 文本型类(视窗平台无此类型)；</p>
+			</blockquote>
+			<p>这些包装类，在火山安卓平台中主要提供一些常用的基本类型操作方法，例如<b>“取文本左边()”</b>这个全局静态方法就是<b>“文本型类”</b>中的一个方法。</p>
+			<blockquote>
+				<p><img src="data_img/50.png" ></p>
+			</blockquote>
+			<!-- <p>在火山视窗平台中，由于基本数据类型不支持<a href="structure.html#参数">参考返回</a>，因此需要通过类的形式间接返回，而这些包装类就是这个作用。</p> -->
+			
+			 <p>在火山视窗平台中，基本数据类型数据不支持以<a href="structure.html#参数">参考</a>的方式传递到方法参数上，从而导致在被调用方法中不能以修改参数值的方式来对外返回基本数据类型数据。</p>
+			<p>这些包装类的作用就是为了方便上述操作。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p>打开<b>“整数类”</b>的帮助页，可以看到会存在一个名叫<b>“值”</b>的成员变量，而这个变量的类型就是<b>“整数”</b>。</p>
+				<p>如果你使用的是<b>“长整数类”</b>，那么这个变量的类型就是<b>长整数</b>。</p>
+				<p><img src="data_img/51.png" ></p>
+				<p><b>“Ctrl+D”</b>插入一个方法后，设置一个<b>“整数类”</b>的参数并赋值。</p>
+				<p><img src="data_img/52.png" ></p>
+				<p>在窗口<b>“创建完毕”</b>事件下调用这个方法，定义<b>“整数类”</b>变量并传参，最后取出整数类中的值。</p>
+				<p><img src="data_img/53.png" ></p>
+				<p>最终可以看到值被取出，也就间接实现了基本数据类型参数返回数据。</p>
+				<p><img src="data_img/54.png" ></p>
+			</blockquote>
+		</blockquote>
+		<a name="对象类"></a>
+		<p><h5>3.3 对象类</h5></p>
+		<blockquote>
+			<p>对象类是火山中所有类的最底层基础类，无论是自定义的类，还是火山系统库中的类，都会继承对象类。</p>
+			<p>安卓平台和视窗平台不同之处为对象类中的方法不一样，具体可看火山帮助页中的列出方法名称：</p>
+			
+			<p>如下所示：</p>
+			<blockquote>
+				<p>视窗平台：</p>
+				<p><img src="data_img/55.png" border="0"></p>
+				<p>安卓平台：</p>
+				<p><img src="data_img/56.png" border="0"></p>
+			</blockquote>
+			<p>如果在实际开发过程中，遇到某个方法的参数是<b>“对象类”</b>，并且没有特别的注释，就代表这个参数可以提供任意的对象类数据进去。</p>
+			<p>例如：在火山视窗平台<b>“对象数组类”</b>的<b>“加入成员()”</b>方法就需要提供对象类的数据，本类为最基本的对象类数组。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p><img src="data_img/57.png" border="0"></p>
+			</blockquote>
+			<p>如果想从对象数组类中取出对象，取出的数据是对象类，需要使用强制转换操作。</p>
+			<p>如下所示，必须保证强制转换的类型与添加时的类型一致：</p>
+			<blockquote>
+				<p><img src="data_img/58.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="Symbol.html">上一章</a>]&nbsp; &nbsp;  [<a href="keyword.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

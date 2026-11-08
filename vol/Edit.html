@@ -1,0 +1,121 @@
+
+<html>
+
+<head>
+<title>火山软件平台基本编辑环境介绍_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台基本编辑环境介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="project.html">上一章</a>]&nbsp;&nbsp;  [<a href="help.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">五、火山软件开发平台基本编辑环境</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="输入"></a>
+	<p>&nbsp;</p>
+	<h4>1、代码输入方式</h4>
+	<blockquote>
+		<p>在火山平台中支持<b>首拼、全拼和汉字</b>智能提示输入，并且按下空格或回车键可将首个提示内容输入到代码编辑框中。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p><img src="edit_img/1.png" border="0"></p>
+		</blockquote>
+		<p>输入方式演示如下：</p>
+		<blockquote>
+			<p><b>(1) 首拼输入</b></p>
+			<blockquote>
+				<p>如下所示，输入<b>“jbbl”</b>就可以表示<b>“局部变量”</b>。</p>
+				<p><img src="edit_img/1.gif" border="0"></p>
+			</blockquote>
+			<p><b>(2) 全拼输入</b></p>
+			<blockquote>
+				<p>如下所示，输入<b>“jubu”</b>加空格就可以快速输入<b>“局部变量”</b>。</p>
+				<p><img src="edit_img/2.gif" border="0"></p>
+			</blockquote>
+			<p><b>(3) 汉字输入</b></p>
+			<blockquote>
+				<p>如下所示，输入<b>“局部”</b>也可以将<b>“局部变量”</b>完整的提示并输入。</p>
+				<p><img src="edit_img/3.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="语句体"></a>
+	<p>&nbsp;</p>
+	<h4>2、代码语句体操作</h4>
+	<blockquote>
+		<p>在火山平台中代码都是语句体形式，具体可看<a href="structure.html#方法语句"><b>“方法语句”</b></a>中的介绍。</p>
+		<p>代码的表现形式都是一层一层，如下：</p>
+		<blockquote>
+			<p>可以清晰的看出<b><a href="structure.html#类">类</a></b>位于一层，<b><a href="structure.html#变量">成员变量</a></b>和<b><a href="structure.html#方法">方法</a></b>位于同一层，方法内的<b><a href="structure.html#局部变量">局部变量</a></b>和方法语句调用，又是一层。</p>
+			<p><img src="edit_img/4.png" border="0"></p>
+		</blockquote>
+		<p>除了类和方法的层级是固定的无法调整外，其它<b>变量、常量、方法语句</b>等都可以进行层级调整。</p>
+		<p>例如：局部变量也可通过调整层级变为成员变量，也可以重新修改为局部变量。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p>选中局部变量右键选择<b>“块操作 -> 向内缩进”</b>或者使用快捷键<b>“ctrl + [”</b>。</p> 
+			<blockquote>
+				<p><img src="edit_img/5.png" border="0"></p>
+			</blockquote>
+			<p>就可以将局部变量改为成员变量。</p>
+			<blockquote>
+				<p><img src="edit_img/6.png" border="0"></p>
+			</blockquote>
+			<p>同理使用<b>“向外缩进”</b>或快捷键<b>“ctrl + ]”</b>，可以重新将成员变量改为局部变量。</p>
+			<blockquote>
+				<p><img src="edit_img/7.gif" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p>如果在方法中输入代码时，发现代码为绿色，证明代码输入到了注释层，此时可通过快捷键<b>“ctrl + ]”</b>进行向外缩进，就可以让代码重新恢复正常。</p>
+		<p>如下所示：</p>
+		<blockquote>
+			<p><img src="edit_img/8.gif" border="0"></p>
+		</blockquote> 
+		<p>另外还有几个使用较多的快捷键为<b>“Ctrl + Insert”</b>和<b>“Shift + Insert”</b>，用作向前/向后插入行，部分电脑需要配合<b>“Fn”</b>键使用。</p>
+		<p>其中，在方法的参数/常量/变量定义表格上按下<b>“Shift + Insert”</b>快捷键，将固定在其下方插入一条空白语句行，如图：</p>
+		<blockquote> 
+			<p><img src="edit_img/9.gif" border="0"></p>
+		</blockquote>
+		<p>在<b>“变量1”</b>的定义行上按下<b>“Shift + Insert”</b>快捷键后的结果如下：</p>
+<blockquote> 
+			<p><img src="edit_img/10.gif" border="0"></p>
+		</blockquote>
+	</blockquote>	
+	<a name="编译"></a>
+	<p>&nbsp;</p>
+	<h4>3、按需编译</h4>
+	<blockquote>
+		<p>火山编译器实行的是按需编译模式，也就是说，凡是不可能被执行到的代码，一概不进行编译。具体为：</p>
+		<blockquote>
+			<p>从程序的启动位置开始，所有未在程序执行流程中的代码都将不会被编译。</p>
+		</blockquote>
+		<p>以火山安卓开发平台举例，譬如下图：</p>
+		<blockquote>
+			<p><img src="../images/b60.png" border="0"></p>
+		</blockquote>
+	</blockquote>	
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="project.html">上一章</a>]&nbsp;&nbsp;  [<a href="help.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

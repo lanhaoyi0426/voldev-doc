@@ -1,0 +1,345 @@
+
+<html>
+
+<head>
+<title>火山平台解决方案及项目介绍_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山平台解决方案及项目介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="Working.html">上一章</a>]&nbsp;&nbsp;  [<a href="Edit.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">四、火山平台解决方案及项目介绍</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="解决方案"></a>
+	<p>&nbsp;</p>
+	<h4>1、解决方案</h4>
+	<blockquote>
+		<a name="概述"></a>
+		<p><h5>1.1 概述</h5></p>
+		<blockquote>
+			<p>多个项目建立在一起的集合被称为解决方案，火山软件开发平台采用的是<b>多项目多文件</b>管理模式，一个解决方案内可以放N个项目，一个项目内可以有N个火山源码文件。</p>
+			<p>例如：要开发一个软件，预计升级多个版本，你想保留历史版本的源代码，那么就可以都把这些历史版本的源代码放在一个解决方案中便于管理。</p>
+		</blockquote><p>&nbsp;</p>
+		<a name="创建"></a>
+		<p><h5>1.2 创建项目</h5></p>
+		<blockquote>
+			<p>创建一个新的项目时会自动依赖一个解决方案，如下图所示进行创建：</p>
+			<blockquote>
+				<p><b>(1) </b>可通过<b>“文件 -> 新建 -> 项目”</b>或直接点击欢迎页中的<b>“新建项目”</b>都可以实现创建项目。</p>
+				<blockquote>
+					<p><img src="project_img/1.png" border="0"></p>
+				</blockquote>
+				<p><b>(2)</b> 根据自己的需求选择<b>平台</b>及目标平台的<b>项目模板</b>，并依次填写<b>项目名称、选择所处(保存)位置、解决方案名称</b>，最后点击<b>确定</b>即可。</p>
+				<blockquote>
+					<p><img src="project_img/2.png" border="0"></p>
+				</blockquote>
+				<p><b>(3)</b> 如果<b>“所处位置”</b>不存在会提示进行创建，点击<b>“是”</b>进行创建即可。</p>
+				<blockquote>
+					<p><img src="project_img/3.png" border="0"></p>
+				</blockquote>
+				<p><b>(4)</b> 最后创建成功后如下图，其中<b>解决方案/项目/源文件名称</b>都可以通过双击进行修改。</p>
+				<blockquote>
+					<p><img src="project_img/4.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="目录"></a>
+		<p><h5>1.3 解决方案目录结构概述</h5></p>
+		<blockquote>
+			<p>在创建了一个项目后，会在<b>“所处位置”</b>目录中生成<b>“解决方案文件”</b>和<b>“项目文件夹”</b>。</p>
+			<p>注：这些生成的项目文件或文件夹不允许随意修改其名称，否则会导致项目无法打开。</p>
+			<blockquote>
+				<p>(1) 解决方法文件后缀名为<b>“vsln”</b>，启动火山项目时，双击此文件即可打开。</p>
+				<p>(2) 项目文件夹中存储有当前项目源码数据。</p>
+				<p><img src="project_img/5.png" border="0"></p>
+			</blockquote>
+			<p>打开项目文件夹，可以看到一个<b>“src”</b>的文件夹和后缀名为<b>“vprj”</b>的项目配置文件。</p>
+			<blockquote>
+				<p>(1) 项目配置文件中存储有当前项目所有配置信息。</p>
+				<p>(2) 自动生成的主程序模板文件，位于src文件夹中。</p>
+			<p><img src="project_img/6.png" border="0"></p>
+			</blockquote>
+			<p>打开src文件夹就可以看到自动生成的主程序模板文件。</p>
+			<blockquote>
+				<p><img src="project_img/7.png" border="0"></p>
+			</blockquote>
+			<p>当程序进行<a href="debug.html">调试</a>或编译发布版时，会自动在解决方案所处目录中，生成一个<b>“_int”</b>文件夹，用于输出目标平台的源码文件和项目程序文件。</p>
+			<blockquote>
+				<p><img src="project_img/8.png" border="0"></p>
+				<p>安卓平台和视窗平台的程序输出路径分别如下：</p>
+				<blockquote>
+					<p>(1) 安卓平台程序默认输出路径：</p>
+					<blockquote>
+						<p><a href="debug.html"><b>调试版</b></a>程序默认输出在：<b>“_int\项目文件名\debug\linker”</b>目录中。</p>
+						<p><b>发布版</b>程序默认输出在：<b>“_int\项目文件名\release\linker”</b>目录中。</p>
+					</blockquote>
+					<p>(2) 视窗平台程序默认输出路径：</p>
+					<blockquote>
+						<p><a href="debug.html"><b>调试版</b></a>程序默认输出在：<b>“_int\项目文件名\debug\x64(或win32)\linker”</b>目录中。</p>
+						<p><b>发布版</b>程序默认输出在：<b>“_int\项目文件名\release\x64(或win32)\linker”</b>目录中。</p>
+						<p>注：x64指64位程序，win32指32位程序。</p>
+					</blockquote>
+				</blockquote>
+				
+			</blockquote>
+			<br>
+			<p><strong>“_int”</strong>文件夹可以自定义其保存位置，通过右键<strong>解决方案</strong>选择<strong>属性</strong>菜单，通过设置<strong>“编译中间数据目录”</strong>即可自定义位置。</p> 
+			<blockquote>
+				<p><img src="project_img/36.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+
+	</blockquote>	
+	<a name="管理"></a>
+	<p>&nbsp;</p>
+	<h4>2、项目管理</h4>
+	<blockquote>
+		<a name="多文件"></a>
+		<p><h5>2.1 多文件管理</h5></p>
+		<blockquote>
+			<p>火山平台中的项目是支持多文件管理的。</p>
+			<p>例如：软件中有多个窗口，可以建立多个火山源码文件，一个文件中存放一个窗口类，可便于后期软件维护。</p>
+			<p>注：跨文件调用程序代码可看<a href="structure.html#包"><b>“包”</b></a>或<a href="structure.html#注意事项"><b>“类”</b></a>中的介绍。</p>
+			<blockquote>
+				<p>(1) 鼠标右键项目选择<b>“添加 -> 新建文件”</b>。</p>
+				<blockquote>
+					<p><img src="project_img/9.png" border="0"></p>
+				</blockquote>
+				
+				<p>(2) 在新建文档窗口中，填写<b>文件名</b>，选择<b>所处位置</b>(默认为当前项目目录，建议保持原样)。</p>
+				<blockquote>
+					<p><img src="project_img/10.png" border="0"></p>
+				</blockquote>
+				<p>(3) 文件创建完毕后如下图：</p>
+				<blockquote>
+					<p><img src="project_img/11.png" border="0"></p>
+				</blockquote>
+			
+				<p>(4) 如果软件有多个功能模块或窗口，可以创建多个源码文件来管理。</p>
+				<blockquote>
+					<p><img src="project_img/12.png" border="0"></p><p>&nbsp;</p>
+				</blockquote>
+				<p>(5) 创建完毕后的火山源码文件会出现在<b>“所处位置”</b>的目录中。</p>
+				<blockquote>
+					<p><img src="project_img/13.png" border="0"></p>
+				</blockquote>
+				<p>(6) 如果项目文件过多，还可以通过建立筛选器来进行二次分类。</p>
+				<blockquote>
+					<p>右键项目选择<b>“添加 -> 新建筛选器”</b>。</p>
+					<p><img src="project_img/14.png" border="0"></p>
+				</blockquote>
+				<p>(7) 建立后可以通过右键进行重命名。</p>
+				<blockquote>
+					<p><img src="project_img/15.png" border="0"></p>
+				</blockquote>
+				<p>(8) 筛选器建立完成后，可以通过点击鼠标左键拖拽火山源码文件到目标筛选器中。</p>
+				<blockquote>
+					<p><img src="project_img/16.gif" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+<p>&nbsp;</p>
+		<a name="多项目"></a>
+		<p><h5>2.2 多项目管理</h5></p>
+		<blockquote>
+			<p>火山平台支持在解决方案中建立多个项目进行管理，不同平台之间也可以混合建立。</p>
+			<p>如下所示：</p>
+			<blockquote>
+				<p>(1) 右键解决方案选择<b>“添加 -> 新建项目”</b>，就可以进行项目建立。</p>
+				<blockquote>
+					<p><img src="project_img/17.png" border="0"></p>
+				</blockquote>
+				<p>(2) 在新建项目窗口中，选择一个平台和项目模板，输入项目名称后点击确定即可建立一个新的项目。</p>
+				<blockquote>
+					<p>注：<b>所处位置</b>默认会填写当前解决方案路径，建议保持原样即可。</p>
+					<p><img src="project_img/18.png" border="0"></p>
+				</blockquote>
+				<p>(3) 项目建立成功后，会自动设置新项目为<b>活动项目</b>。</p>
+				<blockquote>
+					<p>活动项目：即当前操作项目。</p>
+					<p><img src="project_img/19.png" border="0"></p>
+				</blockquote>
+				<p>(4) 切换活动项目，通过项目的右键菜单中可以直接切换。</p> 
+				<blockquote>
+					<p>注：活动项目切换后，项目文本颜色会发生变化。</p>
+					<p><img src="project_img/21.gif" border="0"></p>
+					<p>如果打开了很多火山源文件，也可以通过文件名右键设置活动项目，如下所示：</p>
+					<p><img src="project_img/22.gif" border="0"></p>
+				</blockquote> 
+				<p>(5) 项目建立后，可在<b>“所处位置”</b>指定的路径中看到新项目文件夹，每个项目都会依赖一个文件夹。</p>
+				<blockquote>
+					<p><img src="project_img/20.png" border="0"></p>
+				</blockquote>
+				
+			</blockquote>
+		</blockquote>
+
+	</blockquote>	
+	<a name="模块"></a>
+	<p>&nbsp;</p>
+	<h4>3、项目模块</h4>
+	<blockquote>
+		<a name="配置"></a>
+		<p><h5>3.1 模块配置</h5></p>
+		<blockquote>
+			<p>在火山中每个项目都可以独立配置进行<b>模块</b>(即火山类库)配置，模块不可以跨平台配置，例如：安卓项目无法配置视窗模块。</p>
+			<p>模块配置方法如下：</p>
+			<blockquote>
+				<p>(1) 右键项目配置</p>
+				<blockquote>
+					<p>如果某项目想要配置模块，可通过右键此项目进行配置模块。</p>
+					<p><img src="project_img/22.png" border="0"></p>
+					<p>在弹出的模块配置窗口中，勾选要配置的模块点击<b>“确定”</b>即可。</p>
+					<p>注：如果想要删除某些模块，取消勾选即可。</p>
+					<p><img src="project_img/23.png" border="0"></p>
+					<p>会提示正在添加哪些模块，确认无误后直接点击<b>“确定”</b>即可。</p>
+					<p><img src="project_img/24.png" border="0"></p>
+					<p>添加成功后，可在项目的<b>“模块”</b>分类下看到被添加的模块。</p>
+					<p><img src="project_img/25.png" border="0"></p>
+				</blockquote>
+				<p>(2) 类库夹中右键配置</p>
+				<blockquote>
+					<p>右键要配置的模块，选择<b>“将此模块加入项目XX”</b>，这里会自动选择当前<b>活动项目</b>进行模块配置。</p>
+					<p><img src="project_img/26.png" border="0"></p>
+					<p>配置成功后可以在当前活动项目中看到此模块。</p>
+					<p><img src="project_img/27.png" border="0"></p>
+				</blockquote>
+				<p>(3) 在<a href="help.html">帮助页</a>中配置</p>
+				<blockquote>
+					<p>例如：在进行类库功能搜索时，双击搜索结果打开帮助页，可以在帮助页中将此类所处的模块添加到当前<b>活动项目</b>中。</p>
+					<p><img src="project_img/28.png" border="0"></p>
+					<p>添加成功后可以在项目中看到此模块。</p>
+					<p><img src="project_img/29.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p>删除模块配置方法如下：</p>
+			<blockquote>
+				<p>右键要删除的模块，选择<b>“删除”</b>即可。</p>
+				<blockquote>
+					<p><img src="project_img/33.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="安装"></a>
+		<p><h5>3.2 模块安装</h5></p>
+		<blockquote>
+			<p>火山平台模块的后缀名为<b>vcip</b>，模块安装时火山平台会自动识别安装到视窗模块中还是安卓模块中，安装后将会出现在类库夹中。</p>
+			<blockquote>
+				<p><img src="project_img/32.png" border="0"></p>
+			</blockquote>
+			<p>模块安装方式如下：</p>
+			<blockquote>
+				<p>双击模块文件即可安装。</p>
+				<blockquote>
+					<p><img src="project_img/30.png" border="0"></p>
+				</blockquote>
+				<p>也可以通过<b>“工具->安装模块”</b>进行模块安装。</p>
+				<blockquote>
+					<p><img src="project_img/31.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="删除"></a>
+		<p><h5>3.3 模块卸载</h5></p>
+		<blockquote>
+			<p>选择<b>“工具-卸载模块”</b>即可卸载第三方模块。</p>
+			<blockquote>
+				<p><img src="project_img/34.png" border="0"></p>
+				<p>(1) 选择要卸载的平台。</p>
+				<p>(2) 勾选要卸载的模块，点击<b>“卸载”</b>即可。</p>
+				<p><img src="project_img/35.png" border="0"></p>
+			</blockquote>
+		</blockquote><p>&nbsp;</p>
+		<a name="制作"></a>
+		<p><h5>3.4 模块制作</h5></p>
+		<blockquote>
+			<p>模块制作可参考<a href="../p_vcom.htm">《类库模块的封装和使用方法》</a>文中的介绍。</p>
+		</blockquote>
+	</blockquote>	
+	<a name="部件程序"></a>
+	<p>&nbsp;</p>
+	<h4>4、部件程序</h4>
+	<blockquote><a name="部件"></a>
+		<h5>4.1 部件</h5>
+		<blockquote>
+			<p><strong>4.1.1 概述</strong></p>
+			<blockquote>
+				<p><strong>“部件”</strong>是火山中提供的一种加密版的火山文件，后缀名为<strong>“.wcv”</strong>，可用于闭源代码分享。</p>
+				<p>分享的<strong>部件</strong>无法查看其火山源码，只能看到被公开的方法接口。</p>
+				<p>其效果如下：</p>
+				<blockquote>
+					<p>在火山源文件进行部件处理后，只能看到方法接口，无法看到具体的程序源码。</p>
+					<p><font color="red">注：部件程序只能隐藏火山源码，并不能真正将源代码隐藏起来。</p>
+					<p>譬如：安卓平台编译后依然可以看到java源码，视窗平台编译后依然可以看到C++源码。</font></p>
+					<p><img src="project_img/37.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p><strong>4.1.2 生成部件程序</strong></p>
+			<blockquote>
+				<p>右键火山源文件选择<strong>“生成部件程序”</strong>即可将当前火山源文件转换为部件程序。</p>
+				<blockquote>
+					<p><img src="project_img/38.png" border="0"></p>
+				</blockquote>
+				<p>如果当前整个项目都需要生成部件程序，可以点击<strong>“生成-生成部件项目程序”</strong>菜单进行操作。</p>
+				<blockquote>
+					<p><img src="project_img/39.png" border="0"></p>
+					<p>会弹出一个窗口列出所有的火山源文件，可以选择<strong>“生成”</strong>或<strong>“合并生成”</strong>，前者为每个火山文件独立生成，后者则会将多个火山源文件合并成一个文件。</p>
+					<p><img src="project_img/40.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<p><strong>4.1.3 引用部件程序</strong></p>
+			<blockquote>
+				<p>部件程序的引用和普通火山文件的引用方式一致，通过项目菜单选择<strong>“添加-现有文件/模块”</strong>。</p>
+				<blockquote>
+					<p><img src="project_img/41.png" border="0"></p>
+				</blockquote>
+				<p>然后选择要添加的部件即可，进行添加即可。</p>
+				<blockquote>
+					<p><img src="project_img/42.png" border="0"></p>
+				</blockquote>
+				<p>添加后双击部件文件即可查看部件接口。</p>
+				<blockquote>
+					<p><img src="project_img/43.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<a name="部件DLL"></a>
+		<h5>4.2 部件DLL</h5>
+		<blockquote>
+			<p>部件DLL为火山视窗平台独有功能，安卓平台无法使用。</p>
+			<p><strong>“部件DLL动态链接库”</strong>和普通的<strong>“DLL动态链接库”</strong>没有本质的区别，都是动态链接库。只是前者在编译DLL时会自动生成其火山接口程序，方便他人使用其DLL中的功能，并且由于相关实现代码位于编译后的DLL中，因此安全性是绝对有保证的，可广泛应用于多人协作或闭源项目中。</p>
+			<p>具体使用方式可看<a href="../e_To_vol/project.html#部件DLL">《易语言到火山视窗入门》</a>中的介绍。</p>
+		</blockquote>
+	</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	  <p align="left"> [<a href="Working.html">上一章</a>]&nbsp;&nbsp;  [<a href="Edit.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

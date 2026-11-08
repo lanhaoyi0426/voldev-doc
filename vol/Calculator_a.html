@@ -1,0 +1,387 @@
+
+<html>
+
+<head>
+<title>火山安卓开发简易计算器案例_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山安卓开发简易计算器案例" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="hello_a.html">上一章</a>]&nbsp;&nbsp;  [<a href="hello_w.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">二、火山安卓开发简易计算器软件</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<p>&nbsp;</p>
+	<h4>1、程序分析</h4>
+	<blockquote>
+		<p>在正式开发之前，首先需要对程序进行简单的分析。只有合理的分析程序界面以及要实现的功能之外，才能更好的开发这个软件。</p>
+		<p>如下：</p>
+		<blockquote>
+			<p><b>运行平台：</b>安卓平台，安卓5.0及以上系统。</p>
+			<p><b>界面设计：</b>共分两个区域，显示区域和计算区域，如下图所示：</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/1.png" border="0"></p>
+				<p><b>显示区域：</b></p>
+				<blockquote>
+					<p>在显示区域又分为上下两个部分，分别为<b>“公式区”</b>和<b>“结果区”</b>，用于分别显示计算公式和计算结果，可使用文本框组件显示。</p>
+				</blockquote>
+				<p><b>计算区域：</b></p>
+				<blockquote>
+					<p>计算区域的布局为<b>4×5</b>的宫格布局，可使用<b>5个线性布局器</b>和<b>19个文本框</b>，并利用<a href="../vol_Android/android.htm#remain_space_weight">权重布局</a>实现效果。</p>
+					<p>注：计算区最后一行只有三个内容，因此需要单独设置<a href="../vol_Android/android.htm#remain_space_weight">权重布局</a>。</p>
+				</blockquote>
+			</blockquote> 
+			<p><b>具体功能：</b>按下数字键和运算符键后，最终能够实现简单的数学运算。为防止在<b>公式区</b>出现无意义的计算公式，因此按下某键之前进行相关的判断工作，譬如：按下某运算符键后，需要首先判断一下在<b>公式区</b>是否已经输入了运算符，防止重复输入。</p>
+			
+		</blockquote>
+	</blockquote>	
+	<p>&nbsp;</p>
+	<h4>2、程序开发</h4>
+	<blockquote>
+		<p><b>2.1 项目创建</b></p>
+		<blockquote>
+			<p>利用快捷键<b>“Ctrl + Shift + N”</b>打开项目创建窗口，根据需求选择一个安卓平台下具有窗口的项目模板。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/2.png" border="0"></p>
+			</blockquote>
+			 <p>项目创建完毕：</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/3.png" border="0"></p>
+			</blockquote> 
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><b>2.2 界面设计</b></p>
+		<blockquote>
+			<p>使用快捷键<b>“Ctrl + U”</b>打开界面设计器，因界面较为复杂，需要进行逐步设计。</p>
+			<p><b>(1) </b>在界面中拖放两个文本框和五个线性布局器组件，并按<b>“Ctrl”</b>键依次将所有组件全部选中，并设置以下属性：</p>
+			<blockquote>
+				<p><a href="../vol_Android/android.htm#remain_space_weight">剩余空间权重：</a>10；</p>
+				<p>组件宽度类型：匹配父组件宽度；</p>
+				<p>组件高度类型：直接指定，并设置高度值为0，只有设置高度为0后<b>“剩余空间权重”</b>才会按照比例进行分配尺寸。</p>
+				<p><img src="Calculator_a_img/4.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(2) </b>因所有组件已经将剩余空间权重设置为<b>10</b>，为了能够让组件按照比例平均分配，因此需要选中启动类布局，将<a href="../vol_Android/android.htm#remain_space_total_weight"><b>“剩余空间总权重”</b></a>设置为<b>70</b>，这样所有组件就可以等比例的分配尺寸。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/5.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(3) </b>按<b>“Ctrl”</b>键，选中两个文本框组件，并分别设置以下属性：</p>
+			<blockquote>
+				<p>内容横向对齐：右对齐；</p> 
+				<p>内容纵向对齐：居中；</p> 
+				<p>文本颜色：黑色；</p> 
+				<p>字体尺寸：30，如果最终运行效果和软件效果图有偏差，可以自行调整；</p> 
+				<p>右内边距：25；</p> 
+				<p></p> 
+				<p><img src="Calculator_a_img/6.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(4) </b>单独选中<b>“文本框2”</b>组件，本组件最终会存放计算结果，因此可以将其文本尺寸修改大一些，方便和存放计算公式的文本框形成反差效果。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/7.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(5) </b>因考虑到两个文本框都是居中对齐，最终可能会导致两个文本内容直接间隙过大，因此可以选中“文本框1”组件，将其内容调整为<b>“底对齐”</b>。</p>
+			<blockquote>
+				<p>那为什么不去调整<b>文本框2</b>的对齐方式呢？</p>
+				<p>其实很简单，因为调整<b>文本框2</b>的对齐方式，最终可能会导致<b>文本框2</b>的内容和<b>计算区域</b>直接间隙过大，影响软件的整体美观效果。</p>
+				<p><img src="Calculator_a_img/8.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(6) </b>按<b>“Ctrl”</b>键选中所有的<b>线性布局器</b>，将其布局方向设置为<b>“横向布局”</b>。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/9.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(7) </b>在任意一个线性布局器内，拖放四个文本框组件，并按<b>“Ctrl”</b>键全部选中，然后设置以下属性：</p>
+			<blockquote>
+				<p>内容横向对齐：居中；</p>
+				<p>内容纵向对齐：居中；</p>
+				<p>文本颜色：黑色；</p>
+				<p>文本字体尺寸：26；</p>
+				<p>剩余空间权重：25；</p>
+				<p>组件宽度：0；</p>
+				<p>组件高度：匹配父组件高度；</p>
+				<p><img src="Calculator_a_img/10.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(8) </b>属性设置完毕后，选中四个文本框组件进行<b>右键</b>并选择<b>复制</b>。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/11.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(9)</b> 复制后依次粘贴到其它线性布局器中，粘贴后的组件会自动拥有被复制组件的属性。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/12.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(10)</b> 因最后一个线性布局器只有三个内容，因此需要删除一个文本框组件，并修改其中一个文本框的权重为50。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/13.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(11)</b> 可以选中非数字区域的文本框，修改其颜色增加美观效果。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/14.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(12) </b>选中<b>文本框3、4</b>，因这两个文本框最终会存放汉字，在视觉上会比<b>数字、运算符</b>看起来稍微大一些，为了整体视觉效果可以适当的降低字体尺寸。</p>
+			<blockquote> 
+				<p><img src="Calculator_a_img/15.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(13)</b> 然后按照设计图效果，依次修改文本框名称设置文本框内容。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/16.png" border="0"></p> 
+			</blockquote> 
+			<p>&nbsp;</p>
+			<p><b>(14)</b> 至此界面设计完毕，可以进行调试查看一下界面效果，效果不满意可以根据自己的需求进行调整。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/17.png" border="0"></p> 
+			</blockquote> 
+			
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><b>2.3 代码编写</b></p>
+		<blockquote>
+			<p><b>(1)</b> 首先将所有需要操作的文本框设置<b>“支持单击”</b>和<b>“支持触摸”</b>属性为真，如果不设置将无法进行单击和触摸。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/18.png" border="0"></p>
+			</blockquote> 
+			<br>
+			<p><b>(2)</b> 任意找一个文本框组件，添加触摸事件。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/19.png" border="0"></p>
+			</blockquote> <br>
+			<p><b>(3)</b> 在触摸事件下判断触摸动作类型，当按下时修改背景色为<b>0xCCCCCCCC</b>(即半透明浅灰色)，抬起后修改为透明色。</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/20.png" border="0"></p>
+			</blockquote><br>
+			<p><b>(4)</b> 最终可以实现如下效果：</p>
+			<blockquote>
+				<p></p>
+				<p><img src="Calculator_a_img/21.gif" border="0"></p>
+			</blockquote><br>
+			<p><b>(5)</b> 在正式开始实现计算功能之前，我们首先需要封装三个常用方法出来，为后面的计算过程提供帮助。</p>
+			<blockquote>
+				<p><b>是否为数值：</b></p>
+				<blockquote>
+					<p>譬如：在按下<b>“加号”</b>键时，可用于验证<b>公式文本框</b>中，是否已经输入了整数或小数，从而决定是否在<b>公式文本框</b>中添加<b>加号符</b>。</p>
+					<p>其中本方法<b>“参数2”</b>的作用，是用于在按下<b>小数点</b>时，验证<b>公式文本框</b>中是否输入的为<b>整数</b>，从而决定是否在<b>公式文本框</b>中添加<b>小数点</b>。</p>
+					<p>注：正则表达式类需要配置<b><a href="project.html#模块">“正则表达式支持”</a></b>模块才能使用。</p>
+					<p><strong>方法解析：</strong></p>
+					<blockquote>
+						<p>正则表达式类.是否完全匹配()</p>
+						<blockquote>
+							<p>在本方法的作用，是用于验证提供的文本是否全部为数字，如果全是数字则返回真。</p>
+						</blockquote>
+						<p>文本到小数()</p>
+						<blockquote>
+							<p>在本方法中判断不等于0，用于验证提供的文本是否为数值。</p>
+						</blockquote>
+					</blockquote>
+					<p><img src="Calculator_a_img/22.png" border="0"></p>
+				</blockquote>
+				<p><b>清除尾部0：</b></p> 
+				<blockquote>
+					<p>因在计算过程中采用小数进行计算，即使最终结果值是整数，最后也会以<b>“.0”</b>结尾，本方法用于清除尾部的<b>“.0”。</b></p>
+					<p><img src="Calculator_a_img/23.png" border="0"></p>
+				</blockquote>
+				<p><b>计算公式结果：</b></p>
+				<blockquote>
+					<p>利用<b>正则文本分割()</b>方法，对<b>公式文本框</b>中的内容进行分割后计算结果。</p>
+					 <p>注：相减运算不能使用<b>正则文本分割</b>，因为要考虑负数运算的问题。</p>
+					<p><img src="Calculator_a_img/24.png" border="0"></p>
+				</blockquote>
+				
+			</blockquote><br>
+			<p><b>(6)</b> 任意使用一个文本框添加文本框被单击事件。</p>
+			<blockquote>
+				<p></p>
+				<p><img src="Calculator_a_img/25.png" border="0"></p>
+			</blockquote><br>
+			<p><b>(7)</b> 添加事件后将需要操作的文本框，使用<a href=""></a>如果否则语句进行判断其来源对象。</p>
+			<blockquote>
+				<p>其中<b>加减乘除</b>运算符和所有的<b>数字键</b>统一进行判断。</p>
+				<p><img src="Calculator_a_img/26.png" border="0"></p>
+			</blockquote><br>
+			<p><b>(8) “文本框_清零”</b>被单击：</p>
+			<blockquote>
+				<p>直接将<b>公式文本框</b>设置为空文本，<b>结果文本框</b>设置为0即可。</p>
+				<p><img src="Calculator_a_img/27.png" border="0"></p>
+			</blockquote><br>
+			
+			<p><b>(9) “文本框_删除”</b>被单击：</p>
+			<blockquote>
+				<p>当删除被单击时，首先验证<b>公式文本框</b>是否为空或其结尾文本为等于号，如果满足条件就执行清零操作。</p> 
+				<p>当不满足条件时，就利用<b>“取文本左边()”</b>方法对<b>公式文本框</b>的内容进行删除一个字符，将删除后的内容重新赋值给<b>公式文本框</b>。</p> 
+				<p><img src="Calculator_a_img/28.png" border="0"></p>
+			</blockquote><br>
+			
+			<p><b>(10) “文本框_百分比”</b>被单击：</p>
+			<blockquote>
+				<p>在操作之前首先验证<b>公式文本框</b>的内容是否为空，当不等于空的时候在进行百分比的处理。</p>
+				<p><b>85-88行：</b></p>
+				<blockquote>
+					<p>用于判断<b>公式文本框</b>是否只输入了数值，如果满足条件就进行百分比处理，并修改<b>公式文本框</b>显示的内容后返回。</p>
+				</blockquote>
+				<p><b>89-93行：</b></p>
+				<blockquote>
+					<p>用于验证当前是否已经进行过数学运算，如果满足条件则首先判断<b>结果文本框</b>是否不等于0，当条件满足时修改<b>公式文本框</b>的显示内容并对<b>结果文本框</b>进行百分比处理。</p>
+					<p>将处理结果重新赋值给<b>结果文本框</b>显示，最后执行返回。</p>
+				</blockquote>
+				<p><b>95-98行：</b></p>
+				<blockquote>
+					<p>当前面的两个条件都不满足时，证明输入了计算公式。 </p>
+					
+					<blockquote>
+						<p>到这里可能会疑问，为什么没有判断是否存在运算符，就能证明已经输入计算公式了呢？</p>
+						<p>原因很简单，这是因为已经在<b>“计算公式结果()”</b>方法中进行了判断，因此无需额外的判断。</p>
+					</blockquote>
+					<p>接下来将<b>公式文本框</b>的结果计算出来，并将结果显示在<b>公式文本框</b>中。</p>
+					<p>然后对计算结果进行百分比处理，将处理后的内容赋值给<b>结果文本框</b>显示。</p>
+				</blockquote>
+				<p><img src="Calculator_a_img/29.png" border="0"></p>
+			</blockquote><br>
+			
+			<p><b>(11) “文本框_加/减/乘/除”</b> 被单击</p>
+			<blockquote>  
+				<p>因运算符的处理都是相同的，所以可以放在一起进行判断，减少代码重复使用。</p>
+				<p><b>100-103行：</b></p>
+				<blockquote>
+					<p>用于判断<b>公式文本框</b>内容为空时，如果被单击的运算符为减号，则可以进行输入。</p>
+				</blockquote>
+				<p><b>105-107行：</b></p>
+				<blockquote>
+					<p>如果<b>公式文本框</b>的内容为数值，则直接输入运算符。</p>
+				</blockquote>
+				<p><b>108-110行：</b></p>
+				<blockquote>
+					<p>验证当前是否已经进行过计算，如果已经被计算过了，则将计算结果显示在<b>公式文本框</b>中，并输入对应的运算符。</p>
+				</blockquote>
+				<p><b>111-112行：</b></p>
+				<blockquote>
+					<p>当公式文本框以小数点结尾时，直接返回不输入任何运算符。</p>
+				</blockquote>
+				<p><b>113-116行：</b></p>
+				<blockquote>
+					<p>如果前面的添加都不满足，则证明已经输入了计算公式，但是还未进行计算。</p>
+					<p>首先取出计算结果，并将计算结果显示在<b>公式文本框</b>中，并输入运算符，最后需要将<b>结果文本框</b>设置为0。</p>
+				</blockquote>
+		
+				<p><img src="Calculator_a_img/30.png" border="0"></p>
+			</blockquote><br> 
+			 
+			<p><b>(12) “文本框_等于”</b>被单击 </p>
+			<blockquote>
+				<p>当<b>公式文本框</b>不等于空时，取出最右侧的文本，并判断其是否不等于任何符号。</p> 
+				<p>如果满足条件则进行计算，将计算结果显示在<b>结果文本框</b>中。</p>
+				<p>注意给<b>公式文本框</b>添加等于号，方便其它文本框组件点击时验证是否被计算过。</p> 
+				<p><img src="Calculator_a_img/31.png" border="0"></p>
+			</blockquote><br>
+			
+			<p><b>(13) “文本框_点”</b>被单击</p>
+			<blockquote>
+				<p>首先要判断<b>公式文本框</b>的内容不等于可空，当满足条件后再进行相关处理。</p>
+				<p><b>126-138行：</b></p>
+				<blockquote>
+					<p>本段代码的作用，是用运算符对<b>公式文本框</b>的内容进行分割，将分割的结果赋值给文本数组。</p>
+					<p>其作用是方便验证运算符右侧被运算的数值，是否为整数，从而来决定是否在<b>公式文本框</b>中输入小数。</p>
+				</blockquote>
+				<p><b>139-142行：</b></p>
+				<blockquote>
+					<p>如果任何运算符都没有找到，就证明还没有输入运算符，此时就直接验证<b>公式文本框</b>的内容是否为整数，满足条件后就在<b>公式文本框</b>中输入小数点，并返回。</p>
+				</blockquote>
+				<p><b>143-146行：</b></p>
+				<blockquote>
+					<p>最后这段代码就是用于验证运算符右侧被运算的数值是否已经输入过小数点，如果满足条件则输入小数点并返回。</p>
+				</blockquote>
+				<p><img src="Calculator_a_img/32.png" border="0"></p>
+			</blockquote><br>
+			
+			<p><b>(14) 数字键</b>被单击 </p> 
+			<blockquote>
+				<p>在这里可能会有疑问，因为并没有写条件，怎么就一定是所有的数字键？<b>“文本框_公式”</b>被点击，会不会在这里被执行？</p>
+				<p>这点可以放心，在火山安卓中除了按钮类型的组件外，其它类型的组件都需要设置<b>“支持单击”</b>属性为真，才可以触发被单击事件。</p>
+				<p>因<b>“文本框_公式”</b>并没有设置支持单击属性，因此<b>“否则”</b>子语句体中的代码只能是其它的所有数字键。</p>
+				<p><b>148-152行：</b></p>
+				<blockquote>
+					<p>当<b>公式文本框</b>的内容为空时，首先判断输入数字是否为0，如果为0则自动补充小数点，否则直接输入数字。</p>
+				</blockquote>
+				<p><b>154-156行：</b></p>
+				<blockquote>
+					<p>当<b>公式文本框</b>不为空时，验证一下当前输入的公式是否已经进行过计算，如果被计算过，则直接将<b>公式文本框</b>的内容赋值为要输入的数字。</p>
+				</blockquote>
+				<p><b>157-158行：</b></p>
+				<blockquote>
+					<p>如果公式文本框的内容为0，按下的数字键也为0时，不进行输入直接返回。</p>
+				</blockquote>
+				<p><b>159-166行：</b></p>
+				<blockquote>
+					<p>本段代码的作用是防止，譬如：<b>11+0</b>的情况下继续输入数字。</p>
+					<p>这里可能会有疑问，明明已经处理过对0自动补充小数，为什么要需要验证？</p>
+					<p>这里不要忘记，计算器还提供有删除功能，所以这里依然需要验证一下，其计算公式的结尾是否满足：<b>运算符 + 0</b>的情况，如果满足条件则直接返回。</p>
+				</blockquote>
+				<p><b>167-170行：</b></p>
+				<blockquote>
+					<p>用于验证计算公式的结尾是否为运算符，当结尾为运算符时，判断点击的是否为数字键0，如果为0则自动补充小数点。</p>
+				</blockquote>
+				<p><b>171行：</b></p>
+				<blockquote>
+					<p>当公式文本框不为空时，且以上条件都不满足时，证明可以直接输入对应数字。</p>
+				</blockquote>
+				<p><img src="Calculator_a_img/33.png" border="0"></p>
+			</blockquote><br> 
+			<p>至此整个简易计算器编写完毕，在开发过程中要额外注意全角符号和半角符号的问题，譬如：<b>“-”</b>、<b>“－”</b>是不同的。</p>
+			<p>在程序编写过程中要么全部使用半角，要么全部使用全角，为减少计算过程中产生不必要的错误。</p>
+		</blockquote>
+		<p>&nbsp;</p>
+		<p><b>2.4 调试运行</b></p>
+		<blockquote>
+			<p>在程序正式<a href="release.html#安卓">编译发布版</a>之前，首先需要对程序进行<a href="debug.html">调试</a>工作。</p>
+			<p>打开一个安卓模拟器(推荐使用<a href="https://www.ldmnq.com/" target="_blank">雷电模拟器</a>)，在模拟器运行完毕后，按下快捷键<b>“F5”</b>进行程序调试。</p>
+			<blockquote> 
+				<p>调试时如果火山报以下错误，证明项目缺少模块，<a href="project.html#模块">配置模块</a>即可解决。</p>
+				<p>第二条错误提示缺少返回值，是因为火山在预编译时，没有找到<b>正则表达式类</b>，因此语句被忽略，从而会导致整个方法的返回语句不完整。</p>
+				<p>因此，只要将项目模块配置完善，火山编译器能检查到<b>正则表达式类</b>，第二条错误也就解决了。</p>
+				<p><img src="Calculator_a_img/34.png" border="0"></p>
+			</blockquote> 
+			<p>计算测试：</p>
+			<blockquote>
+				<p><img src="Calculator_a_img/35.gif" border="0"></p>
+			</blockquote> 
+			<p>如果在调试过程中如果遇到程序闪退，或者输入的计算公式存在问题的情况下，可以参考<a href="debug.html">《程序调试和异常处理》</a>章节中的内容，对程序进行详细的调试，找到问题并解决问题。</p>
+		</blockquote>
+	</blockquote>	
+	<p>&nbsp;</p>
+	<h4>3、案例下载</h4>
+	<blockquote>
+		<p><a href="volfile/Calculator_a.zip">点击下载</a>当前教程案例。</p>
+	</blockquote>
+
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left"> [<a href="hello_a.html">上一章</a>]&nbsp;&nbsp;  [<a href="hello_w.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

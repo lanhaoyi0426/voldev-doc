@@ -1,0 +1,136 @@
+
+<html>
+
+<head>
+<title>火山软件程序编译发布版_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台程序调试与异常处理介绍" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="debug.html">上一章</a>]&nbsp;&nbsp; [<a href="hello_a.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">二、火山软件编译发布版</h2>
+<p>&nbsp;</p>
+<blockquote>
+	
+	<a name="安卓"></a>
+	<p>&nbsp;</p>
+	<h4>1、火山安卓</h4>
+	<blockquote>
+		<p><b>(1) 填写程序包名</b></p>
+		<blockquote>
+			<p>填写<a href="structure.html#包">包名</a>，必须保证有一个小数点，并且保证唯一性，不能与其它程序包名重复，以免造成无法安装的后果。</p>
+			<p>例如：腾讯QQ的包名为<b>“com.tencent.mobileqq”</b>，当前程序不可填写同样的包名，会造成包名冲突，从而无法安装程序。</p>
+			<p>注意：确定程序包名后不能更改，如果程序内有多个<b>“.v”</b>火山源文件，则每个文件都需要填写包名，包名可重复。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="release_img/1.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p><b>(2) 建立密钥文件</b></p>
+		<blockquote>
+			<p>在安卓系统中，安卓程序必须要拥有密钥文件才可以运行。</p>
+			<blockquote>
+				<p>1. 选择<b>“工具 -> 安卓密钥文件建立器”</b>。</p>
+				<p><img src="release_img/2.png" border="0"></p>
+				<p>2. 建立器中只有两个必填项，密钥名称和文件保存位置。</p>
+				<p><img src="release_img/3.png" border="0"></p>
+				<p>3. 打开的密钥文件保存窗口，默认会选择当前项目路径，直接输入文件名点击保存即可。</p>
+				<p><img src="release_img/4.png" border="0"></p>
+				<p>4. 点击生成。</p>
+				<p><img src="release_img/5.png" border="0"></p>
+				<p>5. 最后会提示生成成功，如果失败可以尝试重新生成或者重启电脑后尝试。</p>
+				<p><img src="release_img/6.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p><b>(3) 设置软件信息</b></p>
+		<blockquote>
+			<p>使用快捷键<b>“Alt + F7”</b>，打开项目设置窗口。并依次设置<b>程序标题、程序版本号、程序版本名称、程序图标、目标安卓平台SDK的API级别</b>以及生成的<b>密钥文件</b>，填写完毕后，点击<b>“确定”</b>即可。</p>
+			<p>注意：软件应用市场升级软件通常以<b>“程序版本号”</b>为准，在升级软件时需修改<b>“程序版本号”</b>。</p>
+			<blockquote>
+				<p><img src="release_img/7.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<p><b>(4) 编译发布版</b></p>
+		<blockquote>
+			<p>通过菜单<b>“生成 -> 生成活动项目”</b>或使用快捷键<b>F7</b>，都可以编译当前活动项目为发布版。</p>
+			<blockquote>
+				<p><img src="release_img/8.png" border="0"></p>
+				<p>如果发生报错提示XXX不为有效的英文名称。</p>
+				<p><img src="release_img/9.png" border="0"></p>
+				<p>打开项目属性，设置<b>“所输出APK文件纯名称”</b>随便提供一个英文字母名称即可。</p>
+				<p><img src="release_img/10.png" border="0"></p>
+				<p>最后编译成功后，可以看到发布版的APK文件路径。</p>
+				<p><img src="release_img/11.png" border="0"></p>
+			</blockquote>
+			<p>编译完成后生成的<b>temp</b>文件夹可以删除。</p>
+			<blockquote>
+				<p><img src="release_img/15.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+	<a name="视窗"></a>
+	<p>&nbsp;</p>
+	<h4>2、火山视窗</h4>
+	<blockquote>
+		<p>视窗项目编译发布版流程和安卓大致一样，都需要填写包名和软件信息。</p>
+		<blockquote>
+			<p><b>(1) 填写程序包名</b></p>
+			<blockquote>
+				<p>视窗程序中的包名可随意填写，只要保证至少有一个小数点即可。</p>
+				<p><img src="release_img/13.png" border="0"></p>
+			</blockquote>
+			<p><b>(2) 填写程序信息</b></p>
+			<blockquote>
+				<p>使用快捷键<b>“Alt + F7”</b>，打开项目属性设置程序相关信息，完成后点击确定即可。</p> 
+				<p><img src="release_img/12.png" border="0"></p>
+			</blockquote>
+			<p><b>(3) 编译发布版</b></p>
+			<blockquote>
+				<p>使用快捷键<b>“F7”</b>可以编译当前活动项目为发布版，编译完成后可以看到程序输出路径。</p> 
+				<p><img src="release_img/14.png" border="0"></p>
+				<p>编译完成后生成的<b>out</b>文件夹可以删除，不会影响软件运行。</p>
+				<blockquote>
+					<p><img src="release_img/16.png" border="0"></p>
+				</blockquote>
+				<p>如果软件使用了一些模块，则编译出来的程序可能会附带一些DLL动态链接库文件，程序给用户使用时需要将dll一起打包给用户。</p>
+				
+				<p>如下图为，编译视窗例程库中的Curl网络传输例程：</p>
+				<blockquote>
+					<p>编译发布版也可通过右键选择。</p>
+					<p><img src="release_img/17.png" border="0"></p>
+					<p>发布此程序给用户使用时需要将这些dll文件一起打包发给用户。</p>
+					<p><font color="#FF0000">注：</font>如果不想依赖dll文件，可通过<strong>项目属性</strong>设置<strong>“火山模块链接方式”</strong>为静态编译，可解决部分模块附带dll的问题。</p>
+					<p><img src="release_img/18.png" border="0"></p>
+				</blockquote>
+				
+			</blockquote>
+			
+		</blockquote>
+	</blockquote>	
+	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="debug.html">上一章</a>]&nbsp; &nbsp; [<a href="hello_a.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>

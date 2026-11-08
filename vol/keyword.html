@@ -1,0 +1,635 @@
+
+<html>
+
+<head>
+<title>火山软件关键字和方法关键字_火山平台语法手册</title>
+<meta http-equiv="expires" content="0">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="keywords" content="递归软件,火山开发平台,火山软件开发平台火山游戏开发平台,安卓开发" />
+<meta name="description" content="递归软件,火山开发平台,火山软件开发平台,火山游戏开发平台，安卓开发,火山软件开发平台关键字和通用方法" />
+<link rel="shortcut icon" type="image/x-icon" href="../images/voldev.ico" media="screen" />
+<link href="../scripts/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left"> [<a href="dataType.html">上一章</a>]&nbsp;&nbsp;  [<a href="Process.html">下一章</a>] </p> 
+</blockquote>
+<h2 align="center">六、火山软件开发平台关键字和常用方法</h2>
+<p>&nbsp;</p>
+<blockquote>
+	<a name="关键字"></a>
+	<p>&nbsp;</p>
+	<h4>1、名称关键字</h4>
+	<blockquote>
+		<a name="返回"></a>
+		<p><h5>1.1 返回</h5></p>
+		<blockquote>
+			<p>帮助提示如下：</p>
+			<blockquote>
+				<p>通过<b>“返回”</b>的帮助提示可知，调用后当前方法会执行结束，并且会返回到调用语句处。如果有返回值，则会返回一个值到执行语句处。</p>
+				<p><img src="key_img/1.png" border="0"></p>
+				<p>也就是如下图所示，当<b>“测试方法()”</b>被<b>“返回()”</b>方法返回后，会返回到当前方法调用的位置，如果此位置定义了变量来接收返回值，则首先会执行这个赋值操作，然后才会执行下一行的<b>“信息框()”</b>方法。</p>
+				<p><img src="key_img/2.png" border="0"></p>
+			</blockquote> 
+			<p>本方法的参数可以提供任意类型数据，但必须保证能够匹配<b>“返回值类型”</b>一栏中所提供的数据类型。</p>
+			<blockquote>
+				<p>如下图所示：</p> 
+				<p><img src="key_img/4.png" border="0"></p>
+				<p>如果某方法的没有提供返回值类型，也可以使用<b>“返回”</b>，此时的<b>“返回”</b>不需要输入括号。</p>
+				<p><img src="key_img/7.png" border="0"></p>
+			</blockquote>
+			<p>一个方法只能拥有一个返回值，如果重复返回多次，则以一次的返回值为主。</p> 
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/5.png" ></p>
+				<p>最终程序运行后可看到返回了“火山”。</p>
+				<p><img src="key_img/6.png" ></p>
+			</blockquote>
+			<p>如果<b>“返回”</b>写到<a href="Process.html">流程语句</a>或者<a href="loop.html">循环语句</a>中，则流程或循环会提前结束并返回。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>流程语句：</p>
+				<blockquote> 
+					<p><img src="key_img/8.png" border="0"></p>
+				</blockquote>
+				<p>循环语句：</p>
+				<blockquote>
+					<p><img src="key_img/9.png" border="0"></p>
+				</blockquote> 
+			</blockquote>
+			<p><strong>返回</strong>的额外输入字：</p>
+			<blockquote>
+				<p>除了使用全、首拼输入外，还可以使用<b>“return”</b>来输入。</p>
+				<p><img src="key_img/10.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="属于"></a>
+		<p><h5>1.2 属于</h5></p>
+		<blockquote>
+			<p>本关键字是一种判断关键字，关键字的左侧参数提供实例对象、右侧参数提供数据类名。用于返回左侧的对象是否为右侧类或者其直接/间接继承类的实例对象。</p>
+			<p>最终判断结果会返回逻辑型，如果符合返回真，即表示左侧对象能安全转换到右侧类数据类型。</p>
+			<p>注意: 左侧对象的数据类型必须为类，而且必须与右侧类之间存在继承/被继承关系或者等于右侧类本身才会符合条件。</p>	
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>利用<b>“属于”</b>来判断<b>“测试2对象”</b>是否属于<b>“测试类1”</b>，此处必然返回真。</p>
+				<p>因为<b>“测试类2”</b>继承了<b>“测试类1”</b>，既然继承了测试类1，那么必然存在测试类1，因此这个属于条件必然是成立的。</p>
+				<p><img src="key_img/11.png" border="0"></p>
+				<p>最终结果也证明<b>“测试2对象”</b>是属于<b>“测试类1”</b>的。</p>
+				<p><img src="key_img/12.png" border="0"></p>
+			</blockquote>
+			<p>除了继承关系相等外，如果类型相等本条件也会返回真。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>用<b>“测试2对象”</b>和<b>“测试类1”</b>进行判断，其结果也必然是会返回真，因为类型是完全一致的。</p>
+				<p><img src="key_img/13.png" border="0"></p>
+				<p>最终结果也证实了这一点。</p>
+				<p><img src="key_img/14.png" border="0"></p>
+			</blockquote>
+			<p>全部比较结果如下图：</p>
+			<blockquote> 
+				<p><img src="key_img/15.png" border="0"></p>
+			</blockquote>
+			<p>如果符合条件就可以进行强制转换操作，让左侧对象强制转换为右侧类型。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/16.png" border="0"></p>
+			</blockquote> 
+			<p><strong>属于</strong>的额外输入字：</p>
+			<blockquote>
+				<p>除了使用全、首拼输入外，还可以使用<b>“instanceof”</b>来输入。</p>
+				<p><img src="key_img/17.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="逻辑"></a>
+		<p><h5>1.3 逻辑值</h5></p>
+		<blockquote>
+			<p>逻辑值只有<b>“真”</b>和<b>“假”</b>，主要用于表示<a href="dataType.html#逻辑型">逻辑型</a>。</p>
+			<p>例如：上述中的<b>“属于”</b>关键字，其判断结果就是逻辑型，就可以使用真或假来判断其结果。</p>
+			<p>使用方式如下，用于变量、常量、赋值以及条件判断操作。</p>
+			<blockquote>
+				<p><img src="key_img/18.png" border="0"></p>
+			</blockquote>
+			<p><strong>真/假</strong>的额外输入字：</p>
+			<blockquote>
+				<p>除了使用全、首拼输入外，<b>“真”</b>还可以使用<b>“ture”</b>来输入，<b>“假”</b>还可以使用<b>“false”</b>来输入。</p>
+				<p><img src="key_img/19.png" border="0"></p>
+				<p><img src="key_img/20.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<a name="空对象"></a>
+		<p><h5>1.4 空对象</h5></p>
+		<blockquote>
+			<p>用作代表空对象，可以匹配所有非常量类的类数据类型以及文本型。</p>
+			<p>需要注意的是，当对象实例为空对象时，这个对象将不能进行任何操作。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>假设某个方法提供了一个<b>“测试类”</b>的参数，并且默认值为空对象，此时如果想要操作这个参数数据，首先需要判断其是否为空对象，然后在执行相应的方法操作。</p>
+				<p><img src="key_img/21.png" border="0"></p>
+			</blockquote>
+			<p>空对象除了用于判断之外，还可以用于赋值，传参如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/22.png" border="0"></p>
+			</blockquote>
+			<p><strong>空对象</strong>的额外输入字：</p>
+			<blockquote>
+				<p>可以使用<b>“null”</b>输入空对象。</p>
+				<p><img src="key_img/23.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		
+		<a name="父对象"></a>
+		<p><h5>1.5 父对象</h5></p>
+		<blockquote>
+			<p>用于表示在类成员方法中代表所处类的父类(基础类)对象。</p>
+			<p>父对象主要是用作当基础类中存在与本类中相同名称的方法(譬如虚拟方法)时强制调用基础类的方法。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/76.png" border="0"></p>
+			</blockquote> 
+			<p>也可用于调用父类中的通常方法，如下图所示：</p>
+			<blockquote>
+				<p>在<b>“测试类2”</b>的基础类为<b>“测试类1”</b>，然后就可以通过<b>“父对象”</b>调用<b>“方法1()”</b>。</p>
+				<p><img src="key_img/24.png" border="0"></p>
+				<p>在窗口被创建完毕时调用<b>“测试类2”</b>的通常方法。</p>
+				<p><img src="key_img/25.png" border="0"></p>
+				<p>最终会执行<b>“测试类1”</b>中的<b>“方法1”</b>，并弹出一个信息框。</p>
+				<p><img src="key_img/26.png" border="0"></p>
+			</blockquote>
+			<p>当然在实际开发过程中，<b>“父类”</b>(基础类)的方法支持直接输入调用，可以省略<b>“父对象”</b>的关键词。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/27.png" border="0"></p>
+			</blockquote>
+			<p>注意: 如果语句所处方法为静态方法，由于此时根本不存在当前类的实例对象，所以不能使用本关键字。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p><img src="key_img/28.png" border="0"></p> 
+			</blockquote>
+			<p><strong>父对象</strong>的额外输入字：</p>
+			<blockquote>
+				<p>可以使用<b>“super”</b>输入父对象。</p>
+				<p><img src="key_img/29.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+		<a name="本对象"></a>
+		<p><h5>1.6 本对象</h5></p>
+		<blockquote>
+			<p>本对象表示当前代码语句所处类的对象本身。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>例如，在<b>“测试类1”</b>中使用本对象就表示是<b>“测试类1”</b>的对象本身。同理，如果有一个类叫<b>“测试类2”</b>，并且在测试类2中使用本对象，那么此时的本对象就表示的是<b>“测试类2”</b>的对象本身。</p>
+				<p><img src="key_img/30.png" border="0"></p>
+			</blockquote>
+			<p>由此可以得出，如果某个方法的参数是当前类对象的时候就可以提供<b>“本对象”</b>进行传递参数。</p>
+			<p>如下图所示：</p>
+			<blockquote>
+				<p>火山视窗的通用对话框的<b>“打开()”</b>方法，需要提供一个<b>“窗口”</b>对象。</p>
+				<p><img src="key_img/31.png" border="0"></p>
+				<p>在使用这个方法时，如果当前类是<b>“窗口”</b>或者其基础类是<b>“窗口”</b>时都可以使用<b>“本对象”</b>进行进行传递参数。</p>
+				<p><img src="key_img/32.png" border="0"></p>
+				<p>如果在其它类中调用这个<b>“通用对话框”</b>的<b>“打开()”</b>方法，就不能使用<b>“本对象”</b>进行传递参数。</p>
+				<p>如下图所示的写法是错误的：</p>
+				<p><img src="key_img/33.png" border="0"></p>
+				<p>正确的写法如下，可通过传递<b>“窗口”</b>参数来解决，其它类中使用的问题。</p>
+				<p><img src="key_img/34.png" border="0"></p>
+			</blockquote>
+			<p>需要注意的是，如果在使用本对象时当前方法是静态方法，则不支持使用本对象关键字，因为静态方法中不存在当前对象实例。</p>
+			<blockquote>
+				<p><img src="key_img/35.png" border="0"></p>
+			</blockquote>
+			<p><strong>本对象</strong>的额外输入字：</p>
+			<blockquote>
+				<p>可以使用<b>“this”</b>输入本对象。</p>
+				<p><img src="key_img/36.png" border="0"></p>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="方法"></a>
+	<p>&nbsp;</p>
+	<h4>2、方法关键字</h4>
+	<blockquote>
+		<a name="事件方法"></a>
+		<p><h5>2.1 事件方法</h5></p>
+		<blockquote>
+			<a name="挂接事件"></a>
+			<p><b>2.1.1 挂接事件<b></p>
+			<blockquote>
+				<p>本方法用于动态挂接指定对象的事件，共有两个参数，如下：</p>
+				<blockquote>
+					<p>参数1：提供要挂接的对象名称。</p>
+					<p>参数2：提供整数标记值，当多个类型相同的对象同时挂接时，可以在事件接收方法的<b>“标记值”</b>参数中获取到此标记，从而用于区分对象来源。</p>
+					<p><img src="key_img/37.png" border="0"></p>
+				</blockquote>
+				<p><strong>1. 如何挂接事件？</strong></p>
+				<blockquote>
+					<p>如果想要指定对象进行<b>“挂接事件”</b>操作，必须满足以下条件：</p>
+					<blockquote>
+						<p><strong>(1)</strong> 其对象必须拥有<a href="structure.html#事件方法"><b>“事件定义方法”</b></a>。</p>
+						<blockquote>
+							<p>如下图所示的<b>“测试类”</b>想要进行挂接事件的写法是错误的，因为<b>“测试类”</b>中并没有任何事件。</p>
+							<p><img src="key_img/38.png" border="0"></p>
+						</blockquote>
+						<p><strong>(2)</strong> 使用本方法后必须添加指定对象的接收事件方法。</p>
+						<blockquote>
+							<p>如下图所示，使用<b>“挂接事件()”</b>方法后，必须添加<b>“测试类”</b>的接收事件方法，用于接收事件。</p>
+							<p>注意：如果存在多个相同数据类型的对象需要挂接事件，可以通过填写挂接事件的参数2，来判断事件来源。</p>
+							<p><img src="key_img/39.png" border="0"></p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				
+				<p><strong>2. 什么时候需要挂接事件？</strong></p>
+				<blockquote>
+					<p>安卓平台挂接事件：</p>
+					<blockquote>
+						<p>(1) 当对象为非参考成员变量时会自动挂接事件，如下图所示：</p>
+						<blockquote>
+							<p><img src="key_img/81.png" ></p> 
+							<p>注意：在使用火山系统库中的某个类时，即使是非参考成员变量，可能也需要通过某个属性或方法来开启事件，名称中一般包括<b>“支持/允许”</b>之类的字样。</p>
+							<p>如下图所示，轮播图组件需要设置<b>“支持页面改变监听”</b>属性为真，才可以触发<b>“页面被选择”</b>事件。</p>
+							<p><img src="key_img/82.png" ></p> 
+						</blockquote> 
+					
+						<p>(2) 当对象为参考变量时需要挂接事件，如下图所示：</p>
+						<blockquote> 
+							<p><img src="key_img/41.png" border="0"></p>
+						</blockquote>
+						<p>(3) 当对象为局部变量时需要挂接事件，如下图所示：</p>
+						<blockquote>
+							<p><img src="key_img/40.png" border="0"></p>
+						</blockquote>
+						
+						
+						<p>(4) 当对象事件需要发送到其它类中使用时，需要挂接事件。</p>
+						<blockquote>
+							<p>如下所示<b>“组件布局类”</b>中的按钮组件事件想要在窗口中触发事件，就需要进行挂接事件操作。</p> 
+							<p><img src="key_img/43.png" border="0"></p>
+						</blockquote>
+						
+						
+					</blockquote>
+					<p>视窗平台挂接事件：</p>
+					<blockquote>
+						<p>(1) 当对象为非参考成员变量时会自动挂接事件，如下图所示：</p>
+						<blockquote>
+							<p><img src="key_img/81.png" ></p> 
+						</blockquote>
+						<p>(2) 局部变量不可以进行挂接事件，因为其对象实例会立刻销毁，因此如果某类中存在事件应定义为成员变量。</p>
+						<p>(3) 动态创建对象需要手动挂接事件。</p>
+						<blockquote>
+							<p>如下图所示，动态创建一个按钮时需要挂接事件：</p> 
+							<p><img src="key_img/77.png" border="0"></p>
+							<p>运行后可看到动态创建的按钮也可以正常点击：</p>
+							<p><img src="key_img/78.gif" border="0"></p>
+						</blockquote>
+						
+						<p>(4) 当对象事件需要发送到其它类中使用时，需要挂接事件。</p>
+						<blockquote>
+							<p>如下所示<b>“组件布局器”</b>中的按钮组件事件想要在窗口中触发事件，就需要进行挂接事件操作。</p>
+							<p><img src="key_img/47.png" border="0"></p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				
+	
+			</blockquote>
+			<a name="取消事件挂接"></a>
+			<p><b>2.1.2 取消事件挂接<b></p>
+			<blockquote>
+				<p>不再将指定对象所支持的事件挂接到当前类对象中的对应事件接收方法上。</p>
+				<p>无论是自动挂接事件的类成员对象变量，还是手动调用挂接事件关键字挂接的对象，均可以调用本关键字取消其事件挂接。事件挂接一旦取消，该对象的事件将不会再被接收到，谨慎使用。</p>
+				<blockquote>
+					<p>如下图所示调用即可取消所有事件：</p>
+					<p><img src="../images/b118.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+
+		<a name="运算方法"></a>
+		<p><h5>2.2 运算方法</h5></p>
+		<blockquote>
+			<a name="取反"></a>
+			<p><b>2.2.1 取反<b></p>
+			<blockquote>
+				<blockquote>
+					<p>本方法可对逻辑值进行取反。</p>
+					<p>如下图:</p>
+					<blockquote>
+						<p>本方法只有一个逻辑型参数，如果参数中提供真，则返回值会返回假，用于取出反转的逻辑值。</p> 
+						<p><img src="key_img/54.png" border="0"></p>
+					</blockquote>
+					<p>如下图进行调用即可：</p>
+					<blockquote>
+						<p>本方法的参数可以提供逻辑立即数，变量，方法等，只要其数据类型为逻辑型即可。</p>
+						<p><img src="key_img/55.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			
+			
+			
+		</blockquote>
+		<a name="位运算"></a>
+		<p><h5>2.3 位运算方法</h5></p>
+		<blockquote>
+			<a name="了解位运算"></a>
+			<p><b>2.3.1 了解位运算<b></p>
+			<blockquote>
+				
+				<p style="text-indent: 2em;">位运算是指对数值进行二进制的逐位运算。我们知道现代电子计算机内部采用的都是二进制方式存储和处理数据的，输入到计算机的数组、字母、汉字等信息都以二进制的形式存储。在计算机内部用<b>“比特(bit)”</b>这个单位来表示一个二进制，其状态只有0或1两种，位运算命令就是直接改变这些<b>“比特”</b>来达到改变数据的效果。想要了解位运算，首先来需要简单了解一下计算机中的常用进制。</p>
+				<p style="text-indent: 2em;">注意：在火山中所有的位运算都是针对<b>“整数”</b>类型操作，而整数的长度固定为4个字节=32比特(位)，也就是一组32位长度的二进制数。</p>
+			</blockquote>
+			
+			<a name="常用进制"></a>
+			<p><b>2.3.2 常用进制<b></p>
+			<blockquote>
+				<p>在计算机内部运算中，常用的进制有四种。</p>
+				<blockquote>
+					<p>(1) 二进制：逢2进1，由数字<strong>0和1</strong>组成，例如：<strong>1010110</strong>，数值都限制在0和1之间。</p>
+					<p>(2) 八进制：逢8进1，由数字<strong>0到7</strong>组成，例如：<strong>21270</strong>，数值都限制在0到7之间。</p>
+					<p>(3) 十进制：逢10进1，有数字<strong>0到9</strong>组成，例如：<strong>1230569</strong>，数值都限制在0到9之间。</p>
+					<p>(4) 十六进制：逢16进1，有数字<strong>0到9</strong>和字母<strong>A到F</strong>组成，例如：<strong>309F7B</strong>，其内容都限制在0到9和A到F之间。</p>
+				</blockquote>
+				<p>所谓二进制就是<b>“逢2进1、借1当2”</b>为原则，对数值进行计数的进位制。它和我们日常使用的十进制类似，只不过十进制是<b>“逢10进1、借1当10”</b>。</p>
+				<p>进制之间是可以相互转换的，可以使用一些第三方工具来进行操作：<a href="https://tool.lu/hexconvert/" target="_blank">https://tool.lu/hexconvert/</a></p>
+			</blockquote>
+			<a name="位取反"></a>
+			<p><b>2.3.3 位取反<b></p>
+			<blockquote>
+				<p>如下图：</p>
+				<blockquote>
+					<!-- <p>此方法参数只需要提供一个整数值，用于将一个这个整数参数的二进制值的每一位取反，即0变1、1变0，返回值是转换后的结果。</p> -->
+					<p>本方法可以将一个整数值的二进制中的每一位进行取反，即0变1、1变0，返回反转后的结果值。</p>
+					<p><img src="key_img/58.png" border="0"></p>
+				</blockquote>
+				
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对5进行位取反运算操作。</p>
+					<p><img src="key_img/59.png" border="0"></p>
+					<p>最终结果返回-6。</p>
+					<p><img src="key_img/60.png" border="0"></p>
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p style="text-indent: 2em;"><b>“5”</b>的二进制表达式为：<strong>0000 0000 0000 0000 0000 0000 0000 0101</strong>。</p>
+					<p style="text-indent: 2em;">在执行位取反运算后，返回：<strong>1111 1111 1111 1111 1111 1111 1111 1010</strong>，但是如果你直接用这个二进制去转换十进制是得不到<b>“-6”</b>这个结果的。</p>
+					<p style="text-indent: 2em;">那么为什么结果最终是<strong>-6</strong>呢？那么首先需要了解负数的二进制表达方式。</p>
+					<p style="text-indent: 2em;">现在计算机普遍使用补码表示负数。知道一个数的补码，要求其值的方法是：首先看符号位（最左一位），如果是1代表是负数<strong>(-)</strong>如果是0代表是正数<strong>(+)</strong>，然后对该值取反再<strong>+1</strong>，得到其结果值。</p>
+					<p style="text-indent: 2em;">例如本例中得到的 <strong>1111 1111 1111 1111 1111 1111 1111 1010</strong>，其符号位（最左一位）是<strong>1</strong>，表明它表示的是<strong>负数</strong>，欲求其结果值，需先对其取反，然后再加1：<strong>0000 0000 0000 0000 0000 0000 0000 0101 + 1 = 0000 0000 0000 0000 0000 0000 0000 0110</strong>，然后在得到的结果值前加一个负号，即<strong>-0000 0000 0000 0000 0000 0000 0000 0110 = -6</strong>。</p>
+					<p style="text-indent: 2em;">由此可以总结出<b>“位取反()”</b>的计算结论是：<strong>位取反(n)=-(n+1)</strong>。</p>
+					<p style="text-indent: 2em;">例如本例中：<strong>位取反(5) = -(5+1)</strong>，即<strong>位取反(5) = -6</strong></p>
+				</blockquote>
+			</blockquote>
+			<a name="位与"></a>
+			<p><b>2.3.4 位与<b></p>
+			<blockquote>
+				<p>如下图：</p>
+				<blockquote>
+					<p>本方法用于将两个整数数据的二进制值中的同比特位进行<b>“与”</b>运算，返回运算后的结果值。</p>
+					<p><img src="key_img/61.png" border="0"></p>
+					<p><strong>与运算：</strong>如果两个数值的共同位均为1，则返回值的对应位也为1，否则为0。</p>
+					<p>注：对多个整数值进行连续运算可以使用火山系统库中的<b>“连续位与()”</b>方法。</p>
+				</blockquote>
+				<p>例如：</p>
+				<blockquote>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为1，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为1，则返回值的第四位为0。</p>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为0，则返回值的第四位为0。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为0，则返回值的第四位为0。</p>
+				</blockquote>
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对<strong>56和89</strong>进行位与运算。</p>
+					<p><img src="key_img/62.png" border="0"></p>
+					<p>最终结果为24。</p>
+					<p><img src="key_img/63.png" border="0"></p>
+					
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p><strong>56和89</strong>分别转换成二进制为：<b>0011 1000</b>和<b>0101 1001</b>，进行与的运算后即会得出结果<b>0001 1000</b>转换成十进制即<b>“24”</b>。</p>
+				</blockquote>
+			</blockquote>
+			<a name="位或"></a>
+			<p><b>2.3.5 位或<b></p>
+			<blockquote>
+				
+				<p>如下图：</p>
+				<blockquote>
+					<p>本方法用于将两个整数数据的二进制值进行<b>“或”</b>运算，返回运算后的结果值。</p>
+					<p><img src="key_img/64.png" border="0"></p>
+					<p><strong>或运算：</strong>如果两个数值的共同位中有一个为1，则返回值的对应位也为1，否则为0。</p>
+					<p>注：对多个整数值进行连续计算可以使用火山系统库中的<b>“连续位或()”</b>方法。</p>
+				</blockquote>
+				<p>例如：</p>
+				<blockquote>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为1，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为1，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为0，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为0，则返回值的第四位为0。</p>
+				</blockquote>
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对<strong>56和89</strong>两位十进制整数进行位或运算。</p>
+					<p><img src="key_img/65.png" border="0"></p>
+					<p>最终结果为121。</p>
+					<p><img src="key_img/66.png" border="0"></p>
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p><strong>56和89</strong>分别转换成二进制为：<b>0011 1000</b>和<b>0101 1001</b>，进行与的运算后即会得出结果<b>0111 1001</b>转换成十进制即<b>“121”</b>。</p>
+				</blockquote>
+			</blockquote>
+			<a name="位异或"></a>
+			<p><b>2.3.6 位异或<b></p>
+			<blockquote>
+				
+				<p>如下图：</p>
+				<blockquote>
+					<p>本方法用于对二进制数值的共同比特位进行<b>“异或”</b>运算，返回运算后的结果值。</p>
+					<p><img src="key_img/67.png" border="0"></p>
+					<p><strong>异或运算：</strong>如果两个数值的共同位相等（均为0或均为1），则返回值的对应位就是0，否则为1。</p>
+					<p>注：对多个整数值进行连续计算可以使用火山系统库中的<b>“连续位异或()”</b>方法。</p>
+				</blockquote>
+				<p></p>
+				<p>例如：</p>
+				<blockquote>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为1，则返回值的第四位为0。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为1，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为1，另一个二进制数的第四位为0，则返回值的第四位为1。</p>
+					<p>一个二进制数的第四位为0，另一个二进制数的第四位为0，则返回值的第四位为0。</p>
+				</blockquote>
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对<strong>56和89</strong>两位十进制整数进行位异或运算。</p>
+					<p><img src="key_img/68.png" border="0"></p>
+					<p>最终结果为97。</p>
+					<p><img src="key_img/69.png" border="0"></p>
+					
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p><strong>56和89</strong>分别转换成二进制为：<b>0011 1000</b>和<b>0101 1001</b>，进行与的运算后即会得出结果<b>0110 0001</b>转换成十进制即<b>“97”</b>。</p> 
+				</blockquote>
+				<p>如果一个数值连续异或两个相同的数值，将返回该数值本身。如：<strong>连续位异或 (1, 2, 2)</strong> 最终结果会返回最初的值<strong>1</strong>，利用此特性可以进行简单的数值加解密操作。</p>
+				<p>如下图所示：</p>
+				<blockquote>
+					<p>将数值<strong>2</strong>作为用来<strong>位异或</strong>加密的密钥值，将数值<strong>1</strong>进行<strong>位异或</strong>加密，在需要解密的时候对加密结果再次进行<strong>位异或</strong>即可恢复原值。</p>	
+					<p><img src="key_img/79.png" border="0"></p>
+					<p>最终恢复原值：</p>
+					<p><img src="key_img/80.png" border="0"></p>
+				</blockquote>
+				
+			
+			</blockquote>
+			<a name="位左移"></a>
+			<p><b>2.3.7 位左移<b></p>
+			<blockquote>
+				<p>如下图：</p>
+				<blockquote>
+					<p>本方法用于将一个整数值的所有二进制比特位向左移动所指定位数，最右侧使用0补位，最左侧被移出的比特位将被抛弃。</p>
+					<p><img src="key_img/70.png" border="0"></p>
+				</blockquote> 
+				<p>例如：</p>
+				<blockquote>
+					<p>二进制: <strong>1010 0000 0000 0000 0000 0000 0000 1111</strong>，向左移动两位后返回 <strong>1000 0000 0000 0000 0000 0000 0011 1100</strong>，最左侧的10将被抛弃，最右侧自动补0。</p>
+				</blockquote>
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对<strong>80</strong>十进制整数进行位左移2位运算。</p> 
+					<p><img src="key_img/71.png" border="0"></p>
+					<p>最终结果为320。</p>
+					<p><img src="key_img/72.png" border="0"></p>
+					
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p><strong>80</strong>转换成二进制为：<b>0101 0000</b>，进行位左移两位后即会得出结果<b>0001 0100 0000</b>转换成十进制即<b>“320”</b>。</p>
+				</blockquote>
+			</blockquote>
+			<a name="位右移"></a>
+			<p><b>2.3.8 位右移<b></p>
+			<blockquote>
+				<p>如下图：</p>
+				<blockquote>
+					<p>本方法用于将一个整数值的所有二进制比特位向右移动所指定位数，最左侧使用0补位，最右侧被移出的比特位将被抛弃。</p>
+					<p><img src="key_img/73.png" border="0"></p>
+				</blockquote>
+				
+				<p>例如：</p>
+				<blockquote>
+					<p>二进制: <strong>1010 0000 0000 0000 0000 0000 0000 1111</strong>，向右移动两位后返回 <strong>0010 1000 0000 0000 0000 0000 0000 0011</strong>，最左侧将会补0，最右侧将被抛弃两位。</p>
+				<p>示例如下：</p>
+				<blockquote>
+					<p>对<strong>80</strong>十进制整数进行位右移2位运算。</p>
+					<p><img src="key_img/74.png" border="0"></p>
+					<p>最终结果为20。</p>
+					<p><img src="key_img/75.png" border="0"></p>
+				</blockquote>
+				<p>运算过程解析：</p>
+				<blockquote>
+					<p><strong>80</strong>转换成二进制为：<b>0101 0000</b>，进行位右移两位后即会得出结果<b>0001 0100</b>转换成十进制即<b>“20”</b>。</p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	<a name="常用基础方法"></a>
+	<p>&nbsp;</p>
+	<h4>3、常用基础方法</h4>
+	<blockquote>
+		<a name="赋值方法"></a>
+		<p><h5>3.1 赋值方法</h5></p>
+		<blockquote>
+			<a name="连续赋值"></a>
+			<p><b>3.1.1 连续赋值<b></p>
+			<blockquote>
+				<p>本方法可用于同时对多个相同类型的变量进行赋值相同内容。</p>
+				<p>帮助页如下图所示：</p>
+				<blockquote>
+					<p>参数1：可提供任意类型的数据，但必须保证和<strong>参数2</strong>提供的变量的数据类型相匹配。</p>
+					<p>参数2：提供可写入的变量，该变量的类型必须保证和<strong>参数1</strong>提供的类型匹配。</p>
+					<p><img src="key_img/48.png" border="0"></p>
+				</blockquote>
+				<p>如下图进行调用即可：</p>
+				<blockquote>
+					<p>其调用后的最终结果为，<strong>变量1</strong>和<strong>变量2</strong>同时会赋值<b>“火山”</b>。</p>
+					<p><img src="key_img/49.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<a name="连续清零"></a>
+			<p><b>3.1.2 连续清零<b></p>
+			<blockquote>
+				<p>本方法可用于同时对多个相同数值型的变量进行赋值为0，在火山视窗中可以将逻辑型赋值为假（安卓中不支持逻辑型）。</p>
+				<p>本方法只提供了一个可扩展参数，直接提供要清零的变量即可。</p>
+				<p>火山安卓调用如下图：</p>
+				<blockquote>
+					<p>直接提供要清零的数值类型的变量即可。</p>
+					<p><img src="key_img/50.png" border="0"></p>
+				</blockquote>
+				<p>火山视窗调用如下图：</p>
+				<blockquote>
+					<p>在火山视窗中支持逻辑型，逻辑值最终会设置为假。</p>
+					<p><img src="key_img/51.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+			<a name="连续清空"></a>
+			<p><b>3.1.3 连续清空<b></p>
+			<blockquote>
+				<p>本方法可用于同时对多个文本型的变量进行赋值为空文本。</p>
+				<p>帮助页如下图所示：</p>
+				<blockquote>
+					<p>本方法只有一个可扩展的文本型参数，用于清空所有的文本型变量。</p>
+					<p><img src="key_img/52.png" border="0"></p>
+				</blockquote>
+				<p>如下图进行调用即可：</p>
+				<blockquote>
+					<p>其调用后的最终结果为，三个变量都会设置为空文本。</p>
+					<p><img src="key_img/53.png" border="0"></p>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		
+		<a name="运算方法2"></a>
+		<p><h5>3.2 运算方法</h5></p>
+		<blockquote>
+			<a name="选择"></a>
+			<p><b>3.2.1 选择<b></p>
+			<blockquote>
+				<blockquote>
+					<p>本方法又称为三目运算，其作用是根据<strong>参数1</strong>提供的逻辑值，从而决定是返回<strong>参数2</strong>还是返回<strong>参数3</strong>。</p>
+					<p>帮助页如下图所示：</p>
+					<blockquote>
+						<p>如果参数1提供真，则返回参数2，否则返回参数3。</p>
+						<p><img src="key_img/56.png" border="0"></p>
+					</blockquote>
+					<p>如下图进行调用即可：</p>
+					<blockquote>
+						<p>示例中的<b>“文本变量”</b>其内容最终为<b>“文本1”</b>，因为<b>“选择()”</b>方法的参数1提供的逻辑值为真。</p>
+						<p><img src="key_img/57.png" border="0"></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+	</blockquote>	
+	
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<blockquote>
+	 <p align="left">[<a href="dataType.html">上一章</a>]&nbsp; &nbsp;  [<a href="Process.html">下一章</a>] </p> 
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<script language="JavaScript" type="text/javascript" src="../script/doc_foot.js"></script>
+</body>
+
+
+</html>
