@@ -1,0 +1,136 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>火山平台AI训练文档</title>
+</head>
+
+<body>
+
+<p align="left"><span style="font-size: 14pt"><b>使用</b></span><b><font style="font-size: 14pt">火山AI训练文档建立对应AI智能体应用</font></b></p>
+<p align="left">下面以“<b>阿里云百炼</b>”来演示如何使用<b>视窗平台AI训练文档</b>来免费建立AI智能体应用的具体步骤,其它火山子平台（安卓/服务器）及其它AI云产品（如“腾讯云智能平台”）操作方式类似。</p>
+<p align="left">　</p>
+<p align="left"><b>1、</b>首先打开阿里云百练的官网：<a target="_blank" href="https://bailian.console.aliyun.com/">https://bailian.console.aliyun.com</a></p>
+<p align="left"><img border="0" src="pic/1.png" width="1144" height="657"></p>
+<p align="left">　</p>
+<p align="left"><b>2、</b>使用您的阿里云账号登录进去：</p>
+<p align="left"><img border="0" src="pic/2.png" width="1156" height="784"></p>
+<p align="left">　</p>
+<p align="left"><b>3、</b>然后点击中间右侧的“<b>应用</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/3.png" width="1285" height="668"></p>
+<p align="left">　</p>
+<p align="left"><b>4、</b>点击下方的“<b>去应用广场</b>”：</p>
+<p align="left"><img border="0" src="pic/4.png" width="1266" height="671"></p>
+<p align="left">　</p>
+<p align="left"><b>5、</b>点击左侧的“<b>应用数据</b>”：</p>
+<p align="left"><img border="0" src="pic/5.png" width="1411" height="728"></p>
+<p align="left">　</p>
+<p align="left"><b>6、</b>点击右侧的“<b>导入数据</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/5-2.png" width="1379" height="730"></p>
+<p align="left">　</p>
+<p align="left"><b>7、</b>点击中间的“<b>点击或拖拽上传文件</b>”：</p>
+<p align="left"><img border="0" src="pic/6.png" width="926" height="730"></p>
+<p align="left">　</p>
+<p align="left"><b>8、</b>选择并上传火山所提供的视窗AI训练文档。</p>
+<p align="left">本示例使用的是多文件格式训练文档，需要先下载“<a href="https://doc.voldp.com/ai/vol_win_files.rar">视窗平台AI训练文档(多文件格式)</a>”压缩包将其解压，然后选择上传解压出的所有文档。</p>
+<p align="left">也可以使用单文件格式的训练文档，下载使用“<a href="https://doc.voldp.com/ai/vol_win_full.md">视窗平台AI训练文档(单文件格式)</a>”即可。</p>
+<p align="left">如欲训练其它子平台的智能体应用，在“<a target="_blank" href="https://doc.voldp.com/vol_ai.htm">https://doc.voldp.com/vol_ai.htm</a>”下载使用对应的训练文档即可，其它步骤和方法完全一致。</p>
+<p align="left"><img border="0" src="pic/7.png" width="1448" height="911"></p>
+<p align="left">　</p>
+<p align="left"><b>9、</b>等待其上传完毕，然后点击左下角的“<b>确认</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/8.png" width="1048" height="990"></p>
+<p align="left">　</p>
+<p align="left"><b>10、</b>点击“<b>确认</b>”按钮后阿里云会对这些文档进行解析导入，等待所有文档的状态均变为“<b>导入完成</b>”状态，直到列表框顶部显示“<b>0个文件解析中</b>”。</p>
+<p align="left"><img border="0" src="pic/9.png" width="1592" height="936"></p>
+<p align="left">　</p>
+<p align="left"><b>11、</b>点击左侧的“<b>知识库</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/10.png" width="1215" height="748"></p>
+<p align="left">　</p>
+<p align="left"><b>12、</b>点击中间的“<b>创建知识库</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/11.png" width="1015" height="615"></p>
+<p align="left">　</p>
+<p align="left"><b>13、</b>输入知识库名称，然后点击底部的“<b>下一步</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/12.png" width="1085" height="1047"></p>
+<p align="left">　</p>
+<p align="left"><b>14、</b>进入数据选择界面，选择“<b>选择类目</b>”选项，然后选中“<b>默认类目</b>”，确认该类目中所有文档的状态均处于“<b>导入完成</b>”状态，然后点击“<b>下一步</b>”按钮。</p>
+<p align="left"><img border="0" src="pic/12-2.png" width="1248" height="975"></p>
+<p align="left">　</p>
+<p align="left"><b>15、</b>设置“<b>最大分段长度</b>”和“<b>分段重叠长度</b>”参数，然后点击底部的“<b>导入完成</b>”按钮。</p>
+<p align="left"><b>注意：</b>为了达到最好的生成效果，本示例将这两个参数值均设置到了最大值，但是这样在实际使用时比较消耗token（token的意思为“词”，是AI大模型的输入/输出基本计费单位），并且生成速度较慢，您可以自己尝试将这两个参数调整到一个比较合适的值，以既满足程序生成质量和速度又能降低成本。</p>
+<p align="left"><img border="0" src="pic/13.png" width="1083" height="1048"></p>
+<p align="left">　</p>
+<p align="left"><b>16、</b>此时点击左侧的“<b>知识库</b>”按钮即可看到我们所建立的知识库：</p>
+<p align="left"><img border="0" src="pic/14.png" width="1587" height="484"></p>
+<p align="left">　</p>
+<p align="left"><b>17、</b>点击左侧的“<b>应用管理</b>”：</p>
+<p align="left"><img border="0" src="pic/15.png" width="1595" height="486"></p>
+<p align="left">　</p>
+<p align="left"><b>18、</b>点击右上角的“<b>新增应用</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/16.png" width="1588" height="439"></p>
+<p align="left">　</p>
+<p align="left"><b>19、</b>点击“<b>立即创建</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/17.png" width="994" height="621"></p>
+<p align="left">　</p>
+<p align="left"><b>20、</b>此时进入了智能体应用的创建界面：</p>
+<p align="left"><img border="0" src="pic/18.png" width="1596" height="1080"></p>
+<p align="left">　</p>
+<p align="left"><b>21、</b>点击“<b>API配置</b>”组合框右侧的“<b>设置</b>”按钮进入AI大模型选择和配置界面。</p>
+<p align="left"><b>注意：</b></p>
+<ul>
+	<li>
+	<p align="left">将“<b>温度系数</b>”参数设置为“<b>0.3</b>”及以下可以避免AI大模型太过自由发挥，是AI用作代码生成时的较佳参数值。</li>
+	<li>
+	<p align="left">为了达到最好的生成效果，这里将“<b>最长回复长度</b>”和“<b>携带上下文轮数</b>”参数均设置为了最大值，同第<b>15</b>步，您可以自己尝试将这两个参数调整到一个比较合适的值，以既满足程序生成质量和速度又降低成本。</li>
+</ul>
+<p align="left"><img border="0" src="pic/19.png" width="781" height="310"></p>
+<p align="left">　</p>
+<p align="left"><b>22、</b>点击上图中的“<b>选择模型</b>”链接进行所使用AI大模型的选择。</p>
+<p align="left">我们这里选择了“<b>DeepSeek</b>”的“<b>DeepSeek-R1</b>”大模型，您也可以选择使用其它的大模型（如“<b>通义</b>”类别中的模型）。模型选择好后点击右下方的“<b>确认</b>”按钮。</p>
+<p align="left"><img border="0" src="pic/20.png" width="984" height="691"></p>
+<p align="left">　</p>
+<p align="left"><b>23、</b>在弹出的对话框中点击“<b>确认</b>”按钮：</p>
+<p align="left"><img border="0" src="pic/21.png" width="982" height="689"></p>
+<p align="left">　</p>
+<p align="left"><b>24、</b>选中“<b>知识库</b>”单选框，然后点击其右侧的“<b>+知识库</b>”链接，然后将我们先前创建的“<b>火山视窗软件开发平台知识库</b>”添加进来：</p>
+<p align="left"><img border="0" src="pic/22.png" width="1586" height="667"></p>
+<p align="left">　</p>
+<p align="left"><b>25、</b>点击“<b>知识库</b>”单选框右侧的“<b>配置</b>”链接对知识库的使用参数进行配置。</p>
+<p align="left"><b>注意：</b>为了达到最好的生成效果，这里将“<b>召回片段数</b>”和“<b>知识库拼装最大长度</b>”参数均设置为了最大值，将“<b>回答范围设定</b>”选项设置为了“<b>搜索阈值+大模型判断</b>”。同第<b>15</b>和<b>21</b>步，您可以自己尝试将这些参数调整到一个比较合适的值，以既满足程序生成质量和速度又降低成本。</p>
+<p align="left"><img border="0" src="pic/23.png" width="1469" height="1134"></p>
+<p align="left">　</p>
+<p align="left"><b>26、</b>选中底部的“<b>长期记忆</b>”单选框，然后在“<b>指令-&gt;提示词</b>”编辑框尾部输入下面的提示词文本行（为Markdown格式）：</p>
+<blockquote>
+	<p align="left"># 注意事项<br>
+	- 所生成程序的第一行内容必须为：&lt;火山程序 类型 = &quot;通常&quot; 版本 = 1 /&gt;<br>
+	- 所生成程序的第二行内容必须为包定义语句行<br>
+	- 仅使用语法手册中列出的关键字和系统类库手册中列出的已有成员<br>
+	- 循环语句请使用以下格式而不要使用C/java的for关键字格式: 循环 (整数循环变量起始值, 变量目标值, 变量名称, 变量递增值)</p>
+</blockquote>
+<p align="left"><b>注意：</b>您也可以根据AI的实际生成效果自行在这段文本后面添加对应的提示行，每行以“- 
+”（半角减号字符加一个空格）文本开头，以避免一些常见频发的生成错误。所有提示词在每次回答问题时会一起提交给AI大模型，因此对每次问题回答都会生效。</p>
+<p align="left"><img border="0" src="pic/24.png" width="745" height="1226"></p>
+<p align="left">　</p>
+<p align="left"><b>27、</b>至此，火山视窗智能体应用已经配置完成。您可以在右侧下方编辑框中对其进行提问，所生成的火山程序内容点击其右上角的“<b>Copy 
+code</b>”链接即可将其复制到剪贴板，然后直接粘贴到火山IDE的程序内容里面。点击右上角的“<b>发布</b>”按钮可以将此智能体应用发布。</p>
+<p align="left">
+如果您对回答的内容不满意，可以将错误原因或者直接将火山编译器输出的错误信息提交过去，AI会再次重新生成。对于经常性的错误，您可以将其加入到左侧的“<b>提示词</b>”编辑框里面，这样每次回答问题时AI都会参考。</p>
+<p align="left"><img border="0" src="pic/25.png" width="796" height="1248"></p>
+<p align="left">　</p>
+<p align="left"><b>28、</b>下面为使用该AI智能体应用生成的火山程序及其运行效果：</p>
+<p align="left"><img border="0" src="pic/26.png" width="867" height="844"></p>
+<p align="left">　</p>
+<p align="left"><b>29、</b>相关成本费用评估：</p>
+<p align="left">
+智能体应用的成本就是所使用AI大模型的输入输出token费用，目前阿里云百练里面每个大模型对所有用户均有100万token的免费额度，按照一个问题消耗大概3000到5000个token来估算，大概可以免费回答200到300个问题。免费额度用完之后，您可以选择更换一个其它的大模型继续使用新的免费额度，如果觉得当前所使用大模型效果更好，也可以选择付费使用。</p>
+<p align="left">就前面所选择的“<b>DeepSeek-R1</b>”大模型来说，其官方价格如下：</p>
+<blockquote>
+	<p align="left"><b>模型调用-输入</b>：&yen;0.004 / 千Token</p>
+	<p align="left"><b>模型调用-输出</b>：&yen;0.016 / 千Token</p>
+</blockquote>
+<p align="left">
+输入输出合计平均0.01元每千token，也就是说回答一个问题的费用估计为0.03到0.05元之间，如果按一个月咨询300到500个问题来算，费用估计在9到25元之间。这笔费用您提前预存到阿里云账户里面即可，会自动扣除。</p>
+<p align="left"><b>注意：</b>以上费用为估算结果，仅用作参考，具体实际费用由阿里云百练官方实时价格和您的实际使用情况决定。</p>
+
+</body>
+
+</html>
